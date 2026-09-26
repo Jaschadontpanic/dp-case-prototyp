@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title></title>
+<!-- TODO: Title-Tag fehlt in content/kontakt.md -->
+<meta name="description" content="">
+<!-- TODO: Meta Description fehlt in content/kontakt.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body class="pg-kontakt">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <button class="burger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="../produkte/">Produkte</a>
+      <a href="../engineering/">Engineering</a>
+      <a href="../manufaktur/">Manufaktur</a>
+      <a href="../kontakt/">Kontakt</a>
+    </nav>
+    <a href="../" class="logo"><img src="../assets/images/global/logo-dont-panic.jpg" alt="don't panic"></a>
+    <a href="../kontakt/" class="btn btn-primary">Dein Projekt anfragen</a>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <span class="mobile-menu-title">Menü</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Menü schließen">&times;</button>
+  </div>
+  <input type="text" class="mobile-menu-search" placeholder="Wonach suchst du?">
+  <nav class="mobile-menu-list">
+    <a href="../produkte/">Produkte <span>&rsaquo;</span></a>
+    <a href="../engineering/">Engineering <span>&rsaquo;</span></a>
+    <a href="../manufaktur/">Manufaktur <span>&rsaquo;</span></a>
+    <a href="../kontakt/">Kontakt <span>&rsaquo;</span></a>
+  </nav>
+    <a href="../kontakt/" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Dein Projekt anfragen</a>
+  <div class="mobile-menu-footer"><a href="#"><!-- TODO: Seite fehlt -->Impressum / Datenschutz</a></div>
+</div>
+
+
+
+<div class="page-head"><h1>Kontakt</h1></div>
+
+<div class="wrap contact-page">
+
+  <div class="call-cta-top">
+    <p><strong>Ruf uns an.</strong></p>
+    <p class="call-sub">Du brauchst schnell eine Antwort oder sprichst lieber pers&ouml;nlich? Ruf uns doch einfach an.</p>
+    <a href="tel:+4940721 7692" class="btn-link">040 721 76 92 &rarr;</a>
+    <p class="call-hours">Mo.&ndash;Fr. 9&ndash;18 Uhr</p>
+  </div>
+
+  <div class="contact-grid" id="kontaktformular">
+    <h2 class="form-heading">Kontaktformular</h2>
+    <form class="contact-form">
+
+      <div class="subsection-heading">Pers&ouml;nliche Angaben</div>
+      <div class="form-row">
+        <label>Name *<input type="text" required></label>
+        <label>Firma<input type="text"></label>
+      </div>
+
+      <div class="subsection-heading">Deine Kontaktdaten</div>
+      <fieldset class="contact-pref">
+        <legend>Bevorzugte Kontaktart *</legend>
+        <label class="radio-inline"><input type="radio" name="kontaktart" required> E-Mail</label>
+        <label class="radio-inline"><input type="radio" name="kontaktart"> Telefon</label>
+      </fieldset>
+      <label>E-Mail *<input type="email" required></label>
+
+      <div class="subsection-heading">Deine Anfrage</div>
+      <label>Worum geht&rsquo;s? *
+        <select required>
+          <option>Flightcase</option>
+          <option>Sonderbau</option>
+          <option>Reparatur</option>
+        </select>
+      </label>
+      <label>Kurzbeschreibung *<textarea rows="4" required></textarea></label>
+
+      <details class="optional-fields">
+        <summary>Optional, aber hilfreich</summary>
+        <div class="optional-fields-inner">
+
+          <div class="subsection-heading">Deine Case Details</div>
+          <label>Beanspruchung
+            <select>
+              <option>Kofferraum-Transport</option>
+              <option>Spedition</option>
+              <option>Flugtransport</option>
+              <option>Touring</option>
+              <option>Interner Transport</option>
+            </select>
+          </label>
+          <label>Ma&szlig;e / Gewicht / St&uuml;ckzahl des Equipments
+            <textarea rows="3" placeholder="z. B.&#10;2x Mischpult, 60 x 40 x 30 cm, ca. 12 kg&#10;1x Lautsprecher, 80 x 30 x 30 cm, ca. 8 kg"></textarea>
+          </label>
+          <fieldset class="checkbox-group">
+            <legend>Was ist dir am wichtigsten?</legend>
+            <label class="checkbox-inline"><input type="checkbox"> Smartes Handling</label>
+            <label class="checkbox-inline"><input type="checkbox"> Maximaler Schutz</label>
+            <label class="checkbox-inline"><input type="checkbox"> Clevere Details</label>
+            <label class="checkbox-inline"><input type="checkbox"> Minimales Gewicht</label>
+          </fieldset>
+          <label>Optik / Branding<input type="text" placeholder="z. B. Firmenfarbe, Logo, Corporate Design"></label>
+          <label class="checkbox"><input type="checkbox"> Es gibt bereits ein Case, das als Vorlage dienen kann</label>
+
+          <div class="subsection-heading">Projektrahmen</div>
+          <label>Zieltermin<input type="text"></label>
+          <label>Budget-Rahmen<input type="text" placeholder="optional &ndash; hilft uns, realistisch zu planen"></label>
+          <label>Datei-Upload<input type="file">
+            <span class="hint">Alles was du hast: Bilder, Skizzen, 3D-Files</span>
+          </label>
+          <label>Wie bist du auf uns aufmerksam geworden?
+            <select>
+              <option>Empfehlung</option>
+              <option>Suchmaschinen</option>
+              <option>Social Media</option>
+              <option>Messe</option>
+              <option>Case gesehen</option>
+              <option>Ich kannte euch schon</option>
+            </select>
+          </label>
+        </div>
+      </details>
+
+      <label class="checkbox"><input type="checkbox" required> Ich akzeptiere die Datenschutzbestimmungen zur Bearbeitung meiner Anfrage. *</label>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Anfrage senden</button>
+    </form>
+
+    <div class="contact-info">
+      <div class="info-block">
+        <h3>Kontakt</h3>
+        <p><a href="mailto:info@dp-case.de">info@dp-case.de</a></p>
+        <p>040 721 76 92</p>
+        <p>Mo.&ndash;Fr. 9&ndash;18 Uhr</p>
+      </div>
+      <div class="info-block">
+        <h3>Adresse</h3>
+        <p>don&rsquo;t panic &ndash; die case-manufaktur GmbH<br>Kurt-A.-K&ouml;rber-Chaussee 73<br>21033 Hamburg</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="avatar">J</div><h4>Jascha</h4><span class="role">Kundenversteher &amp; Betriebsleiter</span>
+      <p class="quote">&bdquo;Ich h&ouml;re zu, bis ich Dein Projekt wirklich verstanden habe.&ldquo;</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">O</div><h4>Oleg</h4><span class="role">Entwickler &amp; Gesch&auml;ftsf&uuml;hrer</span>
+      <p class="quote">&bdquo;Kein Case ist zu komplex &ndash; wir finden den Weg.&ldquo;</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">O</div><h4>Ole</h4><span class="role">Konstrukteur &amp; Projektleiter</span>
+      <p class="quote">&bdquo;Je kniffliger die Konstruktion, desto lieber.&ldquo;</p>
+    </div>
+    <div class="team-card">
+      <div class="avatar">M</div><h4>Michaela</h4><span class="role">Buchhaltung &amp; Rechnungswesen</span>
+      <p class="quote">&bdquo;Am Ende muss alles auf den Cent genau aufgehen.&ldquo;</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="phone-popup" id="phonePopup">
+  <div class="phone-popup-inner">
+    <button class="phone-popup-close" onclick="dpClosePhonePopup()">&times;</button>
+    <p>Ruf uns an</p>
+    <a href="tel:+4940721 7692" class="phone-popup-number">040 721 76 92</a>
+    <p class="phone-popup-hours">Mo.&ndash;Fr. 9&ndash;18 Uhr</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  © don't panic – die case-manufaktur GmbH · Impressum · Datenschutz · AGB
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

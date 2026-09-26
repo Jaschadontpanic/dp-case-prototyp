@@ -1,0 +1,23 @@
+:root {
+  --teal: #2D8282;
+  --anthrazit: #242223;
+  --hell: #F0F5EB;
+  --schwarz: #1D1D1B;
+  --grau-text: #6b6b6b;
+  --heading-font: 'Clear Sans Bold', Arial, sans-serif;
+  --body-font: 'Clear Sans Bold', Arial, Helvetica, sans-serif;
+  --mono-font: 'DejaVu Sans Mono', 'Courier New', monospace;
+  --headline-alt-font: 'Open Sans', Arial, sans-serif; /* Font 1: nur Hero-H1, "Mehr als nur gut verpackt", "Unsere Empfehlungen" */
+  --max-width: 1744px;
+  --side-pad: 120px; /* war 48px, jetzt 2.5x */
+
+  /* ===== Type scale — one size per role, used everywhere ===== */
+  --fs-h1: 52px;          /* hero headline */
+  --fs-h2: 36px;          /* section headings: "Mehr als nur gut verpackt", "Unsere Empfehlungen", Trust-Headline */
+  --fs-body: 18px;        /* running paragraph text (hero description) */
+  --fs-body-small: 14px;  /* secondary/caption copy inside cards & process steps */
+  --fs-nav: 16px;         /* nav links + buttons */
+  --fs-card-title: 20px;  /* h3 inside cards */
+  --fs-stat-number: 30px; /* big stat numbers */
+  --fs-small: 14px;       /* stat labels / mono kicker */
+}

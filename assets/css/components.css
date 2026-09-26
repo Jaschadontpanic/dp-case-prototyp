@@ -1,0 +1,348 @@
+/* ===== VALUE PROPS (nur Startseite) ===== */
+.valueprops { max-width: var(--max-width); margin: 60px auto; padding: 0 var(--side-pad); }
+.valueprops h2 { margin-bottom: 28px; }
+.vp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.vp-card {
+  position: relative; height: 300px; border-radius: 14px; overflow: hidden;
+  background-size: cover; background-position: center;
+}
+.vp-card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0) 65%);
+}
+.vp-card .vp-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; color: #fff; }
+.vp-card .vp-text h3 { font-size: var(--fs-card-title); margin-bottom: 6px; }
+.vp-card .vp-text p { font-size: var(--fs-body-small); color: #e6e6e6; }
+.vp-handling { background-image: url('../images/startseite/wert-smartes-handling.jpg'); }
+.vp-schutz { background-image: url('../images/startseite/wert-maximaler-schutz.jpg'); }
+.vp-details { background-image: url('../images/startseite/wert-clevere-details.jpg'); }
+.vp-gewicht { background-image: url('../images/startseite/wert-minimales-gewicht.jpg'); }
+
+/* ===== CASES GRID (nur Startseite) ===== */
+.cases { max-width: var(--max-width); margin: 60px auto; padding: 0 var(--side-pad); }
+.cases .cases-head {
+  display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px;
+}
+.cases-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  align-items: stretch;
+}
+.cases-grid img { border-radius: 20px; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.cases-grid > * { overflow: hidden; border-radius: 20px; }
+.cases-grid > *:hover img { transform: scale(1.05); }
+.cases-grid .span-2 { grid-column: span 2; }
+
+/* .cta-tile: ausschliesslich in index.html verwendet, hier global verfuegbar (Vorgabe T3) */
+.cases-grid .cta-tile {
+  border-radius: 20px; background: var(--anthrazit); color: #fff; text-decoration: none;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
+  min-height: 220px; transition: transform .25s ease;
+}
+.cases-grid .cta-tile:hover { transform: translateY(-4px); }
+.cases-grid .cta-tile h3 { font-size: var(--fs-card-title); margin-bottom: 8px; color: #fff; }
+.cases-grid .cta-tile p { font-size: var(--fs-body-small); color: #ddd; margin-bottom: 14px; line-height: 1.5; }
+.cases-grid .cta-tile .btn { align-self: flex-start; }
+
+/* ===== TRUST LIST (nur Startseite) ===== */
+.trust { max-width: var(--max-width); margin: 70px auto; padding: 0 var(--side-pad); }
+.trust h2 { margin-bottom: 34px; }
+.trust-list { text-align: center; }
+.trust-list .tier { margin-bottom: 12px; }
+.trust-list span { margin: 0 14px; white-space: nowrap; }
+.t1 { font-family: var(--heading-font); font-size: 32px; color: #1a1a1a; }
+.t2 { font-family: var(--heading-font); font-size: 26px; color: #333; }
+.t3 { font-family: var(--heading-font); font-size: 22px; color: #444; }
+.t4 { font-family: var(--heading-font); font-size: 19px; color: #555; }
+.t5 { font-size: var(--fs-body-small); color: #666; }
+.t6 { font-size: var(--fs-body-small); color: #777; }
+.t7 { font-size: 13px; color: #888; }
+.t8 { font-size: 13px; color: #939393; }
+
+/* ===== PROCESS / STEP (Startseite + Engineering) =====
+   step-top: Radius 24px + Verlauf #000 -> #112f2f aus engineering.html uebernommen,
+   gilt jetzt einheitlich fuer alle Seiten (Backlog T6). */
+.process { max-width: var(--max-width); margin: 70px auto 90px; padding: 0 var(--side-pad); }
+.process-row { display: flex; position: relative; gap: 20px; align-items: stretch; }
+.step {
+  flex: 1; text-align: center; position: relative; z-index: 1;
+  border: 1px solid #e6e6e2; border-radius: 24px; overflow: hidden; background: #fff;
+}
+.step-top {
+  background: linear-gradient(180deg, #000 0%, #112f2f 100%);
+  padding: 34px 16px 30px; border-radius: 24px;
+}
+.step-bottom { padding: 18px 18px 26px; }
+.step img { width: 64px; height: 64px; margin: 0 auto; background: transparent; filter: invert(1) brightness(2); }
+.step h3 { font-size: var(--fs-card-title); margin-bottom: 8px; }
+.step p { font-size: var(--fs-body-small); color: var(--grau-text); }
+
+/* ===== CONTACT — generische Basis aus index.html (auf der Startseite selbst nur
+   .contact/.contact-intro/.hero-bar-actions sichtbar; contact-form/contact-info/team-grid
+   sind hier ungenutztes Basis-CSS). Die tatsaechliche Kontaktseite hat ein eigenes,
+   staerker abweichendes Set weiter unten unter ".contact-page" skaliert. ===== */
+.contact { max-width: var(--max-width); margin: 70px auto; }
+.contact h2 { margin-bottom: 10px; }
+.contact-intro { font-size: var(--fs-body); color: var(--grau-text); max-width: 640px; margin-bottom: 36px; }
+.contact-grid { display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.contact-form label { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-body-small); font-weight: 700; color: #333; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  font-family: var(--body-font); font-size: var(--fs-body-small); font-weight: 400;
+  padding: 12px 14px; border: 1px solid #d8d8d3; border-radius: 8px; background: #fff; color: var(--schwarz);
+}
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+  outline: none; border-color: var(--teal);
+}
+.contact-form label.checkbox { flex-direction: row; align-items: flex-start; gap: 10px; font-weight: 400; }
+.contact-form label.checkbox input { margin-top: 3px; }
+
+.optional-fields { border: 1px solid #e4e4e0; border-radius: 10px; padding: 4px 16px; }
+.optional-fields summary {
+  cursor: pointer; padding: 14px 0; font-weight: 700; font-size: var(--fs-body-small);
+  color: var(--teal); list-style: none; display: flex; align-items: center; gap: 8px;
+}
+.optional-fields summary::before { content: "+"; font-size: 18px; line-height: 1; }
+.optional-fields[open] summary::before { content: "\2212"; }
+.optional-fields summary::-webkit-details-marker { display: none; }
+.optional-fields-inner { display: flex; flex-direction: column; gap: 18px; padding: 4px 0 18px; }
+.optional-fields .hint { font-weight: 400; font-size: 12.5px; color: #999; }
+.optional-fields fieldset.checkbox-group { border: none; padding: 0; margin: 0; }
+.optional-fields fieldset.checkbox-group legend { font-weight: 700; font-size: var(--fs-body-small); padding: 0 0 8px; }
+.checkbox-inline { flex-direction: row !important; align-items: center; gap: 8px !important; font-weight: 400 !important; margin-bottom: 6px; }
+
+.contact-info { background: var(--hell); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 28px; }
+.info-block h3 { font-size: var(--fs-card-title); margin-bottom: 8px; }
+.info-block p { font-size: var(--fs-body-small); color: #444; line-height: 1.6; }
+.info-block a { color: var(--teal); font-weight: 700; }
+.info-block.call-cta-top {
+  background: var(--hell); border-radius: 16px; padding: 28px 32px; margin-bottom: 36px;
+}
+.call-cta-top .call-hours { font-size: var(--fs-body-small); color: var(--grau-text); margin-top: 8px; }
+.form-heading { font-size: var(--fs-card-title); margin-bottom: 18px; }
+.contact-pref { border: none; padding: 0; margin: 0 0 4px; }
+.contact-pref legend { font-weight: 700; font-size: var(--fs-body-small); margin-bottom: 8px; padding: 0; }
+.contact-pref .radio-inline { display: inline-flex; align-items: center; gap: 6px; margin-right: 24px; font-weight: 400; }
+.info-block.call-cta p { font-size: var(--fs-card-title); color: var(--schwarz); }
+.info-block.call-cta p.call-sub { font-size: var(--fs-body-small); color: #555; font-weight: 400; margin: 8px 0 12px; }
+
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.team-card { background: #fafaf8; border: 1px solid #ececea; border-radius: 14px; padding: 28px 22px; text-align: center; }
+.team-card .avatar {
+  width: 64px; height: 64px; border-radius: 50%; background: var(--anthrazit); color: #fff;
+  font-family: var(--heading-font); font-size: 24px; display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.team-card h4 { font-size: var(--fs-card-title); margin-bottom: 4px; }
+.team-card .role { display: block; font-size: 13px; color: var(--teal); font-weight: 700; margin-bottom: 14px; }
+.team-card .quote { font-size: var(--fs-body-small); color: var(--grau-text); font-style: italic; margin-bottom: 16px; min-height: 60px; }
+.team-card .btn-link { font-size: 14px; }
+
+/* ===== PAGE HEAD / PAGE INTRO (alle Unterseiten) =====
+   Default = Wert aus engineering/engineering-formen/manufaktur/kontakt (10px, fs-h1).
+   produkte.html hat abweichend 30px Bottom-Padding, kontakt.html abweichend fs-h2
+   statt fs-h1 -> als Original-Unterschiede per Body-Klasse erhalten. */
+.page-head { padding: 56px var(--side-pad) 10px; max-width: var(--max-width); margin: 0 auto; }
+.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); }
+.page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
+.pg-produkte .page-head { padding-bottom: 30px; }
+.pg-engineering .page-intro,
+.pg-engineering-formen .page-intro,
+.pg-manufaktur .page-intro { padding-bottom: 26px; max-width: 70ch; }
+.pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
+.section-heading { padding: 40px var(--side-pad) 20px; max-width: var(--max-width); margin: 0 auto; }
+.section-heading h2 { font-size: var(--fs-h2); color: var(--anthrazit); }
+
+/* ===== HUB GRID (Manufaktur = 3 Spalten, Engineering = hub-grid-single mit
+   Inline-Override auf 2 Spalten) ===== */
+.hub-grid, .hub-grid-single {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+  padding: 0 var(--side-pad) 80px; max-width: var(--max-width); margin: 0 auto;
+}
+@media (max-width: 900px) { .hub-grid, .hub-grid-single { grid-template-columns: 1fr; } }
+.hub-card { border: 1px solid #eee; border-radius: 16px; padding: 28px 26px; background: #fff; display: flex; flex-direction: column; }
+.hub-card h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 12px; }
+.hub-card p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; margin-bottom: 18px; }
+.hub-card .btn-link { margin-top: auto; }
+
+/* ===== PRODUCT GRID (Produkte-Hub) ===== */
+.product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; padding: 0 var(--side-pad) 80px; max-width: var(--max-width); margin: 0 auto; }
+@media (max-width: 900px) { .product-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px) { .product-grid { grid-template-columns: 1fr; } }
+.product-card { display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 16px; overflow: hidden; background: #fff; text-decoration: none; color: inherit; transition: box-shadow .2s ease; }
+.product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.product-card-img { aspect-ratio: 4/3; background: linear-gradient(180deg,#eee,#fff); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.product-card-img img { width: 78%; height: 78%; object-fit: contain; }
+.product-card-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.product-card-tag { font-size: 11px; letter-spacing: .04em; color: var(--teal); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+.product-card-body h3 { font-size: var(--fs-card-title); margin-bottom: 6px; color: var(--anthrazit); }
+.product-card-body p { font-size: 13px; color: var(--grau-text); line-height: 1.5; margin-bottom: 14px; }
+.product-card-body .btn-link { margin-top: auto; }
+
+/* ===== PRODUCT HERO (Silent Rack / Produktdetailseiten) ===== */
+.product-top {
+  background: linear-gradient(180deg,
+    #4b4c50 0%, #6c6e73 12%, #8b9095 24%, #a6abb1 36%,
+    #c3c7cf 48%, #d5dae2 60%, #d5dae2 78%, #e8e9eb 90%, #ffffff 100%);
+}
+.product-hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2045 / 867;
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 48px;
+  overflow: hidden;
+}
+.product-hero h1 {
+  font-family: var(--headline-alt-font);
+  font-size: var(--fs-h2); /* 36px statt 52px, Mercedes-Groesse */
+  color: var(--anthrazit);
+  text-align: center;
+  margin: 0 0 auto;
+}
+.product-hero-imgwrap {
+  position: relative;
+  width: 60%;
+  max-width: 780px;
+  margin-top: -10px;
+  display: flex; justify-content: center;
+}
+.product-hero-imgwrap img {
+  width: 100%; height: auto; object-fit: contain; position: relative; z-index: 2;
+}
+.product-hero-shadow {
+  position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%);
+  width: 62%; height: 7%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0) 72%);
+  z-index: 1;
+}
+.product-hero-bar-inner {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  gap: 20px; padding: 22px var(--side-pad) 34px;
+}
+.product-hero-bar .tagline { font-size: var(--fs-body-small); color: var(--anthrazit); max-width: 44ch; font-weight: 600; }
+@media (max-width: 900px) {
+  .product-hero { aspect-ratio: 4 / 5; padding-top: 32px; }
+  .product-hero h1 { font-size: 32px; }
+  .product-hero-imgwrap { width: 82%; }
+}
+
+/* ===== BEGRIFFE-BOX / FORM-CARD / TYPEN-TEASER (Engineering – Flightcase-Formen) ===== */
+.begriffe-box { background: var(--hell); border-radius: 16px; margin: 0 var(--side-pad) 46px; max-width: calc(var(--max-width) - 2*var(--side-pad)); margin-left:auto; margin-right:auto; padding: 22px 28px; }
+.begriffe-box .label { font-weight:700; font-size: 13px; color: var(--anthrazit); margin-bottom: 10px; }
+.begriffe-list { display: flex; flex-wrap: wrap; gap: 22px; }
+.begriffe-list div { font-size: 13px; color: var(--grau-text); }
+.begriffe-list b { color: var(--anthrazit); }
+
+.form-group { max-width: var(--max-width); margin: 0 auto; padding: 30px var(--side-pad) 0; }
+.form-group h2 { font-size: 15px; letter-spacing: .06em; color: var(--teal); font-weight: 700; margin-bottom: 18px; }
+.form-grid { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 18px; row-gap: 64px; padding-bottom: 10px; }
+@media (max-width: 900px) { .form-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+.form-card {
+  position: relative; border-radius: 20px; overflow: visible; height: 150px;
+  background: linear-gradient(135deg, #e9ecef 0%, #ffffff 82%);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+}
+.form-card.placeholder { background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px); display:flex; }
+.form-card .glow-img { position: absolute; left: 32%; width: 62%; top: -46px; }
+.form-card .body { position: absolute; left: 20px; bottom: 16px; right: 16px; }
+.form-card.placeholder .body { position: static; margin: auto; text-align:center; }
+.form-card h3 { font-size: 14.5px; color: var(--anthrazit); margin-bottom: 4px; }
+.form-card p { font-size: 12px; color: var(--grau-text); line-height: 1.4; margin-bottom: 6px; }
+.form-card .tags { font-family: var(--mono-font); font-size: 10px; color: #999; line-height: 1.5; }
+.form-card .placeholder-label { color:#b7b7b0; font-size:11px; }
+
+.typen-teaser { background: var(--hell); border-radius: 16px; margin: 50px var(--side-pad); max-width: calc(var(--max-width) - 2*var(--side-pad)); margin-left:auto; margin-right:auto; padding: 34px 36px; text-align:center; }
+.typen-teaser h2 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 8px; }
+.typen-teaser p { font-size: var(--fs-body-small); color: var(--grau-text); margin-bottom: 16px; }
+
+/* ===== PROCESS-TEASER / CTA-BAND (Produkte, Engineering-Formen) =====
+   Default = produkte.html (50px, kein Extra-Abstand); engineering-formen.html
+   braucht mehr Abstand nach oben, da dort keine vorgeschaltete Teaser-Flaeche
+   den Freiraum schon liefert -> per Body-Klasse ergaenzt. */
+.process-teaser { background: var(--hell); padding: 50px var(--side-pad); text-align: center; margin-top: 20px; }
+.process-teaser h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: var(--anthrazit); margin-bottom: 20px; }
+.cta-band { background: var(--anthrazit); padding: 50px var(--side-pad); text-align: center; }
+.cta-band h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: #fff; margin-bottom: 12px; }
+.cta-band p { color: #ddd; font-size: var(--fs-body-small); max-width: 60ch; margin: 0 auto 22px; }
+.pg-engineering-formen .cta-band { padding: 54px var(--side-pad); margin-top: 40px; }
+
+/* ===== PHONE POPUP / BTN-CALL (T3: global statt nur index.html) ===== */
+.hero-bar-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.btn-call { display: inline-flex; align-items: center; gap: 8px; }
+.btn-call svg { width: 18px; height: 18px; flex-shrink: 0; }
+.phone-popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 1000; align-items: center; justify-content: center; }
+.phone-popup.open { display: flex; }
+.phone-popup-inner { background: #fff; border-radius: 20px; padding: 40px 48px; text-align: center; position: relative; max-width: 90%; }
+.phone-popup-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 22px; cursor: pointer; color: var(--grau-text); }
+.phone-popup-inner p { margin: 0 0 8px; font-size: var(--fs-body-small); color: var(--grau-text); }
+.phone-popup-number { display: block; font-family: var(--headline-alt-font); font-size: 40px; font-weight: 700; color: var(--anthrazit); margin: 6px 0 10px; }
+.phone-popup-hours { font-size: var(--fs-small); color: var(--grau-text); margin: 0; }
+
+/* ===== KONTAKTSEITE (kontakt.html) — eigenes, abweichendes Contact/Team-Set,
+   1:1 aus dem Original uebernommen und unter .contact-page skaliert, damit es
+   die generische .contact-*/.team-* Basis oben (auf anderen Seiten ungenutzt)
+   nicht ueberschreibt. ===== */
+.contact-page { padding: 20px 0 70px; }
+.contact-page .call-cta-top {
+  background: var(--hell); border-radius: 16px; padding: 28px 32px; margin-bottom: 36px;
+}
+.contact-page .call-cta-top .call-hours { font-size: var(--fs-body-small); color: var(--grau-text); margin-top: 8px; }
+.contact-page .form-heading { font-size: var(--fs-card-title); margin-bottom: 20px; }
+
+.contact-page .contact-grid { display: flex; flex-direction: column; gap: 40px; margin-bottom: 60px; }
+.contact-page .contact-form { display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
+.contact-page .contact-form label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--anthrazit); }
+.contact-page .contact-form input, .contact-page .contact-form select, .contact-page .contact-form textarea {
+  font-family: var(--body-font); font-size: 13.5px; font-weight: 400; padding: 12px 14px;
+  border: 1px solid #d8d8d3; border-radius: 8px; color: var(--schwarz);
+}
+.contact-page .contact-form input:focus, .contact-page .contact-form select:focus, .contact-page .contact-form textarea:focus { outline: none; border-color: var(--teal); }
+.contact-page .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .contact-page .form-row { grid-template-columns: 1fr; } }
+
+.contact-page .contact-pref { border: none; padding: 0; margin: 4px 0; }
+.contact-page .contact-pref legend { font-weight: 700; font-size: 13px; margin-bottom: 10px; padding: 0; color: var(--anthrazit); }
+.contact-page .radio-inline { display: inline-flex; align-items: center; gap: 8px; margin-right: 28px; font-weight: 400 !important; cursor: pointer; }
+.contact-page .radio-inline input[type="radio"] {
+  appearance: none; width: 20px; height: 20px; border: 1.5px solid #999; border-radius: 50%;
+  display: inline-block; position: relative; margin: 0; cursor: pointer;
+}
+.contact-page .radio-inline input[type="radio"]:checked { border-color: var(--anthrazit); }
+.contact-page .radio-inline input[type="radio"]:checked::after {
+  content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--anthrazit);
+}
+
+.contact-page .subsection-heading { font-size: 15px; font-weight: 700; color: var(--anthrazit); margin: 10px 0 2px; }
+.contact-page details.optional-fields summary { cursor: pointer; font-weight: 700; font-size: 13.5px; color: var(--teal); margin: 6px 0 14px; }
+.contact-page .optional-fields-inner { display: flex; flex-direction: column; gap: 16px; }
+.contact-page .checkbox-group { border: none; padding: 0; margin: 0; }
+.contact-page .checkbox-group legend { font-weight: 700; font-size: 13px; margin-bottom: 8px; padding: 0; }
+.contact-page .checkbox-inline, .contact-page .checkbox { display: inline-flex; align-items: center; gap: 8px; font-weight: 400 !important; font-size: 13px; margin-right: 20px; }
+.contact-page .hint { display: block; font-size: 11px; color: var(--grau-text); font-weight: 400; margin-top: 4px; }
+
+.contact-page .contact-info { display: flex; flex-direction: column; gap: 24px; }
+.contact-page .info-block { background: var(--hell); border-radius: 16px; padding: 26px 28px; }
+.contact-page .info-block h3 { font-size: 15px; margin-bottom: 10px; }
+.contact-page .info-block p { font-size: 13.5px; color: var(--grau-text); line-height: 1.6; margin: 2px 0; }
+
+.contact-page .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+@media (max-width: 900px) { .contact-page .team-grid { grid-template-columns: repeat(2,1fr); } }
+.contact-page .team-card { text-align: center; }
+.contact-page .team-card .avatar {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--anthrazit); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-family: var(--heading-font);
+  font-weight: 700; font-size: 20px; margin: 0 auto 10px;
+}
+.contact-page .team-card h4 { font-size: 14px; margin-bottom: 2px; }
+.contact-page .team-card .role { font-size: 11.5px; color: var(--teal); font-weight: 600; }
+.contact-page .team-card .quote { font-size: 11.5px; color: var(--grau-text); font-style: italic; margin: 8px 0; }
+
+/* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
+@media (max-width: 900px) {
+  .vp-grid, .cases-grid { grid-template-columns: 1fr; }
+  .cases-grid .span-2 { grid-column: span 1; }
+  .process-row { flex-direction: column; gap: 24px; }
+  .contact-grid, .contact-page .contact-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}

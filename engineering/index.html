@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title></title>
+<!-- TODO: Title-Tag fehlt in content/engineering/index.md -->
+<meta name="description" content="">
+<!-- TODO: Meta Description fehlt in content/engineering/index.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+</head>
+<body class="pg-engineering">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <button class="burger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="../produkte/">Produkte</a>
+      <a href="../engineering/">Engineering</a>
+      <a href="../manufaktur/">Manufaktur</a>
+      <a href="../kontakt/">Kontakt</a>
+    </nav>
+    <a href="../" class="logo"><img src="../assets/images/global/logo-dont-panic.jpg" alt="don't panic"></a>
+    <a href="../kontakt/" class="btn btn-primary">Dein Projekt anfragen</a>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <span class="mobile-menu-title">Menü</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Menü schließen">&times;</button>
+  </div>
+  <input type="text" class="mobile-menu-search" placeholder="Wonach suchst du?">
+  <nav class="mobile-menu-list">
+    <a href="../produkte/">Produkte <span>&rsaquo;</span></a>
+    <a href="../engineering/">Engineering <span>&rsaquo;</span></a>
+    <a href="../manufaktur/">Manufaktur <span>&rsaquo;</span></a>
+    <a href="../kontakt/">Kontakt <span>&rsaquo;</span></a>
+  </nav>
+    <a href="../kontakt/" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Dein Projekt anfragen</a>
+  <div class="mobile-menu-footer"><a href="#"><!-- TODO: Seite fehlt -->Impressum / Datenschutz</a></div>
+</div>
+
+
+
+<div class="page-head"><h1>Engineering</h1></div>
+
+<div class="hub-grid-single" style="grid-template-columns: repeat(2,1fr);">
+  <div class="hub-card">
+    <h3>Materialien</h3>
+    <p>Vom Plattenmaterial bis zum letzten Verschluss &ndash; jede Komponente ist bewusst gew&auml;hlt.</p>
+    <a href="#" class="btn-link"><!-- TODO: Seite fehlt -->Mehr erfahren &rarr;</a>
+  </div>
+  <div class="hub-card">
+    <h3>Flightcase Bauformen</h3>
+    <p>Klassisch, kombiniert oder v&ouml;llig neu gedacht &ndash; 21 Bauformen in 6 Gruppen.</p>
+    <a href="flightcase-formen/" class="btn-link">Mehr erfahren &rarr;</a>
+  </div>
+</div>
+
+<div class="section-heading"><h2>Von der Idee bis zum fertigen Case</h2></div>
+<section class="process">
+  <div class="process-row">
+    <div class="step">
+      <div class="step-top"><img src="../assets/images/engineering/prozess-01-verstehen.png" alt=""></div>
+      <!-- TODO: Alt-Text fehlt (Prozess-Icon) -->
+      <div class="step-bottom"><h3>Verstehen</h3><p>Telefonat, Videocall, vor Ort oder E-Mail – gemeinsam verstehen wir die Herausforderung. Stabilität, Transportart, Handling und Design werden genau hinterfragt.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-top"><img src="../assets/images/engineering/prozess-02-konzipieren.png" alt=""></div>
+      <!-- TODO: Alt-Text fehlt (Prozess-Icon) -->
+      <div class="step-bottom"><h3>Konzipieren</h3><p>Wir entwickeln das Konzept für dein Case und erstellen ein konzeptionelles Angebot – bei Bedarf mit Beispielcases und Konzeptskizze.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-top"><img src="../assets/images/engineering/prozess-03-entwickeln.png" alt=""></div>
+      <!-- TODO: Alt-Text fehlt (Prozess-Icon) -->
+      <div class="step-bottom"><h3>Entwickeln</h3><p>Bei Abwägungsfragen klären wir letzte Details. Am Ende steht ein 3D-Modell im Online-Viewer – einsehbar, herunterladbar und dein Eigentum.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-top"><img src="../assets/images/engineering/prozess-04-fertigen.png" alt=""></div>
+      <!-- TODO: Alt-Text fehlt (Prozess-Icon) -->
+      <div class="step-bottom"><h3>Fertigen</h3><p>In unserer Hamburger Manufaktur bauen erfahrene Casebauer, unterstützt von moderner CNC-Technik. Du hast immer dieselben Ansprechpartner.</p></div>
+    </div>
+    <div class="step">
+      <div class="step-top"><img src="../assets/images/engineering/prozess-05-rundum-service.png" alt=""></div>
+      <!-- TODO: Alt-Text fehlt (Prozess-Icon) -->
+      <div class="step-bottom"><h3>Rundum-Service</h3><p>Wir kümmern uns um die komplette Lieferung. Sollten Mängel auftreten oder sich deine Anforderungen ändern – wir sind da. Irren ist menschlich, egal ob bei dir oder bei uns. Wir finden immer schnell eine gute Lösung, denn dein Case muss funktionieren.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  © don't panic – die case-manufaktur GmbH · Impressum · Datenschutz · AGB
+</footer>
+</body>
+</html>

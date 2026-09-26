@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title></title>
+<!-- TODO: Title-Tag fehlt in content/startseite.md -->
+<meta name="description" content="">
+<!-- TODO: Meta Description fehlt in content/startseite.md -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body class="pg-index">
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <button class="burger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="produkte/">Produkte</a>
+      <a href="engineering/">Engineering</a>
+      <a href="manufaktur/">Manufaktur</a>
+      <a href="kontakt/">Kontakt</a>
+    </nav>
+    <a href="./" class="logo"><img src="assets/images/global/logo-dont-panic.jpg" alt="don't panic"></a>
+    <a href="kontakt/" class="btn btn-primary">Dein Projekt anfragen</a>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <span class="mobile-menu-title">Menü</span>
+    <button class="mobile-menu-close" onclick="document.getElementById('mobileMenu').classList.remove('open')" aria-label="Menü schließen">&times;</button>
+  </div>
+  <input type="text" class="mobile-menu-search" placeholder="Wonach suchst du?">
+  <nav class="mobile-menu-list">
+    <a href="produkte/">Produkte <span>&rsaquo;</span></a>
+    <a href="engineering/">Engineering <span>&rsaquo;</span></a>
+    <a href="manufaktur/">Manufaktur <span>&rsaquo;</span></a>
+    <a href="kontakt/">Kontakt <span>&rsaquo;</span></a>
+  </nav>
+    <a href="kontakt/" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Dein Projekt anfragen</a>
+  <div class="mobile-menu-footer"><a href="#"><!-- TODO: Seite fehlt -->Impressum / Datenschutz</a></div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <h1 style="font-family: var(--headline-alt-font);">Dein Case.<br>Unsere Präzision.<br>Gemeinsam entwickelt.</h1>
+    <p class="desc">Bei don't panic entwickeln und fertigen wir individuelle Flightcases für alles, was sicher transportiert werden muss – ob sehr empfindlich, sehr schwer, sehr wertvoll oder einfach unersetzlich – wir schützen dein Equipment und machen das Handling mühelos.</p>
+    <div class="buttons">
+      <a href="kontakt/" class="btn btn-primary">Dein Projekt anfragen</a>
+      <a href="#" class="btn btn-outline"><!-- TODO: Seite fehlt -->Referenzen ansehen</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS ROW – VARIANTE A: Kicker 50% Breite, 3 Kennzahlen teilen sich die restlichen 50% -->
+<div class="stats-row">
+  <div class="kicker">DIE CASEMANUFAKTUR<br>SEIT 1994 IN HAMBURG</div>
+  <div class="stat"><b>30+</b><span>JAHRE ERFAHRUNG</span></div>
+  <div class="stat"><b>2000+</b><span>KONSTRUKTIONEN</span></div>
+  <div class="stat"><b>100%</b><span>CUSTOM-MADE</span></div>
+</div>
+
+<section class="valueprops">
+  <h2 style="font-family: var(--headline-alt-font);">Mehr als nur gut verpackt</h2>
+  <div class="vp-grid">
+    <div class="vp-card vp-handling">
+      <div class="vp-text"><h3>Smartes Handling</h3><p>Ergonomisch und strukturell durchdacht – innen wie außen. Angepasst an deine Transportherausforderungen.</p></div>
+    </div>
+    <div class="vp-card vp-schutz">
+      <div class="vp-text"><h3>Maximaler Schutz</h3><p>Jedes Equipment ist unterschiedlich. Wir konstruieren den Schutz exakt dafür – nicht Standard, sondern maßgeschneidert.</p></div>
+    </div>
+    <div class="vp-card vp-details">
+      <div class="vp-text"><h3>Clevere Details</h3><p>Wir bauen Funktionssysteme, die dein Setup perfekt machen und professionell aussehen.</p></div>
+    </div>
+    <div class="vp-card vp-gewicht">
+      <div class="vp-text"><h3>Minimales Gewicht</h3><p>Maximale Stabilität bei minimalem Gewicht – neueste Hohlkammermaterialien sparen dir bei jedem Transport Kraft.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="cases-head">
+    <h2 style="font-family: var(--headline-alt-font);">Unsere Empfehlungen</h2>
+  </div>
+  <div class="cases-grid">
+    <img class="span-2" src="assets/images/startseite/cases-backstage-kaffeebar.jpg" alt="Backstage-Kaffeebar">
+    <img src="assets/images/startseite/cases-luftfahrt-schablonen-flightcase.jpg" alt="Luftfahrt Schablonen Flightcase">
+    <img src="assets/images/startseite/cases-broadcast-pult-workstation.jpg" alt="Broadcast-Pult-Workstation">
+    <img src="assets/images/startseite/cases-luftfahrt-schablonen-flightcase.jpg" alt="Luftfahrt Schablonen Flightcase">
+    <img src="assets/images/startseite/cases-broadcast-pult-workstation.jpg" alt="Broadcast-Pult-Workstation">
+
+    <a href="produkte/" class="cta-tile">
+      <h3>Weitere Produkte entdecken</h3>
+      <p>Jedes Case individuell entwickelt &ndash; ob Einzelst&uuml;ck oder Serie.</p>
+      <span class="btn btn-primary">Weitere Produkte</span>
+    </a>
+    <a href="engineering/" class="cta-tile">
+      <h3>Engineering, das den Unterschied macht</h3>
+      <p>Von der ersten Idee bis zur Fertigung &ndash; unser 5-Schritte-Prozess sorgt daf&uuml;r, dass dein Case genau das kann, was es k&ouml;nnen muss.</p>
+      <span class="btn btn-primary">Zum Engineering-Prozess</span>
+    </a>
+  </div>
+</section>
+
+<section class="trust">
+  <h2>30 Jahre Lösungen für anspruchsvolle Partner</h2>
+  <div class="trust-list">
+    <div class="tier t1">BMW · Siemens AG · Lufthansa Technik · Mercedes-Benz · Philips · Chanel</div>
+    <div class="tier t2">AIDA Cruises · Greenpeace · Olympus · TÜV Rheinland · Fritz Cola · Airbus · ARD</div>
+    <div class="tier t3">Bang & Olufsen · Bayer · Beiersdorf AG · BG Verkehr · Bundesamt für Strahlenschutz · Deichkind · Deutsche Telekom AG</div>
+    <div class="tier t4">Dolmar · Drägerwerk AG · Edding · Elbphilharmonie · EOS · NDR · Oracle Deutschland · Peek & Cloppenburg</div>
+    <div class="tier t5">Polizei Hamburg · SHARP Devices Europe · Studio Hamburg MCI · Thyssenkrupp Marine Systems · TUI Cruises · TÜV Süd</div>
+    <div class="tier t6">WÜRTH · Axel Springer AG · Bayerische Staatsoper · Bundesamt für Seeschifffahrt · Casio Europe · CCH · Cinegate · Conrad Electronic</div>
+    <div class="tier t7">Deutsche Lebensrettungsgesellschaft · Deutsche Post AG · DPD GeoPost · engelbert strauss · FKP Scorpio · Hamburger SV · Hamburger Staatsoper · Hauni Maschinenbau</div>
+    <div class="tier t8">KAEFER SE & Co. KG · Kampnagel Filmfabrik · LemonAid Beverages · Leuphana Universität Lüneburg · Max-Planck-Institut f. Meteorologie · Messe Frankfurt · Meute</div>
+    <div class="tier t8">Monacor · Nationaltheater Mannheim · Niedersächsisches Staatstheater · Otto Ganter & Co. KG · PRG · Radio Hamburg · Saint-Gobain Glass · Schenker Deutschland AG</div>
+    <div class="tier t8">Schott AG · St. Pauli Theater · Stiebel Eltron · TU Hamburg-Harburg · Torfrock · UKE Hamburg · Universität Bremen · Universität Hamburg</div>
+    <div class="tier t8">Universitätsklinikum Schleswig-Holstein · Universitätsklinikum TU Dresden · Vattenfall · Video Data · Allmech · Carpetlight · Fotobox Hamburg</div>
+    <div class="tier t8">Fusion Camper Vans · Instagrid · LYNX · Mobyvan · Norddisplay · Offroadmanufaktur · Rote Gourmet Fraktion · Scholz & Friends</div>
+    <div class="tier t8">Spider Cam · T&amp;O Labsystems · Testfuchs · Triofilm · Vossloh Railway Maintenance · Wilhelm Wagenfeld Schule · Woodland Studios</div>
+    <div class="tier t8">Rickshaw Dolly · B+K Medical · VanWave · MBF Filmtechnik · TBF Pyrotec · Meddrop</div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <h2>Dein Case, egal wie speziell.</h2>
+    <p class="contact-intro">Ob Standard oder kniffelig &ndash; erz&auml;hl uns von deinem Projekt, wir melden uns pers&ouml;nlich zur&uuml;ck.</p>
+    <div class="hero-bar-actions" style="margin-top:26px;">
+      <a href="kontakt/#kontaktformular" class="btn btn-primary">Kontaktformular</a>
+      <button type="button" class="btn btn-outline btn-call" onclick="dpOpenPhonePopup()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Anrufen
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="phone-popup" id="phonePopup">
+  <div class="phone-popup-inner">
+    <button class="phone-popup-close" onclick="dpClosePhonePopup()">&times;</button>
+    <p>Ruf uns an</p>
+    <a href="tel:+4940721 7692" class="phone-popup-number">040 721 76 92</a>
+    <p class="phone-popup-hours">Mo.&ndash;Fr. 9&ndash;18 Uhr</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  © don't panic – die case-manufaktur GmbH · Impressum · Datenschutz · AGB
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
