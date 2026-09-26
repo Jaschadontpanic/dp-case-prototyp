@@ -201,8 +201,7 @@
 }
 .product-hero-imgwrap {
   position: relative;
-  width: 60%;
-  max-width: 780px;
+  width: 80%;
   margin-top: -10px;
   display: flex; justify-content: center;
 }
@@ -337,6 +336,21 @@
 .contact-page .team-card h4 { font-size: 14px; margin-bottom: 2px; }
 .contact-page .team-card .role { font-size: 11.5px; color: var(--teal); font-weight: 600; }
 .contact-page .team-card .quote { font-size: 11.5px; color: var(--grau-text); font-style: italic; margin: 8px 0; }
+
+/* ===== ALLGEMEINE FAQ (zentrales, wiederverwendetes Element aus content/_global/faq-allgemein.md
+   – laut Content-Vorgabe auch auf allen Produktseiten und der Engineering-Hauptseite geplant,
+   aktuell nur auf der Kontaktseite eingebaut). Wiederverwendung des .optional-fields-Stils. ===== */
+.faq { max-width: var(--max-width); margin: 0 auto; padding: 20px var(--side-pad) 70px; }
+.faq h2 { margin-bottom: 20px; }
+.faq-item { border: 1px solid #e4e4e0; border-radius: 10px; padding: 4px 20px; margin-bottom: 12px; }
+.faq-item summary {
+  cursor: pointer; padding: 16px 0; font-weight: 700; font-size: var(--fs-body-small);
+  color: var(--anthrazit); list-style: none; display: flex; align-items: center; gap: 8px;
+}
+.faq-item summary::before { content: "+"; font-size: 18px; line-height: 1; color: var(--teal); }
+.faq-item[open] summary::before { content: "\2212"; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; padding: 0 0 18px; }
 
 /* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
 @media (max-width: 900px) {
