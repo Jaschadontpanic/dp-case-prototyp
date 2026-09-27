@@ -46,5 +46,5 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 - **Prozess-Kacheln** (`engineering.html`): `.step` mit Rand #e6e6e2, Radius 24px; `.step-top` Verlauf `#000 → #112f2f`, Radius 24px; Icons 72×72px.
 - **Page-Head** (Unterseiten): `.page-head` 56px oben, H1 in `--headline-alt-font`.
 - **Hub-/Produktkarten**: Rand #eee, Radius 16px, Hover-Schatten.
-- **Produkt-Hero** (`produkte-silent-rack.html`): Grau-Verlauf-Hintergrund, `aspect-ratio 2045/867`, H1 36px zentriert, freigestelltes Produktbild mit Bodenschatten.
+- **Produkt-Hero** (`produkte-silent-rack.html`): Grau-Verlauf-Hintergrund, H1 36px zentriert, freigestelltes Produktbild mit Bodenschatten. Seit 2026-09-27: kein festes `aspect-ratio` mehr (Produktbild muss auf jeder Auflösung komplett sichtbar sein, egal welches Seitenverhältnis das Foto hat) – Bild wird per `max-height` (65vh Desktop / 50vh ≤900px) + `object-fit: contain` begrenzt, Container passt sich an.
 - **Bauform-Karten** (`engineering-formen.html`): 4-Spalten-Grid, Karte 150px, Bild ragt oben heraus.
