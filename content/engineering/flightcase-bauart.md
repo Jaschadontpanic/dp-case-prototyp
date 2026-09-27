@@ -9,8 +9,8 @@ stand: 2026-09-27
 ### TYPEN (Unterseite) - final komplett
 URL: /engineering/flightcase-bauart
 
-**Title-Tag:** Flightcase Bauarten – Material, Gewicht und Stabilität
-**Meta Description:** Welche Materialkombination macht dein Flightcase leicht, welche besonders stabil? Unsere Bauarten mit Gewicht und Stabilität im Vergleich. Jetzt anfragen.
+**Title-Tag:** Flightcase Bauarten – leicht wie möglich, stabil wie nötig
+**Meta Description:** Leicht zu tragen und trotzdem sicher: Mit der passenden Materialkombination spart dein Flightcase Gewicht, ohne beim Schutz nachzugeben. Finde deine Bauart.
 **Breadcrumb:** Start > Engineering > Bauart
 
 **H1:** Flightcase Bauart (final)

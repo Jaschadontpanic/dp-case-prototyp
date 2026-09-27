@@ -9,8 +9,8 @@ stand: 2026-09-27
 ### FORMEN (Unterseite) - final komplett
 URL: /engineering/flightcase-formen
 
-**Title-Tag:** Flightcase Bauformen – so kommst du am besten an deinen Inhalt
-**Meta Description:** Deckel oben, Tür vorn oder beides? Die richtige Flightcase Bauform macht Be- und Entladen einfach und den Inhalt schnell erreichbar. 21 Bauformen im Überblick.
+**Title-Tag:** Flightcase Bauformen – schneller Zugriff, weniger Handgriffe
+**Meta Description:** Deckel oben, Tür vorn oder beides: Die passende Flightcase Bauform bringt dich schneller an dein Equipment und spart Handgriffe beim Be- und Entladen.
 **Breadcrumb:** Start > Engineering > Formen
 
 **H1:** Flightcase Bauformen
