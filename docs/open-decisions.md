@@ -34,7 +34,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |
 |---|---|---|
-| T1 | Original-HTML unverändert sichern (`archiv-original-html/`, 2026-09-27 aus `docs/archiv/` herausgelöst – zu groß/irrelevant für Claude Chat) | erledigt (2026-09-26) |
+| T1 | Original-HTML unverändert sichern (`archiv/original-html/`, 2026-09-27 aus `docs/` herausgelöst und mit `docs/archiv/` zu `archiv/` zusammengeführt – zu groß/irrelevant für Claude Chat) | erledigt (2026-09-26) |
 | T2 | Base64-Bilder und Schrift auslagern, Dubletten entfernen, komprimieren; Logo-Varianten vereinheitlichen | erledigt (2026-09-26) |
 | T3 | CSS aus `index.html` nach `assets/css/` auslagern, alle Seiten darauf umstellen; Unterschiede der Seiten prüfen (Telefon-Popup/CTA-Kacheln fehlen außerhalb index) | erledigt (2026-09-26) – Telefon-Popup/btn-call waren bereits auf fast allen Seiten vorhanden, jetzt global in components.css |
 | T4 | Links von `claude.ai/artifact/...` auf relative Pfade umstellen | erledigt (2026-09-26) |
