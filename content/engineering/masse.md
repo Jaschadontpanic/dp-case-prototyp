@@ -32,7 +32,7 @@ Produkte-Hub-Header)
 **Türbreiten:**
 - Heutiger Standard für Wohnräume in Deutschland: Türblatt 860 mm (Rohbaumaß 885 mm), lichte Durchgangsbreite ca. 825 mm.
 - Viele Bestandstüren sind schmaler, vor allem in Altbauten, Bädern und Nebenräumen: Türblatt 735 mm (ca. 700 mm Durchgang) oder 610 mm (ca. 575 mm Durchgang).
-- Cases im Truckmaß (Tiefe 600 mm) passen mit der schmalen Seite voran durch praktisch jede Tür.
+- Cases im Truckmaß (Tiefe 600 mm) passen mit der schmalen Seite voran durch fast jede Tür – ab 735 mm Türblatt ist genug Platz. Nur bei sehr schmalen 610er-Türen wird es zu eng.
 - Im gewerblichen Bereich – öffentliche Gebäude, Messehallen, Veranstaltungsorte, Hotels, Büro- und Industriegebäude – sind Türen oft breiter. Dort passen häufig auch 800 mm breite und noch breitere Cases.
 
 **Fahrzeug-Innenhoehen:**
