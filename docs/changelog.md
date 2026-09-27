@@ -18,7 +18,7 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 
 ## 2026-09-27 (Abend, 4) – Kontaktseite: Einleitungssatz, Title, Meta (C7)
 - `content/kontakt.md`: Einleitung über dem Kontaktformular ergänzt („Lass uns dein perfektes Case entwickeln.“ / „Ein paar Angaben zu deinem Projekt genügen für den Start.“, Variante C, Entscheidung Jascha). Aufbau analog „Ruf uns an.“.
-- `content/kontakt.md`: Title-Tag und Meta Description (160 Zeichen) neu, da bisher fehlend (TODO im HTML).
+- `content/kontakt.md`: Title-Tag („Kontakt – dein Case, egal wie speziell | don't panic“, greift CTA-Headline auf) und Meta Description (160 Zeichen) neu, da bisher fehlend (TODO im HTML).
 - `docs/open-decisions.md`: C7 von „offen“ auf „Aufgabe“ (Umsetzung durch Claude Code).
 
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request

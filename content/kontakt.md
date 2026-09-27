@@ -8,7 +8,7 @@ stand: 2026-09-27
 
 # Kontakt
 
-**Title-Tag:** Kontakt – Flightcase anfragen bei don't panic
+**Title-Tag:** Kontakt – dein Case, egal wie speziell | don't panic
 **Meta Description:** Frag dein individuelles Flightcase bei don't panic in Hamburg an: per Formular, Telefon oder E-Mail. Ein paar Angaben zu deinem Projekt genügen. Jetzt anfragen.
 
 ## Einleitung über dem Kontaktformular
