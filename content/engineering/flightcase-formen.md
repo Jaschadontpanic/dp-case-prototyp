@@ -9,8 +9,8 @@ stand: 2026-09-27
 ### FORMEN (Unterseite) - final komplett
 URL: /engineering/flightcase-formen
 
-**Title-Tag:** Flightcase Bauformen – Toplader, Seitenlader und Kombinationen
-**Meta Description:** 21 Flightcase Bauformen von Klappdeckel- bis Doppel-Tür-Case: Toplader, Seitenlader und Kombinationen im Überblick – oder ganz neu gedacht. Jetzt anfragen.
+**Title-Tag:** Flightcase Bauformen – so kommst du am besten an deinen Inhalt
+**Meta Description:** Deckel oben, Tür vorn oder beides? Die richtige Flightcase Bauform macht Be- und Entladen einfach und den Inhalt schnell erreichbar. 21 Bauformen im Überblick.
 **Breadcrumb:** Start > Engineering > Formen
 
 **H1:** Flightcase Bauformen

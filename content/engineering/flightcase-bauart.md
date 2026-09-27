@@ -9,8 +9,8 @@ stand: 2026-09-27
 ### TYPEN (Unterseite) - final komplett
 URL: /engineering/flightcase-bauart
 
-**Title-Tag:** Flightcase Bauarten – von Standard Protect bis Custom Case
-**Meta Description:** Flightcase Bauart wählen: Standard, Plus und Ultra Protect, N-Case, Easy-Case oder Custom Case – Stabilität und Gewicht im Vergleich. Jetzt dein Case anfragen.
+**Title-Tag:** Flightcase Bauarten – Material, Gewicht und Stabilität
+**Meta Description:** Welche Materialkombination macht dein Flightcase leicht, welche besonders stabil? Unsere Bauarten mit Gewicht und Stabilität im Vergleich. Jetzt anfragen.
 **Breadcrumb:** Start > Engineering > Bauart
 
 **H1:** Flightcase Bauart (final)
