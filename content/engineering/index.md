@@ -3,7 +3,7 @@ seite: Engineering (Hauptseite)
 url: /engineering
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-25
+stand: 2026-09-27
 ---
 
 ## 17. ENGINEERING (Hauptseite + Formen-Unterseite) *(zuletzt aktualisiert: 2026-09-25)*
@@ -56,6 +56,15 @@ Kontaktseite oder Zusatzsatz bei Rundum-Service.)
 Custom-Icon-Set fuer diese 5 Schritte wird im Design-Chat bereits gebaut (Verstehen:
 Dialog-Sprechblasen, Konzipieren: Stift+Skizze, Entwickeln: isometrischer 3D-Wuerfel,
 Fertigen: Zahnrad+Wuerfel, Rundum-Service: Schild mit Haken).
+
+**Hub-Kacheln (C2, nach dem 5-Schritte-Prozess, vor der Allgemeinen FAQ; Reihenfolge fest):**
+
+| Kachel | Überschrift | Text | Button |
+|---|---|---|---|
+| Bauart | Leicht wie möglich, stabil wie nötig | Die richtige Materialkombination für dein Equipment – vom Leichtgewicht bis zum unzerstörbaren Klassiker. | Zu den Bauarten -> /engineering/flightcase-bauart |
+| Formen | Schneller Zugriff, weniger Handgriffe | Deckel, Tür oder beides – die Bauform bestimmt, wie einfach du be- und entlädst. | Zu den Bauformen -> /engineering/flightcase-formen |
+| Maße | Passend für Inhalt und Transportweg | Durch die Tür, in den Sprinter, ins Flugzeug – wir planen die Maße für den ganzen Weg. | Zu den Maßen -> /engineering/masse |
+| Materialien | Das steckt in deinem Case | Vom Plattenmaterial bis zum letzten Verschluss – jede Komponente bewusst gewählt. | Zu den Materialien -> /engineering/materialien |
 
 **+ Allgemeine FAQ (zentrales Element, siehe Abschnitt ganz oben im Dokument) danach anfuegen.**
 

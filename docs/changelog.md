@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-27 (Abend, 9) – Engineering-Hauptseite: Hub-Kacheln (C2)
+- Entscheidung Jascha: Engineering-Hauptseite bleibt (5-Schritte-Prozess + Kacheln zu den Unterseiten).
+- `content/engineering/index.md`: 4 Kacheln (Bauart, Formen, Maße, Materialien) mit Überschrift, Text, Button nach dem Prozess ergänzt; Überschriften greifen die Title-Tags der Unterseiten auf. C2 erledigt.
+
 ## 2026-09-27 (Abend, 8) – Teaser Bauart → Formen → Maße (C1)
 - `content/engineering/flightcase-bauart.md`: Teaser zur Formen-Seite vor dem CTA ergänzt („Deckel, Tür oder beides?“). C1 erledigt.
 - `content/engineering/flightcase-formen.md`: Teaser führt weiterhin zur Bauart-Seite (Entscheidung Jascha); veralteter Begriff „Typen“ durch „Bauarten“ ersetzt (Text und Button).
