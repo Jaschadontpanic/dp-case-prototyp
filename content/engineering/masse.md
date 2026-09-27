@@ -35,11 +35,30 @@ Produkte-Hub-Header)
 - Cases im Truckmaß (Tiefe 600 mm) passen mit der schmalen Seite voran durch fast jede Tür – ab 735 mm Türblatt ist genug Platz. Nur bei sehr schmalen 610er-Türen wird es zu eng.
 - Im gewerblichen Bereich – öffentliche Gebäude, Messehallen, Veranstaltungsorte, Hotels, Büro- und Industriegebäude – sind Türen oft breiter. Dort passen häufig auch 800 mm breite und noch breitere Cases.
 
-**Fahrzeug-Innenhoehen:**
+**Fahrzeug-Innenhöhen (Straße):**
 - Auto, Standarddach (H1/H2): ca. 1,70-1,90 m
 - Auto, Hochdach (H2/H3): ca. 1,90-2,10 m
 - Auto, Kofferaufbau (3,5t): teilweise bis 2,20 m
 - 7,5-Tonnen-LKW (Spedition/Koffer/Plane): 2,30-2,40 m
+- 12-Tonnen-LKW: ca. 2,50 m
+- Sattelauflieger Standard (Plane/Koffer): ca. 2,70 m (Innenbreite ca. 2,48 m)
+- Megatrailer und Jumbo-Gliederzug: bis ca. 3,00 m (Innenbreite ca. 2,48 m)
+
+**Seecontainer (Innenmaß / Türöffnung, B x H in mm):**
+| Container | Innenmaß B x H | Türöffnung B x H |
+|---|---|---|
+| 20 Fuß Standard | 2352 x 2390 | 2338 x 2280 |
+| 20 Fuß High Cube | 2352 x 2690 | 2338 x 2585 |
+| 40 Fuß Standard | 2352 x 2395 | 2340 x 2280 |
+| 40 Fuß High Cube | 2352 x 2698 | 2340 x 2585 |
+
+**Luftfracht (Richtwerte, abhängig von Airline und Flugzeugtyp):**
+- Unterdeck-Container LD3 (AKE): Grundfläche ca. 1534 x 1562 mm, Höhe ca. 1630 mm – typischer Container im Frachtraum von Passagierflugzeugen.
+- Unterdeck allgemein: Ladehöhe maximal ca. 1,60 m.
+- Hauptdeck (Frachtflugzeug), Palette PMC: Grundfläche 3175 x 2438 mm, Ladehöhe je nach Flugzeug ca. 2,44 m bis 3,00 m.
+- Wir stimmen Maße bei Luftfracht mit deiner Spedition bzw. Airline ab.
+
+*Quellen (Recherche 2026-09-27, intern, nicht auf Website): LKW – cargolo.com/de/lkw-masse; Container – containerbasis.de/informationen/containermasse; Luftfracht – dsv.com (PMC), en.wikipedia.org/wiki/Unit_load_device (LD3).*
 
 **CTA am Seitenende (identisch zum Muster der Bauart-Seite):**
 > **Dein Case, egal wie speziell.**
