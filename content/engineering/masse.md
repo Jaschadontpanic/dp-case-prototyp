@@ -56,7 +56,7 @@ Produkte-Hub-Header)
 - Unterdeck-Container LD3 (AKE): Grundfläche min. 1534 x 1562 mm, Höhe min. 1562 mm – typischer Container im Frachtraum von Passagierflugzeugen.
 - Unterdeck allgemein: Ladehöhe min. 1,56 m.
 - Hauptdeck (Frachtflugzeug), Palette PMC: Grundfläche min. 3175 x 2438 mm, Ladehöhe min. 2,44 m.
-- Wir stimmen Maße bei Luftfracht mit deiner Spedition bzw. Airline ab.
+- Wir stimmen die Maße bei Luftfracht auf deine Airline ab.
 
 *Quellen (Recherche 2026-09-27, intern, nicht auf Website): LKW – cargolo.com/de/lkw-masse; Container – containerbasis.de/informationen/containermasse; Luftfracht – dsv.com (PMC), en.wikipedia.org/wiki/Unit_load_device (LD3).*
 
