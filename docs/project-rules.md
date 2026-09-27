@@ -14,7 +14,7 @@ Priorität: korrekter Content → überzeugendes Design → funktionierende UX �
 |---|---|---|
 | Claude Chat | Texte, SEO, Meta-Daten, CTAs, Alt-Texte, Content-Struktur, Checkliste, Changelog (`content/`, `docs/`) | HTML/CSS/JS ändern |
 | Claude Code | HTML, CSS, JS, Layout, Komponenten, Responsive, Navigation, technische SEO-Umsetzung, Performance | Content umformulieren, kürzen, ergänzen (siehe Schutzregel) |
-| Jascha | Entscheidungen, Freigaben, Upload von Content-Dateien auf GitHub | – |
+| Jascha | Entscheidungen, Freigaben, Prüfung und Merge der Pull Requests | – |
 | Entwicklerin | finale Umsetzung auf Basis des Prototyps | – |
 
 ## Schutzregel Content
@@ -24,8 +24,8 @@ Claude Code verändert niemals eigenständig Marketingtexte, Überschriften/H1, 
 Claude Chat verändert kein technisches Design. Probleme bei der Darstellung von Content werden an Jascha/Claude Code gemeldet.
 
 ## Workflow
-1. Content-Änderung im Claude Chat → Chat liefert die geänderte Datei aus `content/` bzw. `docs/`.
-2. Jascha lädt die Datei auf github.com hoch (Add file → Upload files, gleicher Ordner, Commit).
+1. Content-Änderung durch Claude Chat: eigener Aufgaben-Branch von `main`, Änderung in `content/` bzw. `docs/` inkl. Eintrag in `docs/changelog.md`, danach Pull Request.
+2. Jascha prüft den Pull Request (Files changed), merged und löscht den Branch.
 3. Claude Code legt einen Aufgaben-Branch von `main` an, setzt die Änderung technisch um, prüft und öffnet einen Pull Request. Jascha prüft und merged.
 4. Kontrolle über die Vorschau-Adresse.
 
