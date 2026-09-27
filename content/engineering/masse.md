@@ -9,8 +9,8 @@ stand: 2026-09-27
 ### MASSE (Unterseite, aus Truckmaß-Tabellenblatt) - final komplett
 URL: /engineering/masse
 
-**Title-Tag:** Flightcase Maße – Truckmaß, Türbreiten und Innenhöhen
-**Meta Description:** Flightcase Maße nach Truckmaß, Türbreite und Innenhöhe planen: EU- und US-Truckmaße, Türstandards und Fahrzeughöhen im Überblick. Jetzt dein Case anfragen.
+**Title-Tag:** Flightcase Maße – passend für Inhalt und Transportweg
+**Meta Description:** Cases müssen nicht nur zum Inhalt passen, auch zum Transportweg. Wir achten darauf, dass dein Case durch die Tür, in den Sprinter oder ins Flugzeug passt.
 **Breadcrumb:** Start > Engineering > Maße
 
 **H1:** Flightcase Maße
