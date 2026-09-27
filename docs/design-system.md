@@ -24,15 +24,23 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--fs-small` | 14px | Labels |
 | `--max-width` | 1744px | Inhaltsbreite |
 | `--side-pad` | 120px | Seitenrand Inhalte (Header bewusst 48px) |
+| `--header-pad-v` | 18px | Header-Innenabstand oben/unten, Scroll-Position 0 |
+| `--header-pad-v-scrolled` | 10px | Header-Innenabstand oben/unten, gescrollt |
+| `--logo-h-top` | 60px | Logo-Höhe Desktop, Scroll-Position 0 |
+| `--logo-h-top-mobile` | 45px | Logo-Höhe ≤900px, Scroll-Position 0 |
+| `--logo-h-scrolled` | 32px | Logo-Höhe Desktop, gescrollt |
+| `--logo-h-scrolled-mobile` | 24px | Logo-Höhe ≤900px, gescrollt |
+| `--transition-fast` | 220ms ease | Logo-Crossfade, Padding-Übergang im Header |
 
 ## Grundlagen
 - Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`.
 - `.wrap`: max-width + side-pad, zentriert.
-- Breakpoint: **900px** (Nav → Burger, Grids einspaltig, Hero-H1 32px, Logo 30px, CTA-Button im Header ausgeblendet). Formularzeilen zusätzlich bei 640px.
+- Breakpoint: **900px** (Nav → Burger, Grids einspaltig, Hero-H1 32px, Logo 45px→24px gescrollt, CTA-Button im Header ausgeblendet). Formularzeilen zusätzlich bei 640px.
 - Formsprache weich/rund: Radien 14–24px, Buttons als Pille (999px).
 
 ## Komponenten
-- **Header** (`header.nav`): sticky, #000, Innenabstand 18px/48px; Logo absolut mittig (40px hoch); Nav-Links links (Abstand 40px, Hover teal); CTA-Button rechts.
+- **Header** (`header.nav`): sticky, #000, Innenabstand 48px links/rechts; Logo absolut mittig; Nav-Links links (Abstand 40px, Hover teal); CTA-Button rechts. Nav-Schrift, Button und Breite bleiben in jedem Zustand gleich groß.
+  - **Scroll-Logo** (Vorbild mercedes-benz.de, 2026-09-27): Scroll-Position 0 → Innenabstand oben/unten 18px, Logo 60px (Desktop) / 45px (≤900px), zweizeilig („don't panic“ + „die case-manufaktur GmbH“). Ab 24px Scrollposition (Klasse `.scrolled` auf `header.nav`, gesetzt von `assets/js/main.js`) → Innenabstand 10px, Logo 32px (Desktop) / 24px (≤900px), einzeilig (`logo-dont-panic-kompakt.jpg`), Gesamthöhe 76px = gemessene mercedes-benz.de-Headerhöhe. Zwei `<img>` übereinander, Wechsel per Opacity-Crossfade (`--transition-fast`, 220ms) statt `src`-Tausch, kein Flackern/Sprung. Alt-Text in beiden Zuständen „don't panic – die case-manufaktur GmbH“.
 - **Buttons** (`.btn`): 14px 26px, Radius 999px, 700, `--fs-nav`; `.btn-primary` teal/weiß; `.btn-outline` transparent mit weißem 2px-Rand (auf dunkel); `.btn-link` teal mit Pfeil; `.btn-call` mit Telefon-Icon + Popup (`.phone-popup`).
 - **Hero** (`.hero`): Vollbild-Hintergrundbild, `aspect-ratio: 2045/867`; Verlauf links (95 % schwarz → 0 bei 30 %) und unten (90 % → 0 bei 22 %); H1 `--fs-h1`, Beschreibung max. 640px, #ddd.
 - **Stats-Zeile** (`.stats-row`): 6-Spalten-Grid, Kicker über 3 Spalten, 3 Stat-Items (Zahl `--fs-stat-number`, Label `--fs-small` #888).

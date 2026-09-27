@@ -28,13 +28,30 @@ header.nav {
 header.nav .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   position: relative;
-  padding-top: 18px; padding-bottom: 18px;
+  padding-top: var(--header-pad-v); padding-bottom: var(--header-pad-v);
   padding-left: 48px; padding-right: 48px; /* Header/Nav bewusst NICHT auf 120px vergroessert */
+  transition: padding var(--transition-fast);
 }
+header.nav.scrolled .nav-inner {
+  padding-top: var(--header-pad-v-scrolled); padding-bottom: var(--header-pad-v-scrolled);
+}
+/* Scroll-Logo (Vorbild mercedes-benz.de): zwei uebereinanderliegende Bilder
+   (zweizeilig/einzeilig), Wechsel per Opacity-Crossfade statt src-Tausch,
+   damit kein Flackern/Sprung beim Scrollen entsteht. */
 header.nav .logo {
   position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  height: var(--logo-h-top);
+  transition: height var(--transition-fast);
 }
-header.nav .logo img { height: 40px; }
+header.nav.scrolled .logo { height: var(--logo-h-scrolled); }
+header.nav .logo img {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  height: 100%; width: auto; max-width: none; /* .logo hat shrink-to-fit-Breite 0 (nur absolut positionierte Kinder) */
+  transition: opacity var(--transition-fast);
+}
+header.nav .logo img.logo-img--compact { opacity: 0; }
+header.nav.scrolled .logo img.logo-img--default { opacity: 0; }
+header.nav.scrolled .logo img.logo-img--compact { opacity: 1; }
 header.nav .nav-links { justify-self: start; display: flex; gap: 40px; font-size: var(--fs-nav); }
 header.nav .nav-links a:hover { color: var(--teal); }
 header.nav .btn { justify-self: end; }
@@ -119,5 +136,6 @@ footer.site-footer {
   .stats-row { grid-template-columns: 1fr; }
   .stats-row .kicker { grid-column: span 1; }
   header.nav > .nav-inner > .btn { display: none; }
-  header.nav .logo img { height: 30px; }
+  header.nav .logo { height: var(--logo-h-top-mobile); }
+  header.nav.scrolled .logo { height: var(--logo-h-scrolled-mobile); }
 }

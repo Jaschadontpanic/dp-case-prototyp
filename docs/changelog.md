@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-27 – Header: Scroll-Logo und Maße nach Vorbild mercedes-benz.de
+- Logo wechselt beim Scrollen (>24px) von zweizeilig/groß (Scroll-Position 0: 60px Desktop / 45px Mobile) auf einzeilig/kompakt (32px Desktop / 24px Mobile, `logo-dont-panic-kompakt.jpg`, neu aus dem Standard-Logo zugeschnitten). Crossfade per Opacity (`--transition-fast`, 220ms), kein `src`-Tausch, damit kein Flackern/Sprung.
+- Header-Innenabstand oben/unten wechselt von 18px auf 10px beim Scrollen; Gesamthöhe gescrollt = 76px (gemessene mercedes-benz.de-Headerhöhe, Desktop 1920px). Nav-Schrift, Button und ihre Größe bleiben in beiden Zuständen unverändert (Vorgabe Jascha) – Mercedes selbst hat keinen kompakten Scroll-Zustand, nur „oben“ oder „ganz ausgeblendet"; Vollständig-Ausblenden wurde bewusst verworfen (Navigation/CTA sollen beim Scrollen erreichbar bleiben).
+- Alt-Text in beiden Logo-Zuständen vereinheitlicht: „don't panic – die case-manufaktur GmbH" (vorher nur „don't panic").
+- Neue Tokens in `tokens.css`: `--header-pad-v`, `--header-pad-v-scrolled`, `--logo-h-top`, `--logo-h-top-mobile`, `--logo-h-scrolled`, `--logo-h-scrolled-mobile`, `--transition-fast`.
+- `assets/js/main.js`: Scroll-Listener setzt Klasse `.scrolled` auf `header.nav`; jetzt auch auf `engineering/index.html` und `manufaktur/index.html` eingebunden (fehlte bisher, da diese Seiten kein Telefon-Popup haben).
+- Bugfix während der Umsetzung: `header.nav .logo` hat als absolut positionierter Container ohne Eigenbreite (nur absolut positionierte Bild-Kinder) eine Shrink-to-fit-Breite von 0; die globale Regel `img{max-width:100%}` hat die Logo-Bilder dadurch auf 0px Breite gequetscht. Fix: `max-width:none` für die Logo-Bilder.
+
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request
 - `docs/project-rules.md`: Content-Änderungen laufen wie technische Änderungen über Aufgaben-Branch und Pull Request statt über manuellen Datei-Upload auf `main` (Entscheidung Jascha). Workflow-Schritte 1–2 und Rolle „Jascha“ angepasst.
 
