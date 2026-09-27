@@ -22,7 +22,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | Aufgabe | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
 | C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
-| C10 | Maße-Seite: Türbreiten-Abschnitt neu fassen (aktueller Standard, schmalere Bestandstüren, 800er Cases) und Einheit der Truckmaß-Tabelle („in cm“, Werte sind mm) | offen | 1/2 Truckmaß = 600 bereits korrigiert (2026-09-27) |
+| C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
 
 ## Bilder
 | # | Punkt | Status |

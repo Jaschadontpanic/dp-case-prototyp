@@ -19,7 +19,7 @@ URL: /engineering/masse
 Header-Bild: Case-Tower (gleiches Bild wie Homepage-Kachel "Weitere Produkte" und
 Produkte-Hub-Header)
 
-**Truckmass-Standards (B x T in cm):**
+**Truckmass-Standards (B x T in mm):**
 | Format | Mass |
 |---|---|
 | EU-Truckmass | 1200 x 600 |
@@ -29,10 +29,11 @@ Produkte-Hub-Header)
 | 2/3 US-Truckmass | 800 x 800 |
 | 1/2 US-Truckmass | 600 x 800 |
 
-**Tuerbreiten:**
-- 860/885 mm: heutiger Standard fuer Wohnraeume in Deutschland/Europa
-- Mindestlichte Breite: Tueren muessen mindestens 90 cm Durchgangsbreite haben
-- Cases unter 800 mm Breite passen durch fast jede gewerblich genutzte Tuer
+**Türbreiten:**
+- Heutiger Standard für Wohnräume in Deutschland: Türblatt 860 mm (Rohbaumaß 885 mm), lichte Durchgangsbreite ca. 825 mm.
+- Viele Bestandstüren sind schmaler, vor allem in Altbauten, Bädern und Nebenräumen: Türblatt 735 mm (ca. 700 mm Durchgang) oder 610 mm (ca. 575 mm Durchgang).
+- Cases im Truckmaß (Tiefe 600 mm) passen mit der schmalen Seite voran durch praktisch jede Tür.
+- Im gewerblichen Bereich – öffentliche Gebäude, Messehallen, Veranstaltungsorte, Hotels, Büro- und Industriegebäude – sind Türen oft breiter. Dort passen häufig auch 800 mm breite und noch breitere Cases.
 
 **Fahrzeug-Innenhoehen:**
 - Auto, Standarddach (H1/H2): ca. 1,70-1,90 m
@@ -63,8 +64,5 @@ Produkte-Hub-Header)
 <link rel="canonical" href="https://dp-case.de/engineering/masse" />
 <meta name="robots" content="index, follow" />
 ```
-
-**Offene Datenfragen (vor Veröffentlichung klären, siehe C10):**
-- Türbreiten: „Standard 860/885 mm“ und „mindestens 90 cm Durchgangsbreite“ widersprechen sich.
 
 ---
