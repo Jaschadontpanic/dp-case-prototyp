@@ -24,10 +24,10 @@ Produkte-Hub-Header)
 |---|---|
 | EU-Truckmass | 1200 x 600 |
 | 2/3 EU-Truckmass | 800 x 600 |
-| 1/2 EU-Truckmass | 400 x 600 |
+| 1/2 EU-Truckmass | 600 x 600 |
 | US-Truckmass | 1200 x 800 |
 | 2/3 US-Truckmass | 800 x 800 |
-| 1/2 US-Truckmass | 400 x 800 |
+| 1/2 US-Truckmass | 600 x 800 |
 
 **Tuerbreiten:**
 - 860/885 mm: heutiger Standard fuer Wohnraeume in Deutschland/Europa
@@ -65,7 +65,6 @@ Produkte-Hub-Header)
 ```
 
 **Offene Datenfragen (vor Veröffentlichung klären, siehe C10):**
-- 1/2 EU-/US-Truckmaß mit 400 cm Breite: rechnerisch wäre 1/2 von 1200 = 600, 400 entspricht 1/3.
 - Türbreiten: „Standard 860/885 mm“ und „mindestens 90 cm Durchgangsbreite“ widersprechen sich.
 
 ---
