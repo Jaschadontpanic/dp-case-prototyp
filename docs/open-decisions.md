@@ -13,7 +13,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Content
 | # | Punkt | Status | Notiz |
 |---|---|---|---|
-| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite (neue Reihenfolge Bauart → Formen) | offen | Text schreibt Claude Chat, Freigabe durch Jascha |
+| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-27) | Text in `content/engineering/flightcase-bauart.md`; Formen-Teaser führt jetzt zu Maße. HTML-Umsetzung durch Claude Code offen |
 | C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien (Texte in Master-MD nicht enthalten, HTML hat nur Materialien + Bauformen) | offen | Kacheltexte schreiben |
 | C3 | Maße-Seite: H1, Intro, CTA, Schema.org | Aufgabe | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
 | C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-27) | BreadcrumbList + Canonical/Robots in `content/`; Bauart/Formen zusätzlich Title, Meta, Breadcrumb. Einbau ins HTML durch Claude Code offen |

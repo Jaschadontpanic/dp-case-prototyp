@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-27 (Abend, 8) – Teaser Bauart → Formen → Maße (C1)
+- `content/engineering/flightcase-bauart.md`: Teaser zur Formen-Seite vor dem CTA ergänzt („Deckel, Tür oder beides?“). C1 erledigt.
+- `content/engineering/flightcase-formen.md`: Teaser führt nicht mehr zurück zur Bauart (veralteter Begriff „Typen“), sondern entsprechend der Seitenreihenfolge zur Maße-Seite („Passt es auch in den Transporter?“).
+
 ## 2026-09-27 (Abend, 7) – Schema.org und SEO-Felder Bauart/Formen (C4)
 - `content/engineering/flightcase-bauart.md` und `flightcase-formen.md`: Title-Tag, Meta Description (156/150 Zeichen; mehrwertorientiert nach Website-Muster „Keyword – Nutzen“, Auswahl Jascha aus je 10 Vorschlägen), Breadcrumb, BreadcrumbList-Schema, Canonical/Robots ergänzt (fehlten bisher). Maße-Seite bereits unter C3 erledigt. C4 erledigt.
 

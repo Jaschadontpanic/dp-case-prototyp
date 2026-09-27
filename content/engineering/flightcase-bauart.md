@@ -60,6 +60,12 @@ kein direkter Flightcase-Bauart-Vergleich):
 Referenzbild. Fuer alle anderen 10 Flightcase-Bauarten (Standard bis Easy-Case Light) sowie
 alle 5 Eintraege der Gruppe 2 fehlen noch Bilder.
 
+**Nach der Bauart-Übersicht, vor dem finalen CTA – Teaser zu Formen (C1):**
+> **Deckel, Tür oder beides?**
+> Die Bauart entscheidet über Gewicht und Stabilität, die Bauform über den optimalen Zugriff
+> auf deinen Inhalt.
+> [Button: Zu den Bauformen -> /engineering/flightcase-formen]
+
 **CTA am Seitenende (final, identisch zum Muster):**
 > **Dein Case, egal wie speziell.**
 > Ob Standard oder kniffelig – wir finden gemeinsam eine Loesung, schneller und besser als du

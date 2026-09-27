@@ -72,11 +72,11 @@ Schriftart, KEIN einleitender Satz wie "auch bezeichnet als" - zu erklaerend fue
 | Alles ist moeglich | Deine Bauform ist nicht dabei? Wir entwickeln jede gewuenschte Loesung – frag uns einfach. |
 (Bild: Case, das sich in alle Richtungen oeffnet, mit Fragezeichen darin - motiviert zur Anfrage)
 
-**Nach den 21 Bauformen, vor dem finalen CTA - Teaser zu Typen:**
-> **Mehr zur Bauart**
-> Bauform ist nur die halbe Wahrheit – die Qualitaet entscheidet sich auch durch die
-> eingesetzten Materialien und deren Kombination. Sieh dir unsere Typen an.
-> [Button: Zu den Typen -> /engineering/flightcase-bauart]
+**Nach den 21 Bauformen, vor dem finalen CTA – Teaser zu Maße (Reihenfolge Bauart → Formen → Maße → Materialien):**
+> **Passt es auch in den Transporter?**
+> Die beste Bauform nützt nichts, wenn das Case nicht durch die Tür passt. Wir planen die Maße
+> für deinen ganzen Transportweg.
+> [Button: Zu den Maßen -> /engineering/masse]
 
 **Danach: CTA-Abschnitt (identisch zu Homepage/Produkte), KEIN FAQ auf dieser Seite** - die
 21 Kurztexte beantworten "was gibt es" bereits, ein FAQ wuerde eher allgemeine
