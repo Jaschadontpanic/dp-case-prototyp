@@ -31,9 +31,11 @@ Claude Chat verändert kein technisches Design. Probleme bei der Darstellung von
 
 ## Versionierung
 - `main` = stabile Version (wird von GitHub Pages angezeigt).
-- `development` = laufende Arbeit von Claude Code (wird eingerichtet, sobald Claude Code startet).
-- Größere Umbauten optional in eigenen Branches (`feature/…`).
-- Vor Übernahme nach `main`: Prüfung Desktop/Tablet/Mobile, Navigation, Links, Bilder, JS, Formulare, keine unbeabsichtigten Content-Änderungen.
+- Claude Code arbeitet in Cloud-Sessions (claude.ai/code). Jede Aufgabe bekommt einen eigenen Branch, der vom aktuellen Stand von `main` abzweigt.
+- Kein fester `development`-Branch.
+- Übernahme nach `main` ausschließlich per Pull Request, erst nach Prüfung und Freigabe durch Jascha.
+- Prüfung vor dem Merge: Desktop/Tablet/Mobile, Navigation, Links, Bilder, JS, Formulare, keine unbeabsichtigten Content-Änderungen.
+- Nach dem Merge wird der Aufgaben-Branch gelöscht.
 
 ## Entscheidungen
 Grundsätzliche Entscheidungen (Struktur, Design, Architektur) trifft Jascha. Offene Punkte stehen in `docs/open-decisions.md`. Kleine technische Entscheidungen ohne Auswirkung auf Content, Designkonzept oder Architektur darf Claude Code selbst treffen.
