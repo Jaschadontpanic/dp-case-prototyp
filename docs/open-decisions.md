@@ -19,7 +19,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | C4 | Schema.org für Bauart, Formen, Maße | Aufgabe | gesammelt für Projektabschluss |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
 | C6 | Markenneutraler Versand zusätzlich in Engineering-Schritt 05 „Rundum-Service“? | offen | aktuell über Allgemeine FAQ gelöst |
-| C7 | Kontaktseite: eigener Intro-Text? (aktuell nur Formular, Info-Block, Allgemeine FAQ) | offen | |
+| C7 | Kontaktseite: eigener Intro-Text? (aktuell nur Formular, Info-Block, Allgemeine FAQ) | offen | Platzhalter im HTML sichtbar markiert (Mercedes-Vorbild, 2026-09-27), Text fehlt noch |
 | C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
 

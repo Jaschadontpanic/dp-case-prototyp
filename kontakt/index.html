@@ -61,13 +61,14 @@
   </div>
 
   <div class="contact-grid" id="kontaktformular">
+    <p class="intro-headline placeholder">[Platzhalter: Einleitungssatz fehlt noch – siehe offener Punkt C7 in docs/open-decisions.md]</p>
     <h2 class="form-heading">Kontaktformular</h2>
     <form class="contact-form">
 
       <div class="subsection-heading">Pers&ouml;nliche Angaben</div>
       <div class="form-row">
-        <label>Name *<input type="text" required></label>
-        <label>Firma<input type="text"></label>
+        <label class="field"><span class="field-label">Name *</span><input type="text" required></label>
+        <label class="field"><span class="field-label">Firma</span><input type="text"></label>
       </div>
 
       <div class="subsection-heading">Deine Kontaktdaten</div>
@@ -76,24 +77,26 @@
         <label class="radio-inline"><input type="radio" name="kontaktart" required> E-Mail</label>
         <label class="radio-inline"><input type="radio" name="kontaktart"> Telefon</label>
       </fieldset>
-      <label>E-Mail *<input type="email" required></label>
+      <label class="field"><span class="field-label">E-Mail *</span><input type="email" required></label>
 
       <div class="subsection-heading">Deine Anfrage</div>
-      <label>Worum geht&rsquo;s? *
+      <label class="field">
+        <span class="field-label">Worum geht&rsquo;s? *</span>
         <select required>
           <option>Flightcase</option>
           <option>Sonderbau</option>
           <option>Reparatur</option>
         </select>
       </label>
-      <label>Kurzbeschreibung *<textarea rows="4" required></textarea></label>
+      <label class="field"><span class="field-label">Kurzbeschreibung *</span><textarea rows="4" required></textarea></label>
 
       <details class="optional-fields">
         <summary>Optional, aber hilfreich</summary>
         <div class="optional-fields-inner">
 
           <div class="subsection-heading">Deine Case Details</div>
-          <label>Beanspruchung
+          <label class="field">
+            <span class="field-label">Beanspruchung</span>
             <select>
               <option>Kofferraum-Transport</option>
               <option>Spedition</option>
@@ -102,7 +105,8 @@
               <option>Interner Transport</option>
             </select>
           </label>
-          <label>Ma&szlig;e / Gewicht / St&uuml;ckzahl des Equipments
+          <label class="field">
+            <span class="field-label">Ma&szlig;e / Gewicht / St&uuml;ckzahl des Equipments</span>
             <textarea rows="3" placeholder="z. B.&#10;2x Mischpult, 60 x 40 x 30 cm, ca. 12 kg&#10;1x Lautsprecher, 80 x 30 x 30 cm, ca. 8 kg"></textarea>
           </label>
           <fieldset class="checkbox-group">
@@ -112,16 +116,19 @@
             <label class="checkbox-inline"><input type="checkbox"> Clevere Details</label>
             <label class="checkbox-inline"><input type="checkbox"> Minimales Gewicht</label>
           </fieldset>
-          <label>Optik / Branding<input type="text" placeholder="z. B. Firmenfarbe, Logo, Corporate Design"></label>
+          <label class="field"><span class="field-label">Optik / Branding</span><input type="text" placeholder="z. B. Firmenfarbe, Logo, Corporate Design"></label>
           <label class="checkbox"><input type="checkbox"> Es gibt bereits ein Case, das als Vorlage dienen kann</label>
 
           <div class="subsection-heading">Projektrahmen</div>
-          <label>Zieltermin<input type="text"></label>
-          <label>Budget-Rahmen<input type="text" placeholder="optional &ndash; hilft uns, realistisch zu planen"></label>
-          <label>Datei-Upload<input type="file">
+          <label class="field"><span class="field-label">Zieltermin</span><input type="text"></label>
+          <label class="field"><span class="field-label">Budget-Rahmen</span><input type="text" placeholder="optional &ndash; hilft uns, realistisch zu planen"></label>
+          <label class="field">
+            <span class="field-label">Datei-Upload</span>
+            <input type="file">
             <span class="hint">Alles was du hast: Bilder, Skizzen, 3D-Files</span>
           </label>
-          <label>Wie bist du auf uns aufmerksam geworden?
+          <label class="field">
+            <span class="field-label">Wie bist du auf uns aufmerksam geworden?</span>
             <select>
               <option>Empfehlung</option>
               <option>Suchmaschinen</option>
@@ -135,7 +142,7 @@
       </details>
 
       <label class="checkbox"><input type="checkbox" required> Ich akzeptiere die Datenschutzbestimmungen zur Bearbeitung meiner Anfrage. *</label>
-      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Anfrage senden</button>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-end;">Anfrage senden</button>
     </form>
 
     <div class="contact-info">
