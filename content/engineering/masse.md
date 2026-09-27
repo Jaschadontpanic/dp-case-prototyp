@@ -36,15 +36,15 @@ Produkte-Hub-Header)
 - Im gewerblichen Bereich – öffentliche Gebäude, Messehallen, Veranstaltungsorte, Hotels, Büro- und Industriegebäude – sind Türen oft breiter. Dort passen häufig auch 800 mm breite und noch breitere Cases.
 
 **Fahrzeug-Innenhöhen (Straße):**
-- Auto, Standarddach (H1/H2): ca. 1,70-1,90 m
-- Auto, Hochdach (H2/H3): ca. 1,90-2,10 m
+- Auto, Standarddach (H1/H2): min. 1,70 m
+- Auto, Hochdach (H2/H3): min. 1,90 m
 - Auto, Kofferaufbau (3,5t): teilweise bis 2,20 m
-- 7,5-Tonnen-LKW (Spedition/Koffer/Plane): 2,30-2,40 m
-- 12-Tonnen-LKW: ca. 2,50 m
-- Sattelauflieger Standard (Plane/Koffer): ca. 2,70 m (Innenbreite ca. 2,48 m)
-- Megatrailer und Jumbo-Gliederzug: bis ca. 3,00 m (Innenbreite ca. 2,48 m)
+- 7,5-Tonnen-LKW (Spedition/Koffer/Plane): min. 2,30 m
+- 12-Tonnen-LKW: min. 2,50 m
+- Sattelauflieger Standard (Plane/Koffer): min. 2,70 m (Innenbreite min. 2,48 m)
+- Megatrailer und Jumbo-Gliederzug: min. 3,00 m (Innenbreite min. 2,48 m)
 
-**Seecontainer (Innenmaß / Türöffnung, B x H in mm):**
+**Seecontainer (Innenmaß / Türöffnung, B x H in mm, jeweils min.):**
 | Container | Innenmaß B x H | Türöffnung B x H |
 |---|---|---|
 | 20 Fuß Standard | 2352 x 2390 | 2338 x 2280 |
@@ -53,9 +53,9 @@ Produkte-Hub-Header)
 | 40 Fuß High Cube | 2352 x 2698 | 2340 x 2585 |
 
 **Luftfracht (Richtwerte, abhängig von Airline und Flugzeugtyp):**
-- Unterdeck-Container LD3 (AKE): Grundfläche ca. 1534 x 1562 mm, Höhe ca. 1630 mm – typischer Container im Frachtraum von Passagierflugzeugen.
-- Unterdeck allgemein: Ladehöhe maximal ca. 1,60 m.
-- Hauptdeck (Frachtflugzeug), Palette PMC: Grundfläche 3175 x 2438 mm, Ladehöhe je nach Flugzeug ca. 2,44 m bis 3,00 m.
+- Unterdeck-Container LD3 (AKE): Grundfläche min. 1534 x 1562 mm, Höhe min. 1562 mm – typischer Container im Frachtraum von Passagierflugzeugen.
+- Unterdeck allgemein: Ladehöhe min. 1,56 m.
+- Hauptdeck (Frachtflugzeug), Palette PMC: Grundfläche min. 3175 x 2438 mm, Ladehöhe min. 2,44 m.
 - Wir stimmen Maße bei Luftfracht mit deiner Spedition bzw. Airline ab.
 
 *Quellen (Recherche 2026-09-27, intern, nicht auf Website): LKW – cargolo.com/de/lkw-masse; Container – containerbasis.de/informationen/containermasse; Luftfracht – dsv.com (PMC), en.wikipedia.org/wiki/Unit_load_device (LD3).*
