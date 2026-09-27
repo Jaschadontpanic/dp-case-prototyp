@@ -3,11 +3,15 @@ seite: Flightcase Bauformen
 url: /engineering/flightcase-formen
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-25
+stand: 2026-09-27
 ---
 
 ### FORMEN (Unterseite) - final komplett
 URL: /engineering/flightcase-formen
+
+**Title-Tag:** Flightcase Bauformen – Toplader, Seitenlader und Kombinationen
+**Meta Description:** 21 Flightcase Bauformen von Klappdeckel- bis Doppel-Tür-Case: Toplader, Seitenlader und Kombinationen im Überblick – oder ganz neu gedacht. Jetzt anfragen.
+**Breadcrumb:** Start > Engineering > Formen
 
 **H1:** Flightcase Bauformen
 **Unterueberschrift:** Klassisch, kombiniert oder voellig neu gedacht – jede Bauform ist
@@ -81,5 +85,24 @@ Engineering-Fragen behandeln, die besser auf die Engineering-Hauptseite gehoeren
 **Quelldatei fuer Bild-Zuordnung:** Nutzer hat 21 PDF-Grafiken passend zu jeder Bauform
 designt, Dateinamen 1-21 durchnummeriert (z.B. "1_Klapp-Deckel-Case.pdf" etc.) - Zuordnung
 Bild-zu-Bauform ist über Dateiname eindeutig.
+
+**BreadcrumbList-Schema:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://dp-case.de"},
+    {"@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://dp-case.de/engineering"},
+    {"@type": "ListItem", "position": 3, "name": "Formen", "item": "https://dp-case.de/engineering/flightcase-formen"}
+  ]
+}
+```
+
+**Canonical/Robots:**
+```html
+<link rel="canonical" href="https://dp-case.de/engineering/flightcase-formen" />
+<meta name="robots" content="index, follow" />
+```
 
 ---
