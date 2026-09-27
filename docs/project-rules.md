@@ -41,5 +41,4 @@ Grundsätzliche Entscheidungen (Struktur, Design, Architektur) trifft Jascha. Of
 ## Dateien
 - `content/` – eine Datei pro Seite, Ordner = URL
 - `docs/` – Regeln, Design-System, Seitenstruktur, Checkliste, Changelog, offene Entscheidungen
-- `docs/archiv/` – Master-MD (Stand 2026-09-25) als Referenz, wird nicht weiter gepflegt
-- `archiv-original-html/` – 7 Original-HTML-Dateien der Migration (T1), unverändert, bewusst außerhalb von `docs/` (zu groß/irrelevant für Claude Chat)
+- `archiv/` – Master-MD (`master-content-backup.md`, Stand 2026-09-25, als Referenz, wird nicht weiter gepflegt) und `original-html/` (7 Original-HTML-Dateien der Migration T1, unverändert). Bewusst außerhalb von `docs/` (zu groß/irrelevant für Claude Chat, das `docs/` für Content-Arbeit durchsieht)
