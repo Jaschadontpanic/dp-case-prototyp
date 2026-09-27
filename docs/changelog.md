@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-27 – Silent-Rack: Produktbild-Fix + Highlight-Kacheln
+- `.product-hero`: festes `aspect-ratio` (2045/867) samt `overflow:hidden` entfernt. Das hochformatige Silent-Rack-Foto (996×1241) wurde dadurch bei 80% Breite oben/unten stark beschnitten. Jetzt per `max-height` (65vh Desktop / 50vh ≤900px) + `object-fit:contain` begrenzt – Case ist auf jeder Auflösung komplett sichtbar.
+- Neue Sektion „Highlights" unterhalb des Produkt-Heros: 7 Kacheln (Macrolon Sichttür, Geräuschlose Luftführung, Silent-Aktivbelüftung, Schalldämmung innen, Kabelführung mit Bürstenleiste, Geölt Natur Birke, Kantengriff), Texte aus `content/19-zoll-racks/silent-rack.md` übernommen. Layout per bestehendem `.product-grid`/`.product-card` (keine neuen CSS-Werte). Alle 7 Kacheln zeigen vorerst dasselbe Platzhalterfoto (Hero-Bild) – echte Highlight-Fotos fehlen noch (siehe B5 in `open-decisions.md`).
+
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request
 - `docs/project-rules.md`: Content-Änderungen laufen wie technische Änderungen über Aufgaben-Branch und Pull Request statt über manuellen Datei-Upload auf `main` (Entscheidung Jascha). Workflow-Schritte 1–2 und Rolle „Jascha“ angepasst.
 

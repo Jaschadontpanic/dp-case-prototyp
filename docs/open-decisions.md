@@ -30,6 +30,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
+| B5 | Silent-Rack-Highlights (7 Kacheln): alle zeigen Platzhalterbild (Hero-Foto), echte Fotos SOAZMA0010_10–_16 fehlen | Aufgabe |
 
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |
