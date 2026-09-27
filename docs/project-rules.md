@@ -26,7 +26,7 @@ Claude Chat verändert kein technisches Design. Probleme bei der Darstellung von
 ## Workflow
 1. Content-Änderung im Claude Chat → Chat liefert die geänderte Datei aus `content/` bzw. `docs/`.
 2. Jascha lädt die Datei auf github.com hoch (Add file → Upload files, gleicher Ordner, Commit).
-3. Claude Code: `git pull`, setzt die Änderung technisch um, prüft, committet.
+3. Claude Code legt einen Aufgaben-Branch von `main` an, setzt die Änderung technisch um, prüft und öffnet einen Pull Request. Jascha prüft und merged.
 4. Kontrolle über die Vorschau-Adresse.
 
 ## Versionierung
