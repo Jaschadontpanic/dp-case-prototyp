@@ -15,13 +15,14 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 |---|---|---|---|
 | C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite (neue Reihenfolge Bauart → Formen) | offen | Text schreibt Claude Chat, Freigabe durch Jascha |
 | C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien (Texte in Master-MD nicht enthalten, HTML hat nur Materialien + Bauformen) | offen | Kacheltexte schreiben |
-| C3 | Maße-Seite: H1, Intro, CTA, Schema.org fehlen | Aufgabe | |
+| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | Aufgabe | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
 | C4 | Schema.org für Bauart, Formen, Maße | Aufgabe | gesammelt für Projektabschluss |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
 | C6 | Markenneutraler Versand zusätzlich in Engineering-Schritt 05 „Rundum-Service“? | offen | aktuell über Allgemeine FAQ gelöst |
 | C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | Aufgabe | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
 | C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
+| C10 | Maße-Seite: Datenkonflikte – „1/2 Truckmaß“ = 400 cm (rechnerisch 1/3), Türbreite 860/885 mm vs. „mindestens 90 cm“ | offen | Werte prüfen und korrigieren, bevor die Seite gebaut wird |
 
 ## Bilder
 | # | Punkt | Status |
