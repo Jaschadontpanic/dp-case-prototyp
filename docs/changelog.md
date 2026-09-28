@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (6) – Empfehlungs-Bilder ohne Schrift ersetzt
+- `assets/images/startseite/cases-broadcast-pult-workstation.jpg`, `cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg` durch neue Fotos ohne eingebrannte Schrift ersetzt (Beschriftung kommt künftig per CSS). Dateinamen unverändert, daher keine HTML-Änderung nötig.
+- Seitenverhältnisse weichen von den alten Dateien ab (Pult 0,86 statt 0,66; Kaffeebar 1,50 statt 1,39; Schablonen-Koffer 1,33 statt 0,66) – Kachel-Zuschnitt in `components.css` prüfen.
+- Als JPEG gespeichert, längste Kante max. 1600 px, 39–169 KB.
+
 ## 2026-09-28 (5) – Allgemeine FAQ überall einbinden (C6)
 - Entscheidung Jascha: Markenneutraler Versand bleibt in der Allgemeinen FAQ, keine Dopplung in Engineering-Schritt 05.
 - `content/_global/faq-allgemein.md`: Einbindungsliste erweitert – die Allgemeine FAQ kommt zusätzlich auf die 6 Seiten ohne eigene FAQ (Bauart, Formen, Maße, Fertigung, Über uns, PPWR-Stellungnahme), jeweils am Seitenende vor dem CTA.
