@@ -171,7 +171,8 @@
 .product-card { display: flex; flex-direction: column; border: 1px solid #eee; border-radius: 16px; overflow: hidden; background: #fff; text-decoration: none; color: inherit; transition: box-shadow .2s ease; }
 .product-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
 .product-card-img { aspect-ratio: 4/3; background: linear-gradient(180deg,#eee,#fff); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.product-card-img img { width: 78%; height: 78%; object-fit: contain; }
+.product-card-img img { width: 78%; height: 78%; object-fit: contain; transition: transform .35s ease; }
+.product-card:hover .product-card-img img { transform: scale(1.05); }
 .product-card-body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
 .product-card-tag { font-size: 11px; letter-spacing: .04em; color: var(--teal); font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
 .product-card-body h3 { font-size: var(--fs-card-title); margin-bottom: 6px; color: var(--anthrazit); }

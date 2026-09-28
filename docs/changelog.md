@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 – Hover-Zoom auf Produktkarten-Bildern
+- `.product-card-img img`: Hover-Zoom (`scale(1.05)`, `transition transform .35s ease`) ergänzt – identischer Effekt wie bei „Unsere Empfehlungen" (`.cases-grid`) auf der Startseite, kein neuer Design-Wert. Wirkt auf Produkte-Hub-Karten und (nach Merge von PR #6) die Silent-Rack-Highlight-Kacheln, da beide dieselbe Komponente nutzen.
+
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request
 - `docs/project-rules.md`: Content-Änderungen laufen wie technische Änderungen über Aufgaben-Branch und Pull Request statt über manuellen Datei-Upload auf `main` (Entscheidung Jascha). Workflow-Schritte 1–2 und Rolle „Jascha“ angepasst.
 
