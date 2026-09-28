@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (7) – Rechtstexte übernommen (C8)
+- Neuer Ordner `content/rechtliches/` mit Impressum, Datenschutzerklärung, 4 AGB-Varianten (Geschäftskunden, Verbraucher, eBay, Business Customers EN) und einer Übersichtsdatei `index.md` samt Redirect-Tabelle.
+- Quellen: Impressum und Datenschutzerklärung als Text von Jascha (Live-Stand), AGB aus 4 PDFs. Texte wörtlich übernommen, nur Umbrüche/Absätze bereinigt; jede Datei trägt einen Rechtstext-Hinweis (nicht umformulieren).
+- Prüfpunkte dokumentiert, nichts eigenständig geändert: Impressum ohne Handelsregister/HRB, unterschiedliche Geschäftsführer-Angaben, Aufsichtsrats-Zeile bei einer GmbH, `info@dont-panic.biz` vs. `@dp-case.de`, Firmierung „case-manufaktur“ vs. „Casemanufaktur“; Datenschutzerklärung beschreibt die alte WordPress-Seite (Borlabs, Google Analytics/Ads/Maps/reCAPTCHA, WP Statistics, Brevo, SolidWP, Zoom) und lässt Google Fonts offen.
+- `docs/seitenstruktur.md` um die 7 Seiten ergänzt, C8 in `docs/open-decisions.md` aktualisiert.
+
 ## 2026-09-28 (6) – Empfehlungs-Bilder ohne Schrift ersetzt
 - `assets/images/startseite/cases-broadcast-pult-workstation.jpg`, `cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg` durch neue Fotos ohne eingebrannte Schrift ersetzt (Beschriftung kommt künftig per CSS). Dateinamen unverändert, daher keine HTML-Änderung nötig.
 - Seitenverhältnisse weichen von den alten Dateien ab (Pult 0,86 statt 0,66; Kaffeebar 1,50 statt 1,39; Schablonen-Koffer 1,33 statt 0,66) – Kachel-Zuschnitt in `components.css` prüfen.

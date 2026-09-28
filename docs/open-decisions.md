@@ -20,7 +20,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
 | C6 | Markenneutraler Versand: Platzierung | erledigt (2026-09-28) | Entscheidung Jascha: bleibt in der Allgemeinen FAQ, nicht in Schritt 05; Allgemeine FAQ wird zusätzlich auf Bauart, Formen, Maße, Fertigung, Über uns und PPWR eingebunden |
 | C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-27) | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
-| C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
+| C8 | Impressum, Datenschutz, AGB übernehmen; alte URLs als Redirects | Aufgabe | Content in `content/rechtliches/` (2026-09-28): Impressum, Datenschutz, 4 AGB-Varianten, Übersicht mit Redirect-Tabelle. Offen: Prüfpunkte in impressum.md/datenschutz.md klären, HTML-Seiten + Redirects durch Claude Code |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
 | C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | in `content/engineering/index.md`; HTML-Umsetzung durch Claude Code offen |
 | C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
