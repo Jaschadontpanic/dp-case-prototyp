@@ -33,4 +33,6 @@ Partner zurueck.
 fotogen - stattdessen Bild geplant: Werkstatt-Atmosphaere, echte Arbeit an einem Case, nicht
 gestellt/posiert)
 
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
+
 ---

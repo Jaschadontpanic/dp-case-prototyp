@@ -90,4 +90,6 @@ alle 5 Eintraege der Gruppe 2 fehlen noch Bilder.
 <meta name="robots" content="index, follow" />
 ```
 
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
+
 ---

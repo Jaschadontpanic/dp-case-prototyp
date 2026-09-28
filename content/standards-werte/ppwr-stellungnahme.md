@@ -23,4 +23,6 @@ Kerninhalte (Original-Dokument):
 **Breadcrumb:** Start > Standards & Werte > PPWR-Stellungnahme
 **Schema:** WebPage
 
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
+
 ---

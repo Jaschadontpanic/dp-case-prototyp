@@ -89,4 +89,6 @@ Produkte-Hub-Header)
 <meta name="robots" content="index, follow" />
 ```
 
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
+
 ---

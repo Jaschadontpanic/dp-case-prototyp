@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (5) – Allgemeine FAQ überall einbinden (C6)
+- Entscheidung Jascha: Markenneutraler Versand bleibt in der Allgemeinen FAQ, keine Dopplung in Engineering-Schritt 05.
+- `content/_global/faq-allgemein.md`: Einbindungsliste erweitert – die Allgemeine FAQ kommt zusätzlich auf die 6 Seiten ohne eigene FAQ (Bauart, Formen, Maße, Fertigung, Über uns, PPWR-Stellungnahme), jeweils am Seitenende vor dem CTA.
+- Entsprechender Hinweis in diesen 6 Content-Dateien ergänzt. C6 erledigt.
+
 ## 2026-09-28 (4) – Alt-Texte der Prozess-Icons
 - `content/engineering/index.md`: Alt-Texte für die 5 Prozess-Icons ergänzt (im HTML bisher `alt=""`, offener Rest aus T5). Beschreibungen entsprechen dem dokumentierten Icon-Set.
 
