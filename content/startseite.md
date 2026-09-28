@@ -3,13 +3,17 @@ seite: Startseite
 url: /
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 14
-stand: 2026-09-25
+stand: 2026-09-28
 ---
 
 ## 14. HOMEPAGE (final, Stand nach Feedbackrunde jennyholtz3) *(zuletzt aktualisiert: 2026-09-25)*
 
 **Navigation final:** Produkte · Engineering · Manufaktur · Kontakt
 (Manufaktur OHNE "Die" davor, Unterseiten: Fertigung, Ueber uns, Standards & Werte)
+
+**Title-Tag:** Flightcases nach Maß aus Hamburg | don't panic
+**Meta Description:** Empfindlich, schwer oder unersetzlich? Wir entwickeln und fertigen dein Flightcase in Hamburg – seit 1994, über 2000 Konstruktionen. Jetzt anfragen.
+(Title-Tag ≠ H1: Die H1 sind die drei Hero-Zeilen „Dein Case. / Unsere Präzision. / Gemeinsam entwickelt.“ – bleibt unverändert.)
 
 ### Hero
 **Headline (3 Zeilen, je eigene Zeile):**
