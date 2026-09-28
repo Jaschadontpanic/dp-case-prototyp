@@ -25,6 +25,8 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
 | C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | im HTML umgesetzt, inkl. BreadcrumbList-Schema und 5 Alt-Texten der Prozess-Icons |
 | C12 | HTML-Seiten fehlen komplett: Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme | erledigt (2026-09-28) | Alle 5 Seiten neu angelegt und verlinkt (Bauart bereits zuvor erledigt). Materialien-Hub zeigt weiterhin nur die eine Kachel „Plattenmaterialien“ (Vorgabe Content: „keine leeren Kacheln“), deren Zielseite selbst noch fehlt |
+| C13 | Silent-Rack-Seite: Story, Use-Case, Konfigurierbarkeit+CTA, Trust-Zeile, eigene FAQ, Technische Daten, Branchen-Tags, Kundenreferenz, Schema.org (Product/FAQPage/BreadcrumbList) fehlten im HTML | erledigt (2026-09-28) | Vollständig nachgebaut – dient jetzt als Vorlage für die 9 weiteren Produktseiten |
+| C14 | Silent-Rack H1 im HTML ist „Silent Rack“, Content sieht `Silent 19" Rack – Vollständig gekühlt, völlig geräuschlos` vor (Tagline im Hero deckt den zweiten Teil bereits ab) | offen | H1 unverändert gelassen (Design-Entscheidung nötig: langer H1-Text würde den Hero-Bereich verändern) |
 
 ## Bilder
 | # | Punkt | Status |

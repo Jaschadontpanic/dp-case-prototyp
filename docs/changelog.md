@@ -2,6 +2,15 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 5) – Silent Rack vollständig gebaut (Vorlage für Produktseiten)
+- Produktbild-Fix + 7 Highlight-Kacheln aus PR #6 per Cherry-Pick übernommen (Branch war von vor dem Merge dieses PRs abgezweigt).
+- Fehlende Abschnitte ergänzt: Story, Use-Case, Breadcrumb (Ziel-Hub `/19-zoll-racks/` fehlt noch, `#`-Platzhalter), Konfigurierbarkeit + eigener CTA, Trust-Zeile, produkteigene FAQ (6 Fragen), Technische-Daten-Tabelle, Rating Stabilität/Gewicht als Balken (Wiederverwendung der Bauart-Komponente), Branchen-Tags (Wiederverwendung `.bauart-badge`), Kundenreferenz, Allgemeine FAQ, abschließendes CTA-Band, 3 Schema.org-Blöcke (BreadcrumbList, Product, FAQPage).
+- Neuer Modifier `.data-table.spec-sheet` (normaler Zeilenumbruch statt `nowrap`, schmalere Label-Spalte) für Label/Wert-Tabellen mit langen Textwerten, plus 48px-Seitenrand bei ≤900px (wie Bauart-Row) statt der sonst 120px `--side-pad` – sonst überläuft die Tabelle auf schmalen Viewports.
+- Bugfix während des Baus: Rating-Balken initial durch `max-width:320px` auf einem bereits gepolsterten `.text-section`-Container auf 80px Breite zusammengequetscht (Padding + max-width addierten sich) – behoben durch inneren Wrapper.
+- H1 weicht weiterhin vom Content ab („Silent Rack“ statt vollem Content-H1) – bewusst nicht geändert, da Design-Entscheidung nötig (C14).
+- Dient jetzt als vollständige Vorlage für die 9 weiteren Produktseiten (siehe `docs/design-system.md`).
+
+
 ## 2026-09-28 (später, 4) – Verbleibende Seiten angelegt (C12)
 - `/engineering/materialien/`, `/manufaktur/fertigung/`, `/manufaktur/ueber-uns/`, `/standards-werte/`, `/standards-werte/ppwr-stellungnahme/` neu gebaut – reine Wiederverwendung bestehender Komponenten (`page-head`, `page-intro`, `text-section`, `hub-grid`, `breadcrumb`, FAQ, CTA-band), keine neuen Design-Werte.
 - Standards & Werte + PPWR-Stellungnahme mit `Schema: WebPage` (statt `BreadcrumbList`) gemäß Content-Vorgabe. Standards & Werte endet wie im Content vorgegeben mit „Qualität statt Zertifikate“ + wiederverwendetem Trust-Element (kein FAQ/CTA, nicht vorgesehen).

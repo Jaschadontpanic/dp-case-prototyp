@@ -416,6 +416,16 @@
 .data-table th, .data-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #eee; white-space: nowrap; }
 .data-table th { background: var(--hell); color: var(--anthrazit); font-weight: 700; }
 .data-table td { color: var(--grau-text); }
+/* .spec-sheet: Label/Wert-Tabelle mit langen Textwerten (z.B. Technische Daten Produktseiten) -
+   normaler Zeilenumbruch statt nowrap, Label-Spalte schmal. */
+.data-table.spec-sheet { min-width: 0; }
+.data-table.spec-sheet th, .data-table.spec-sheet td { white-space: normal; }
+.data-table.spec-sheet th { width: 220px; }
+@media (max-width: 900px) {
+  .pg-silent-rack .data-table-wrap, .pg-silent-rack .text-section { padding-left: 48px; padding-right: 48px; }
+  .data-table.spec-sheet th { width: 130px; padding-left: 12px; padding-right: 8px; }
+  .data-table.spec-sheet td { padding-left: 8px; }
+}
 .placeholder-text { color: var(--grau-text); font-style: italic; }
 
 /* ===== RECHTLICHES (Übersicht + AGB-Downloads, 2026-09-28) ===== */

@@ -6,7 +6,7 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 |---|---|---|---|
 | `/` | `content/startseite.md` | fertig | vorhanden (Design-Basis) |
 | `/produkte` | `content/produkte/index.md` | fertig | vorhanden, Karten mit Platzhalterbild |
-| `/19-zoll-racks/silent-rack` | `content/19-zoll-racks/silent-rack.md` | fertig | nur Kopfbereich |
+| `/19-zoll-racks/silent-rack` | `content/19-zoll-racks/silent-rack.md` | fertig | vollständig (2026-09-28), dient als Vorlage für die restlichen Produktseiten – H1-Abweichung siehe C14, Highlight-Fotos Platzhalter (B6) |
 | `/19-zoll-racks/schwing-rack` | `content/19-zoll-racks/schwing-rack.md` | fertig | fehlt |
 | `/moebel-cases/barista-bar` | `content/moebel-cases/barista-bar.md` | fertig | fehlt |
 | `/monitor-cases/samsung-flip-2` | `content/monitor-cases/samsung-flip-2.md` | fertig | fehlt |
