@@ -32,6 +32,23 @@
 .cases-grid > *:hover img { transform: scale(1.05); }
 .cases-grid .span-2 { grid-column: span 2; }
 
+/* .case-tile: Bild-Kachel mit Text-Overlay (2026-09-28). Verlauf/Positionierung identisch
+   zu .vp-card (kein neuer Design-Wert) - Bild und Text werden getrennt geliefert. */
+.cases-grid .case-tile { position: relative; display: block; text-decoration: none; color: inherit; }
+.cases-grid .case-tile::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0) 65%);
+}
+.cases-grid .case-tile-tag {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #fff;
+}
+.cases-grid .case-tile-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; color: #fff; }
+.cases-grid .case-tile-text h3 { font-size: var(--fs-card-title); margin-bottom: 4px; }
+.cases-grid .case-tile-text p { font-size: var(--fs-body-small); color: #e6e6e6; }
+.cases-grid .case-tile-tag.placeholder,
+.cases-grid .case-tile-text.placeholder * { color: #ccc; font-style: italic; }
+
 /* .cta-tile: ausschliesslich in index.html verwendet, hier global verfuegbar (Vorgabe T3) */
 .cases-grid .cta-tile {
   border-radius: 20px; background: var(--anthrazit); color: #fff; text-decoration: none;

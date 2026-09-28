@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später) – Case-Tile-Komponente umgesetzt
+- `.cases-grid`-Kacheln auf „Unsere Empfehlungen“ (Startseite) von reinem `<img>` auf `.case-tile` umgestellt: Bild + Verlauf + Branchen-Tag oben links + Titel/Text unten links weiß, identische Werte wie `.vp-card` (kein neuer Design-Wert).
+- Platzhalter-Text (`[Branche]`/`[Case-Titel]`/`[Story-Text folgt]`) bis echter Text via `content/startseite.md` vorliegt. Alte Fotos bleiben vorerst drauf (enthalten noch eingebrannten Text) – werden über den Content-Chat gegen textfreie Fotos getauscht (B5).
+
 ## 2026-09-28 – Case-Tile-Anforderungen dokumentiert (Unsere Empfehlungen)
 - Beim Testen einer geplanten Text-Overlay-Kachel für „Unsere Empfehlungen“ festgestellt: die 3 aktuellen Fotos enthalten Titel/Text/Tag/Button bereits als Pixel eingebrannt, nicht als Foto+Text getrennt nutzbar.
 - Anforderungen an Ersatzfotos + Komponenten-Entwurf (Case-Tile) in `docs/design-system.md` dokumentiert: was per CSS automatisiert wird (Verlauf, Radius, Hover-Zoom, Textposition) vs. was in der Bildbearbeitung passieren muss (Bildausschnitt, Seitenverhältnis, CI-Farbe in Reflexionen, ggf. Freisteller).

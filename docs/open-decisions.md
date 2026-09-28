@@ -30,7 +30,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
-| B5 | „Unsere Empfehlungen“-Fotos (`cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg`, `cases-broadcast-pult-workstation.jpg`): Titel, Story-Text, Branchen-Tag und Button sind als Pixel ins Bild eingebrannt, nicht als reine Fotos nutzbar – Anforderungen an Ersatzfotos siehe `docs/design-system.md`, Abschnitt „Case-Tile (geplant)“ | offen |
+| B5 | „Unsere Empfehlungen“-Fotos (`cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg`, `cases-broadcast-pult-workstation.jpg`): Titel, Story-Text, Branchen-Tag und Button waren als Pixel ins Bild eingebrannt. Kachel-Komponente (`.case-tile`) ist umgesetzt (siehe `docs/design-system.md`), textfreie Ersatzfotos + echter Text (Titel/Story/Branchen-Tag pro Kachel, `content/startseite.md`) kommen über den Content-Chat | Aufgabe |
 
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |
