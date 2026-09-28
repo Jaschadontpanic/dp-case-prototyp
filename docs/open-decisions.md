@@ -13,25 +13,30 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Content
 | # | Punkt | Status | Notiz |
 |---|---|---|---|
-| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-27) | Text in `content/engineering/flightcase-bauart.md`; Formen-Teaser führt zur Bauart („Typen“ → „Bauarten“). HTML-Umsetzung durch Claude Code offen |
-| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-27) | Hauptseite bleibt (Entscheidung Jascha: mit Prozess und Kacheln); Kacheltexte in `content/engineering/index.md`, HTML-Umsetzung durch Claude Code offen |
-| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | erledigt (2026-09-27) | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
-| C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-27) | BreadcrumbList + Canonical/Robots in `content/`; Bauart/Formen zusätzlich Title, Meta, Breadcrumb. Einbau ins HTML durch Claude Code offen |
+| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-28) | Beide Teaser im HTML umgesetzt und verlinkt: Formen → Bauart, Bauart → Formen |
+| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-28) | 4 Kacheln im HTML umgesetzt, alle 4 verlinkt (Materialien seit 2026-09-28 auf `/engineering/materialien/`) |
+| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | erledigt (2026-09-28) | `/engineering/masse/` als neue HTML-Seite angelegt, inkl. aller Tabellen/Listen aus `content/engineering/masse.md` |
+| C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-28) | BreadcrumbList-Schema + sichtbare Breadcrumb bei Bauart, Formen und Maße im HTML |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
-| C6 | Markenneutraler Versand: Platzierung | erledigt (2026-09-28) | Entscheidung Jascha: bleibt in der Allgemeinen FAQ, nicht in Schritt 05; Allgemeine FAQ wird zusätzlich auf Bauart, Formen, Maße, Fertigung, Über uns und PPWR eingebunden |
-| C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-27) | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
-| C8 | Impressum, Datenschutz, AGB; alte URLs als Redirects | Aufgabe | Entscheidung Jascha (2026-09-28): Impressum/Datenschutz vorerst nur Platzhalter, AGB ohne eigene Seiten als 4 PDF-Downloads unter `/rechtliches`. Offen: echte Texte später, HTML-Seiten + Redirects durch Claude Code |
+| C6 | Markenneutraler Versand: Platzierung | erledigt (2026-09-28) | Allgemeine FAQ im HTML ergänzt auf Engineering-Hauptseite, Bauart, Formen, Maße, Fertigung, Über uns, PPWR-Stellungnahme (Standards & Werte selbst bewusst ohne, siehe Content-Datei: Seite endet mit „Qualität statt Zertifikate“ + Trust-Element) |
+| C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-28) | Platzhalter im HTML durch den finalen Text ersetzt, Title/Meta gesetzt |
+| C8 | Impressum, Datenschutz, AGB; alte URLs als Redirects | erledigt (2026-09-28) | `/rechtliches/`, `/rechtliches/impressum/`, `/rechtliches/datenschutz/` als HTML-Seiten angelegt (Impressum/Datenschutz als sichtbarer Platzhalter), 4 AGB-PDF-Downloads verlinkt, Footer + mobiles Menü auf allen Seiten aktualisiert. Redirect-Mapping als HTML-Kommentar dokumentiert (keine echten Server-Redirects auf GitHub Pages möglich). Echte Impressum-/Datenschutztexte weiterhin offen |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
-| C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | in `content/engineering/index.md`; HTML-Umsetzung durch Claude Code offen |
 | C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
+| C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | im HTML umgesetzt, inkl. BreadcrumbList-Schema und 5 Alt-Texten der Prozess-Icons |
+| C12 | HTML-Seiten fehlen komplett: Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme | erledigt (2026-09-28) | Alle 5 Seiten neu angelegt und verlinkt (Bauart bereits zuvor erledigt). Materialien-Hub zeigt weiterhin nur die eine Kachel „Plattenmaterialien“ (Vorgabe Content: „keine leeren Kacheln“), deren Zielseite selbst noch fehlt |
+| C13 | Silent-Rack-Seite: Story, Use-Case, Konfigurierbarkeit+CTA, Trust-Zeile, eigene FAQ, Technische Daten, Branchen-Tags, Kundenreferenz, Schema.org (Product/FAQPage/BreadcrumbList) fehlten im HTML | erledigt (2026-09-28) | Vollständig nachgebaut – dient jetzt als Vorlage für die 9 weiteren Produktseiten |
+| C14 | Silent-Rack H1 im HTML ist „Silent Rack“, Content sieht `Silent 19" Rack – Vollständig gekühlt, völlig geräuschlos` vor (Tagline im Hero deckt den zweiten Teil bereits ab) | offen | H1 unverändert gelassen (Design-Entscheidung nötig: langer H1-Text würde den Hero-Bereich verändern) |
 
 ## Bilder
 | # | Punkt | Status |
 |---|---|---|
-| B1 | Bauart-Seite: nur „Custom Cases“ hat Bild, 15 fehlen | Aufgabe |
+| B1 | Bauart-Seite: alle 11 Bauarten zeigen „Bild folgt“-Platzhalter, echte Fotos fehlen komplett | Aufgabe |
 | B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
+| B5 | „Unsere Empfehlungen“: Case-Tile-Komponente ist umgesetzt (Bild + Text getrennt, textfreie Fotos seit 2026-09-28 im Einsatz), aber Branchen-Tag/Titel/Story-Text pro Kachel fehlen noch (Datenfelder aus `content/startseite.md` Abschnitt 3 nicht ausgefüllt) | Aufgabe |
+| B6 | Silent-Rack-Highlights (7 Kacheln): alle zeigen Platzhalterbild (Hero-Foto), echte Fotos SOAZMA0010_10–_16 fehlen | Aufgabe |
 
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |

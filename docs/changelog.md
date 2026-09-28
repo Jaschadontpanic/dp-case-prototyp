@@ -2,6 +2,43 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 5) – Silent Rack vollständig gebaut (Vorlage für Produktseiten)
+- Produktbild-Fix + 7 Highlight-Kacheln aus PR #6 per Cherry-Pick übernommen (Branch war von vor dem Merge dieses PRs abgezweigt).
+- Fehlende Abschnitte ergänzt: Story, Use-Case, Breadcrumb (Ziel-Hub `/19-zoll-racks/` fehlt noch, `#`-Platzhalter), Konfigurierbarkeit + eigener CTA, Trust-Zeile, produkteigene FAQ (6 Fragen), Technische-Daten-Tabelle, Rating Stabilität/Gewicht als Balken (Wiederverwendung der Bauart-Komponente), Branchen-Tags (Wiederverwendung `.bauart-badge`), Kundenreferenz, Allgemeine FAQ, abschließendes CTA-Band, 3 Schema.org-Blöcke (BreadcrumbList, Product, FAQPage).
+- Neuer Modifier `.data-table.spec-sheet` (normaler Zeilenumbruch statt `nowrap`, schmalere Label-Spalte) für Label/Wert-Tabellen mit langen Textwerten, plus 48px-Seitenrand bei ≤900px (wie Bauart-Row) statt der sonst 120px `--side-pad` – sonst überläuft die Tabelle auf schmalen Viewports.
+- Bugfix während des Baus: Rating-Balken initial durch `max-width:320px` auf einem bereits gepolsterten `.text-section`-Container auf 80px Breite zusammengequetscht (Padding + max-width addierten sich) – behoben durch inneren Wrapper.
+- H1 weicht weiterhin vom Content ab („Silent Rack“ statt vollem Content-H1) – bewusst nicht geändert, da Design-Entscheidung nötig (C14).
+- Dient jetzt als vollständige Vorlage für die 9 weiteren Produktseiten (siehe `docs/design-system.md`).
+
+
+## 2026-09-28 (später, 4) – Verbleibende Seiten angelegt (C12)
+- `/engineering/materialien/`, `/manufaktur/fertigung/`, `/manufaktur/ueber-uns/`, `/standards-werte/`, `/standards-werte/ppwr-stellungnahme/` neu gebaut – reine Wiederverwendung bestehender Komponenten (`page-head`, `page-intro`, `text-section`, `hub-grid`, `breadcrumb`, FAQ, CTA-band), keine neuen Design-Werte.
+- Standards & Werte + PPWR-Stellungnahme mit `Schema: WebPage` (statt `BreadcrumbList`) gemäß Content-Vorgabe. Standards & Werte endet wie im Content vorgegeben mit „Qualität statt Zertifikate“ + wiederverwendetem Trust-Element (kein FAQ/CTA, nicht vorgesehen).
+- Über uns: 4 volle Team-Bios (Jascha, Oleg, Ole, Michaela) als Kacheln, Hero-Bild weiterhin Platzhalter (B3).
+- Manufaktur-Hub- und Engineering-Hub-Links (Fertigung, Über uns, Standards & Werte, Materialien) von `#`-Platzhaltern auf die neuen Seiten umgestellt.
+- Bugfix: Links in `.text-section` waren durch den globalen `a{color:inherit}`-Reset unsichtbar (grauer Fließtext-Ton) – jetzt `--teal`, unterstrichen.
+- C12 vollständig erledigt (Bauart war bereits zuvor fertig).
+
+
+## 2026-09-28 (später, 3) – Bauart-Seite neu angelegt
+- `/engineering/flightcase-bauart/` neu gebaut: 11 Bauarten (alternierende Bild/Text-Zeile, Balken-Rating für Stabilität/Gewicht, „Light“/„Ultra Light“-Badge) + 5 „Weitere Leistungen“ als einfache Kacheln, Breadcrumb, BreadcrumbList-Schema, Teaser zu Formen, Allgemeine FAQ, CTA-Band.
+- Design mit Jascha per Mockup abgestimmt (3 Iterationen: Grundlayout, Mobile-Anpassung Schriftgröße/Seitenrand, Reihenfolge der Elemente gestapelt). Neue Komponente `.bauart-row` in `assets/css/components.css` und `docs/design-system.md` dokumentiert.
+- Formen-Teaser und Engineering-Hub-Kachel „Bauart“ von `#`-Platzhalter auf die neue Seite verlinkt.
+- Alle 11 Bilder als „Bild folgt“-Platzhalter (siehe B1 in `docs/open-decisions.md`); C1, C4, C11, C12 (Bauart-Teil) entsprechend aktualisiert.
+
+
+## 2026-09-28 (später, 2) – Content-Änderungen aus dem Merge vom 2026-09-28 umgesetzt
+- **Startseite:** Title-Tag/Meta Description eingesetzt (TODOs entfernt).
+- **Kontaktseite:** Platzhalter über dem Formular durch den finalen Einleitungssatz ersetzt (`.intro-headline`/`.intro-headline-sub`, neue Sub-Zeile analog „Ruf uns an.“-Block), Title/Meta eingesetzt.
+- **Engineering-Hauptseite:** Title/Meta, Intro über dem Prozess, 5 Alt-Texte der Prozess-Icons, 4 Hub-Kacheln (Bauart/Formen/Maße/Materialien, vorher nur 2), Allgemeine FAQ, CTA-Band, BreadcrumbList-Schema + sichtbare Breadcrumb ergänzt; fehlendes `main.js`-Script nachgetragen.
+- **Formen-Seite:** Title/Meta, Breadcrumb (sichtbar + Schema), Allgemeine FAQ vor dem CTA ergänzt; Teaser-Text „Typen“ → „Bauarten“ korrigiert (Content-Stand nachgezogen).
+- **Maße-Seite neu angelegt** (`/engineering/masse/`): alle Inhalte aus `content/engineering/masse.md` (Truckmaß-Standards, 19-Zoll-Einbauten, Türbreiten, Fahrzeug-Innenhöhen, Seecontainer, Luftfracht als Tabellen/Listen), Breadcrumb, Allgemeine FAQ, CTA-Band, BreadcrumbList-Schema. Neue Komponenten `.data-table`/`.text-section` (nur bestehende Tokens); Tabellen scrollen auf schmalen Viewports horizontal statt umzubrechen.
+- **`/rechtliches` neu angelegt:** Übersichtsseite (Links zu Impressum/Datenschutz, 4 AGB-PDF-Downloads mit Dateigröße) sowie `/rechtliches/impressum/` und `/rechtliches/datenschutz/` mit sichtbar markiertem Platzhaltertext. Footer und mobiles Menü auf allen 11 Seiten von `#`/Platzhalter auf echte Links umgestellt. Alte-URL-Redirects (`/impressum/`, `/datenschutzerklaerung/`, `/agb-2/`) als HTML-Kommentar dokumentiert – GitHub Pages kann keine echten Server-Redirects.
+- **Neue Breadcrumb-Komponente** (`.breadcrumb`) auf Engineering-Hauptseite, Formen, Maße, Rechtliches, Impressum, Datenschutz.
+- **Empfehlungs-Kacheln:** Case-Tile-Komponente (Bild + Text-Overlay per CSS, aus vorherigem Branch übernommen) mit den neuen textfreien Fotos getestet – `object-fit:cover` gleicht die unterschiedlichen Seitenverhältnisse (0,86–1,50) automatisch aus, kein Zuschnitt-Fix nötig. Branchen-Tag/Titel/Story-Text bleiben Platzhalter (Datenfelder in `content/startseite.md` noch nicht ausgefüllt, siehe B5).
+- **Nicht umgesetzt (HTML-Seiten fehlen komplett):** Bauart, Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme – daher auch die dort vorgesehenen FAQ-Einbindungen und der bauart-seitige Formen-Teaser nicht möglich. Bauart zusätzlich mit eigener Design-Entscheidung (Rating-Skala, „Light“-Suffix-Styling). Siehe C12 in `docs/open-decisions.md`.
+- `docs/open-decisions.md`, `docs/design-system.md`, `docs/seitenstruktur.md` entsprechend aktualisiert.
+
 ## 2026-09-28 (8) – Rechtsbereich auf Platzhalter und PDF-Downloads umgestellt
 - Entscheidung Jascha: Impressum und Datenschutzerklärung enthalten vorerst nur Platzhalter; die übernommenen Live-Texte samt Prüfpunkten wurden wieder entfernt.
 - AGB bekommen keine eigenen Seiten. Die vier Fassungen liegen als PDF unter `assets/downloads/` und werden auf `/rechtliches` als Download-Links geführt (Linktext = Dateiname).
@@ -66,6 +103,10 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - `content/kontakt.md`: Einleitung über dem Kontaktformular ergänzt („Lass uns dein perfektes Case entwickeln.“ / „Ein paar Angaben zu deinem Projekt genügen für den Start.“, Variante C, Entscheidung Jascha). Aufbau analog „Ruf uns an.“.
 - `content/kontakt.md`: Title-Tag („Kontakt – dein Case, egal wie speziell | don't panic“, greift CTA-Headline auf) und Meta Description (160 Zeichen) neu, da bisher fehlend (TODO im HTML).
 - `docs/open-decisions.md`: C7 von „offen“ auf „Aufgabe“ (Umsetzung durch Claude Code).
+
+## 2026-09-27 – Silent-Rack: Produktbild-Fix + Highlight-Kacheln
+- `.product-hero`: festes `aspect-ratio` (2045/867) samt `overflow:hidden` entfernt. Das hochformatige Silent-Rack-Foto (996×1241) wurde dadurch bei 80% Breite oben/unten stark beschnitten. Jetzt per `max-height` (65vh Desktop / 50vh ≤900px) + `object-fit:contain` begrenzt – Case ist auf jeder Auflösung komplett sichtbar.
+- Neue Sektion „Highlights" unterhalb des Produkt-Heros: 7 Kacheln (Macrolon Sichttür, Geräuschlose Luftführung, Silent-Aktivbelüftung, Schalldämmung innen, Kabelführung mit Bürstenleiste, Geölt Natur Birke, Kantengriff), Texte aus `content/19-zoll-racks/silent-rack.md` übernommen. Layout per bestehendem `.product-grid`/`.product-card` (keine neuen CSS-Werte). Alle 7 Kacheln zeigen vorerst dasselbe Platzhalterfoto (Hero-Bild) – echte Highlight-Fotos fehlen noch (siehe B5 in `open-decisions.md`).
 
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request
 - `docs/project-rules.md`: Content-Änderungen laufen wie technische Änderungen über Aufgaben-Branch und Pull Request statt über manuellen Datei-Upload auf `main` (Entscheidung Jascha). Workflow-Schritte 1–2 und Rolle „Jascha“ angepasst.

@@ -6,7 +6,7 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 |---|---|---|---|
 | `/` | `content/startseite.md` | fertig | vorhanden (Design-Basis) |
 | `/produkte` | `content/produkte/index.md` | fertig | vorhanden, Karten mit Platzhalterbild |
-| `/19-zoll-racks/silent-rack` | `content/19-zoll-racks/silent-rack.md` | fertig | nur Kopfbereich |
+| `/19-zoll-racks/silent-rack` | `content/19-zoll-racks/silent-rack.md` | fertig | vollständig (2026-09-28), dient als Vorlage für die restlichen Produktseiten – H1-Abweichung siehe C14, Highlight-Fotos Platzhalter (B6) |
 | `/19-zoll-racks/schwing-rack` | `content/19-zoll-racks/schwing-rack.md` | fertig | fehlt |
 | `/moebel-cases/barista-bar` | `content/moebel-cases/barista-bar.md` | fertig | fehlt |
 | `/monitor-cases/samsung-flip-2` | `content/monitor-cases/samsung-flip-2.md` | fertig | fehlt |
@@ -16,25 +16,25 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/standard-cases/kanistertransportcase` | `content/standard-cases/kanistertransportcase.md` | fertig | fehlt |
 | `/ladesaeulen-cases/auto-ladesaeule` | `content/ladesaeulen-cases/auto-ladesaeule.md` | fertig | fehlt |
 | `/kamera-cases/red-raptor-xl-case` | `content/kamera-cases/red-raptor-xl-case.md` | fertig | fehlt |
-| `/engineering` | `content/engineering/index.md` | fertig | vorhanden (Hub-Kacheln unvollständig, Allgemeine FAQ fehlt) |
-| `/engineering/flightcase-bauart` | `content/engineering/flightcase-bauart.md` | fertig (Schema.org, Bilder offen) | fehlt |
-| `/engineering/flightcase-formen` | `content/engineering/flightcase-formen.md` | fertig | vorhanden (3 von 21 Bildern) |
-| `/engineering/masse` | `content/engineering/masse.md` | teilweise | fehlt |
-| `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | fehlt |
+| `/engineering` | `content/engineering/index.md` | fertig | vorhanden (4 Hub-Kacheln, Intro, Alt-Texte, Allgemeine FAQ, CTA, Breadcrumb-Schema) |
+| `/engineering/flightcase-bauart` | `content/engineering/flightcase-bauart.md` | fertig (Bilder offen) | vorhanden (2026-09-28): 11 Bauarten + 5 „Weitere Leistungen“, Breadcrumb, Schema, FAQ, Teaser, alle Bilder Platzhalter (B1) |
+| `/engineering/flightcase-formen` | `content/engineering/flightcase-formen.md` | fertig | vorhanden (3 von 21 Bildern; Breadcrumb, Schema, FAQ, Teaser „Zu den Bauarten“ ergänzt) |
+| `/engineering/masse` | `content/engineering/masse.md` | fertig | vorhanden (neu angelegt 2026-09-28) |
+| `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | vorhanden (2026-09-28): 1 Kachel „Plattenmaterialien“ (weitere Kategorien laut Content erst bei fertigem Content), Zielseite selbst fehlt |
 | `/engineering/materialien/plattenmaterialien` | `…/plattenmaterialien/index.md` | fertig | fehlt |
 | `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | fehlt |
 | `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | fehlt |
 | `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | fehlt |
 | `…/plattenmaterialien/phenolharz-statt-pvc` | `…/phenolharz-statt-pvc.md` | fertig | fehlt |
 | `/manufaktur` | `content/manufaktur/index.md` | fertig | vorhanden |
-| `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | fehlt |
-| `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | fehlt |
-| `/standards-werte` (URL offen) | `content/standards-werte/index.md` | fertig | fehlt |
-| `/standards-werte/ppwr-stellungnahme` (URL offen) | `content/standards-werte/ppwr-stellungnahme.md` | fertig | fehlt |
+| `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | vorhanden (2026-09-28), Werkstatt-Bilder Platzhalter (B3) |
+| `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | vorhanden (2026-09-28), Hero-Bild Platzhalter (B3) |
+| `/standards-werte` (URL offen, S1) | `content/standards-werte/index.md` | fertig | vorhanden (2026-09-28) |
+| `/standards-werte/ppwr-stellungnahme` (URL offen, S1) | `content/standards-werte/ppwr-stellungnahme.md` | fertig | vorhanden (2026-09-28) |
 | `/kontakt` | `content/kontakt.md` (Verweise) | fertig | vorhanden |
-| Rechtliches (Übersicht) | `/rechtliches` | Hub, AGB als 4 PDF-Downloads, Redirect-Tabelle | Content fertig (2026-09-28) |
-| Impressum | `/rechtliches/impressum` | Platzhalter, Inhalt folgt | Platzhalter (2026-09-28) |
-| Datenschutzerklärung | `/rechtliches/datenschutz` | Platzhalter, Inhalt folgt | Platzhalter (2026-09-28) |
+| `/rechtliches` | `content/rechtliches/index.md` | fertig (Hub, AGB als 4 PDF-Downloads, Redirect-Tabelle) | vorhanden (2026-09-28) |
+| `/rechtliches/impressum` | `content/rechtliches/impressum.md` | Platzhalter, Inhalt folgt | vorhanden, sichtbarer Platzhalter (2026-09-28) |
+| `/rechtliches/datenschutz` | `content/rechtliches/datenschutz.md` | Platzhalter, Inhalt folgt | vorhanden, sichtbarer Platzhalter (2026-09-28) |
 
 Reihenfolge Engineering-Unterseiten: Bauart → Formen → Maße → Materialien.
 
