@@ -69,6 +69,15 @@ Custom-Icon-Set fuer diese 5 Schritte wird im Design-Chat bereits gebaut (Verste
 Dialog-Sprechblasen, Konzipieren: Stift+Skizze, Entwickeln: isometrischer 3D-Wuerfel,
 Fertigen: Zahnrad+Wuerfel, Rundum-Service: Schild mit Haken).
 
+**Alt-Texte der 5 Prozess-Icons (bisher `alt=""` im HTML, siehe T5):**
+| Datei | Alt-Text |
+|---|---|
+| prozess-01-verstehen.png | Icon Verstehen: zwei Sprechblasen im Dialog |
+| prozess-02-konzipieren.png | Icon Konzipieren: Stift über einer Skizze |
+| prozess-03-entwickeln.png | Icon Entwickeln: isometrischer 3D-Würfel |
+| prozess-04-fertigen.png | Icon Fertigen: Zahnrad mit Würfel |
+| prozess-05-rundum-service.png | Icon Rundum-Service: Schild mit Haken |
+
 **Hub-Kacheln (C2, nach dem 5-Schritte-Prozess, vor der Allgemeinen FAQ; Reihenfolge fest):**
 
 | Kachel | Überschrift | Text | Button |

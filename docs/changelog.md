@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (4) – Alt-Texte der Prozess-Icons
+- `content/engineering/index.md`: Alt-Texte für die 5 Prozess-Icons ergänzt (im HTML bisher `alt=""`, offener Rest aus T5). Beschreibungen entsprechen dem dokumentierten Icon-Set.
+
 ## 2026-09-28 (3) – Startseite: Title-Tag und Meta Description
 - `content/startseite.md`: Title-Tag („Flightcases nach Maß aus Hamburg | don't panic“) und Meta Description (148 Zeichen) ergänzt; beide fehlten seit der Migration (TODO in `index.html`, siehe T5).
 - H1 bleibt die bestehende Hero-Überschrift („Dein Case. / Unsere Präzision. / Gemeinsam entwickelt.“), im HTML bereits korrekt als `<h1>` ausgezeichnet.
