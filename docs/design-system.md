@@ -56,6 +56,27 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 - **Bauart-Row** (`.bauart-row`, neu 2026-09-28, Flightcase-Bauart-Seite, mit Jascha abgestimmt): alternierende Bild/Text-Zeile per CSS-Grid-Areas (Desktop: Bild 42% Breite abwechselnd links/rechts neben Titel/Text/Specs/Rating; Mobil gestapelt in fester Reihenfolge Titel → Bild → Text → Rating, Bild randlos ohne Radius, Textblock mit 48px Seitenrand statt der sonst 120px `--side-pad` – sonst zu wenig Platz für Text). Rating als Balken (`.bauart-rating-track`/`-fill`, Teal auf `--hell`, Beschriftung „Label X/10“ daneben). „Light“/„Ultra Light“-Suffix als eigenes Badge (`.bauart-badge`, Teal-Outline-Pille, Mono-Font, reuse aus Tag-Mustern) statt Teil des Fließnamens. Bauart-Name auf `--fs-card-title` (Token, kein Freihandwert).
 - **Produkt-Detailseite, Vorlage** (Silent Rack, vollständig 2026-09-28): Hero → Breadcrumb → Story → Use-Case → Highlights (`.product-grid`) → Konfigurierbarkeit+CTA (`.typen-teaser`) → Trust-Zeile (einzeiliger `--teal`-Satz, zentriert) → eigene Produkt-FAQ → Technische Daten (`.data-table.spec-sheet` – Modifier für lange Textwerte: `white-space:normal` statt `nowrap`, schmalere Label-Spalte, bei ≤900px zusätzlich 48px statt 120px Seitenrand wie bei Bauart-Row) → Rating-Balken (Wiederverwendung `.bauart-rating-*`) → Branchen-Tags (Wiederverwendung `.bauart-badge`) → Kundenreferenz → Allgemeine FAQ → CTA-Band. Schema.org: BreadcrumbList + Product + FAQPage (3 separate `<script type="application/ld+json">`). Als Muster für die weiteren 9 Produktseiten gedacht.
 
+## Case-Tile (umgesetzt 2026-09-28)
+„Unsere Empfehlungen“-Kacheln (`.cases-grid`, Startseite) benötigen jetzt nur noch **Bild + Text getrennt** (Titel, Story-Text, Branchen-Tag) statt wie bisher fertig bebilderter Kacheln mit eingebranntem Text. Optik bleibt gleich (Verlauf, Branchen-Tag oben links, Titel/Text unten links, weiß).
+
+**Befund (2026-09-28):** Die bisherigen Fotos `cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg`, `cases-broadcast-pult-workstation.jpg` enthielten Titel, Story-Text, Branchen-Tag und Button bereits als Pixel im Bild (Export aus dem ursprünglichen Claude-Artifact-Mockup) – konnten nicht als Hintergrund für die neue Text-Overlay-Kachel weiterverwendet werden. Textfreie Ersatzfotos werden über den Content-Chat geliefert (siehe B5 in `docs/open-decisions.md`) – bis dahin zeigt die Seite die alten Fotos + Platzhalter-Text übereinander (technisch funktionsfähig, optisch erst nach dem Foto-Tausch final).
+
+**Komponenten-Entwurf** (reine Wiederverwendung bestehender Werte, kein neuer Design-Wert): identischer Verlauf/Textposition wie `.vp-card` – `linear-gradient(to top, rgba(0,0,0,.85) 10%, rgba(0,0,0,0) 65%)`, Text unten links weiß (`--fs-card-title`/`--fs-body-small`), Branchen-Tag oben links (`--mono-font`, 11px, uppercase).
+
+**Was automatisiert per CSS passiert (einmalig umgesetzt, danach kein Aufwand mehr pro Kachel):**
+- Dunkler Verlauf von unten für Text-Lesbarkeit
+- Eckenradius 20px, Zuschnitt auf Kachelgröße (`object-fit: cover`)
+- Hover-Zoom (`scale(1.05)`)
+- Positionierung Branchen-Tag/Titel/Text
+- Responsives Umbrechen (Grid → 1 Spalte ≤900px)
+
+**Was in der Bildbearbeitung passieren muss, bevor ein Foto geliefert wird:**
+- Bildausschnitt so wählen, dass der untere Bereich nicht zu hell/detailreich ist (sonst schluckt es den Text-Kontrast trotz Verlauf)
+- Passendes Seitenverhältnis je Kachelgröße zuschneiden (3 normale Kacheln + 1 breite `span-2`-Kachel = unterschiedliche Formate)
+- CI-Farbe (Teal) dezent in Lichtreflexionen/Spiegelungen einbringen – gestalterische Retusche, nicht automatisierbar (würde sonst das ganze Bild einfärben statt selektiv einzelne Bereiche)
+- Freisteller/Hintergrund entfernen – nur falls Produktfoto statt Umgebungsfoto (bei den aktuellen 3 Motiven nicht relevant)
+- Kompression/Dateigröße übernimmt weiterhin Claude Code (mechanisch, keine Gestaltung)
+
 ## Aus anderen Seiten übernommene Elemente
 - **Prozess-Kacheln** (`engineering.html`): `.step` mit Rand #e6e6e2, Radius 24px; `.step-top` Verlauf `#000 → #112f2f`, Radius 24px; Icons 72×72px.
 - **Page-Head** (Unterseiten): `.page-head` 56px oben, H1 in `--headline-alt-font`.
