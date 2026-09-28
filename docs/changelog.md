@@ -4,6 +4,7 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 
 ## 2026-09-28 (2) – Engineering-Hauptseite vervollständigt
 - `content/engineering/index.md`: Title-Tag, Meta Description (156 Zeichen), Breadcrumb, H1 „Engineering“, Intro über dem Prozess, CTA und BreadcrumbList-Schema/Canonical ergänzt (Title/Meta fehlten bisher, siehe T5).
+- `docs/open-decisions.md`: C3 und C7 auf „erledigt“ gesetzt (Content steht, nur HTML-Umsetzung offen); neuer Punkt C11 für die Engineering-Hauptseite.
 - Intro nimmt die Leitfrage „Was soll dein Case können?“ und die Flexibilitäts-Aussage der Live-Seite sinngemäß auf (Vorlage Jascha), nicht wörtlich. Der Live-Text „Qualität“ wird nicht übernommen: dafür gibt es bereits „Qualität statt Zertifikate“ auf `content/standards-werte/index.md`.
 
 ## 2026-09-28 – Maße-Seite: 19-Zoll-Einbauten

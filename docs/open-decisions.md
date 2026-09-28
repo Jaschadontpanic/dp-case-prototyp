@@ -15,13 +15,14 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 |---|---|---|---|
 | C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-27) | Text in `content/engineering/flightcase-bauart.md`; Formen-Teaser führt zur Bauart („Typen“ → „Bauarten“). HTML-Umsetzung durch Claude Code offen |
 | C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-27) | Hauptseite bleibt (Entscheidung Jascha: mit Prozess und Kacheln); Kacheltexte in `content/engineering/index.md`, HTML-Umsetzung durch Claude Code offen |
-| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | Aufgabe | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
+| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | erledigt (2026-09-27) | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
 | C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-27) | BreadcrumbList + Canonical/Robots in `content/`; Bauart/Formen zusätzlich Title, Meta, Breadcrumb. Einbau ins HTML durch Claude Code offen |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
 | C6 | Markenneutraler Versand zusätzlich in Engineering-Schritt 05 „Rundum-Service“? | offen | aktuell über Allgemeine FAQ gelöst |
-| C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | Aufgabe | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
+| C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-27) | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
 | C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
+| C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | in `content/engineering/index.md`; HTML-Umsetzung durch Claude Code offen |
 | C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
 
 ## Bilder
