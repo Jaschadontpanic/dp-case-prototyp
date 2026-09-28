@@ -37,14 +37,18 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 - **Hero** (`.hero`): Vollbild-Hintergrundbild, `aspect-ratio: 2045/867`; Verlauf links (95 % schwarz → 0 bei 30 %) und unten (90 % → 0 bei 22 %); H1 `--fs-h1`, Beschreibung max. 640px, #ddd.
 - **Stats-Zeile** (`.stats-row`): 6-Spalten-Grid, Kicker über 3 Spalten, 3 Stat-Items (Zahl `--fs-stat-number`, Label `--fs-small` #888).
 - **Wert-Kacheln** (`.vp-card`): 4-Spalten-Grid, 300px hoch, Radius 14px, Hintergrundbild mit Verlauf von unten (85 % → 0 bei 65 %), Text unten links weiß.
-- **Cases-Grid** (`.cases-grid`): 3 Spalten, Abstand 24px, Radius 20px, `.span-2` für breite Kachel, Hover-Zoom 1.05; CTA-Kacheln (`.cta-tile`) anthrazit.
+- **Cases-Grid** (`.cases-grid`): 3 Spalten, Abstand 24px, Radius 20px, `.span-2` für breite Kachel, Hover-Zoom 1.05; CTA-Kacheln (`.cta-tile`) anthrazit. Seit 2026-09-28: Bild-Kacheln nutzen `.case-tile` (Bild + Verlauf + Branchen-Tag oben links + Titel/Text unten links weiß, identische Werte wie `.vp-card`) statt Text im Bild – Bild und Text werden getrennt geliefert; textfreie Fotos seit 2026-09-28 im Einsatz, Branchen-Tag/Titel/Story-Text pro Kachel noch Platzhalter (siehe B5).
 - **Trust-Liste**: 8 Größenstufen `.t1`–`.t8` (32/26/22/19px Heading-Font, dann 14/14/13/13px, Grau abgestuft #1a1a1a → #939393).
-- **Kontakt**: Formular einspaltig (Inputs Radius 14px, Fokus teal), optionale Felder per `<details>`; Info-Block `--hell`, Radius 16px. Seit 2026-09-27 (Vorbild mercedes-benz.de-Kontaktformular): Label steht als kleine, teal-farbene Zeile IM umrandeten Feld (`.field`/`.field-label`, nur Kontaktseite), Radiobuttons „Bevorzugte Kontaktart" stehen untereinander statt nebeneinander, Absenden-Button rechtsbündig. Eingabefeld-Radius 14px gilt sitewide (vorher 8px, siehe `.contact-form input/select/textarea`).
-- **Footer** (`footer.site-footer`): #000, #ccc, 13px, zentriert, einzeilig.
+- **Kontakt**: Formular einspaltig (Inputs Radius 14px, Fokus teal), optionale Felder per `<details>`; Info-Block `--hell`, Radius 16px. Seit 2026-09-27 (Vorbild mercedes-benz.de-Kontaktformular): Label steht als kleine, teal-farbene Zeile IM umrandeten Feld (`.field`/`.field-label`, nur Kontaktseite), Radiobuttons „Bevorzugte Kontaktart" stehen untereinander statt nebeneinander, Absenden-Button rechtsbündig. Eingabefeld-Radius 14px gilt sitewide (vorher 8px, siehe `.contact-form input/select/textarea`). Einleitungssatz (`.intro-headline` + `.intro-headline-sub`, seit 2026-09-28 final): fette teal Zeile + kleinerer grauer Satz darunter, Aufbau analog „Ruf uns an.“-Block.
+- **Footer** (`footer.site-footer`): #000, #ccc, 13px, zentriert, einzeilig. Seit 2026-09-28: „Impressum“/„Datenschutz“/„AGB“ sind echte Links auf `/rechtliches/…`.
+- **Breadcrumb** (`.breadcrumb`, neu 2026-09-28): kleine graue Zeile über `.page-head`, `--fs-small`, Trenner „›“, letztes Element (aktuelle Seite) ohne Link. Nur bestehende Tokens.
+- **Data-Table / Text-Section** (`.data-table`, `.text-section`, neu 2026-09-28, Maße-Seite): schlichte Tabelle (Kopfzeile `--hell`-Hintergrund, `--fs-body-small`) mit horizontalem Scroll auf schmalen Viewports (`min-width` + `overflow-x:auto`, kein Zeilenumbruch pro Zelle); Fließtext/Listen in `--grau-text`, max. 70ch.
+- **Rechtliches** (`.legal-list`, `.download-list`, neu 2026-09-28): einfache Linklisten mit unterer Trennlinie, für Seiten-Übersicht bzw. PDF-Downloads (AGB).
+- **FAQ + CTA-Band, Reihenfolge**: siteweit einheitlich Content → (Teaser) → Allgemeine FAQ → CTA-Band (CTA immer als letztes Element vor dem Footer).
 
 ## Aus anderen Seiten übernommene Elemente
 - **Prozess-Kacheln** (`engineering.html`): `.step` mit Rand #e6e6e2, Radius 24px; `.step-top` Verlauf `#000 → #112f2f`, Radius 24px; Icons 72×72px.
 - **Page-Head** (Unterseiten): `.page-head` 56px oben, H1 in `--headline-alt-font`.
-- **Hub-/Produktkarten**: Rand #eee, Radius 16px, Hover-Schatten.
+- **Hub-/Produktkarten**: Rand #eee, Radius 16px, Hover-Schatten. `.hub-grid`/`.hub-grid-single` Default 3 Spalten, Anzahl per Inline-Style überschreibbar (Engineering: 4 Spalten seit 2026-09-28).
 - **Produkt-Hero** (`produkte-silent-rack.html`): Grau-Verlauf-Hintergrund, `aspect-ratio 2045/867`, H1 36px zentriert, freigestelltes Produktbild mit Bodenschatten.
 - **Bauform-Karten** (`engineering-formen.html`): 4-Spalten-Grid, Karte 150px, Bild ragt oben heraus.

@@ -32,6 +32,23 @@
 .cases-grid > *:hover img { transform: scale(1.05); }
 .cases-grid .span-2 { grid-column: span 2; }
 
+/* .case-tile: Bild-Kachel mit Text-Overlay (2026-09-28). Verlauf/Positionierung identisch
+   zu .vp-card (kein neuer Design-Wert) - Bild und Text werden getrennt geliefert. */
+.cases-grid .case-tile { position: relative; display: block; text-decoration: none; color: inherit; }
+.cases-grid .case-tile::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0) 65%);
+}
+.cases-grid .case-tile-tag {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #fff;
+}
+.cases-grid .case-tile-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; color: #fff; }
+.cases-grid .case-tile-text h3 { font-size: var(--fs-card-title); margin-bottom: 4px; }
+.cases-grid .case-tile-text p { font-size: var(--fs-body-small); color: #e6e6e6; }
+.cases-grid .case-tile-tag.placeholder,
+.cases-grid .case-tile-text.placeholder * { color: #ccc; font-style: italic; }
+
 /* .cta-tile: ausschliesslich in index.html verwendet, hier global verfuegbar (Vorgabe T3) */
 .cases-grid .cta-tile {
   border-radius: 20px; background: var(--anthrazit); color: #fff; text-decoration: none;
@@ -136,6 +153,12 @@
 .team-card .role { display: block; font-size: 13px; color: var(--teal); font-weight: 700; margin-bottom: 14px; }
 .team-card .quote { font-size: var(--fs-body-small); color: var(--grau-text); font-style: italic; margin-bottom: 16px; min-height: 60px; }
 .team-card .btn-link { font-size: 14px; }
+
+/* ===== BREADCRUMB (Unterseiten, 2026-09-28) - nur bestehende Tokens ===== */
+.breadcrumb { padding: 20px var(--side-pad) 0; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-small); color: var(--grau-text); }
+.breadcrumb a { color: var(--grau-text); text-decoration: none; }
+.breadcrumb a:hover { color: var(--teal); }
+.breadcrumb .sep { margin: 0 6px; color: #ccc; }
 
 /* ===== PAGE HEAD / PAGE INTRO (alle Unterseiten) =====
    Default = Wert aus engineering/engineering-formen/manufaktur/kontakt (10px, fs-h1).
@@ -283,13 +306,13 @@
    die generische .contact-... / .team-... Basis oben (auf anderen Seiten ungenutzt)
    nicht ueberschreibt. ===== */
 .contact-page { padding: 20px 0 70px; }
-/* Einleitungssatz (Vorbild Mercedes-Kontaktformular) – Text fehlt noch (offener Punkt C7,
-   docs/open-decisions.md), daher als Platzhalter sichtbar markiert statt selbst formuliert. */
+/* Einleitungssatz (Vorbild Mercedes-Kontaktformular, Text seit 2026-09-27 final, C7). */
 .contact-page .intro-headline {
   font-family: var(--headline-alt-font); font-weight: 600; font-size: var(--fs-h2);
-  color: var(--teal); line-height: 1.3; max-width: 720px; margin-bottom: 30px;
+  color: var(--teal); line-height: 1.3; max-width: 720px; margin-bottom: 8px;
 }
 .contact-page .intro-headline.placeholder { color: var(--grau-text); font-style: italic; font-weight: 400; }
+.contact-page .intro-headline-sub { font-size: var(--fs-body-small); color: var(--grau-text); max-width: 720px; margin-bottom: 30px; }
 .contact-page .call-cta-top {
   background: var(--hell); border-radius: 16px; padding: 28px 32px; margin-bottom: 36px;
 }
@@ -378,6 +401,29 @@
 .faq-item[open] summary::before { content: "\2212"; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; padding: 0 0 18px; }
+
+/* ===== DATA-TABLE / TEXT-SECTION (Maße-Seite, 2026-09-28) - nur bestehende Tokens ===== */
+.text-section { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 30px; }
+.text-section p, .text-section ul { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; max-width: 70ch; }
+.text-section ul { padding-left: 20px; margin-top: 8px; }
+.text-section li { margin-bottom: 6px; }
+.data-table-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 40px; overflow-x: auto; }
+.data-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: var(--fs-body-small); }
+.data-table th, .data-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #eee; white-space: nowrap; }
+.data-table th { background: var(--hell); color: var(--anthrazit); font-weight: 700; }
+.data-table td { color: var(--grau-text); }
+.placeholder-text { color: var(--grau-text); font-style: italic; }
+
+/* ===== RECHTLICHES (Übersicht + AGB-Downloads, 2026-09-28) ===== */
+.legal-list { list-style: none; max-width: var(--max-width); margin: 0 auto 20px; padding: 0 var(--side-pad); }
+.legal-list li { border-bottom: 1px solid #eee; padding: 14px 0; }
+.legal-list a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.legal-list a:hover { text-decoration: underline; }
+.download-list { list-style: none; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 60px; }
+.download-list li { border-bottom: 1px solid #eee; padding: 14px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.download-list a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.download-list a:hover { text-decoration: underline; }
+.download-list .filesize { font-size: var(--fs-small); color: var(--grau-text); }
 
 /* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
 @media (max-width: 900px) {

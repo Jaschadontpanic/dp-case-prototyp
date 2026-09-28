@@ -2,6 +2,18 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 2) – Content-Änderungen aus dem Merge vom 2026-09-28 umgesetzt
+- **Startseite:** Title-Tag/Meta Description eingesetzt (TODOs entfernt).
+- **Kontaktseite:** Platzhalter über dem Formular durch den finalen Einleitungssatz ersetzt (`.intro-headline`/`.intro-headline-sub`, neue Sub-Zeile analog „Ruf uns an.“-Block), Title/Meta eingesetzt.
+- **Engineering-Hauptseite:** Title/Meta, Intro über dem Prozess, 5 Alt-Texte der Prozess-Icons, 4 Hub-Kacheln (Bauart/Formen/Maße/Materialien, vorher nur 2), Allgemeine FAQ, CTA-Band, BreadcrumbList-Schema + sichtbare Breadcrumb ergänzt; fehlendes `main.js`-Script nachgetragen.
+- **Formen-Seite:** Title/Meta, Breadcrumb (sichtbar + Schema), Allgemeine FAQ vor dem CTA ergänzt; Teaser-Text „Typen“ → „Bauarten“ korrigiert (Content-Stand nachgezogen).
+- **Maße-Seite neu angelegt** (`/engineering/masse/`): alle Inhalte aus `content/engineering/masse.md` (Truckmaß-Standards, 19-Zoll-Einbauten, Türbreiten, Fahrzeug-Innenhöhen, Seecontainer, Luftfracht als Tabellen/Listen), Breadcrumb, Allgemeine FAQ, CTA-Band, BreadcrumbList-Schema. Neue Komponenten `.data-table`/`.text-section` (nur bestehende Tokens); Tabellen scrollen auf schmalen Viewports horizontal statt umzubrechen.
+- **`/rechtliches` neu angelegt:** Übersichtsseite (Links zu Impressum/Datenschutz, 4 AGB-PDF-Downloads mit Dateigröße) sowie `/rechtliches/impressum/` und `/rechtliches/datenschutz/` mit sichtbar markiertem Platzhaltertext. Footer und mobiles Menü auf allen 11 Seiten von `#`/Platzhalter auf echte Links umgestellt. Alte-URL-Redirects (`/impressum/`, `/datenschutzerklaerung/`, `/agb-2/`) als HTML-Kommentar dokumentiert – GitHub Pages kann keine echten Server-Redirects.
+- **Neue Breadcrumb-Komponente** (`.breadcrumb`) auf Engineering-Hauptseite, Formen, Maße, Rechtliches, Impressum, Datenschutz.
+- **Empfehlungs-Kacheln:** Case-Tile-Komponente (Bild + Text-Overlay per CSS, aus vorherigem Branch übernommen) mit den neuen textfreien Fotos getestet – `object-fit:cover` gleicht die unterschiedlichen Seitenverhältnisse (0,86–1,50) automatisch aus, kein Zuschnitt-Fix nötig. Branchen-Tag/Titel/Story-Text bleiben Platzhalter (Datenfelder in `content/startseite.md` noch nicht ausgefüllt, siehe B5).
+- **Nicht umgesetzt (HTML-Seiten fehlen komplett):** Bauart, Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme – daher auch die dort vorgesehenen FAQ-Einbindungen und der bauart-seitige Formen-Teaser nicht möglich. Bauart zusätzlich mit eigener Design-Entscheidung (Rating-Skala, „Light“-Suffix-Styling). Siehe C12 in `docs/open-decisions.md`.
+- `docs/open-decisions.md`, `docs/design-system.md`, `docs/seitenstruktur.md` entsprechend aktualisiert.
+
 ## 2026-09-28 (8) – Rechtsbereich auf Platzhalter und PDF-Downloads umgestellt
 - Entscheidung Jascha: Impressum und Datenschutzerklärung enthalten vorerst nur Platzhalter; die übernommenen Live-Texte samt Prüfpunkten wurden wieder entfernt.
 - AGB bekommen keine eigenen Seiten. Die vier Fassungen liegen als PDF unter `assets/downloads/` und werden auf `/rechtliches` als Download-Links geführt (Linktext = Dateiname).
