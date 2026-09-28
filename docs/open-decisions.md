@@ -13,15 +13,17 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Content
 | # | Punkt | Status | Notiz |
 |---|---|---|---|
-| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite (neue Reihenfolge Bauart → Formen) | offen | Text schreibt Claude Chat, Freigabe durch Jascha |
-| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien (Texte in Master-MD nicht enthalten, HTML hat nur Materialien + Bauformen) | offen | Kacheltexte schreiben |
-| C3 | Maße-Seite: H1, Intro, CTA, Schema.org fehlen | Aufgabe | |
-| C4 | Schema.org für Bauart, Formen, Maße | Aufgabe | gesammelt für Projektabschluss |
+| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-27) | Text in `content/engineering/flightcase-bauart.md`; Formen-Teaser führt zur Bauart („Typen“ → „Bauarten“). HTML-Umsetzung durch Claude Code offen |
+| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-27) | Hauptseite bleibt (Entscheidung Jascha: mit Prozess und Kacheln); Kacheltexte in `content/engineering/index.md`, HTML-Umsetzung durch Claude Code offen |
+| C3 | Maße-Seite: H1, Intro, CTA, Schema.org | erledigt (2026-09-27) | Content in `content/engineering/masse.md` ergänzt (2026-09-27), Freigabe Jascha + HTML-Seite durch Claude Code offen |
+| C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-27) | BreadcrumbList + Canonical/Robots in `content/`; Bauart/Formen zusätzlich Title, Meta, Breadcrumb. Einbau ins HTML durch Claude Code offen |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
-| C6 | Markenneutraler Versand zusätzlich in Engineering-Schritt 05 „Rundum-Service“? | offen | aktuell über Allgemeine FAQ gelöst |
-| C7 | Kontaktseite: eigener Intro-Text? (aktuell nur Formular, Info-Block, Allgemeine FAQ) | offen | Platzhalter im HTML sichtbar markiert (Mercedes-Vorbild, 2026-09-27), Text fehlt noch |
-| C8 | Impressum, Datenschutz, AGB: Inhalte der Live-Seite übernehmen; alte URLs `/datenschutzerklaerung/`, `/impressum/`, `/agb-2/` als Redirects erhalten | Aufgabe | |
+| C6 | Markenneutraler Versand: Platzierung | erledigt (2026-09-28) | Entscheidung Jascha: bleibt in der Allgemeinen FAQ, nicht in Schritt 05; Allgemeine FAQ wird zusätzlich auf Bauart, Formen, Maße, Fertigung, Über uns und PPWR eingebunden |
+| C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-27) | Text entschieden (2026-09-27): „Lass uns dein perfektes Case entwickeln.“ + Satz, steht in `content/kontakt.md`; Claude Code ersetzt den Platzhalter und setzt Title/Meta ein |
+| C8 | Impressum, Datenschutz, AGB; alte URLs als Redirects | Aufgabe | Entscheidung Jascha (2026-09-28): Impressum/Datenschutz vorerst nur Platzhalter, AGB ohne eigene Seiten als 4 PDF-Downloads unter `/rechtliches`. Offen: echte Texte später, HTML-Seiten + Redirects durch Claude Code |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
+| C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | in `content/engineering/index.md`; HTML-Umsetzung durch Claude Code offen |
+| C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
 
 ## Bilder
 | # | Punkt | Status |

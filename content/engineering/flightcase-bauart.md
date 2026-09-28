@@ -3,11 +3,15 @@ seite: Flightcase Bauart (Typen)
 url: /engineering/flightcase-bauart
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-25
+stand: 2026-09-27
 ---
 
 ### TYPEN (Unterseite) - final komplett
 URL: /engineering/flightcase-bauart
+
+**Title-Tag:** Flightcase Bauarten – leicht wie möglich, stabil wie nötig
+**Meta Description:** Leicht zu tragen und trotzdem sicher: Mit der passenden Materialkombination spart dein Flightcase Gewicht, ohne beim Schutz nachzugeben. Finde deine Bauart.
+**Breadcrumb:** Start > Engineering > Bauart
 
 **H1:** Flightcase Bauart (final)
 
@@ -56,11 +60,36 @@ kein direkter Flightcase-Bauart-Vergleich):
 Referenzbild. Fuer alle anderen 10 Flightcase-Bauarten (Standard bis Easy-Case Light) sowie
 alle 5 Eintraege der Gruppe 2 fehlen noch Bilder.
 
+**Nach der Bauart-Übersicht, vor dem finalen CTA – Teaser zu Formen (C1):**
+> **Deckel, Tür oder beides?**
+> Die Bauart entscheidet über Gewicht und Stabilität, die Bauform über den optimalen Zugriff
+> auf deinen Inhalt.
+> [Button: Zu den Bauformen -> /engineering/flightcase-formen]
+
 **CTA am Seitenende (final, identisch zum Muster):**
 > **Dein Case, egal wie speziell.**
 > Ob Standard oder kniffelig – wir finden gemeinsam eine Loesung, schneller und besser als du
 > denkst. Melde dich unverbindlich, per E-Mail oder Anruf.
 
-**Noch zu ergaenzen:** Schema.org (gesammelt fuer Seitenabschluss).
+**BreadcrumbList-Schema:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://dp-case.de"},
+    {"@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://dp-case.de/engineering"},
+    {"@type": "ListItem", "position": 3, "name": "Bauart", "item": "https://dp-case.de/engineering/flightcase-bauart"}
+  ]
+}
+```
+
+**Canonical/Robots:**
+```html
+<link rel="canonical" href="https://dp-case.de/engineering/flightcase-bauart" />
+<meta name="robots" content="index, follow" />
+```
+
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
 
 ---
