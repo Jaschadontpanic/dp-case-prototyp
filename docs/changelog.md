@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (2) – Engineering-Hauptseite vervollständigt
+- `content/engineering/index.md`: Title-Tag, Meta Description (156 Zeichen), Breadcrumb, H1 „Engineering“, Intro über dem Prozess, CTA und BreadcrumbList-Schema/Canonical ergänzt (Title/Meta fehlten bisher, siehe T5).
+- Intro nimmt die Leitfrage „Was soll dein Case können?“ und die Flexibilitäts-Aussage der Live-Seite sinngemäß auf (Vorlage Jascha), nicht wörtlich. Der Live-Text „Qualität“ wird nicht übernommen: dafür gibt es bereits „Qualität statt Zertifikate“ auf `content/standards-werte/index.md`.
+
 ## 2026-09-28 – Maße-Seite: 19-Zoll-Einbauten
 - `content/engineering/masse.md`: Abschnitt „19-Zoll-Einbauten“ ergänzt (19 Zoll = 482,6 mm, ca. 450 mm lichte Breite, Normen, 1 HE = 44,45 mm, halbe 19 Zoll nicht einheitlich genormt: 9,5 bzw. 10 Zoll). Grundlage für das geplante HE/U/RU-Glossar (C9).
 
