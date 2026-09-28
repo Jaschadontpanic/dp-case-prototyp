@@ -20,17 +20,17 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/engineering/flightcase-bauart` | `content/engineering/flightcase-bauart.md` | fertig (Bilder offen) | vorhanden (2026-09-28): 11 Bauarten + 5 „Weitere Leistungen“, Breadcrumb, Schema, FAQ, Teaser, alle Bilder Platzhalter (B1) |
 | `/engineering/flightcase-formen` | `content/engineering/flightcase-formen.md` | fertig | vorhanden (3 von 21 Bildern; Breadcrumb, Schema, FAQ, Teaser „Zu den Bauarten“ ergänzt) |
 | `/engineering/masse` | `content/engineering/masse.md` | fertig | vorhanden (neu angelegt 2026-09-28) |
-| `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | fehlt |
+| `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | vorhanden (2026-09-28): 1 Kachel „Plattenmaterialien“ (weitere Kategorien laut Content erst bei fertigem Content), Zielseite selbst fehlt |
 | `/engineering/materialien/plattenmaterialien` | `…/plattenmaterialien/index.md` | fertig | fehlt |
 | `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | fehlt |
 | `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | fehlt |
 | `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | fehlt |
 | `…/plattenmaterialien/phenolharz-statt-pvc` | `…/phenolharz-statt-pvc.md` | fertig | fehlt |
 | `/manufaktur` | `content/manufaktur/index.md` | fertig | vorhanden |
-| `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | fehlt (siehe C12) |
-| `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | fehlt (siehe C12) |
-| `/standards-werte` (URL offen, S1) | `content/standards-werte/index.md` | fertig | fehlt (siehe C12) |
-| `/standards-werte/ppwr-stellungnahme` (URL offen, S1) | `content/standards-werte/ppwr-stellungnahme.md` | fertig | fehlt (siehe C12) |
+| `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | vorhanden (2026-09-28), Werkstatt-Bilder Platzhalter (B3) |
+| `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | vorhanden (2026-09-28), Hero-Bild Platzhalter (B3) |
+| `/standards-werte` (URL offen, S1) | `content/standards-werte/index.md` | fertig | vorhanden (2026-09-28) |
+| `/standards-werte/ppwr-stellungnahme` (URL offen, S1) | `content/standards-werte/ppwr-stellungnahme.md` | fertig | vorhanden (2026-09-28) |
 | `/kontakt` | `content/kontakt.md` (Verweise) | fertig | vorhanden |
 | `/rechtliches` | `content/rechtliches/index.md` | fertig (Hub, AGB als 4 PDF-Downloads, Redirect-Tabelle) | vorhanden (2026-09-28) |
 | `/rechtliches/impressum` | `content/rechtliches/impressum.md` | Platzhalter, Inhalt folgt | vorhanden, sichtbarer Platzhalter (2026-09-28) |

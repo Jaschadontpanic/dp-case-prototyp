@@ -404,9 +404,11 @@
 
 /* ===== DATA-TABLE / TEXT-SECTION (Maße-Seite, 2026-09-28) - nur bestehende Tokens ===== */
 .text-section { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 30px; }
+.text-section h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 6px; }
 .text-section p, .text-section ul { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; max-width: 70ch; }
 .text-section ul { padding-left: 20px; margin-top: 8px; }
 .text-section li { margin-bottom: 6px; }
+.text-section a { color: var(--teal); font-weight: 600; text-decoration: underline; }
 .data-table-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 40px; overflow-x: auto; }
 .data-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: var(--fs-body-small); }
 .data-table th, .data-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #eee; white-space: nowrap; }

@@ -2,6 +2,15 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 4) – Verbleibende Seiten angelegt (C12)
+- `/engineering/materialien/`, `/manufaktur/fertigung/`, `/manufaktur/ueber-uns/`, `/standards-werte/`, `/standards-werte/ppwr-stellungnahme/` neu gebaut – reine Wiederverwendung bestehender Komponenten (`page-head`, `page-intro`, `text-section`, `hub-grid`, `breadcrumb`, FAQ, CTA-band), keine neuen Design-Werte.
+- Standards & Werte + PPWR-Stellungnahme mit `Schema: WebPage` (statt `BreadcrumbList`) gemäß Content-Vorgabe. Standards & Werte endet wie im Content vorgegeben mit „Qualität statt Zertifikate“ + wiederverwendetem Trust-Element (kein FAQ/CTA, nicht vorgesehen).
+- Über uns: 4 volle Team-Bios (Jascha, Oleg, Ole, Michaela) als Kacheln, Hero-Bild weiterhin Platzhalter (B3).
+- Manufaktur-Hub- und Engineering-Hub-Links (Fertigung, Über uns, Standards & Werte, Materialien) von `#`-Platzhaltern auf die neuen Seiten umgestellt.
+- Bugfix: Links in `.text-section` waren durch den globalen `a{color:inherit}`-Reset unsichtbar (grauer Fließtext-Ton) – jetzt `--teal`, unterstrichen.
+- C12 vollständig erledigt (Bauart war bereits zuvor fertig).
+
+
 ## 2026-09-28 (später, 3) – Bauart-Seite neu angelegt
 - `/engineering/flightcase-bauart/` neu gebaut: 11 Bauarten (alternierende Bild/Text-Zeile, Balken-Rating für Stabilität/Gewicht, „Light“/„Ultra Light“-Badge) + 5 „Weitere Leistungen“ als einfache Kacheln, Breadcrumb, BreadcrumbList-Schema, Teaser zu Formen, Allgemeine FAQ, CTA-Band.
 - Design mit Jascha per Mockup abgestimmt (3 Iterationen: Grundlayout, Mobile-Anpassung Schriftgröße/Seitenrand, Reihenfolge der Elemente gestapelt). Neue Komponente `.bauart-row` in `assets/css/components.css` und `docs/design-system.md` dokumentiert.
