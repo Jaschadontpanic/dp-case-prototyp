@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 – Case-Tile-Anforderungen dokumentiert (Unsere Empfehlungen)
+- Beim Testen einer geplanten Text-Overlay-Kachel für „Unsere Empfehlungen“ festgestellt: die 3 aktuellen Fotos enthalten Titel/Text/Tag/Button bereits als Pixel eingebrannt, nicht als Foto+Text getrennt nutzbar.
+- Anforderungen an Ersatzfotos + Komponenten-Entwurf (Case-Tile) in `docs/design-system.md` dokumentiert: was per CSS automatisiert wird (Verlauf, Radius, Hover-Zoom, Textposition) vs. was in der Bildbearbeitung passieren muss (Bildausschnitt, Seitenverhältnis, CI-Farbe in Reflexionen, ggf. Freisteller).
+- Neuer Punkt B5 in `docs/open-decisions.md`. Noch nicht umgesetzt – wartet auf textfreie Fotos.
+
 ## 2026-09-27 (Abend, 3) – Content-Änderungen per Pull Request
 - `docs/project-rules.md`: Content-Änderungen laufen wie technische Änderungen über Aufgaben-Branch und Pull Request statt über manuellen Datei-Upload auf `main` (Entscheidung Jascha). Workflow-Schritte 1–2 und Rolle „Jascha“ angepasst.
 

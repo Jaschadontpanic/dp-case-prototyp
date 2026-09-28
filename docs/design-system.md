@@ -42,6 +42,27 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 - **Kontakt**: Formular einspaltig (Inputs Radius 14px, Fokus teal), optionale Felder per `<details>`; Info-Block `--hell`, Radius 16px. Seit 2026-09-27 (Vorbild mercedes-benz.de-Kontaktformular): Label steht als kleine, teal-farbene Zeile IM umrandeten Feld (`.field`/`.field-label`, nur Kontaktseite), Radiobuttons „Bevorzugte Kontaktart" stehen untereinander statt nebeneinander, Absenden-Button rechtsbündig. Eingabefeld-Radius 14px gilt sitewide (vorher 8px, siehe `.contact-form input/select/textarea`).
 - **Footer** (`footer.site-footer`): #000, #ccc, 13px, zentriert, einzeilig.
 
+## Case-Tile (geplant, noch nicht gebaut)
+Ziel: „Unsere Empfehlungen“-Kacheln (`.cases-grid`, Startseite) sollen künftig nur noch **Bild + Text getrennt** benötigen (Titel, Story-Text, Branchen-Tag), statt wie bisher fertig bebilderte Kacheln mit eingebranntem Text zu verwenden. Optik soll dabei gleich bleiben (Verlauf, Branchen-Tag oben links, Titel/Text unten links, weiß).
+
+**Befund (2026-09-28):** Die aktuellen Fotos `cases-backstage-kaffeebar.jpg`, `cases-luftfahrt-schablonen-flightcase.jpg`, `cases-broadcast-pult-workstation.jpg` enthalten Titel, Story-Text, Branchen-Tag und Button bereits als Pixel im Bild (Export aus dem ursprünglichen Claude-Artifact-Mockup) – sie können nicht als Hintergrund für eine neue Text-Overlay-Kachel weiterverwendet werden. Es werden neue, textfreie Fotos benötigt (siehe B5 in `docs/open-decisions.md`).
+
+**Komponenten-Entwurf** (reine Wiederverwendung bestehender Werte, kein neuer Design-Wert): identischer Verlauf/Textposition wie `.vp-card` – `linear-gradient(to top, rgba(0,0,0,.85) 10%, rgba(0,0,0,0) 65%)`, Text unten links weiß (`--fs-card-title`/`--fs-body-small`), Branchen-Tag oben links (`--mono-font`, 11px, uppercase).
+
+**Was automatisiert per CSS passiert (einmalig umgesetzt, danach kein Aufwand mehr pro Kachel):**
+- Dunkler Verlauf von unten für Text-Lesbarkeit
+- Eckenradius 20px, Zuschnitt auf Kachelgröße (`object-fit: cover`)
+- Hover-Zoom (`scale(1.05)`)
+- Positionierung Branchen-Tag/Titel/Text
+- Responsives Umbrechen (Grid → 1 Spalte ≤900px)
+
+**Was in der Bildbearbeitung passieren muss, bevor ein Foto geliefert wird:**
+- Bildausschnitt so wählen, dass der untere Bereich nicht zu hell/detailreich ist (sonst schluckt es den Text-Kontrast trotz Verlauf)
+- Passendes Seitenverhältnis je Kachelgröße zuschneiden (3 normale Kacheln + 1 breite `span-2`-Kachel = unterschiedliche Formate)
+- CI-Farbe (Teal) dezent in Lichtreflexionen/Spiegelungen einbringen – gestalterische Retusche, nicht automatisierbar (würde sonst das ganze Bild einfärben statt selektiv einzelne Bereiche)
+- Freisteller/Hintergrund entfernen – nur falls Produktfoto statt Umgebungsfoto (bei den aktuellen 3 Motiven nicht relevant)
+- Kompression/Dateigröße übernimmt weiterhin Claude Code (mechanisch, keine Gestaltung)
+
 ## Aus anderen Seiten übernommene Elemente
 - **Prozess-Kacheln** (`engineering.html`): `.step` mit Rand #e6e6e2, Radius 24px; `.step-top` Verlauf `#000 → #112f2f`, Radius 24px; Icons 72×72px.
 - **Page-Head** (Unterseiten): `.page-head` 56px oben, H1 in `--headline-alt-font`.
