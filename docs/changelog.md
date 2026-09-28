@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 6) – Header: Logo-Bildfehler behoben, CTA-Button verkleinert
+- `logo-dont-panic.jpg` (zweizeiliges Logo „don't panic / die case-manufaktur GmbH“) hatte einen ins Bild einexportierten weißen Rand rechts (14px) und unten (10px) von Canvas 1512×420 – sichtbar als weißer Strich hinter „panic“ und Unterstreichung unter dem Untertitel. War kein CSS-Bug (Scroll-Logo-Crossfade selbst fehlerfrei, geprüft durch Ausblenden des Compact-Bildes), sondern im JPEG selbst. Bild auf den tatsächlichen Inhalt zugeschnitten (1499×411, reines Re-Crop ohne Skalierung/Neugestaltung), Kompakt-Logo war bereits fehlerfrei.
+- Header-CTA „Dein Projekt anfragen“ wirkte neben dem kompakten Logo zu dominant: Innenabstand nur im Header von 14px/26px auf 11px/21px reduziert (~20%, wie gewünscht), sitewide `.btn` (CTA-Bänder, Anrufen-Button, Formular-Button etc.) unverändert gelassen, da nur der Header gemeint war.
+
 ## 2026-09-28 – Hover-Zoom auf Produktkarten-Bildern
 - `.product-card-img img`: Hover-Zoom (`scale(1.05)`, `transition transform .35s ease`) ergänzt – identischer Effekt wie bei „Unsere Empfehlungen" (`.cases-grid`) auf der Startseite, kein neuer Design-Wert. Wirkt auf Produkte-Hub-Karten und die Silent-Rack-Highlight-Kacheln, da beide dieselbe Komponente nutzen.
 
