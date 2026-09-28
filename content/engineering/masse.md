@@ -3,7 +3,7 @@ seite: Maße
 url: /engineering/masse
 content-status: Content fertig (Freigabe Jascha ausstehend)
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-27
+stand: 2026-09-28
 ---
 
 ### MASSE (Unterseite, aus Truckmaß-Tabellenblatt) - final komplett
@@ -28,6 +28,11 @@ Produkte-Hub-Header)
 | US-Truckmass | 1200 x 800 |
 | 2/3 US-Truckmass | 800 x 800 |
 | 1/2 US-Truckmass | 600 x 800 |
+
+**19-Zoll-Einbauten:**
+- **19 Zoll** ist die genormte Breite der Frontplatte von Rack-Geräten: 482,6 mm. Zwischen den Rackschienen bleiben ca. 450 mm Platz für das Gerät. Genormt ist das in EIA-310, IEC 60297 und DIN 41494.
+- **HE (Höheneinheit)**, auch U oder RU genannt, ist die Höhe im Rack: 1 HE = 1,75 Zoll = 44,45 mm. Ein Gerät mit 2 HE ist also 88,9 mm hoch.
+- **Halbe 19 Zoll:** Viele kompakte Geräte sind nur halb so breit. Das ist allerdings nicht einheitlich genormt. Hersteller legen es unterschiedlich aus, meist als 9,5 Zoll (halbe 19 Zoll) oder als 10 Zoll (254 mm, Mini-Rack). Deshalb klären wir bei halben Racks immer das genaue Maß deiner Geräte.
 
 **Türbreiten:**
 - Heutiger Standard für Wohnräume in Deutschland: Türblatt 860 mm (Rohbaumaß 885 mm), lichte Durchgangsbreite ca. 825 mm.
@@ -58,7 +63,7 @@ Produkte-Hub-Header)
 - Hauptdeck (Frachtflugzeug), Palette PMC: Grundfläche min. 3175 x 2438 mm, Ladehöhe min. 2,44 m.
 - Wir stimmen die Maße bei Luftfracht auf deine Airline ab.
 
-*Quellen (Recherche 2026-09-27, intern, nicht auf Website): LKW – cargolo.com/de/lkw-masse; Container – containerbasis.de/informationen/containermasse; Luftfracht – dsv.com (PMC), en.wikipedia.org/wiki/Unit_load_device (LD3).*
+*Quellen (Recherche 2026-09-27, intern, nicht auf Website): LKW – cargolo.com/de/lkw-masse; Container – containerbasis.de/informationen/containermasse; Luftfracht – dsv.com (PMC), en.wikipedia.org/wiki/Unit_load_device (LD3); 19 Zoll – de.wikipedia.org/wiki/19-Zoll-Rack. Halbe 19 Zoll (nicht genormt, 9,5/10 Zoll): Angabe Jascha.*
 
 **CTA am Seitenende (identisch zum Muster der Bauart-Seite):**
 > **Dein Case, egal wie speziell.**
