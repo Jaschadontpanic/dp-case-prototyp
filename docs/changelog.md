@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (8) – Rechtsbereich auf Platzhalter und PDF-Downloads umgestellt
+- Entscheidung Jascha: Impressum und Datenschutzerklärung enthalten vorerst nur Platzhalter; die übernommenen Live-Texte samt Prüfpunkten wurden wieder entfernt.
+- AGB bekommen keine eigenen Seiten. Die vier Fassungen liegen als PDF unter `assets/downloads/` und werden auf `/rechtliches` als Download-Links geführt (Linktext = Dateiname).
+- `content/rechtliches/agb-*.md` gelöscht, `index.md`, `docs/seitenstruktur.md` und C8 entsprechend angepasst.
+
 ## 2026-09-28 (7) – Rechtstexte übernommen (C8)
 - Neuer Ordner `content/rechtliches/` mit Impressum, Datenschutzerklärung, 4 AGB-Varianten (Geschäftskunden, Verbraucher, eBay, Business Customers EN) und einer Übersichtsdatei `index.md` samt Redirect-Tabelle.
 - Quellen: Impressum und Datenschutzerklärung als Text von Jascha (Live-Stand), AGB aus 4 PDFs. Texte wörtlich übernommen, nur Umbrüche/Absätze bereinigt; jede Datei trägt einen Rechtstext-Hinweis (nicht umformulieren).

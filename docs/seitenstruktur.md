@@ -32,13 +32,9 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/standards-werte` (URL offen) | `content/standards-werte/index.md` | fertig | fehlt |
 | `/standards-werte/ppwr-stellungnahme` (URL offen) | `content/standards-werte/ppwr-stellungnahme.md` | fertig | fehlt |
 | `/kontakt` | `content/kontakt.md` (Verweise) | fertig | vorhanden |
-| Rechtliches (Übersicht) | `/rechtliches` | Hub + Redirect-Tabelle | Content fertig (2026-09-28) |
-| Impressum | `/rechtliches/impressum` | von Live-Seite, Prüfpunkte offen | Content fertig |
-| Datenschutzerklärung | `/rechtliches/datenschutz` | von Live-Seite, Prüfpunkte offen | Content fertig |
-| AGB Geschäftskunden | `/rechtliches/agb-geschaeftskunden` | PDF-Vorlage | Content fertig |
-| AGB Verbraucher | `/rechtliches/agb-verbraucher` | PDF-Vorlage, inkl. Widerrufsbelehrung | Content fertig |
-| AGB eBay | `/rechtliches/agb-ebay` | PDF-Vorlage | Content fertig |
-| T&C Business Customers (EN) | `/rechtliches/agb-business-customers-en` | PDF-Vorlage | Content fertig |
+| Rechtliches (Übersicht) | `/rechtliches` | Hub, AGB als 4 PDF-Downloads, Redirect-Tabelle | Content fertig (2026-09-28) |
+| Impressum | `/rechtliches/impressum` | Platzhalter, Inhalt folgt | Platzhalter (2026-09-28) |
+| Datenschutzerklärung | `/rechtliches/datenschutz` | Platzhalter, Inhalt folgt | Platzhalter (2026-09-28) |
 
 Reihenfolge Engineering-Unterseiten: Bauart → Formen → Maße → Materialien.
 
