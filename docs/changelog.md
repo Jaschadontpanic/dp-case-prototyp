@@ -99,6 +99,14 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 ## 2026-09-27 (Abend, 5) – Kompakt-Logo für Scroll-Header vorbereitet
 - `assets/images/global/logo-dont-panic-kompakt.jpg` neu: Zuschnitt aus `logo-dont-panic.jpg`, nur Wortmarke „don't panic“ ohne Zeile „die case-manufaktur GmbH“ (1499 × 279 px, schwarzer Hintergrund wie das Original). Noch nicht eingebunden; Umsetzung (großes Logo oben, Kompakt-Logo beim Scrollen, Header nach Vorbild mercedes-benz.de) durch Claude Code.
 
+## 2026-09-27 – Header: Scroll-Logo und Maße nach Vorbild mercedes-benz.de
+- Logo wechselt beim Scrollen (>24px) von zweizeilig/groß (Scroll-Position 0: 60px Desktop / 45px Mobile) auf einzeilig/kompakt (32px Desktop / 24px Mobile, `logo-dont-panic-kompakt.jpg`, neu aus dem Standard-Logo zugeschnitten). Crossfade per Opacity (`--transition-fast`, 220ms), kein `src`-Tausch, damit kein Flackern/Sprung.
+- Header-Innenabstand oben/unten wechselt von 18px auf 10px beim Scrollen; Gesamthöhe gescrollt = 76px (gemessene mercedes-benz.de-Headerhöhe, Desktop 1920px). Nav-Schrift, Button und ihre Größe bleiben in beiden Zuständen unverändert (Vorgabe Jascha) – Mercedes selbst hat keinen kompakten Scroll-Zustand, nur „oben“ oder „ganz ausgeblendet"; Vollständig-Ausblenden wurde bewusst verworfen (Navigation/CTA sollen beim Scrollen erreichbar bleiben).
+- Alt-Text in beiden Logo-Zuständen vereinheitlicht: „don't panic – die case-manufaktur GmbH" (vorher nur „don't panic").
+- Neue Tokens in `tokens.css`: `--header-pad-v`, `--header-pad-v-scrolled`, `--logo-h-top`, `--logo-h-top-mobile`, `--logo-h-scrolled`, `--logo-h-scrolled-mobile`, `--transition-fast`.
+- `assets/js/main.js`: Scroll-Listener setzt Klasse `.scrolled` auf `header.nav`; jetzt auch auf `engineering/index.html` und `manufaktur/index.html` eingebunden (fehlte bisher, da diese Seiten kein Telefon-Popup haben).
+- Bugfix während der Umsetzung: `header.nav .logo` hat als absolut positionierter Container ohne Eigenbreite (nur absolut positionierte Bild-Kinder) eine Shrink-to-fit-Breite von 0; die globale Regel `img{max-width:100%}` hat die Logo-Bilder dadurch auf 0px Breite gequetscht. Fix: `max-width:none` für die Logo-Bilder.
+
 ## 2026-09-27 (Abend, 4) – Kontaktseite: Einleitungssatz, Title, Meta (C7)
 - `content/kontakt.md`: Einleitung über dem Kontaktformular ergänzt („Lass uns dein perfektes Case entwickeln.“ / „Ein paar Angaben zu deinem Projekt genügen für den Start.“, Variante C, Entscheidung Jascha). Aufbau analog „Ruf uns an.“.
 - `content/kontakt.md`: Title-Tag („Kontakt – dein Case, egal wie speziell | don't panic“, greift CTA-Headline auf) und Meta Description (160 Zeichen) neu, da bisher fehlend (TODO im HTML).
