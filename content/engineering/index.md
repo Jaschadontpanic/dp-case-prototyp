@@ -3,7 +3,7 @@ seite: Engineering (Hauptseite)
 url: /engineering
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-25
+stand: 2026-09-28
 ---
 
 ## 17. ENGINEERING (Hauptseite + Formen-Unterseite) *(zuletzt aktualisiert: 2026-09-25)*
@@ -17,6 +17,18 @@ gute UX, waehrend URL-Slug und H1/Title-Tag das eigentliche Keyword "Flightcase"
 (SEO-Wert steckt in H1/Title/URL, nicht im Navigationstext).
 
 ### ENGINEERING - Hauptseite
+
+**Title-Tag:** Engineering – vom ersten Gespräch bis zum fertigen Case
+**Meta Description:** Verstehen, konzipieren, entwickeln, fertigen, liefern: So entsteht dein Flightcase bei don't panic in Hamburg – mit festen Ansprechpartnern. Jetzt anfragen.
+**Breadcrumb:** Start > Engineering
+
+**H1:** Engineering
+
+**Intro (über dem 5-Schritte-Prozess):**
+Was soll dein Case können, und was würde es perfekt machen? Mit dieser Frage fängt bei uns jedes
+Projekt an. Wir denken weiter als die Aufgabe, liefern Ideen und bauen dann genau dein Case –
+kein Auftrag ist uns zu kompliziert, zu kurzfristig, zu groß oder zu kleinteilig.
+
 Enthaelt den vollstaendigen 5-Schritte-Prozess (umgezogen von der Homepage, dort nur noch als
 Teaser-Kachel "Engineering, das den Unterschied macht" verlinkt):
 
@@ -56,6 +68,47 @@ Kontaktseite oder Zusatzsatz bei Rundum-Service.)
 Custom-Icon-Set fuer diese 5 Schritte wird im Design-Chat bereits gebaut (Verstehen:
 Dialog-Sprechblasen, Konzipieren: Stift+Skizze, Entwickeln: isometrischer 3D-Wuerfel,
 Fertigen: Zahnrad+Wuerfel, Rundum-Service: Schild mit Haken).
+
+**Alt-Texte der 5 Prozess-Icons (bisher `alt=""` im HTML, siehe T5):**
+| Datei | Alt-Text |
+|---|---|
+| prozess-01-verstehen.png | Icon Verstehen: zwei Sprechblasen im Dialog |
+| prozess-02-konzipieren.png | Icon Konzipieren: Stift über einer Skizze |
+| prozess-03-entwickeln.png | Icon Entwickeln: isometrischer 3D-Würfel |
+| prozess-04-fertigen.png | Icon Fertigen: Zahnrad mit Würfel |
+| prozess-05-rundum-service.png | Icon Rundum-Service: Schild mit Haken |
+
+**Hub-Kacheln (C2, nach dem 5-Schritte-Prozess, vor der Allgemeinen FAQ; Reihenfolge fest):**
+
+| Kachel | Überschrift | Text | Button |
+|---|---|---|---|
+| Bauart | Leicht wie möglich, stabil wie nötig | Die richtige Materialkombination für dein Equipment – vom Leichtgewicht bis zum unzerstörbaren Klassiker. | Zu den Bauarten -> /engineering/flightcase-bauart |
+| Formen | Schneller Zugriff, weniger Handgriffe | Deckel, Tür oder beides – die Bauform bestimmt, wie einfach du be- und entlädst. | Zu den Bauformen -> /engineering/flightcase-formen |
+| Maße | Passend für Inhalt und Transportweg | Durch die Tür, in den Sprinter, ins Flugzeug – wir planen die Maße für den ganzen Weg. | Zu den Maßen -> /engineering/masse |
+| Materialien | Das steckt in deinem Case | Vom Plattenmaterial bis zum letzten Verschluss – jede Komponente bewusst gewählt. | Zu den Materialien -> /engineering/materialien |
+
+**CTA am Seitenende (identisch zum Muster der Bauart-/Maße-Seite):**
+> **Dein Case, egal wie speziell.**
+> Ob Standard oder kniffelig – wir finden gemeinsam eine Loesung, schneller und besser als du
+> denkst. Melde dich unverbindlich, per E-Mail oder Anruf.
+
+**BreadcrumbList-Schema:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://dp-case.de"},
+    {"@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://dp-case.de/engineering"}
+  ]
+}
+```
+
+**Canonical/Robots:**
+```html
+<link rel="canonical" href="https://dp-case.de/engineering" />
+<meta name="robots" content="index, follow" />
+```
 
 **+ Allgemeine FAQ (zentrales Element, siehe Abschnitt ganz oben im Dokument) danach anfuegen.**
 

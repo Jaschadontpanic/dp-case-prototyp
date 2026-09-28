@@ -3,11 +3,15 @@ seite: Flightcase Bauformen
 url: /engineering/flightcase-formen
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-25
+stand: 2026-09-27
 ---
 
 ### FORMEN (Unterseite) - final komplett
 URL: /engineering/flightcase-formen
+
+**Title-Tag:** Flightcase Bauformen – schneller Zugriff, weniger Handgriffe
+**Meta Description:** Deckel oben, Tür vorn oder beides: Die passende Flightcase Bauform bringt dich schneller an dein Equipment und spart Handgriffe beim Be- und Entladen.
+**Breadcrumb:** Start > Engineering > Formen
 
 **H1:** Flightcase Bauformen
 **Unterueberschrift:** Klassisch, kombiniert oder voellig neu gedacht – jede Bauform ist
@@ -68,18 +72,41 @@ Schriftart, KEIN einleitender Satz wie "auch bezeichnet als" - zu erklaerend fue
 | Alles ist moeglich | Deine Bauform ist nicht dabei? Wir entwickeln jede gewuenschte Loesung – frag uns einfach. |
 (Bild: Case, das sich in alle Richtungen oeffnet, mit Fragezeichen darin - motiviert zur Anfrage)
 
-**Nach den 21 Bauformen, vor dem finalen CTA - Teaser zu Typen:**
+**Nach den 21 Bauformen, vor dem finalen CTA – Teaser zur Bauart:**
 > **Mehr zur Bauart**
 > Bauform ist nur die halbe Wahrheit – die Qualitaet entscheidet sich auch durch die
-> eingesetzten Materialien und deren Kombination. Sieh dir unsere Typen an.
-> [Button: Zu den Typen -> /engineering/flightcase-bauart]
+> eingesetzten Materialien und deren Kombination. Sieh dir unsere Bauarten an.
+> [Button: Zu den Bauarten -> /engineering/flightcase-bauart]
 
-**Danach: CTA-Abschnitt (identisch zu Homepage/Produkte), KEIN FAQ auf dieser Seite** - die
-21 Kurztexte beantworten "was gibt es" bereits, ein FAQ wuerde eher allgemeine
-Engineering-Fragen behandeln, die besser auf die Engineering-Hauptseite gehoeren.
+**Danach: Allgemeine FAQ, dann CTA-Abschnitt (identisch zu Homepage/Produkte).**
+(Geaendert 2026-09-28, C6: Die fruehere Festlegung "KEIN FAQ auf dieser Seite" gilt nicht mehr.
+Es gibt weiterhin keine eigene, seitenspezifische FAQ - die 21 Kurztexte beantworten "was gibt
+es" bereits -, aber der zentrale Baustein Allgemeine FAQ wird wie auf allen anderen Seiten
+eingebunden.)
 
 **Quelldatei fuer Bild-Zuordnung:** Nutzer hat 21 PDF-Grafiken passend zu jeder Bauform
 designt, Dateinamen 1-21 durchnummeriert (z.B. "1_Klapp-Deckel-Case.pdf" etc.) - Zuordnung
 Bild-zu-Bauform ist über Dateiname eindeutig.
+
+**BreadcrumbList-Schema:**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Start", "item": "https://dp-case.de"},
+    {"@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://dp-case.de/engineering"},
+    {"@type": "ListItem", "position": 3, "name": "Formen", "item": "https://dp-case.de/engineering/flightcase-formen"}
+  ]
+}
+```
+
+**Canonical/Robots:**
+```html
+<link rel="canonical" href="https://dp-case.de/engineering/flightcase-formen" />
+<meta name="robots" content="index, follow" />
+```
+
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
 
 ---
