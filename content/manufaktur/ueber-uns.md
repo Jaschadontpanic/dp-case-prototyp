@@ -62,4 +62,6 @@ Michaela ist seit weit ueber 20 Jahren Teil des Teams und verantwortet vor allem
 und Rechnungswesen. Als gute Seele im Hintergrund haelt sie die Zahlen zusammen, die den
 Betrieb erst moeglich machen – und liebt es, wenn am Ende alles auf den Cent genau aufgeht.
 
+**+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende einbinden, vor dem finalen CTA (C6, 2026-09-28).**
+
 ---

@@ -32,6 +32,23 @@
 .cases-grid > *:hover img { transform: scale(1.05); }
 .cases-grid .span-2 { grid-column: span 2; }
 
+/* .case-tile: Bild-Kachel mit Text-Overlay (2026-09-28). Verlauf/Positionierung identisch
+   zu .vp-card (kein neuer Design-Wert) - Bild und Text werden getrennt geliefert. */
+.cases-grid .case-tile { position: relative; display: block; text-decoration: none; color: inherit; }
+.cases-grid .case-tile::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 10%, rgba(0,0,0,0) 65%);
+}
+.cases-grid .case-tile-tag {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: #fff;
+}
+.cases-grid .case-tile-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; color: #fff; }
+.cases-grid .case-tile-text h3 { font-size: var(--fs-card-title); margin-bottom: 4px; }
+.cases-grid .case-tile-text p { font-size: var(--fs-body-small); color: #e6e6e6; }
+.cases-grid .case-tile-tag.placeholder,
+.cases-grid .case-tile-text.placeholder * { color: #ccc; font-style: italic; }
+
 /* .cta-tile: ausschliesslich in index.html verwendet, hier global verfuegbar (Vorgabe T3) */
 .cases-grid .cta-tile {
   border-radius: 20px; background: var(--anthrazit); color: #fff; text-decoration: none;
@@ -137,6 +154,12 @@
 .team-card .quote { font-size: var(--fs-body-small); color: var(--grau-text); font-style: italic; margin-bottom: 16px; min-height: 60px; }
 .team-card .btn-link { font-size: 14px; }
 
+/* ===== BREADCRUMB (Unterseiten, 2026-09-28) - nur bestehende Tokens ===== */
+.breadcrumb { padding: 20px var(--side-pad) 0; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-small); color: var(--grau-text); }
+.breadcrumb a { color: var(--grau-text); text-decoration: none; }
+.breadcrumb a:hover { color: var(--teal); }
+.breadcrumb .sep { margin: 0 6px; color: #ccc; }
+
 /* ===== PAGE HEAD / PAGE INTRO (alle Unterseiten) =====
    Default = Wert aus engineering/engineering-formen/manufaktur/kontakt (10px, fs-h1).
    produkte.html hat abweichend 30px Bottom-Padding, kontakt.html abweichend fs-h2
@@ -187,26 +210,27 @@
 .product-hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 2045 / 867;
   display: flex; flex-direction: column; align-items: center;
-  padding-top: 48px;
-  overflow: hidden;
+  padding: 48px 0 24px;
+  /* Kein festes aspect-ratio/overflow:hidden mehr (Vorgabe: Produktbild muss auf
+     jeder Aufloesung komplett sichtbar sein, unabhaengig vom Bild-Seitenverhaeltnis) */
 }
 .product-hero h1 {
   font-family: var(--headline-alt-font);
   font-size: var(--fs-h2); /* 36px statt 52px, Mercedes-Groesse */
   color: var(--anthrazit);
   text-align: center;
-  margin: 0 0 auto;
+  margin: 0 0 24px;
 }
 .product-hero-imgwrap {
   position: relative;
   width: 80%;
-  margin-top: -10px;
+  max-width: 900px;
   display: flex; justify-content: center;
 }
 .product-hero-imgwrap img {
-  width: 100%; height: auto; object-fit: contain; position: relative; z-index: 2;
+  max-width: 100%; max-height: 65vh; width: auto; height: auto;
+  object-fit: contain; position: relative; z-index: 2;
 }
 .product-hero-shadow {
   position: absolute; left: 50%; bottom: 6%; transform: translateX(-50%);
@@ -220,9 +244,10 @@
 }
 .product-hero-bar .tagline { font-size: var(--fs-body-small); color: var(--anthrazit); max-width: 44ch; font-weight: 600; }
 @media (max-width: 900px) {
-  .product-hero { aspect-ratio: 4 / 5; padding-top: 32px; }
+  .product-hero { padding-top: 32px; }
   .product-hero h1 { font-size: 32px; }
   .product-hero-imgwrap { width: 82%; }
+  .product-hero-imgwrap img { max-height: 50vh; }
 }
 
 /* ===== BEGRIFFE-BOX / FORM-CARD / TYPEN-TEASER (Engineering – Flightcase-Formen) ===== */
@@ -283,13 +308,13 @@
    die generische .contact-... / .team-... Basis oben (auf anderen Seiten ungenutzt)
    nicht ueberschreibt. ===== */
 .contact-page { padding: 20px 0 70px; }
-/* Einleitungssatz (Vorbild Mercedes-Kontaktformular) – Text fehlt noch (offener Punkt C7,
-   docs/open-decisions.md), daher als Platzhalter sichtbar markiert statt selbst formuliert. */
+/* Einleitungssatz (Vorbild Mercedes-Kontaktformular, Text seit 2026-09-27 final, C7). */
 .contact-page .intro-headline {
   font-family: var(--headline-alt-font); font-weight: 600; font-size: var(--fs-h2);
-  color: var(--teal); line-height: 1.3; max-width: 720px; margin-bottom: 30px;
+  color: var(--teal); line-height: 1.3; max-width: 720px; margin-bottom: 8px;
 }
 .contact-page .intro-headline.placeholder { color: var(--grau-text); font-style: italic; font-weight: 400; }
+.contact-page .intro-headline-sub { font-size: var(--fs-body-small); color: var(--grau-text); max-width: 720px; margin-bottom: 30px; }
 .contact-page .call-cta-top {
   background: var(--hell); border-radius: 16px; padding: 28px 32px; margin-bottom: 36px;
 }
@@ -378,6 +403,83 @@
 .faq-item[open] summary::before { content: "\2212"; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; padding: 0 0 18px; }
+
+/* ===== DATA-TABLE / TEXT-SECTION (Maße-Seite, 2026-09-28) - nur bestehende Tokens ===== */
+.text-section { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 30px; }
+.text-section h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 6px; }
+.text-section p, .text-section ul { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; max-width: 70ch; }
+.text-section ul { padding-left: 20px; margin-top: 8px; }
+.text-section li { margin-bottom: 6px; }
+.text-section a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+.data-table-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 40px; overflow-x: auto; }
+.data-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: var(--fs-body-small); }
+.data-table th, .data-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #eee; white-space: nowrap; }
+.data-table th { background: var(--hell); color: var(--anthrazit); font-weight: 700; }
+.data-table td { color: var(--grau-text); }
+/* .spec-sheet: Label/Wert-Tabelle mit langen Textwerten (z.B. Technische Daten Produktseiten) -
+   normaler Zeilenumbruch statt nowrap, Label-Spalte schmal. */
+.data-table.spec-sheet { min-width: 0; }
+.data-table.spec-sheet th, .data-table.spec-sheet td { white-space: normal; }
+.data-table.spec-sheet th { width: 220px; }
+@media (max-width: 900px) {
+  .pg-silent-rack .data-table-wrap, .pg-silent-rack .text-section { padding-left: 48px; padding-right: 48px; }
+  .data-table.spec-sheet th { width: 130px; padding-left: 12px; padding-right: 8px; }
+  .data-table.spec-sheet td { padding-left: 8px; }
+}
+.placeholder-text { color: var(--grau-text); font-style: italic; }
+
+/* ===== RECHTLICHES (Übersicht + AGB-Downloads, 2026-09-28) ===== */
+.legal-list { list-style: none; max-width: var(--max-width); margin: 0 auto 20px; padding: 0 var(--side-pad); }
+.legal-list li { border-bottom: 1px solid #eee; padding: 14px 0; }
+.legal-list a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.legal-list a:hover { text-decoration: underline; }
+.download-list { list-style: none; max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 60px; }
+.download-list li { border-bottom: 1px solid #eee; padding: 14px 0; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.download-list a { color: var(--teal); font-weight: 600; text-decoration: none; }
+.download-list a:hover { text-decoration: underline; }
+.download-list .filesize { font-size: var(--fs-small); color: var(--grau-text); }
+
+/* ===== BAUART-ROW (Flightcase Bauart, 2026-09-28) - alternierende Bild/Text-Zeile,
+   nur bestehende Tokens. Reihenfolge per Grid-Areas: Desktop Bild neben Titel/Text/
+   Specs/Rating (abwechselnd links/rechts), Mobil gestapelt Titel -> Bild -> Text -> Rating. */
+.bauart-row {
+  display: grid; column-gap: 56px;
+  grid-template-columns: 42% 1fr;
+  grid-template-areas: "img title" "img text" "img specs" "img rating";
+  max-width: var(--max-width); margin: 0 auto 56px; padding: 0 var(--side-pad);
+}
+.bauart-row:nth-child(even) {
+  grid-template-columns: 1fr 42%;
+  grid-template-areas: "title img" "text img" "specs img" "rating img";
+}
+.bauart-row-img { grid-area: img; align-self: center; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: #f3f3f0; }
+.bauart-row-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bauart-row-img.placeholder {
+  background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px);
+  display: flex; align-items: center; justify-content: center; color: #b7b7b0; font-size: 13px;
+}
+.bauart-row-title { grid-area: title; display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; align-self: end; }
+.bauart-row-title h3 { font-size: var(--fs-card-title); color: var(--anthrazit); }
+.bauart-badge {
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid var(--teal); border-radius: 999px; padding: 3px 12px;
+}
+.bauart-row-text { grid-area: text; color: var(--grau-text); font-size: var(--fs-body-small); line-height: 1.6; margin-bottom: 18px; }
+.bauart-row-specs { grid-area: specs; font-family: var(--mono-font); font-size: 11px; color: #999; letter-spacing: .02em; margin-bottom: 22px; }
+.bauart-row-ratings { grid-area: rating; display: flex; flex-direction: column; gap: 14px; }
+.bauart-rating-label { display: flex; justify-content: space-between; font-size: var(--fs-small); color: var(--anthrazit); font-weight: 600; margin-bottom: 6px; }
+.bauart-rating-track { height: 8px; border-radius: 999px; background: var(--hell); overflow: hidden; }
+.bauart-rating-fill { height: 100%; border-radius: 999px; background: var(--teal); }
+@media (max-width: 900px) {
+  .pg-engineering-bauart .page-head, .pg-engineering-bauart .page-intro, .pg-engineering-bauart .breadcrumb { padding-left: 48px; padding-right: 48px; }
+  .bauart-row, .bauart-row:nth-child(even) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "img" "text" "specs" "rating";
+    padding-left: 0; padding-right: 0; row-gap: 14px;
+  }
+  .bauart-row-title, .bauart-row-text, .bauart-row-specs, .bauart-row-ratings { padding: 0 48px; align-self: auto; }
+  .bauart-row-img { border-radius: 0; }
+}
 
 /* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
 @media (max-width: 900px) {
