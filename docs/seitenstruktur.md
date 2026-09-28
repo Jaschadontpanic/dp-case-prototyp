@@ -17,7 +17,7 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/ladesaeulen-cases/auto-ladesaeule` | `content/ladesaeulen-cases/auto-ladesaeule.md` | fertig | fehlt |
 | `/kamera-cases/red-raptor-xl-case` | `content/kamera-cases/red-raptor-xl-case.md` | fertig | fehlt |
 | `/engineering` | `content/engineering/index.md` | fertig | vorhanden (4 Hub-Kacheln, Intro, Alt-Texte, Allgemeine FAQ, CTA, Breadcrumb-Schema) |
-| `/engineering/flightcase-bauart` | `content/engineering/flightcase-bauart.md` | fertig (Schema.org, Bilder offen) | fehlt (siehe C12) |
+| `/engineering/flightcase-bauart` | `content/engineering/flightcase-bauart.md` | fertig (Bilder offen) | vorhanden (2026-09-28): 11 Bauarten + 5 „Weitere Leistungen“, Breadcrumb, Schema, FAQ, Teaser, alle Bilder Platzhalter (B1) |
 | `/engineering/flightcase-formen` | `content/engineering/flightcase-formen.md` | fertig | vorhanden (3 von 21 Bildern; Breadcrumb, Schema, FAQ, Teaser „Zu den Bauarten“ ergänzt) |
 | `/engineering/masse` | `content/engineering/masse.md` | fertig | vorhanden (neu angelegt 2026-09-28) |
 | `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | fehlt |

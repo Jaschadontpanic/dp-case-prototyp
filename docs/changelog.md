@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 (später, 3) – Bauart-Seite neu angelegt
+- `/engineering/flightcase-bauart/` neu gebaut: 11 Bauarten (alternierende Bild/Text-Zeile, Balken-Rating für Stabilität/Gewicht, „Light“/„Ultra Light“-Badge) + 5 „Weitere Leistungen“ als einfache Kacheln, Breadcrumb, BreadcrumbList-Schema, Teaser zu Formen, Allgemeine FAQ, CTA-Band.
+- Design mit Jascha per Mockup abgestimmt (3 Iterationen: Grundlayout, Mobile-Anpassung Schriftgröße/Seitenrand, Reihenfolge der Elemente gestapelt). Neue Komponente `.bauart-row` in `assets/css/components.css` und `docs/design-system.md` dokumentiert.
+- Formen-Teaser und Engineering-Hub-Kachel „Bauart“ von `#`-Platzhalter auf die neue Seite verlinkt.
+- Alle 11 Bilder als „Bild folgt“-Platzhalter (siehe B1 in `docs/open-decisions.md`); C1, C4, C11, C12 (Bauart-Teil) entsprechend aktualisiert.
+
+
 ## 2026-09-28 (später, 2) – Content-Änderungen aus dem Merge vom 2026-09-28 umgesetzt
 - **Startseite:** Title-Tag/Meta Description eingesetzt (TODOs entfernt).
 - **Kontaktseite:** Platzhalter über dem Formular durch den finalen Einleitungssatz ersetzt (`.intro-headline`/`.intro-headline-sub`, neue Sub-Zeile analog „Ruf uns an.“-Block), Title/Meta eingesetzt.

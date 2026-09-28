@@ -13,23 +13,23 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Content
 | # | Punkt | Status | Notiz |
 |---|---|---|---|
-| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | teilweise erledigt (2026-09-28) | Formen-seitiger Teaser („Zu den Bauarten“) im HTML umgesetzt und verlinkt auf `#` (Ziel fehlt, siehe C12). Bauart-seitiger Teaser kann erst mit der Bauart-Seite selbst entstehen |
-| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-28) | 4 Kacheln im HTML umgesetzt (Bauart/Materialien verlinken vorerst auf `#`, siehe C12) |
+| C1 | Teaser am Ende der Bauart-Seite zur Formen-Seite | erledigt (2026-09-28) | Beide Teaser im HTML umgesetzt und verlinkt: Formen → Bauart, Bauart → Formen |
+| C2 | Engineering-Hauptseite: Hub-Kacheln für Bauart, Formen, Maße, Materialien | erledigt (2026-09-28) | 4 Kacheln im HTML umgesetzt; Bauart-Kachel verlinkt jetzt auf `/engineering/flightcase-bauart/`, Materialien weiterhin auf `#` (Seite fehlt, siehe C12) |
 | C3 | Maße-Seite: H1, Intro, CTA, Schema.org | erledigt (2026-09-28) | `/engineering/masse/` als neue HTML-Seite angelegt, inkl. aller Tabellen/Listen aus `content/engineering/masse.md` |
-| C4 | Schema.org für Bauart, Formen, Maße | teilweise erledigt (2026-09-28) | BreadcrumbList-Schema + sichtbare Breadcrumb bei Formen und Maße im HTML; Bauart erst mit eigener Seite (C12) |
+| C4 | Schema.org für Bauart, Formen, Maße | erledigt (2026-09-28) | BreadcrumbList-Schema + sichtbare Breadcrumb bei Bauart, Formen und Maße im HTML |
 | C5 | Finaler SEO-Alt-Text-Check aller Bilder | Aufgabe | |
-| C6 | Markenneutraler Versand: Platzierung | teilweise erledigt (2026-09-28) | Allgemeine FAQ im HTML ergänzt auf Engineering-Hauptseite, Formen, Maße; Bauart/Fertigung/Über uns/PPWR erst mit den jeweiligen Seiten (C12) |
+| C6 | Markenneutraler Versand: Platzierung | teilweise erledigt (2026-09-28) | Allgemeine FAQ im HTML ergänzt auf Engineering-Hauptseite, Bauart, Formen, Maße; Fertigung/Über uns/PPWR erst mit den jeweiligen Seiten (C12) |
 | C7 | Kontaktseite: Einleitungssatz über dem Kontaktformular | erledigt (2026-09-28) | Platzhalter im HTML durch den finalen Text ersetzt, Title/Meta gesetzt |
 | C8 | Impressum, Datenschutz, AGB; alte URLs als Redirects | erledigt (2026-09-28) | `/rechtliches/`, `/rechtliches/impressum/`, `/rechtliches/datenschutz/` als HTML-Seiten angelegt (Impressum/Datenschutz als sichtbarer Platzhalter), 4 AGB-PDF-Downloads verlinkt, Footer + mobiles Menü auf allen Seiten aktualisiert. Redirect-Mapping als HTML-Kommentar dokumentiert (keine echten Server-Redirects auf GitHub Pages möglich). Echte Impressum-/Datenschutztexte weiterhin offen |
 | C9 | Branchen-Seiten, Zubehör-Materialseiten, HE/U/RU-Glossar, `/wissen/tsa-schloss` | Aufgabe | siehe `docs/seitenstruktur.md` |
 | C10 | Maße-Seite: Datenkonflikte (1/2 Truckmaß, Einheit Truckmaß-Tabelle, Türbreiten) | erledigt (2026-09-27) | 1/2 = 600er Breite, Einheit mm, Türbreiten-Abschnitt neu (Entscheidungen Jascha) |
 | C11 | Engineering-Hauptseite: Title, Meta, H1, Intro, CTA, Schema | erledigt (2026-09-28) | im HTML umgesetzt, inkl. BreadcrumbList-Schema und 5 Alt-Texten der Prozess-Icons |
-| C12 | HTML-Seiten fehlen komplett: Bauart, Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme | offen | Content liegt in `content/` bereit, aber keine HTML-Seite gebaut (nur „Seite fehlt“-Platzhalterlinks in den Hubs). Bauart zusätzlich mit eigener Design-Entscheidung: Rating-Skala (Punkte/Balken) für Stabilität/Gewicht, Hervorhebung „Light“/„Ultra Light“-Suffix – Vorschlag folgt vor Umsetzung |
+| C12 | HTML-Seiten fehlen komplett: Materialien, Fertigung, Über uns, Standards & Werte/PPWR-Stellungnahme | offen | Content liegt in `content/` bereit, aber keine HTML-Seite gebaut (nur „Seite fehlt“-Platzhalterlinks in den Hubs). Bauart ist seit 2026-09-28 erledigt (`.bauart-row`-Komponente, Design von Jascha freigegeben: alternierende Bild/Text-Zeile, Balken-Rating, Light/Ultra-Light-Badge) |
 
 ## Bilder
 | # | Punkt | Status |
 |---|---|---|
-| B1 | Bauart-Seite: nur „Custom Cases“ hat Bild, 15 fehlen | Aufgabe |
+| B1 | Bauart-Seite: alle 11 Bauarten zeigen „Bild folgt“-Platzhalter, echte Fotos fehlen komplett | Aufgabe |
 | B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
