@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-28 – Hover-Zoom auf Produktkarten-Bildern
+- `.product-card-img img`: Hover-Zoom (`scale(1.05)`, `transition transform .35s ease`) ergänzt – identischer Effekt wie bei „Unsere Empfehlungen" (`.cases-grid`) auf der Startseite, kein neuer Design-Wert. Wirkt auf Produkte-Hub-Karten und die Silent-Rack-Highlight-Kacheln, da beide dieselbe Komponente nutzen.
+
 ## 2026-09-28 (später, 5) – Silent Rack vollständig gebaut (Vorlage für Produktseiten)
 - Produktbild-Fix + 7 Highlight-Kacheln aus PR #6 per Cherry-Pick übernommen (Branch war von vor dem Merge dieses PRs abgezweigt).
 - Fehlende Abschnitte ergänzt: Story, Use-Case, Breadcrumb (Ziel-Hub `/19-zoll-racks/` fehlt noch, `#`-Platzhalter), Konfigurierbarkeit + eigener CTA, Trust-Zeile, produkteigene FAQ (6 Fragen), Technische-Daten-Tabelle, Rating Stabilität/Gewicht als Balken (Wiederverwendung der Bauart-Komponente), Branchen-Tags (Wiederverwendung `.bauart-badge`), Kundenreferenz, Allgemeine FAQ, abschließendes CTA-Band, 3 Schema.org-Blöcke (BreadcrumbList, Product, FAQPage).
