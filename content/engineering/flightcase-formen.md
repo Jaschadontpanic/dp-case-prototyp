@@ -78,9 +78,11 @@ Schriftart, KEIN einleitender Satz wie "auch bezeichnet als" - zu erklaerend fue
 > eingesetzten Materialien und deren Kombination. Sieh dir unsere Bauarten an.
 > [Button: Zu den Bauarten -> /engineering/flightcase-bauart]
 
-**Danach: CTA-Abschnitt (identisch zu Homepage/Produkte), KEIN FAQ auf dieser Seite** - die
-21 Kurztexte beantworten "was gibt es" bereits, ein FAQ wuerde eher allgemeine
-Engineering-Fragen behandeln, die besser auf die Engineering-Hauptseite gehoeren.
+**Danach: Allgemeine FAQ, dann CTA-Abschnitt (identisch zu Homepage/Produkte).**
+(Geaendert 2026-09-28, C6: Die fruehere Festlegung "KEIN FAQ auf dieser Seite" gilt nicht mehr.
+Es gibt weiterhin keine eigene, seitenspezifische FAQ - die 21 Kurztexte beantworten "was gibt
+es" bereits -, aber der zentrale Baustein Allgemeine FAQ wird wie auf allen anderen Seiten
+eingebunden.)
 
 **Quelldatei fuer Bild-Zuordnung:** Nutzer hat 21 PDF-Grafiken passend zu jeder Bauform
 designt, Dateinamen 1-21 durchnummeriert (z.B. "1_Klapp-Deckel-Case.pdf" etc.) - Zuordnung
