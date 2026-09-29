@@ -16,18 +16,19 @@ stand: 2026-09-29
 Keine eigene Überschrift „Kontakt“ mehr (Entscheidung Jascha, 2026-09-29). Der Seitenkopf-Block
 `page-head` entfällt, die Seite startet mit der H1.
 
-**Reihenfolge der Seite:** H1 → Unterzeile → Anruf-Block → Formular → Info-Blöcke →
-Team-Kacheln → Allgemeine FAQ.
+**Reihenfolge der Seite:** H1 → Anruf-Block → Formular → Info-Blöcke → Team-Kacheln →
+Allgemeine FAQ.
 
-**H1 (über dem Formular, ersetzt den bisherigen Einleitungssatz):**
+**H1 (ersetzt den bisherigen Seitenkopf):**
 Lass uns dein perfektes Case entwickeln.
 
-**Zeile darunter:**
-Ein paar Angaben zu deinem Projekt genügen für den Start.
+Keine Unterzeile. Der frühere Satz „Ein paar Angaben zu deinem Projekt genügen für den Start.“
+entfällt (Entscheidung Jascha, 2026-09-29) – die Aussage steckt bereits im Aufklappbereich
+„Optional, aber hilfreich“ und im Feld „Kurzbeschreibung“.
 
 ## Anruf-Block
-Steht NICHT mehr ganz oben, sondern direkt unter der H1 und ihrer Unterzeile – also zwischen
-Unterzeile und Formular (Entscheidung Jascha, 2026-09-29).
+Steht NICHT mehr ganz oben, sondern direkt unter der H1 – also zwischen H1 und Formular
+(Entscheidung Jascha, 2026-09-29).
 
 Ohne Überschrift „Ruf uns an.“ (Entscheidung Jascha, 2026-09-29) – nur diese drei Zeilen:
 
@@ -103,9 +104,9 @@ Fragen zur Buchhaltung? Melde dich gern direkt bei Michaela.
 **+ Allgemeine FAQ (`_global/faq-allgemein.md`) am Seitenende, Überschrift „Häufige Fragen“.**
 
 ## Änderungen 2026-09-29 (Übersicht für Claude Code)
-1. Seitenkopf „Kontakt“ entfällt; der bisherige Einleitungssatz wird zur H1.
+1. Seitenkopf „Kontakt“ entfällt; der bisherige Einleitungssatz wird zur H1. Die Unterzeile „Ein paar Angaben zu deinem Projekt genügen für den Start.“ entfällt ersatzlos.
 2. Überschrift „Kontaktformular“ entfällt.
-2a. Anruf-Block wandert von ganz oben unter die H1 und ihre Unterzeile; Überschrift „Ruf uns an.“ entfällt, der Einleitungssatz lautet jetzt „Du telefonierst lieber oder brauchst sofort eine Lösung?“.
+2a. Anruf-Block wandert von ganz oben direkt unter die H1; Überschrift „Ruf uns an.“ entfällt, der Einleitungssatz lautet jetzt „Du telefonierst lieber oder brauchst sofort eine Lösung?“.
 3. Zwischenüberschriften neu: „Persönliche Angaben“ → „Wer du bist“, „Deine Kontaktdaten“ → „Wie wir dich erreichen“, „Deine Anfrage“ → „Worum es geht“. „Projektrahmen“ bleibt.
 4. „Deine Case Details“ entfällt ersatzlos; die Felder stehen direkt unter „Optional, aber hilfreich“.
 5. Neuer zweiter Datei-Upload direkt unter der Checkbox „Es gibt bereits ein Case …“ für Fotos des vorhandenen Cases. Der bisherige Upload unter „Projektrahmen“ bleibt unverändert.
