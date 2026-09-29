@@ -23,10 +23,10 @@
 
   /* ===== Header (Scroll-Logo, Vorbild mercedes-benz.de, 2026-09-27) ===== */
   --header-pad-v: 18px;           /* Innenabstand oben/unten, Scroll-Position 0 (bisheriger Wert) */
-  --header-pad-v-scrolled: 10px;  /* Innenabstand oben/unten, gescrollt -> Gesamthoehe 76px (= gemessene mercedes-benz.de-Headerhoehe) */
+  --header-pad-v-scrolled: 9px;   /* Innenabstand oben/unten, gescrollt (2026-09-29: ca. 10% kleiner als bisher 10px) */
   --logo-h-top: 60px;             /* Logo-Hoehe Desktop, Scroll-Position 0 (1,5x von 40px) */
   --logo-h-top-mobile: 45px;      /* Logo-Hoehe Mobile/Tablet (<=900px), Scroll-Position 0 (1,5x von 30px) */
-  --logo-h-scrolled: 32px;        /* Logo-Hoehe Desktop, gescrollt (einzeilige Wortmarke) */
-  --logo-h-scrolled-mobile: 24px; /* Logo-Hoehe Mobile/Tablet, gescrollt */
+  --logo-h-scrolled: 29px;        /* Logo-Hoehe Desktop, gescrollt (2026-09-29: ca. 10% kleiner als bisher 32px) */
+  --logo-h-scrolled-mobile: 22px; /* Logo-Hoehe Mobile/Tablet, gescrollt (2026-09-29: ca. 10% kleiner als bisher 24px) */
   --transition-fast: 220ms ease;  /* Logo-Crossfade, Padding-Uebergang */
 }
