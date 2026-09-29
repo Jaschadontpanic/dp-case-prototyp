@@ -3,7 +3,7 @@ seite: Manufaktur (Hub)
 url: /manufaktur
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 15
-stand: 2026-09-25
+stand: 2026-09-29
 ---
 
 ### MANUFAKTUR (Hub-Seite)
@@ -13,11 +13,15 @@ URL: /manufaktur
 **Meta Description:** Von der Werkstatt bis zum Team: Erfahre, wer und was hinter jedem
 don't panic Flightcase steckt.
 **Breadcrumb:** Start > Manufaktur
-**H1:** Manufaktur
+**H1 (geändert 2026-09-29, vorher nur „Manufaktur“):** Alles unter einem Dach, von der Idee bis zum fertigen Case
+(Begründung: Das Etikett „Manufaktur“ steht schon in Navigation und Breadcrumb. Die H1 nennt
+stattdessen den Nutzen. Die Kundennutzen-Zeile darunter beginnt dadurch doppelt – sie wird
+gekürzt, siehe unten.)
 
-**Kundennutzen-Zusammenfassung (kurz, direkt unter H1):**
-Alles unter einem Dach, dieselben Ansprechpartner von Anfang bis Ende, Cases fuer 20+ Jahre –
-das steckt hinter jedem don't panic Flightcase.
+**Kundennutzen-Zusammenfassung (kurz, direkt unter H1; gekürzt 2026-09-29, weil „Alles unter
+einem Dach“ jetzt in der H1 steht):**
+Dieselben Ansprechpartner von Anfang bis Ende und Cases, die 20+ Jahre halten – das steckt
+hinter jedem don't panic Flightcase.
 
 **3 Teaser-Kacheln (Bild + Kurztext + "Mehr erfahren"-Link, Produktkarten-Prinzip):**
 - **Fertigung** – Wir arbeiten mit CNC-Praezision, erfahrenen Casebauern und beherrschen

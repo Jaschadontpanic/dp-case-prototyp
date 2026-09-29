@@ -3,7 +3,7 @@ seite: Produkte (Hub)
 url: /produkte
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 16
-stand: 2026-09-25
+stand: 2026-09-29
 ---
 
 ## 16. PRODUKTE (Hub-Seite, alle 10 Produkte) *(zuletzt aktualisiert: 2026-09-25)*
@@ -13,9 +13,22 @@ URL: /produkte
 **Meta Description:** Von Racks ueber Moebel-Cases bis Kamera-Cases – ein Ueberblick ueber
 unsere individuell gefertigten Flightcases. Jetzt entdecken.
 **Breadcrumb:** Start > Produkte
-**H1:** Produkte
-**Intro:** Individuelle Loesungen fuer jede Herausforderung.
-(korrigiert von "Jedes Case ein Unikat..." - Unikat widerspricht dem eigenen Serienangebot)
+**H1 (geändert 2026-09-29, vorher nur „Produkte“):** Individuelle Lösungen für jede Herausforderung
+(Das Etikett „Produkte“ steht bereits in Navigation und Breadcrumb. Der bisherige Intro-Satz
+wird zur H1, damit der Seitenkopf einen Nutzen transportiert.)
+
+**Header-Bild (neu 2026-09-29):**
+Der Seitenkopf bekommt ein Bild im Hintergrund, darüber H1 und Trust-Zeile. Bild noch offen –
+bis dahin `assets/images/startseite/hero-case-foto.jpg` als Platzhalter.
+
+**Trust-Zeile im Header (über dem Bild, unter der H1):**
+30 Jahre Lösungen für anspruchsvolle Partner – über 2.000 Konstruktionen, 100 % individuell.
+
+(Entscheidung 2026-09-29: Die vollständige Kundenliste des Trust-Elements wird NICHT über das
+Bild gelegt. Sie hat 8 fein abgestufte Größenstufen und Blocksatz und wird über einem Foto
+unleserlich; außerdem erscheint sie bereits auf Startseite und Standards & Werte. Stattdessen
+steht hier nur die Headline plus zwei Kennzahlen aus der Startseiten-Statistik. Wenn die
+komplette Liste gewünscht ist: als eigener Abschnitt unter dem Header, nicht im Bild.)
 
 **Design-Referenz:** Produkte_vorschlag_2.png (Projektdatei) - dunkle Karten, 1 Bild pro Karte
 (NICHT die 3-Bild-Galerie mit Hover/Swipe, die urspruenglich fuer Branchen-Uebersichtsseiten

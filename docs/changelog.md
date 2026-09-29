@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Nachtrag 3) – Hub-Überschriften, Produkte-Header, Empfehlungs-Kacheln
+- H1 auf den Hub-Seiten von Etikett auf Nutzen umgestellt (Entscheidung Jascha): Engineering „Engineering, das dein Case zu Ende denkt“, Manufaktur „Alles unter einem Dach, von der Idee bis zum fertigen Case“, Produkte „Individuelle Lösungen für jede Herausforderung“ (bisheriger Intro-Satz). Die Kundennutzen-Zeile der Manufaktur-Seite wurde gekürzt, weil „Alles unter einem Dach“ jetzt in der H1 steht.
+- Produkte-Hub bekommt ein Header-Bild mit Text darüber. Über dem Bild stehen H1 und eine Trust-Zeile („30 Jahre Lösungen für anspruchsvolle Partner – über 2.000 Konstruktionen, 100 % individuell“), nicht die vollständige Kundenliste: die ist als Blocksatz mit 8 Größenstufen über einem Foto unleserlich und steht bereits auf zwei anderen Seiten. Bild bis auf Weiteres `hero-case-foto.jpg` als Platzhalter.
+- „Unsere Empfehlungen“ auf der Startseite: Die 5 Bild-Kacheln hatten bisher überall Platzhalter und weder Button noch Link. Jetzt je Kachel Branchen-Tag, Titel, Story, Button „Case ansehen“ und Ziel-URL (Barista Bar, Bohrschablonen-Case, Silent Rack, Wartungsset-Case, Schwing-Rack). Storys aus den bestehenden Produkttexten abgeleitet.
+- Es gibt nur 3 Fotos für 5 Kacheln, zwei werden vorerst doppelt verwendet (B5). Die beiden CTA-Kacheln „Weitere Produkte“ und „Engineering“ bekommen vorläufig Hintergrundbilder aus dem vorhandenen Bestand.
+- Hinweis: Keine der drei Hub-Seiten hatte bisher ein Header-Bild – nur die Startseite hat eins.
+
 ## 2026-09-29 (später, 8) – Wissen-Bereich, Breadcrumb sitewide entfernt, Button-Hover, Overflow-Fixes
 - **Wissen-Bereich (C9)**: `/wissen` (Übersicht, 2 Kacheln), `/wissen/hoeheneinheiten`, `/wissen/tsa-schloss` neu als HTML angelegt – ausschließlich bestehende Komponenten (`page-head`, `text-section`, `hub-grid.cols-2`, FAQ, `cta-band`), keine neuen Design-Werte. Interne Links wie gefordert gesetzt; Schwing-Rack und Kamera-Case-Produktseite existieren noch nicht als HTML (nur Silent Rack ist fertig) – dorthin `href="#"` mit TODO-Kommentar, gleiches Muster wie bei anderen fehlenden Seiten. Footer-Link „Wissen" auf allen 20 Seiten mit Footer ergänzt (Navigationsentscheidung: nur Footer, nicht Hauptnav – bereits früher im Chat bestätigt).
 - Punkt 3 der Aufgabe (Platzhalter-Link in der Kamera-Case-FAQ im HTML verlinken) bleibt offen – die Kamera-Case-Produktseite existiert noch nicht als HTML, es gibt nichts zu verlinken.

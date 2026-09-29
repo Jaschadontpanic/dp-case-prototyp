@@ -3,7 +3,7 @@ seite: Engineering (Hauptseite)
 url: /engineering
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-28
+stand: 2026-09-29
 ---
 
 ## 17. ENGINEERING (Hauptseite + Formen-Unterseite) *(zuletzt aktualisiert: 2026-09-25)*
@@ -22,7 +22,9 @@ gute UX, waehrend URL-Slug und H1/Title-Tag das eigentliche Keyword "Flightcase"
 **Meta Description:** Verstehen, konzipieren, entwickeln, fertigen, liefern: So entsteht dein Flightcase bei don't panic in Hamburg – mit festen Ansprechpartnern. Jetzt anfragen.
 **Breadcrumb:** Start > Engineering
 
-**H1:** Engineering
+**H1 (geändert 2026-09-29, vorher nur „Engineering“):** Engineering, das dein Case zu Ende denkt
+(Begründung: Das Etikett „Engineering“ steht schon in Navigation und Breadcrumb. Die H1 nimmt
+stattdessen die Formulierung der Startseiten-Kachel auf und nennt den Nutzen.)
 
 **Intro (über dem 5-Schritte-Prozess):**
 Was soll dein Case können, und was würde es perfekt machen? Mit dieser Frage fängt bei uns jedes
