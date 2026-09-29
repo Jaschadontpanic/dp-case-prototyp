@@ -158,24 +158,25 @@
 .team-card .quote { font-size: var(--fs-body-small); color: var(--grau-text); font-style: italic; margin-bottom: 16px; min-height: 60px; }
 .team-card .btn-link { font-size: 14px; }
 
-/* ===== BREADCRUMB (Unterseiten, 2026-09-28) - nur bestehende Tokens ===== */
-.breadcrumb { padding: 20px var(--side-pad) 0; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-small); color: var(--grau-text); }
-.breadcrumb a { color: var(--grau-text); text-decoration: none; }
-.breadcrumb a:hover { color: var(--teal); }
-.breadcrumb .sep { margin: 0 6px; color: #ccc; }
-
 /* ===== PAGE HEAD / PAGE INTRO (alle Unterseiten) =====
    Default = Wert aus engineering/engineering-formen/manufaktur/kontakt (10px, fs-h1).
    produkte.html hat abweichend 30px Bottom-Padding, kontakt.html abweichend fs-h2
    statt fs-h1 -> als Original-Unterschiede per Body-Klasse erhalten. */
 .page-head { padding: 56px var(--side-pad) 10px; max-width: var(--max-width); margin: 0 auto; }
-.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); }
+.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; }
 .page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
 .pg-produkte .page-head { padding-bottom: 30px; }
 .pg-engineering .page-intro,
 .pg-engineering-formen .page-intro,
 .pg-manufaktur .page-intro { padding-bottom: 26px; max-width: 70ch; }
 .pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
+/* Seit 2026-09-29: bei <=900px 48px statt 120px Seitenrand (wie Bauart-Row/Silent-Rack/
+   Trust-Liste) - bei laengeren H1 (z.B. "HE, U und RU - Hoeheneinheiten im Rack",
+   "PPWR-Stellungnahme") blieb bei 120px nur ~150px Textbreite, dadurch echter horizontaler
+   Overflow auf schmalen Viewports (gemessen: scrollWidth > clientWidth). */
+@media (max-width: 900px) {
+  .page-head, .page-intro { padding-left: 48px; padding-right: 48px; }
+}
 .section-heading { padding: 40px var(--side-pad) 20px; max-width: var(--max-width); margin: 0 auto; }
 .section-heading h2 { font-size: var(--fs-h2); color: var(--anthrazit); }
 
@@ -185,7 +186,15 @@
   display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
   padding: 0 var(--side-pad) 80px; max-width: var(--max-width); margin: 0 auto;
 }
-@media (max-width: 900px) { .hub-grid, .hub-grid-single { grid-template-columns: 1fr; } }
+/* .cols-2: 2-Spalten-Modifier statt Inline-Style (2026-09-29) - ein Inline-
+   grid-template-columns hatte hoehere Spezifitaet als die 900px-Media-Query
+   und verhinderte so den Umbruch auf 1 Spalte bei schmalen Viewports. */
+.hub-grid.cols-2 { grid-template-columns: repeat(2,1fr); }
+.hub-grid.cols-4 { grid-template-columns: repeat(4,1fr); }
+@media (max-width: 900px) {
+  .hub-grid, .hub-grid-single { grid-template-columns: 1fr; }
+  .hub-grid.cols-2, .hub-grid.cols-4 { grid-template-columns: 1fr; }
+}
 .hub-card { border: 1px solid #eee; border-radius: 16px; padding: 28px 26px; background: #fff; display: flex; flex-direction: column; }
 .hub-card h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 12px; }
 .hub-card p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; margin-bottom: 18px; }
@@ -434,6 +443,7 @@
 
 /* ===== DATA-TABLE / TEXT-SECTION (Maße-Seite, 2026-09-28) - nur bestehende Tokens ===== */
 .text-section { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 30px; }
+@media (max-width: 900px) { .text-section { padding-left: 48px; padding-right: 48px; } }
 .text-section h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 6px; }
 .text-section p, .text-section ul { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; max-width: 70ch; }
 .text-section ul { padding-left: 20px; margin-top: 8px; }
@@ -450,7 +460,7 @@
 .data-table.spec-sheet th, .data-table.spec-sheet td { white-space: normal; }
 .data-table.spec-sheet th { width: 220px; }
 @media (max-width: 900px) {
-  .pg-silent-rack .data-table-wrap, .pg-silent-rack .text-section { padding-left: 48px; padding-right: 48px; }
+  .pg-silent-rack .data-table-wrap { padding-left: 48px; padding-right: 48px; }
   .data-table.spec-sheet th { width: 130px; padding-left: 12px; padding-right: 8px; }
   .data-table.spec-sheet td { padding-left: 8px; }
 }
@@ -499,7 +509,6 @@
 .bauart-rating-track { height: 8px; border-radius: 999px; background: var(--hell); overflow: hidden; }
 .bauart-rating-fill { height: 100%; border-radius: 999px; background: var(--teal); }
 @media (max-width: 900px) {
-  .pg-engineering-bauart .page-head, .pg-engineering-bauart .page-intro, .pg-engineering-bauart .breadcrumb { padding-left: 48px; padding-right: 48px; }
   .bauart-row, .bauart-row:nth-child(even) {
     grid-template-columns: 1fr;
     grid-template-areas: "title" "img" "text" "specs" "rating";
