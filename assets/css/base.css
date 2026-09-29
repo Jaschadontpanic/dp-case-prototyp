@@ -29,7 +29,9 @@ header.nav .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   position: relative;
   padding-top: var(--header-pad-v); padding-bottom: var(--header-pad-v);
-  padding-left: 48px; padding-right: 48px; /* Header/Nav bewusst NICHT auf 120px vergroessert */
+  /* Seit 2026-09-29: kein eigener Seitenrand mehr - .nav-inner ist auch .wrap,
+     links/rechts faellt auf var(--side-pad) zurueck, damit der Header-Inhalt
+     buendig mit dem Seiteninhalt darunter abschliesst (vorher fix 48px). */
   transition: padding var(--transition-fast);
 }
 header.nav.scrolled .nav-inner {
