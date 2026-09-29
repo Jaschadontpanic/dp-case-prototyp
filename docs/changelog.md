@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 – Kontaktseite überarbeitet
+- `content/kontakt.md`: Seitenkopf „Kontakt“ entfällt, der Einleitungssatz wird zur H1; Überschrift „Kontaktformular“ gestrichen.
+- Zwischenüberschriften im Formular vereinheitlicht (Wer du bist / Wie wir dich erreichen / Worum es geht); „Projektrahmen“ bleibt, „Deine Case Details“ entfällt – die Felder stehen direkt unter „Optional, aber hilfreich“.
+- Zweiter Datei-Upload für Fotos eines vorhandenen Cases direkt unter der zugehörigen Checkbox ergänzt; Upload unter „Projektrahmen“ unverändert.
+- Info-Blöcke umbenannt („Lieber direkt?“, „Komm vorbei“), Telefon/Zeiten dort entfernt (standen dreifach auf der Seite). Datenschutz-Checkbox neu formuliert und auf `/rechtliches/datenschutz` verlinkt. Tippfehler im Team-Zitat korrigiert. Fehlende Elemente aus der Master-MD (Button „Mehr erfahren“ je Team-Kachel, Michaela-Zusatz) vermerkt.
+
 ## 2026-09-29 (später, 4) – Kontaktseite: Ruf-uns-an-Bereich, Datei-Button, leichtere Eingabefeld-Schrift
 - Neue helle Button-Variante `.btn-outline-light` (weißer Hintergrund, dünner grauer Rand, dunkle Schrift) – Pendant zu `.btn-outline` für helle Flächen, Vorbild Header-Button (dünner Rand statt Vollfläche). Keine neuen Design-Werte, nur bestehende Farben neu kombiniert.
 - „Ruf uns an“-Bereich: Hintergrundkasten (`--hell`, Radius 16px) entfernt (Jascha: „sieht immer doof aus“) und auf `max-width:960px; margin:auto` gesetzt – jetzt bündig mit dem Kontaktformular darunter statt breiter/versetzt. Telefonnummer steht jetzt in einem `.btn-outline-light`-Button statt als Pfeil-Textlink.
