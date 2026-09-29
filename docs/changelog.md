@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 3) – Trust-Element: Blocksatz statt zentriert
+- `.trust-list .tier` (Firmen-Referenzliste unter „30 Jahre Lösungen für anspruchsvolle Partner“, auf Startseite und `standards-werte/index.html`) war zentriert – jede Zeile hing unterschiedlich weit von beiden Rändern weg. Auf Wunsch jetzt echter Blocksatz: jede Zeile beginnt/endet flush mit dem Container.
+- Reines `text-align:justify` hätte auch Leerzeichen INNERHALB mehrteiliger Firmennamen gestreckt (z. B. „Siemens AG“ auseinandergerissen) – stattdessen `display:flex;justify-content:space-between` je Zeile mit jedem Firmennamen in einem `<span>`, „·“-Trenner an den jeweils vorherigen Namen angehängt (bleibt beim Zeilenumbruch immer an seinem Namen, landet nie isoliert auf eigener Zeile). Keine Namen geändert, keine Bindestriche nötig – nur Markup/CSS.
+- Bei ≤900px zusätzlich 48px statt 120px Seitenrand (wie Bauart-Row/Silent-Rack), da bei 120px sonst zu wenig Platz für sinnvolle Zeilenlängen bleibt.
+- Geprüft auf Desktop/Tablet/Mobile auf beiden Seiten, die die Komponente nutzen.
+
 ## 2026-09-29 (später, 2) – Kontaktformular-Regression behoben (Breite/Zentrierung, Radio/Checkbox-Ausrichtung)
 - Fehler war eine verlorene Korrektur aus einem verwaisten, nie gemergten Commit (`ee99631`, 27.09.) auf dem alten Stand von `claude/loving-turing-hpufsz` – beim Neustart dieses Branches von `main` (nach Merge von PR #11) wurde nur oberflächlich per `grep` auf `field-label`-Anzahl geprüft statt das CSS visuell zu vergleichen, dadurch blieb der Bug unbemerkt in `main`.
 - `.contact-grid` hatte keine eigene Breite/Zentrierung, während `.contact-form` auf `max-width:640px` gedeckelt war → Formular hing schmal und linksbündig in der viel breiteren `.wrap`-Spalte. Fix: `max-width:960px; margin:0 auto` auf `.contact-grid`, `.contact-form` ohne eigenes `max-width` – Formular, Info-Block und Team-Karten teilen sich jetzt eine einheitliche zentrierte Spalte.
