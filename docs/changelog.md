@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 2) – Kontaktformular-Regression behoben (Breite/Zentrierung, Radio/Checkbox-Ausrichtung)
+- Fehler war eine verlorene Korrektur aus einem verwaisten, nie gemergten Commit (`ee99631`, 27.09.) auf dem alten Stand von `claude/loving-turing-hpufsz` – beim Neustart dieses Branches von `main` (nach Merge von PR #11) wurde nur oberflächlich per `grep` auf `field-label`-Anzahl geprüft statt das CSS visuell zu vergleichen, dadurch blieb der Bug unbemerkt in `main`.
+- `.contact-grid` hatte keine eigene Breite/Zentrierung, während `.contact-form` auf `max-width:640px` gedeckelt war → Formular hing schmal und linksbündig in der viel breiteren `.wrap`-Spalte. Fix: `max-width:960px; margin:0 auto` auf `.contact-grid`, `.contact-form` ohne eigenes `max-width` – Formular, Info-Block und Team-Karten teilen sich jetzt eine einheitliche zentrierte Spalte.
+- `.contact-page .contact-form label` (Spezifität durch Element+2 Klassen) hat mit `flex-direction:column` die spezifisch schwächeren Regeln für `.radio-inline`/`.checkbox-inline`/`.checkbox` überstimmt – Radios und Checkboxen standen dadurch gestapelt statt neben ihrem Label. Fix: Selektoren auf `.contact-page .contact-form label.radio-inline` bzw. `label.checkbox-inline`/`label.checkbox` verschärft (höhere Spezifität), `flex-direction:row` gewinnt jetzt.
+- Geprüft auf Desktop/Tablet/Mobile inkl. geöffnetem „Optional, aber hilfreich“-Bereich (4er-Checkbox-Reihe).
+
 ## 2026-09-29 – Header-Breite an Seiteninhalt angeglichen, Empfehlungs-Kacheln mit Mercedes-Verlauf
 - `header.nav .nav-inner` hatte einen eigenen, fest auf 48px gesetzten Seitenrand (Kommentar „bewusst NICHT auf 120px“) – dadurch war der Header-Inhalt (Logo, Nav, Button) breiter als der Seiteninhalt darunter (`--side-pad` 120px). Override entfernt, `.nav-inner` ist auch `.wrap` und fällt jetzt auf denselben `--side-pad` zurück – Header und Inhalt schließen auf allen Breakpoints bündig ab.
 - `.case-tile`-Verlauf (Startseite „Unsere Empfehlungen") nach Vorbild mercedes-benz.de „Unsere Empfehlungen" angepasst: Foto geht jetzt unten in einen durchgehend schwarzen Textblock über (`linear-gradient(to top, #000 25%, rgba(0,0,0,0) 55%)`) statt in einen durchgängig halbtransparenten Verlauf (vorher max. 85% Deckkraft). Bewusst nur `.case-tile` geändert, `.vp-card` („Mehr als nur gut verpackt") bleibt unverändert – kürzere Icon-Kacheln, andere Bildmotive, kein Mercedes-Vorbild dafür genannt.
