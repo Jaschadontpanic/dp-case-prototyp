@@ -101,6 +101,10 @@ header.nav .burger { display: none; }
   padding: 18px 4px; border-bottom: 1px solid #eee; font-size: 19px; color: var(--schwarz);
 }
 .mobile-menu-list a span { color: #bbb; font-size: 22px; }
+/* Seit 2026-09-29: wie der Header-Button (duenner Rand statt Vollflaeche), aber fuer den
+   weissen Menue-Hintergrund in Schwarz/Anthrazit statt Weiss - .btn-primary-Markup bleibt
+   unveraendert (17 Seiten), nur hier innerhalb .mobile-menu ueberschrieben. */
+.mobile-menu .btn-primary { background: transparent; color: var(--anthrazit); border: 1px solid var(--anthrazit); }
 .mobile-menu-footer { margin-top: 30px; font-size: 13px; color: #999; }
 
 /* ===== HERO ===== */

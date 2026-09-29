@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 6) – Mobilmenü-Button dezenter (wie Header-Button)
+- „Dein Projekt anfragen" im Mobilmenü war weiterhin teal-gefüllt (`.btn-primary`), obwohl das Menü einen weißen Hintergrund hat. Auf Wunsch jetzt wie der Header-Button: dünner Rand statt Vollfläche – hier in Anthrazit/Schwarz statt Weiß, da der Menü-Hintergrund hell ist.
+- Rein per CSS (`.mobile-menu .btn-primary`) überschrieben, keine HTML-Änderung nötig – betrifft automatisch alle 17 Seiten mit Mobilmenü (identisches, kopiertes Markup je Seite).
+
 ## 2026-09-29 (später, 5) – Burger-Menü-Breakpoint korrigiert (Header/Logo-Überlappung)
 - Burger sprang bisher erst bei 900px ein, aber „Kontakt" (letzter Nav-Link) hatte schon deutlich vorher weniger Abstand zum Logo als die Nav-Punkte untereinander (40px) – ab ca. 1300px überlappten sich Logo-Bild und „Kontakt" sogar sichtbar. Per Playwright exakt gemessen (echte Bildkante des Logos, nicht dessen 0px-breiter Positionierungs-Anker): Gleichstand bei 1379px, ab 1378px abwärts bereits weniger Abstand. Burger-Breakpoint auf `max-width:1380px` gesetzt (vorher 900px), nur für Nav-Links/Burger/Header-CTA/Logo-Größe – `.hero`/`.stats-row` bleiben bei 900px (eigenständiger Grund, nicht Teil des Nav-Problems).
 - Nebenbei gefunden und behoben: Der Burger-Button war auf schmalen Viewports (≤ca. 390px) teils gar nicht klickbar – das absolut positionierte, breitere Logo (inkl. des unsichtbaren, aber weiterhin klickblockierenden Crossfade-Bilds mit `opacity:0`) lag optisch über dem Burger und fing den Klick ab. Burger jetzt mit `position:relative; z-index:2` über das Logo gehoben (Logo `z-index:1`), Klick per Playwright-Test bestätigt.
