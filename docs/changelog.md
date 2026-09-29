@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 9) – Kontaktseite: Überschrift „Lass uns dein perfektes Case entwickeln.“ überarbeitet
+- `.contact-page .intro-headline`: Farbe von Teal auf Anthrazit geändert (wie alle anderen H1 im page-head, Teal wirkte hier unpassend als Fließtext-Farbe), Abstand oben 0 → 44px, Abstand unten 20px → 32px – auf Wunsch „passend zum Mercedes-Stil“, mehr Luft um die Überschrift.
+- Geprüft: Desktop/Tablet/Mobile (kein horizontaler Overflow).
+- Stichprobe auf Teal-Überschriften sitewide: Keine weiteren H1/H2-Überschriften in Teal gefunden – alle übrigen `color: var(--teal)`-Stellen sind kleine Labels/Kicker/Links/Fokus-Rahmen (bewusste Sekundärfarbe), keine Headlines.
+
 ## 2026-09-29 (später, 8) – Wissen-Bereich, Breadcrumb sitewide entfernt, Button-Hover, Overflow-Fixes
 - **Wissen-Bereich (C9)**: `/wissen` (Übersicht, 2 Kacheln), `/wissen/hoeheneinheiten`, `/wissen/tsa-schloss` neu als HTML angelegt – ausschließlich bestehende Komponenten (`page-head`, `text-section`, `hub-grid.cols-2`, FAQ, `cta-band`), keine neuen Design-Werte. Interne Links wie gefordert gesetzt; Schwing-Rack und Kamera-Case-Produktseite existieren noch nicht als HTML (nur Silent Rack ist fertig) – dorthin `href="#"` mit TODO-Kommentar, gleiches Muster wie bei anderen fehlenden Seiten. Footer-Link „Wissen" auf allen 20 Seiten mit Footer ergänzt (Navigationsentscheidung: nur Footer, nicht Hauptnav – bereits früher im Chat bestätigt).
 - Punkt 3 der Aufgabe (Platzhalter-Link in der Kamera-Case-FAQ im HTML verlinken) bleibt offen – die Kamera-Case-Produktseite existiert noch nicht als HTML, es gibt nichts zu verlinken.
