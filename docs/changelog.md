@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Doku) – Design-System mit dem Code abgeglichen
+- `docs/design-system.md`, Token-Tabelle: `--header-pad-v-scrolled` 10px → 9px, `--logo-h-scrolled` 32px → 29px, `--logo-h-scrolled-mobile` 24px → 22px. Die Werte waren am 2026-09-29 im Code geändert, in der Tabelle aber nicht nachgezogen (die Fließtext-Beschreibung war bereits korrekt).
+- `--side-pad`: Hinweis „Header bewusst 48px“ entfernt, der Header nutzt seit 2026-09-29 denselben Seitenrand wie der Inhalt.
+- Breakpoint-Zeile: gescrolltes Logo ≤900px 24px → 22px.
+- Abschnitt „Buttons“: Verweis ergänzt, dass der Header-CTA seit 2026-09-29 eine eigene Optik hat und diese Ausnahme nur im Header gilt.
+
 ## 2026-09-29 – Wissen-Bereich angelegt (Teil von C9)
 - Neuer Ordner `content/wissen/` mit Übersichtsseite, `hoeheneinheiten.md` (HE/U/RU, 19 Zoll, halbe Breite, Rechenweg) und `tsa-schloss.md` (Funktion, Länder, Grenzen, Empfehlung).
 - Jede Seite mit Title, Meta, Breadcrumb, H1, Intro, internen Links, Allgemeiner FAQ, CTA und BreadcrumbList-Schema.

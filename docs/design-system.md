@@ -23,19 +23,19 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--fs-stat-number` | 30px | Statistik-Zahlen, Kicker |
 | `--fs-small` | 14px | Labels |
 | `--max-width` | 1744px | Inhaltsbreite |
-| `--side-pad` | 120px | Seitenrand Inhalte (Header bewusst 48px) |
+| `--side-pad` | 120px | Seitenrand Inhalte; seit 2026-09-29 auch im Header (vorher dort fix 48px) |
 | `--header-pad-v` | 18px | Header-Innenabstand oben/unten, Scroll-Position 0 |
-| `--header-pad-v-scrolled` | 10px | Header-Innenabstand oben/unten, gescrollt |
+| `--header-pad-v-scrolled` | 9px | Header-Innenabstand oben/unten, gescrollt (seit 2026-09-29, vorher 10px) |
 | `--logo-h-top` | 60px | Logo-Höhe Desktop, Scroll-Position 0 |
 | `--logo-h-top-mobile` | 45px | Logo-Höhe ≤900px, Scroll-Position 0 |
-| `--logo-h-scrolled` | 32px | Logo-Höhe Desktop, gescrollt |
-| `--logo-h-scrolled-mobile` | 24px | Logo-Höhe ≤900px, gescrollt |
+| `--logo-h-scrolled` | 29px | Logo-Höhe Desktop, gescrollt (seit 2026-09-29, vorher 32px) |
+| `--logo-h-scrolled-mobile` | 22px | Logo-Höhe ≤900px, gescrollt (seit 2026-09-29, vorher 24px) |
 | `--transition-fast` | 220ms ease | Logo-Crossfade, Padding-Übergang im Header |
 
 ## Grundlagen
 - Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`.
 - `.wrap`: max-width + side-pad, zentriert.
-- Breakpoints: **1380px** (Nav → Burger, Logo 45px→24px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px). Formularzeilen zusätzlich bei 640px.
+- Breakpoints: **1380px** (Nav → Burger, Logo 45px→22px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px). Formularzeilen zusätzlich bei 640px.
 - Formsprache weich/rund: Radien 14–24px, Buttons als Pille (999px).
 
 ## Komponenten
@@ -43,7 +43,7 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
   - **Burger-Breakpoint** (seit 2026-09-29, eigener Wert statt 900px): per Playwright exakt an der echten Logo-Bildkante gemessen (nicht am 0px-breiten Positionierungs-Anker von `.logo`) – „Kontakt" (letzter Nav-Link) hatte schon deutlich vor 900px weniger Abstand zum Logo als die Nav-Punkte untereinander, ab ca. 1300px überlappten sich Logo und „Kontakt" sogar sichtbar. Exakter Umschlagpunkt zwischen 1378px und 1379px → Burger-Breakpoint jetzt `max-width:1380px`, nur für Nav-Links/Burger/Header-CTA/Logo-Größe (Grids/Hero bleiben bei 900px, eigenständiger Grund). Dabei gefunden: Burger-Button war auf schmalen Viewports teils nicht klickbar, weil das breitere, absolut positionierte Logo (inkl. unsichtbarem Crossfade-Bild mit `opacity:0`, das trotzdem Klicks abfängt) darüberlag – behoben mit `position:relative;z-index:2` auf `.burger` (Logo `z-index:1`).
   - **Scroll-Logo** (Vorbild mercedes-benz.de, 2026-09-27): Scroll-Position 0 → Innenabstand oben/unten 18px, Logo 60px (Desktop) / 45px (≤900px), zweizeilig („don't panic“ + „die case-manufaktur GmbH“). Ab 24px Scrollposition (Klasse `.scrolled` auf `header.nav`, gesetzt von `assets/js/main.js`) → Innenabstand 9px, Logo 29px (Desktop) / 22px (≤900px), einzeilig (`logo-dont-panic-kompakt.jpg`) – Werte seit 2026-09-29 ca. 10% kleiner als zuvor (vorher 10px/32px/24px, Gesamthöhe 76px). Zwei `<img>` übereinander, Wechsel per Opacity-Crossfade (`--transition-fast`, 220ms) statt `src`-Tausch, kein Flackern/Sprung. Alt-Text in beiden Zuständen „don't panic – die case-manufaktur GmbH“. Seit 2026-09-28: `logo-dont-panic.jpg` auf reinen Bildinhalt zugeschnitten (1499×411 statt 1512×420) – Original hatte einen mitexportierten weißen Rand rechts/unten, sichtbar als Strich hinter „panic“ und Unterstreichung unter dem Untertitel; `logo-dont-panic-kompakt.jpg` war bereits sauber.
   - **Header-CTA** (seit 2026-09-28, Stil seit 2026-09-29 überarbeitet): `header.nav .nav-inner > .btn` mit reduziertem Innenabstand 11px/21px (~20 % kleiner als `.btn`-Standard) – wirkte neben dem kompakten Logo sonst zu dominant. Stil seit 2026-09-29 dezenter: dünner 1px-Rand `rgba(255,255,255,0.6)`, transparenter Hintergrund statt teal-gefüllt (aus 14 Vorschlägen ausgewählt, Screenshots im Chat). Nach dem Scrollen (`.scrolled`) zusätzlich kleiner: Padding 10px/19px, Schrift 13px. Nur im Header, andere `.btn-primary`-Vorkommen (CTA-Bänder, Formular) bleiben teal-gefüllt und unverändert.
-- **Buttons** (`.btn`): 14px 26px, Radius 999px, 700, `--fs-nav`; `.btn-primary` teal/weiß (Ausnahme: im Mobilmenü seit 2026-09-29 per `.mobile-menu .btn-primary` auf dünnen Anthrazit-Rand + Anthrazit-Schrift umgestellt, Vorbild Header-Button, rein CSS-Override ohne HTML-Änderung); `.btn-outline` transparent mit weißem 2px-Rand (auf dunkel); `.btn-outline-light` (neu 2026-09-29) weißer Hintergrund mit dünnem grauen 1px-Rand + dunkler Schrift (helles Pendant zu `.btn-outline`, Vorbild Header-Button) – bisher auf der Kontaktseite (Telefonnummer-Button, Datei-Upload-Button); `.btn-link` teal mit Pfeil; `.btn-call` mit Telefon-Icon + Popup (`.phone-popup`).
+- **Buttons** (`.btn`): 14px 26px, Radius 999px, 700, `--fs-nav`; `.btn-primary` teal/weiß (Ausnahme: im Mobilmenü seit 2026-09-29 per `.mobile-menu .btn-primary` auf dünnen Anthrazit-Rand + Anthrazit-Schrift umgestellt, Vorbild Header-Button, rein CSS-Override ohne HTML-Änderung); `.btn-outline` transparent mit weißem 2px-Rand (auf dunkel); `.btn-outline-light` (neu 2026-09-29) weißer Hintergrund mit dünnem grauen 1px-Rand + dunkler Schrift (helles Pendant zu `.btn-outline`, Vorbild Header-Button) – bisher auf der Kontaktseite (Telefonnummer-Button, Datei-Upload-Button); `.btn-link` teal mit Pfeil; `.btn-call` mit Telefon-Icon + Popup (`.phone-popup`). **Ausnahme Header:** der CTA im Header hat seit 2026-09-29 eine eigene Optik (1px-Rand, transparent, kleineres Padding) – siehe Header-CTA oben. Diese Ausnahme gilt nur dort; überall sonst bleibt `.btn-primary` teal gefüllt.
 - **Hero** (`.hero`): Vollbild-Hintergrundbild, `aspect-ratio: 2045/867`; Verlauf links (95 % schwarz → 0 bei 30 %) und unten (90 % → 0 bei 22 %); H1 `--fs-h1`, Beschreibung max. 640px, #ddd.
 - **Stats-Zeile** (`.stats-row`): 6-Spalten-Grid, Kicker über 3 Spalten, 3 Stat-Items (Zahl `--fs-stat-number`, Label `--fs-small` #888).
 - **Wert-Kacheln** (`.vp-card`): 4-Spalten-Grid, 300px hoch, Radius 14px, Hintergrundbild mit Verlauf von unten (85 % → 0 bei 65 %), Text unten links weiß.
