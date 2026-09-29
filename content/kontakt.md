@@ -42,12 +42,13 @@ auf Desktop nebeneinander (Anruf links, Besuch rechts) oder direkt darüber, auf
 gestapelt. Gleiche Optik wie der Anruf-Block, damit beide als Paar gelesen werden.
 
 > Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.
-> Anfahrt ansehen →
 
-Der Link „Anfahrt ansehen“ führt auf eine Karte mit unserer Adresse:
-`https://www.google.com/maps/search/?api=1&query=Kurt-A.-K%C3%B6rber-Chaussee+73%2C+21033+Hamburg`
-(öffnet in neuem Tab). Offen: ob stattdessen eine eingebettete Karte gewünscht ist – das wäre
-datenschutzrelevant (Google Maps, siehe Datenschutzerklärung) und eine Design-Entscheidung.
+Darunter ein **Platzhalter für die Karte** (Entscheidung Jascha, 2026-09-29): sichtbare Fläche
+im Seitenverhältnis der späteren Karte, im HTML als Platzhalter markiert, z. B.
+`[Platzhalter: Karte mit Anfahrt – folgt.]`
+
+Welcher Kartendienst eingebunden wird, ist noch offen. Das ist datenschutzrelevant (bei Google
+Maps Einwilligung nötig, siehe Datenschutzerklärung) und wird vor dem Livegang entschieden.
 
 ## Kontaktformular
 Keine Überschrift „Kontaktformular“ – das Formular erklärt sich selbst.
@@ -129,9 +130,9 @@ Fragen zur Buchhaltung? Melde dich gern direkt bei Michaela.
 3. Zwischenüberschriften neu: „Persönliche Angaben“ → „Wer du bist“, „Deine Kontaktdaten“ → „Wie wir dich erreichen“, „Deine Anfrage“ → „Worum es geht“. „Projektrahmen“ bleibt.
 4. „Deine Case Details“ entfällt ersatzlos; die Felder stehen direkt unter „Optional, aber hilfreich“.
 5. Neuer zweiter Datei-Upload direkt unter der Checkbox „Es gibt bereits ein Case …“ für Fotos des vorhandenen Cases. Der bisherige Upload unter „Projektrahmen“ bleibt unverändert.
-6. Info-Blöcke: „Kontakt“ → „Lieber direkt?“ (nur E-Mail), „Adresse“ → „Komm vorbei“. Telefon/Zeiten entfallen (standen dreifach auf der Seite).
+6. Info-Blöcke: „Kontakt“ → „Lieber direkt?“ (nur E-Mail), „Adresse“ → „So findest du uns“. Telefon/Zeiten entfallen (standen dreifach auf der Seite).
 7. Datenschutz-Checkbox neu formuliert und mit Link auf `/rechtliches/datenschutz`.
 8. Tippfehler im Zitat von Jascha: „Dein Projekt“ → „dein Projekt“.
 9. Team-Kacheln: Button „Mehr erfahren“ je Kachel und Michaela-Zusatz ergänzen (fehlten gegenüber der Master-MD).
-10. (2026-09-29, Nachtrag) Neuer Besuchs-Block neben/über dem Anruf-Block: „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ + Link „Anfahrt ansehen“ auf eine Karte. Der untere Info-Block heißt dadurch „So findest du uns“ statt „Komm vorbei“.
+10. (2026-09-29, Nachtrag) Neuer Besuchs-Block neben/über dem Anruf-Block: „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für die Karte (kein Kartendienst einbinden). Der untere Info-Block heißt dadurch „So findest du uns“ statt „Komm vorbei“.
 11. (2026-09-29, Nachtrag) Platzhalter im Feld „Maße / Gewicht / Stückzahl des Equipments“ austauschen: statt Mischpult/Lautsprecher jetzt Steuerschrank/Ersatzteil-Baugruppe – branchenneutral statt Veranstaltungstechnik.

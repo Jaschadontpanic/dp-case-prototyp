@@ -3,9 +3,8 @@
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
 ## 2026-09-29 (Nachtrag 2) – Kontaktseite: Besuchs-Block ergänzt
-- `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ mit Link „Anfahrt ansehen“ auf eine Karte (Google-Maps-Suchlink mit der Firmenadresse, neuer Tab).
+- `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für eine Karte (Entscheidung Jascha: vorerst nur Platzhalter, kein Kartendienst – die Einbindung ist datenschutzrelevant und wird vor dem Livegang entschieden).
 - Der Info-Block unter dem Formular heißt deshalb jetzt „So findest du uns“ statt „Komm vorbei“, damit sich die Formulierung nicht doppelt.
-- Offen: ob statt des Links eine eingebettete Karte gewünscht ist – das wäre datenschutzrelevant und eine Design-Entscheidung.
 
 ## 2026-09-29 (Nachtrag) – Kontaktformular: Platzhalter branchenneutral
 - `content/kontakt.md`, Feld „Maße / Gewicht / Stückzahl des Equipments“: Beispieltext von Mischpult/Lautsprecher auf Steuerschrank/Ersatzteil-Baugruppe geändert (Entscheidung Jascha). Grund: Der bisherige Platzhalter kam aus der Veranstaltungstechnik und schränkte den Eindruck der Zielgruppe unnötig ein.
