@@ -14,7 +14,10 @@ stand: 2026-09-29
 
 ## Seitenkopf
 Keine eigene Überschrift „Kontakt“ mehr (Entscheidung Jascha, 2026-09-29). Der Seitenkopf-Block
-`page-head` entfällt, die Seite startet mit dem Anruf-Block.
+`page-head` entfällt, die Seite startet mit der H1.
+
+**Reihenfolge der Seite:** H1 → Unterzeile → Anruf-Block → Formular → Info-Blöcke →
+Team-Kacheln → Allgemeine FAQ.
 
 **H1 (über dem Formular, ersetzt den bisherigen Einleitungssatz):**
 Lass uns dein perfektes Case entwickeln.
@@ -22,14 +25,17 @@ Lass uns dein perfektes Case entwickeln.
 **Zeile darunter:**
 Ein paar Angaben zu deinem Projekt genügen für den Start.
 
-## Anruf-Block (über dem Formular, unverändert)
+## Anruf-Block
+Steht NICHT mehr ganz oben, sondern direkt unter der H1 und ihrer Unterzeile – also zwischen
+Unterzeile und Formular (Entscheidung Jascha, 2026-09-29).
+
 > **Ruf uns an.**
 > Du brauchst schnell eine Antwort oder sprichst lieber persönlich? Ruf uns doch einfach an.
 > 040 721 76 92 →
 > Mo.–Fr. 9–18 Uhr
 
 ## Kontaktformular
-Keine Überschrift „Kontaktformular“ mehr – das Formular erklärt sich selbst.
+Keine Überschrift „Kontaktformular“ – das Formular erklärt sich selbst.
 
 ### Pflichtteil
 
@@ -98,6 +104,7 @@ Fragen zur Buchhaltung? Melde dich gern direkt bei Michaela.
 ## Änderungen 2026-09-29 (Übersicht für Claude Code)
 1. Seitenkopf „Kontakt“ entfällt; der bisherige Einleitungssatz wird zur H1.
 2. Überschrift „Kontaktformular“ entfällt.
+2a. Anruf-Block wandert von ganz oben unter die H1 und ihre Unterzeile.
 3. Zwischenüberschriften neu: „Persönliche Angaben“ → „Wer du bist“, „Deine Kontaktdaten“ → „Wie wir dich erreichen“, „Deine Anfrage“ → „Worum es geht“. „Projektrahmen“ bleibt.
 4. „Deine Case Details“ entfällt ersatzlos; die Felder stehen direkt unter „Optional, aber hilfreich“.
 5. Neuer zweiter Datei-Upload direkt unter der Checkbox „Es gibt bereits ein Case …“ für Fotos des vorhandenen Cases. Der bisherige Upload unter „Projektrahmen“ bleibt unverändert.
