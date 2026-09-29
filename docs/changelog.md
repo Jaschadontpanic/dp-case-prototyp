@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 4) – Kontaktseite: Ruf-uns-an-Bereich, Datei-Button, leichtere Eingabefeld-Schrift
+- Neue helle Button-Variante `.btn-outline-light` (weißer Hintergrund, dünner grauer Rand, dunkle Schrift) – Pendant zu `.btn-outline` für helle Flächen, Vorbild Header-Button (dünner Rand statt Vollfläche). Keine neuen Design-Werte, nur bestehende Farben neu kombiniert.
+- „Ruf uns an“-Bereich: Hintergrundkasten (`--hell`, Radius 16px) entfernt (Jascha: „sieht immer doof aus“) und auf `max-width:960px; margin:auto` gesetzt – jetzt bündig mit dem Kontaktformular darunter statt breiter/versetzt. Telefonnummer steht jetzt in einem `.btn-outline-light`-Button statt als Pfeil-Textlink.
+- Datei-Upload: natives `<input type="file">` (hässlicher Browser-Standard-„Durchsuchen“-Button) optisch versteckt, sichtbares `<label for="...">` als `.btn-outline-light` übernimmt Klick/Tastatur ohne JS (native `label for`-Zuordnung löst den Datei-Dialog aus, geprüft).
+- Eingabefeld-Schrift (Input/Select/Textarea) von `--body-font` (Clear Sans **Bold** – wirkt auch bei `font-weight:400` fett, da der Schriftschnitt selbst fett ist) auf `--headline-alt-font` (Open Sans, echtes Regular vorhanden) umgestellt – wirkt jetzt deutlich weniger dick, näher am Mercedes-Vorbild. Nur Kontaktseiten-Formularfelder betroffen, keine andere Seite nutzt diesen Selektor.
+- Geprüft auf Desktop/Tablet/Mobile, Datei-Dialog per Playwright ausgelöst (funktioniert).
+- Hinweis: „das machen wir nirgends mehr“ (Hintergrundkästen) bewusst nur auf diesen einen Bereich angewendet – andere Kästen (z. B. Kontakt-Info-Block darunter, `--hell`-Flächen auf anderen Seiten) sind unverändert, da das eine größere Design-Entscheidung wäre (siehe Rückfrage im Chat).
+
 ## 2026-09-29 (später, 3) – Trust-Element: Blocksatz statt zentriert
 - `.trust-list .tier` (Firmen-Referenzliste unter „30 Jahre Lösungen für anspruchsvolle Partner“, auf Startseite und `standards-werte/index.html`) war zentriert – jede Zeile hing unterschiedlich weit von beiden Rändern weg. Auf Wunsch jetzt echter Blocksatz: jede Zeile beginnt/endet flush mit dem Container.
 - Reines `text-align:justify` hätte auch Leerzeichen INNERHALB mehrteiliger Firmennamen gestreckt (z. B. „Siemens AG“ auseinandergerissen) – stattdessen `display:flex;justify-content:space-between` je Zeile mit jedem Firmennamen in einem `<span>`, „·“-Trenner an den jeweils vorherigen Namen angehängt (bleibt beim Zeilenumbruch immer an seinem Namen, landet nie isoliert auf eigener Zeile). Keine Namen geändert, keine Bindestriche nötig – nur Markup/CSS.
