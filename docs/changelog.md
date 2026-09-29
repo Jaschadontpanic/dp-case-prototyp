@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 – Header-Breite an Seiteninhalt angeglichen, Empfehlungs-Kacheln mit Mercedes-Verlauf
+- `header.nav .nav-inner` hatte einen eigenen, fest auf 48px gesetzten Seitenrand (Kommentar „bewusst NICHT auf 120px“) – dadurch war der Header-Inhalt (Logo, Nav, Button) breiter als der Seiteninhalt darunter (`--side-pad` 120px). Override entfernt, `.nav-inner` ist auch `.wrap` und fällt jetzt auf denselben `--side-pad` zurück – Header und Inhalt schließen auf allen Breakpoints bündig ab.
+- `.case-tile`-Verlauf (Startseite „Unsere Empfehlungen") nach Vorbild mercedes-benz.de „Unsere Empfehlungen" angepasst: Foto geht jetzt unten in einen durchgehend schwarzen Textblock über (`linear-gradient(to top, #000 25%, rgba(0,0,0,0) 55%)`) statt in einen durchgängig halbtransparenten Verlauf (vorher max. 85% Deckkraft). Bewusst nur `.case-tile` geändert, `.vp-card` („Mehr als nur gut verpackt") bleibt unverändert – kürzere Icon-Kacheln, andere Bildmotive, kein Mercedes-Vorbild dafür genannt.
+
 ## 2026-09-28 (später, 6) – Header: Logo-Bildfehler behoben, CTA-Button verkleinert
 - `logo-dont-panic.jpg` (zweizeiliges Logo „don't panic / die case-manufaktur GmbH“) hatte einen ins Bild einexportierten weißen Rand rechts (14px) und unten (10px) von Canvas 1512×420 – sichtbar als weißer Strich hinter „panic“ und Unterstreichung unter dem Untertitel. War kein CSS-Bug (Scroll-Logo-Crossfade selbst fehlerfrei, geprüft durch Ausblenden des Compact-Bildes), sondern im JPEG selbst. Bild auf den tatsächlichen Inhalt zugeschnitten (1499×411, reines Re-Crop ohne Skalierung/Neugestaltung), Kompakt-Logo war bereits fehlerfrei.
 - Header-CTA „Dein Projekt anfragen“ wirkte neben dem kompakten Logo zu dominant: Innenabstand nur im Header von 14px/26px auf 11px/21px reduziert (~20%, wie gewünscht), sitewide `.btn` (CTA-Bänder, Anrufen-Button, Formular-Button etc.) unverändert gelassen, da nur der Header gemeint war.
