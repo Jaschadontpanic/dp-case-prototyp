@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Nachtrag) – Kontaktformular: Platzhalter branchenneutral
+- `content/kontakt.md`, Feld „Maße / Gewicht / Stückzahl des Equipments“: Beispieltext von Mischpult/Lautsprecher auf Steuerschrank/Ersatzteil-Baugruppe geändert (Entscheidung Jascha). Grund: Der bisherige Platzhalter kam aus der Veranstaltungstechnik und schränkte den Eindruck der Zielgruppe unnötig ein.
+
 ## 2026-09-29 (Doku) – Design-System mit dem Code abgeglichen
 - `docs/design-system.md`, Token-Tabelle: `--header-pad-v-scrolled` 10px → 9px, `--logo-h-scrolled` 32px → 29px, `--logo-h-scrolled-mobile` 24px → 22px. Die Werte waren am 2026-09-29 im Code geändert, in der Tabelle aber nicht nachgezogen (die Fließtext-Beschreibung war bereits korrekt).
 - `--side-pad`: Hinweis „Header bewusst 48px“ entfernt, der Header nutzt seit 2026-09-29 denselben Seitenrand wie der Inhalt.

@@ -58,7 +58,11 @@ Die Case-Angaben stehen direkt unter dem Aufklapp-Titel. Die frühere Zwischenü
 „Deine Case Details“ entfällt, der Aufklapp-Titel übernimmt ihre Rolle.
 
 - Beanspruchung (Kofferraum-Transport / Spedition / Flugtransport / Touring / Interner Transport)
-- Maße / Gewicht / Stückzahl des Equipments (Platzhalter: „z. B. 2x Mischpult, 60 x 40 x 30 cm, ca. 12 kg“)
+- Maße / Gewicht / Stückzahl des Equipments
+  Platzhalter (2 Zeilen, branchenneutral – bewusst kein Veranstaltungs-Equipment, damit sich auch Industrie- und Technikkunden angesprochen fühlen):
+  „z. B.
+  1x Steuerschrank, 60 x 40 x 30 cm, ca. 12 kg
+  4x Ersatzteil-Baugruppe, 80 x 30 x 30 cm, je ca. 8 kg“
 - Was ist dir am wichtigsten? (Mehrfachauswahl: Smartes Handling / Maximaler Schutz / Clevere Details / Minimales Gewicht)
 - Optik / Branding (Platzhalter: „z. B. Firmenfarbe, Logo, Corporate Design“)
 - Checkbox: Es gibt bereits ein Case, das als Vorlage dienen kann
@@ -114,3 +118,4 @@ Fragen zur Buchhaltung? Melde dich gern direkt bei Michaela.
 7. Datenschutz-Checkbox neu formuliert und mit Link auf `/rechtliches/datenschutz`.
 8. Tippfehler im Zitat von Jascha: „Dein Projekt“ → „dein Projekt“.
 9. Team-Kacheln: Button „Mehr erfahren“ je Kachel und Michaela-Zusatz ergänzen (fehlten gegenüber der Master-MD).
+10. (2026-09-29, Nachtrag) Platzhalter im Feld „Maße / Gewicht / Stückzahl des Equipments“ austauschen: statt Mischpult/Lautsprecher jetzt Steuerschrank/Ersatzteil-Baugruppe – branchenneutral statt Veranstaltungstechnik.
