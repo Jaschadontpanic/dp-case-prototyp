@@ -26,6 +26,15 @@ gute UX, waehrend URL-Slug und H1/Title-Tag das eigentliche Keyword "Flightcase"
 (Begründung: Das Etikett „Engineering“ steht schon in Navigation und Breadcrumb. Die H1 nimmt
 stattdessen die Formulierung der Startseiten-Kachel auf und nennt den Nutzen.)
 
+**Header-Bild (neu 2026-09-29):**
+`assets/images/engineering/header-engineering-zeichner.jpg` (1800 × 725, gleiches Seitenverhältnis
+wie das Hero der Startseite). Konstrukteur am CAD-Rechner, im Hintergrund die Werkstatt.
+Bearbeitet im Stil des Startseiten-Heros: entsättigt und abgedunkelt, CI-Teal (#2D8282) in
+Schatten und Lichtern, Abdunklung von links, oben und unten – jeweils bis zur Monitorkante.
+Der Bildschirm ist vom Effekt ausgenommen und bleibt hell; die Konstruktion und die farbigen
+Icons darauf sind in CI-Teal umgefärbt. Text steht links über dem dunklen Bereich, wie beim Hero.
+Alt-Text: „Konstrukteur bei don't panic entwickelt ein Flightcase am CAD-Rechner, im Hintergrund die Werkstatt“
+
 **Intro (über dem 5-Schritte-Prozess):**
 Was soll dein Case können, und was würde es perfekt machen? Mit dieser Frage fängt bei uns jedes
 Projekt an. Wir denken weiter als die Aufgabe, liefern Ideen und bauen dann genau dein Case –
