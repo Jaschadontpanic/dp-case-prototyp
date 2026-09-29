@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Nachtrag 2) – Kontaktseite: Besuchs-Block ergänzt
+- `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für eine Karte (Entscheidung Jascha: vorerst nur Platzhalter, kein Kartendienst – die Einbindung ist datenschutzrelevant und wird vor dem Livegang entschieden).
+- Der Info-Block unter dem Formular heißt deshalb jetzt „So findest du uns“ statt „Komm vorbei“, damit sich die Formulierung nicht doppelt.
+
+## 2026-09-29 (Nachtrag) – Kontaktformular: Platzhalter branchenneutral
+- `content/kontakt.md`, Feld „Maße / Gewicht / Stückzahl des Equipments“: Beispieltext von Mischpult/Lautsprecher auf Steuerschrank/Ersatzteil-Baugruppe geändert (Entscheidung Jascha). Grund: Der bisherige Platzhalter kam aus der Veranstaltungstechnik und schränkte den Eindruck der Zielgruppe unnötig ein.
+
 ## 2026-09-29 (später, 8) – Wissen-Bereich, Breadcrumb sitewide entfernt, Button-Hover, Overflow-Fixes
 - **Wissen-Bereich (C9)**: `/wissen` (Übersicht, 2 Kacheln), `/wissen/hoeheneinheiten`, `/wissen/tsa-schloss` neu als HTML angelegt – ausschließlich bestehende Komponenten (`page-head`, `text-section`, `hub-grid.cols-2`, FAQ, `cta-band`), keine neuen Design-Werte. Interne Links wie gefordert gesetzt; Schwing-Rack und Kamera-Case-Produktseite existieren noch nicht als HTML (nur Silent Rack ist fertig) – dorthin `href="#"` mit TODO-Kommentar, gleiches Muster wie bei anderen fehlenden Seiten. Footer-Link „Wissen" auf allen 20 Seiten mit Footer ergänzt (Navigationsentscheidung: nur Footer, nicht Hauptnav – bereits früher im Chat bestätigt).
 - Punkt 3 der Aufgabe (Platzhalter-Link in der Kamera-Case-FAQ im HTML verlinken) bleibt offen – die Kamera-Case-Produktseite existiert noch nicht als HTML, es gibt nichts zu verlinken.
