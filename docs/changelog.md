@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 10) – Silent-Rack: „Anrufen“-Button im Hero-Bar-Bereich korrigiert
+- `19-zoll-racks/silent-rack/index.html`, oberer Hero-Bar-Bereich (`.product-hero-bar`, heller Farbverlauf): „Anrufen“-Button nutzte `.btn-outline` (weißer Rand/weiße Schrift, für dunkle Flächen gedacht) – auf dem hellen Hintergrund praktisch unlesbar. Auf `.btn-outline-light` (schwarzer Rand/schwarze Schrift, bereits bestehende Komponente) umgestellt. Der zweite „Anrufen“-Button weiter unten im dunklen `.cta-band` bleibt unverändert bei `.btn-outline` (dort korrekt).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
+
 ## 2026-09-29 (später, 9) – Kontaktseite: Überschrift „Lass uns dein perfektes Case entwickeln.“ überarbeitet
 - `.contact-page .intro-headline`: Farbe von Teal auf Anthrazit geändert (wie alle anderen H1 im page-head, Teal wirkte hier unpassend als Fließtext-Farbe), Abstand oben 0 → 44px, Abstand unten 20px → 32px – auf Wunsch „passend zum Mercedes-Stil“, mehr Luft um die Überschrift.
 - Geprüft: Desktop/Tablet/Mobile (kein horizontaler Overflow).
