@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 2) – Kontaktformular-Regression behoben (Breite/Zentrierung, Radio/Checkbox-Ausrichtung)
+- Fehler war eine verlorene Korrektur aus einem verwaisten, nie gemergten Commit (`ee99631`, 27.09.) auf dem alten Stand von `claude/loving-turing-hpufsz` – beim Neustart dieses Branches von `main` (nach Merge von PR #11) wurde nur oberflächlich per `grep` auf `field-label`-Anzahl geprüft statt das CSS visuell zu vergleichen, dadurch blieb der Bug unbemerkt in `main`.
+- `.contact-grid` hatte keine eigene Breite/Zentrierung, während `.contact-form` auf `max-width:640px` gedeckelt war → Formular hing schmal und linksbündig in der viel breiteren `.wrap`-Spalte. Fix: `max-width:960px; margin:0 auto` auf `.contact-grid`, `.contact-form` ohne eigenes `max-width` – Formular, Info-Block und Team-Karten teilen sich jetzt eine einheitliche zentrierte Spalte.
+- `.contact-page .contact-form label` (Spezifität durch Element+2 Klassen) hat mit `flex-direction:column` die spezifisch schwächeren Regeln für `.radio-inline`/`.checkbox-inline`/`.checkbox` überstimmt – Radios und Checkboxen standen dadurch gestapelt statt neben ihrem Label. Fix: Selektoren auf `.contact-page .contact-form label.radio-inline` bzw. `label.checkbox-inline`/`label.checkbox` verschärft (höhere Spezifität), `flex-direction:row` gewinnt jetzt.
+- Geprüft auf Desktop/Tablet/Mobile inkl. geöffnetem „Optional, aber hilfreich“-Bereich (4er-Checkbox-Reihe).
+
 ## 2026-09-29 (später) – Header-CTA dezenter, gescrollter Header nochmal ~10% kleiner
 - 14 Stilvarianten für den Header-Button als Vorschau gebaut (Screenshots im Chat), Jascha hat Variante 7 gewählt: dünner 1px-Rand (`rgba(255,255,255,0.6)`), transparenter Hintergrund, statt bisher teal-gefüllt – nur `header.nav .nav-inner > .btn`, alle anderen `.btn-primary`-Vorkommen (CTA-Bänder, Formular) bleiben teal.
 - Zusätzlich nach dem Scrollen (`.scrolled`) nochmal kleiner: Button-Padding 10px/19px + Schrift 13px (statt 11px/21px), `--header-pad-v-scrolled` 9px (vorher 10px), `--logo-h-scrolled`/`--logo-h-scrolled-mobile` 29px/22px (vorher 32px/24px) – Gesamthöhe gescrollter Header ca. 10% kleiner als zuvor.
