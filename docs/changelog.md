@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Doku) – Design-System mit dem Code abgeglichen
+- `docs/design-system.md`, Token-Tabelle: `--header-pad-v-scrolled` 10px → 9px, `--logo-h-scrolled` 32px → 29px, `--logo-h-scrolled-mobile` 24px → 22px. Die Werte waren am 2026-09-29 im Code geändert, in der Tabelle aber nicht nachgezogen (die Fließtext-Beschreibung war bereits korrekt).
+- `--side-pad`: Hinweis „Header bewusst 48px“ entfernt, der Header nutzt seit 2026-09-29 denselben Seitenrand wie der Inhalt.
+- Breakpoint-Zeile: gescrolltes Logo ≤900px 24px → 22px.
+- Abschnitt „Buttons“: Verweis ergänzt, dass der Header-CTA seit 2026-09-29 eine eigene Optik hat und diese Ausnahme nur im Header gilt.
+
 ## 2026-09-29 (später, 4) – Kontaktseite: Ruf-uns-an-Bereich, Datei-Button, leichtere Eingabefeld-Schrift
 - Neue helle Button-Variante `.btn-outline-light` (weißer Hintergrund, dünner grauer Rand, dunkle Schrift) – Pendant zu `.btn-outline` für helle Flächen, Vorbild Header-Button (dünner Rand statt Vollfläche). Keine neuen Design-Werte, nur bestehende Farben neu kombiniert.
 - „Ruf uns an“-Bereich: Hintergrundkasten (`--hell`, Radius 16px) entfernt (Jascha: „sieht immer doof aus“) und auf `max-width:960px; margin:auto` gesetzt – jetzt bündig mit dem Kontaktformular darunter statt breiter/versetzt. Telefonnummer steht jetzt in einem `.btn-outline-light`-Button statt als Pfeil-Textlink.
