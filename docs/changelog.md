@@ -3,7 +3,7 @@
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
 ## 2026-09-29 – Kontaktseite überarbeitet
-- `content/kontakt.md`: Seitenkopf „Kontakt“ entfällt, der Einleitungssatz wird zur H1; Überschrift „Kontaktformular“ gestrichen. Der Anruf-Block „Ruf uns an.“ steht jetzt unter H1 und Unterzeile statt ganz oben.
+- `content/kontakt.md`: Seitenkopf „Kontakt“ entfällt, der Einleitungssatz wird zur H1; Überschrift „Kontaktformular“ gestrichen. Der Anruf-Block steht jetzt unter H1 und Unterzeile statt ganz oben; seine Überschrift „Ruf uns an.“ entfällt, er besteht nur noch aus der Frage „Du telefonierst lieber oder brauchst sofort eine Lösung?“, Telefonnummer und Öffnungszeiten.
 - Zwischenüberschriften im Formular vereinheitlicht (Wer du bist / Wie wir dich erreichen / Worum es geht); „Projektrahmen“ bleibt, „Deine Case Details“ entfällt – die Felder stehen direkt unter „Optional, aber hilfreich“.
 - Zweiter Datei-Upload für Fotos eines vorhandenen Cases direkt unter der zugehörigen Checkbox ergänzt; Upload unter „Projektrahmen“ unverändert.
 - Info-Blöcke umbenannt („Lieber direkt?“, „Komm vorbei“), Telefon/Zeiten dort entfernt (standen dreifach auf der Seite). Datenschutz-Checkbox neu formuliert und auf `/rechtliches/datenschutz` verlinkt. Tippfehler im Team-Zitat korrigiert. Fehlende Elemente aus der Master-MD (Button „Mehr erfahren“ je Team-Kachel, Michaela-Zusatz) vermerkt.
