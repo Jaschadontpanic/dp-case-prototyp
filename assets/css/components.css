@@ -316,10 +316,9 @@
 /* Einleitungssatz (Vorbild Mercedes-Kontaktformular, Text seit 2026-09-27 final, C7). */
 .contact-page .intro-headline {
   font-family: var(--headline-alt-font); font-weight: 600; font-size: var(--fs-h2);
-  color: var(--teal); line-height: 1.3; max-width: 720px; margin-bottom: 8px;
+  color: var(--teal); line-height: 1.3; max-width: 960px; margin: 0 auto 20px;
 }
 .contact-page .intro-headline.placeholder { color: var(--grau-text); font-style: italic; font-weight: 400; }
-.contact-page .intro-headline-sub { font-size: var(--fs-body-small); color: var(--grau-text); max-width: 720px; margin-bottom: 30px; }
 /* Seit 2026-09-29: kein Hintergrundkasten mehr (Jascha-Feedback: "sieht immer doof aus"),
    stattdessen buendig mit .contact-grid (identische max-width+margin), Telefonnummer als
    .btn-outline-light statt Pfeil-Textlink. */
@@ -411,6 +410,9 @@
 .contact-page .team-card h4 { font-size: 14px; margin-bottom: 2px; }
 .contact-page .team-card .role { font-size: 11.5px; color: var(--teal); font-weight: 600; }
 .contact-page .team-card .quote { font-size: 11.5px; color: var(--grau-text); font-style: italic; margin: 8px 0; }
+.contact-page .team-grid-note { font-size: var(--fs-body-small); color: var(--grau-text); text-align: center; margin-top: 24px; }
+/* Inline-Link in der Datenschutz-Checkbox: sonst per globalem Reset unsichtbar (a{color:inherit}). */
+.contact-page .contact-form label.checkbox a { color: var(--teal); text-decoration: underline; }
 
 /* ===== ALLGEMEINE FAQ (zentrales, wiederverwendetes Element aus content/_global/faq-allgemein.md
    – laut Content-Vorgabe auch auf allen Produktseiten und der Engineering-Hauptseite geplant,
