@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 11) – Silent-Rack: Technische Daten + Rating-Balken zusammengelegt
+- `19-zoll-racks/silent-rack/index.html`: Tabelle „Technische Daten“ und die Rating-Balken (Stabilität/Gewicht) standen bisher untereinander mit eigener Zwischenüberschrift „Technische Daten“ plus einer separaten freistehenden Zeile „Seit 30 Jahren – made in Hamburg.“ weiter oben auf der Seite. Auf Wunsch zusammengelegt: neue gemeinsame Überschrift „Seit 30 Jahren – made in Hamburg.“ (bestehender Trust-Zeilen-Text aus dem Content, wiederverwendet statt neu erfunden) direkt über beiden Elementen, Tabelle und Balken liegen ab jetzt nebeneinander (`.specs-flex`, neue Komponente). Die alte freistehende Zeile weiter oben entfernt (Dopplung). Bei ≤900px stapelt sich der Block (Tabelle oben, Balken darunter).
+- Nebenbei: toter CSS-Rest `.pg-silent-rack .data-table-wrap` entfernt (Klasse wird auf der Seite nicht mehr verwendet).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
+
 ## 2026-09-29 (später, 10) – Silent-Rack: „Anrufen“-Button im Hero-Bar-Bereich korrigiert
 - `19-zoll-racks/silent-rack/index.html`, oberer Hero-Bar-Bereich (`.product-hero-bar`, heller Farbverlauf): „Anrufen“-Button nutzte `.btn-outline` (weißer Rand/weiße Schrift, für dunkle Flächen gedacht) – auf dem hellen Hintergrund praktisch unlesbar. Auf `.btn-outline-light` (schwarzer Rand/schwarze Schrift, bereits bestehende Komponente) umgestellt. Der zweite „Anrufen“-Button weiter unten im dunklen `.cta-band` bleibt unverändert bei `.btn-outline` (dort korrekt).
 - Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
