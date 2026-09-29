@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 – Wissen-Bereich angelegt (Teil von C9)
+- Neuer Ordner `content/wissen/` mit Übersichtsseite, `hoeheneinheiten.md` (HE/U/RU, 19 Zoll, halbe Breite, Rechenweg) und `tsa-schloss.md` (Funktion, Länder, Grenzen, Empfehlung).
+- Jede Seite mit Title, Meta, Breadcrumb, H1, Intro, internen Links, Allgemeiner FAQ, CTA und BreadcrumbList-Schema.
+- `content/kamera-cases/red-raptor-xl-case.md`: Platzhalter „[Link zu geplanter Wissens-Seite …]“ durch echten Link auf `/wissen/tsa-schloss` ersetzt.
+- `docs/seitenstruktur.md` und C9 aktualisiert; offen bleiben Branchen- und Zubehör-Materialseiten.
+
 ## 2026-09-29 (später, 4) – Kontaktseite: Ruf-uns-an-Bereich, Datei-Button, leichtere Eingabefeld-Schrift
 - Neue helle Button-Variante `.btn-outline-light` (weißer Hintergrund, dünner grauer Rand, dunkle Schrift) – Pendant zu `.btn-outline` für helle Flächen, Vorbild Header-Button (dünner Rand statt Vollfläche). Keine neuen Design-Werte, nur bestehende Farben neu kombiniert.
 - „Ruf uns an“-Bereich: Hintergrundkasten (`--hell`, Radius 16px) entfernt (Jascha: „sieht immer doof aus“) und auf `max-width:960px; margin:auto` gesetzt – jetzt bündig mit dem Kontaktformular darunter statt breiter/versetzt. Telefonnummer steht jetzt in einem `.btn-outline-light`-Button statt als Pfeil-Textlink.

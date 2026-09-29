@@ -63,8 +63,8 @@ Innenausbau, Gravur und Sicherheitsausstattung - individuell auf deine Kamera ab
    Reisegewohnheiten abgestimmt.
 2. Was ist ein TSA-Schloss und brauche ich das? -> Ein TSA-Schloss laesst sich von
    US-Sicherheitsbehoerden mit einem Universalschluessel oeffnen, ohne das Schloss
-   aufzubrechen - praktisch bei Fluegen von, nach oder ueber die USA. [Link zu geplanter
-   Wissens-Seite /wissen/tsa-schloss, sobald vorhanden]
+   aufzubrechen - praktisch bei Fluegen von, nach oder ueber die USA. Mehr dazu:
+   /wissen/tsa-schloss
 3. Wie lange dauert die Lieferzeit? -> 2 bis 8 Wochen, je nach Auslastung. In Notfaellen oft schneller.
 4. Was kostet das Case? -> Individuell konfiguriert, Preis haengt von Anforderungen ab.
    Wir erstellen schnell ein unverbindliches Angebot.
