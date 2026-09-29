@@ -58,8 +58,14 @@ header.nav .nav-links { justify-self: start; display: flex; gap: 40px; font-size
 header.nav .nav-links a:hover { color: var(--teal); }
 header.nav .btn { justify-self: end; }
 /* Header-CTA wirkt neben dem kleinen Logo zu praesent: Flaeche um die Schrift ~20% kleiner
-   als der sitewide .btn-Standard (14px/26px), nur im Header, andere Buttons unveraendert. */
-header.nav .nav-inner > .btn { padding: 11px 21px; }
+   als der sitewide .btn-Standard (14px/26px), nur im Header, andere Buttons unveraendert.
+   Stil seit 2026-09-29 dezenter (Variante 7 aus Vorschlagsrunde): duenner 1px-Rand statt
+   teal-gefuellt, reine .btn-primary-Farbe bleibt fuer alle anderen CTA-Buttons erhalten. */
+header.nav .nav-inner > .btn {
+  padding: 11px 21px; background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.6);
+}
+/* Nach dem Scrollen zusaetzlich ca. 10% kleiner (Nutzerwunsch 2026-09-29). */
+header.nav.scrolled .nav-inner > .btn { padding: 10px 19px; font-size: 13px; }
 header.nav .burger { display: none; }
 
 /* ---- Mobile burger button ---- */
