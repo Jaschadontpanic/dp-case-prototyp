@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 – Wissen-Bereich angelegt (Teil von C9)
+- Neuer Ordner `content/wissen/` mit Übersichtsseite, `hoeheneinheiten.md` (HE/U/RU, 19 Zoll, halbe Breite, Rechenweg) und `tsa-schloss.md` (Funktion, Länder, Grenzen, Empfehlung).
+- Jede Seite mit Title, Meta, Breadcrumb, H1, Intro, internen Links, Allgemeiner FAQ, CTA und BreadcrumbList-Schema.
+- TSA-Seite ergänzt (Angaben Jascha): Butterfly mit Öse ist Standard, daran passt jedes Schloss (TSA, Zahlen, Schlüssel); für den Versand empfehlen wir Zahlenschlösser; passende Schlösser bieten wir auf Wunsch mit an.
+- `content/kamera-cases/red-raptor-xl-case.md`: Platzhalter „[Link zu geplanter Wissens-Seite …]“ durch echten Link auf `/wissen/tsa-schloss` ersetzt.
+- `docs/seitenstruktur.md` und C9 aktualisiert; offen bleiben Branchen- und Zubehör-Materialseiten.
+
 ## 2026-09-29 – Kontaktseite überarbeitet
 - `content/kontakt.md`: Seitenkopf „Kontakt“ entfällt, der Einleitungssatz wird zur H1; Überschrift „Kontaktformular“ gestrichen. Die Unterzeile „Ein paar Angaben zu deinem Projekt genügen für den Start.“ entfällt (Aussage steckt bereits im Aufklappbereich und im Feld „Kurzbeschreibung“). Der Anruf-Block steht jetzt direkt unter der H1 statt ganz oben; seine Überschrift „Ruf uns an.“ entfällt, er besteht nur noch aus der Frage „Du telefonierst lieber oder brauchst sofort eine Lösung?“, Telefonnummer und Öffnungszeiten.
 - Zwischenüberschriften im Formular vereinheitlicht (Wer du bist / Wie wir dich erreichen / Worum es geht); „Projektrahmen“ bleibt, „Deine Case Details“ entfällt – die Felder stehen direkt unter „Optional, aber hilfreich“.

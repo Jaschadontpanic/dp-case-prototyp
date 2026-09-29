@@ -38,10 +38,16 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 
 Reihenfolge Engineering-Unterseiten: Bauart → Formen → Maße → Materialien.
 
+## Wissen (neu 2026-09-29, C9)
+| Seite | URL | Status |
+|---|---|---|
+| Wissen (Übersicht) | `/wissen` | Content fertig |
+| Höheneinheiten (HE, U, RU) | `/wissen/hoeheneinheiten` | Content fertig |
+| TSA-Schloss | `/wissen/tsa-schloss` | Content fertig |
+
 ## Noch nicht geschrieben
 - Branchen-Seiten (Veranstaltung, Musik, Industrie, Catering, Broadcast & Film, Marketing, Luftfahrt)
 - Materialien: Bänder, Eckbeschläge, Griffe, Profile, Rollen & Füße, Verschlüsse (nur Platzhalter)
-- HE/U/RU-Glossarseite; `/wissen/tsa-schloss` ist verlinkt, existiert aber nicht
 - Achse-A-Übersichtsseiten (bewusst zurückgestellt bis 3+ Produkte)
 
 ## Taxonomie, Launch-Regeln, Featured-Mechanik
