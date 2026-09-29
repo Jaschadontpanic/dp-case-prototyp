@@ -32,7 +32,7 @@ Neben den USA arbeiten unter anderem Kanada, Japan, Israel, Österreich, Südkor
 Es ist ein Reise-Schloss, kein Diebstahlschutz. Weil es einen Generalschlüssel gibt, ist die Sicherung prinzipbedingt schwächer als bei einem normalen Schloss – 2015 kursierten Baupläne für Nachschlüssel im Netz. Für Werte, die dauerhaft gesichert sein sollen, ist ein abschließbarer Verschluss ohne Generalschlüssel die bessere Wahl, etwa im Lager oder im Tourbetrieb.
 
 **Bei uns kannst du frei wählen**
-Wir verbauen standardmäßig Butterfly-Verschlüsse mit Öse. Daran lässt sich jedes Schloss hängen – TSA-Schloss, Zahlenschloss oder Schlüsselschloss. Du legst dich also beim Bau nicht fest und kannst je nach Reise ein anderes Schloss nutzen.
+Wir verbauen standardmäßig Butterfly-Verschlüsse mit Öse. Daran lässt sich jedes Schloss hängen – TSA-Schloss, Zahlenschloss oder Schlüsselschloss. Du legst dich also beim Bau nicht fest und kannst je nach Reise ein anderes Schloss nutzen. Passende Schlösser bieten wir dir natürlich gern gleich mit an.
 
 **Für den Versand empfehlen wir Zahlenschlösser**
 Geht das Case per Spedition oder Paketdienst auf die Reise, ist ein Zahlenschloss am praktischsten: Es kann kein Schlüssel verloren gehen oder beim Empfänger fehlen. Die Zahlenkombination gibst du einfach weiter.
