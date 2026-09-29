@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später, 5) – Burger-Menü-Breakpoint korrigiert (Header/Logo-Überlappung)
+- Burger sprang bisher erst bei 900px ein, aber „Kontakt" (letzter Nav-Link) hatte schon deutlich vorher weniger Abstand zum Logo als die Nav-Punkte untereinander (40px) – ab ca. 1300px überlappten sich Logo-Bild und „Kontakt" sogar sichtbar. Per Playwright exakt gemessen (echte Bildkante des Logos, nicht dessen 0px-breiter Positionierungs-Anker): Gleichstand bei 1379px, ab 1378px abwärts bereits weniger Abstand. Burger-Breakpoint auf `max-width:1380px` gesetzt (vorher 900px), nur für Nav-Links/Burger/Header-CTA/Logo-Größe – `.hero`/`.stats-row` bleiben bei 900px (eigenständiger Grund, nicht Teil des Nav-Problems).
+- Nebenbei gefunden und behoben: Der Burger-Button war auf schmalen Viewports (≤ca. 390px) teils gar nicht klickbar – das absolut positionierte, breitere Logo (inkl. des unsichtbaren, aber weiterhin klickblockierenden Crossfade-Bilds mit `opacity:0`) lag optisch über dem Burger und fing den Klick ab. Burger jetzt mit `position:relative; z-index:2` über das Logo gehoben (Logo `z-index:1`), Klick per Playwright-Test bestätigt.
+
 ## 2026-09-29 (später, 4) – Kontaktseite: Ruf-uns-an-Bereich, Datei-Button, leichtere Eingabefeld-Schrift
 - Neue helle Button-Variante `.btn-outline-light` (weißer Hintergrund, dünner grauer Rand, dunkle Schrift) – Pendant zu `.btn-outline` für helle Flächen, Vorbild Header-Button (dünner Rand statt Vollfläche). Keine neuen Design-Werte, nur bestehende Farben neu kombiniert.
 - „Ruf uns an“-Bereich: Hintergrundkasten (`--hell`, Radius 16px) entfernt (Jascha: „sieht immer doof aus“) und auf `max-width:960px; margin:auto` gesetzt – jetzt bündig mit dem Kontaktformular darunter statt breiter/versetzt. Telefonnummer steht jetzt in einem `.btn-outline-light`-Button statt als Pfeil-Textlink.
