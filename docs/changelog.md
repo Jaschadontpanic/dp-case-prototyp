@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (später) – Header-CTA dezenter, gescrollter Header nochmal ~10% kleiner
+- 14 Stilvarianten für den Header-Button als Vorschau gebaut (Screenshots im Chat), Jascha hat Variante 7 gewählt: dünner 1px-Rand (`rgba(255,255,255,0.6)`), transparenter Hintergrund, statt bisher teal-gefüllt – nur `header.nav .nav-inner > .btn`, alle anderen `.btn-primary`-Vorkommen (CTA-Bänder, Formular) bleiben teal.
+- Zusätzlich nach dem Scrollen (`.scrolled`) nochmal kleiner: Button-Padding 10px/19px + Schrift 13px (statt 11px/21px), `--header-pad-v-scrolled` 9px (vorher 10px), `--logo-h-scrolled`/`--logo-h-scrolled-mobile` 29px/22px (vorher 32px/24px) – Gesamthöhe gescrollter Header ca. 10% kleiner als zuvor.
+
 ## 2026-09-29 – Header-Breite an Seiteninhalt angeglichen, Empfehlungs-Kacheln mit Mercedes-Verlauf
 - `header.nav .nav-inner` hatte einen eigenen, fest auf 48px gesetzten Seitenrand (Kommentar „bewusst NICHT auf 120px“) – dadurch war der Header-Inhalt (Logo, Nav, Button) breiter als der Seiteninhalt darunter (`--side-pad` 120px). Override entfernt, `.nav-inner` ist auch `.wrap` und fällt jetzt auf denselben `--side-pad` zurück – Header und Inhalt schließen auf allen Breakpoints bündig ab.
 - `.case-tile`-Verlauf (Startseite „Unsere Empfehlungen") nach Vorbild mercedes-benz.de „Unsere Empfehlungen" angepasst: Foto geht jetzt unten in einen durchgehend schwarzen Textblock über (`linear-gradient(to top, #000 25%, rgba(0,0,0,0) 55%)`) statt in einen durchgängig halbtransparenten Verlauf (vorher max. 85% Deckkraft). Bewusst nur `.case-tile` geändert, `.vp-card` („Mehr als nur gut verpackt") bleibt unverändert – kürzere Icon-Kacheln, andere Bildmotive, kein Mercedes-Vorbild dafür genannt.
