@@ -35,7 +35,7 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 ## Grundlagen
 - Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`.
 - `.wrap`: max-width + side-pad, zentriert.
-- Breakpoints: **1380px** (Nav → Burger, Logo 45px→24px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px). Formularzeilen zusätzlich bei 640px.
+- Breakpoints: **1380px** (Nav → Burger, Logo 45px→22px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px). Formularzeilen zusätzlich bei 640px.
 - Formsprache weich/rund: Radien 14–24px, Buttons als Pille (999px).
 
 ## Komponenten
