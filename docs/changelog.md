@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-04 – Header-Bild Manufaktur
+- `assets/images/manufaktur/header-manufaktur-werkstatt.jpg` neu: Werkstatt-Panorama von Jascha, mittig auf 1800 × 725 zugeschnitten (Original 5689 × 1960, 2,9:1 → Header-Format 2,48:1, links und rechts je ca. 200 px beschnitten).
+- Bearbeitung bewusst anders als beim Engineering-Header (Entscheidung Jascha, nach zwei verworfenen Varianten): keine Abdunklung und keine Entsättigung, nur Deckenleuchten und Oberlichter in CI-Türkis plus Lichthof und Schimmer auf hellen Reflexen.
+- `content/manufaktur/index.md`: Header-Bild mit Alt-Text und Bearbeitungshinweis eingetragen.
+- Offen vor Livegang: Die Person in der Halle ist klein und gebückt, dadurch kaum erkennbar – Einwilligung trotzdem prüfen.
+
 ## 2026-09-29 (Nachtrag 3) – Hub-Überschriften, Produkte-Header, Empfehlungs-Kacheln
 - H1 auf den Hub-Seiten von Etikett auf Nutzen umgestellt (Entscheidung Jascha): Engineering „Engineering, das dein Case zu Ende denkt“, Manufaktur „Alles unter einem Dach, von der Idee bis zum fertigen Case“, Produkte „Individuelle Lösungen für jede Herausforderung“ (bisheriger Intro-Satz). Die Kundennutzen-Zeile der Manufaktur-Seite wurde gekürzt, weil „Alles unter einem Dach“ jetzt in der H1 steht.
 - Produkte-Hub bekommt ein Header-Bild mit Text darüber. Über dem Bild stehen H1 und eine Trust-Zeile („30 Jahre Lösungen für anspruchsvolle Partner – über 2.000 Konstruktionen, 100 % individuell“), nicht die vollständige Kundenliste: die ist als Blocksatz mit 8 Größenstufen über einem Foto unleserlich und steht bereits auf zwei anderen Seiten. Bild bis auf Weiteres `hero-case-foto.jpg` als Platzhalter.

@@ -3,7 +3,7 @@ seite: Manufaktur (Hub)
 url: /manufaktur
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 15
-stand: 2026-09-29
+stand: 2026-10-04
 ---
 
 ### MANUFAKTUR (Hub-Seite)
@@ -13,6 +13,16 @@ URL: /manufaktur
 **Meta Description:** Von der Werkstatt bis zum Team: Erfahre, wer und was hinter jedem
 don't panic Flightcase steckt.
 **Breadcrumb:** Start > Manufaktur
+**Header-Bild (neu 2026-10-04):**
+`assets/images/manufaktur/header-manufaktur-werkstatt.jpg` (1800 × 725, gleiches Seitenverhältnis
+wie Startseiten-Hero und Engineering-Header). Panorama der Hamburger Werkstatt, mittig auf das
+Header-Format zugeschnitten.
+Bearbeitung bewusst anders als beim Engineering-Header (Entscheidung Jascha): Das Foto bleibt
+unverändert – keine Abdunklung, keine Entsättigung. Nur die Deckenleuchten und Oberlichter sind
+in CI-Türkis (#2D8282) eingefärbt, dazu ein weicher Lichthof und ein leichter Schimmer auf hellen
+Reflexen.
+Alt-Text: „Blick in die Werkstatt von don't panic in Hamburg-Bergedorf mit Maschinen, Materiallager und Arbeitsplätzen“
+
 **H1 (geändert 2026-09-29, vorher nur „Manufaktur“):** Alles unter einem Dach, von der Idee bis zum fertigen Case
 (Begründung: Das Etikett „Manufaktur“ steht schon in Navigation und Breadcrumb. Die H1 nennt
 stattdessen den Nutzen. Die Kundennutzen-Zeile darunter beginnt dadurch doppelt – sie wird
