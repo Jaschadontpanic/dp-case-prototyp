@@ -359,16 +359,30 @@
 /* Seit 2026-09-29: kein Hintergrundkasten mehr (Jascha-Feedback: "sieht immer doof aus"),
    stattdessen buendig mit .contact-grid (identische max-width+margin), Telefonnummer als
    .btn-outline-light statt Pfeil-Textlink. */
-.contact-page .call-cta-top {
-  max-width: 960px; margin: 0 auto 40px;
-}
-.contact-page .call-cta-top .call-cta-heading {
+/* Seit 2026-10-04: Anruf-Block + neuer Besuchs-Block nebeneinander in .visit-grid (vorher
+   stand .call-cta-top allein mit eigener max-width+margin - die zentrierende Rolle uebernimmt
+   jetzt .visit-grid, die Boxen selbst werden Flex-Kinder). */
+.contact-page .visit-grid { display: flex; gap: 40px; max-width: 960px; margin: 0 auto 40px; align-items: flex-start; }
+.contact-page .visit-grid .call-cta-top,
+.contact-page .visit-grid .visit-cta-top { flex: 1; min-width: 0; }
+@media (max-width: 900px) { .contact-page .visit-grid { flex-direction: column; gap: 28px; } }
+.contact-page .call-cta-top .call-cta-heading,
+.contact-page .visit-cta-top .call-cta-heading {
   font-family: var(--headline-alt-font); font-weight: 700; font-size: var(--fs-card-title);
   color: var(--anthrazit); margin-bottom: 6px;
 }
-.contact-page .call-cta-top .call-sub { font-size: var(--fs-body-small); color: var(--grau-text); max-width: 480px; margin-bottom: 16px; }
+.contact-page .call-cta-top .call-sub,
+.contact-page .visit-cta-top .call-sub { font-size: var(--fs-body-small); color: var(--grau-text); max-width: 480px; margin-bottom: 16px; }
 .contact-page .call-cta-top .btn { margin-bottom: 10px; }
 .contact-page .call-cta-top .call-hours { font-size: var(--fs-body-small); color: var(--grau-text); margin-top: 0; }
+/* Kartenplatzhalter (kein Kartendienst eingebunden) - Streifenmuster wiederverwendet von
+   .bauart-row-img.placeholder / .form-card.placeholder, gleiche Werte, keine neue Design-Optik. */
+.contact-page .map-placeholder {
+  aspect-ratio: 4/3; border-radius: 14px;
+  background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: #b7b7b0; font-size: var(--fs-body-small); font-style: italic; padding: 16px;
+}
 .contact-page .form-heading { font-size: var(--fs-card-title); margin-bottom: 20px; }
 
 .contact-page .contact-grid { display: flex; flex-direction: column; gap: 40px; margin: 0 auto 60px; max-width: 960px; }

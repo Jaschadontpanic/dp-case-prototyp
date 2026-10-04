@@ -9,6 +9,12 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 ## 2026-09-29 (Nachtrag) – Kontaktformular: Platzhalter branchenneutral
 - `content/kontakt.md`, Feld „Maße / Gewicht / Stückzahl des Equipments“: Beispieltext von Mischpult/Lautsprecher auf Steuerschrank/Ersatzteil-Baugruppe geändert (Entscheidung Jascha). Grund: Der bisherige Platzhalter kam aus der Veranstaltungstechnik und schränkte den Eindruck der Zielgruppe unnötig ein.
 
+## 2026-10-04 (später, 2) – Kontaktseite im HTML umgesetzt: Besuchs-Block, Info-Block umbenannt, neuer Placeholder-Text
+- Neuer Besuchs-Block (`.visit-cta-top`) neben dem bestehenden Anruf-Block: Satz „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf." + Kartenplatzhalter mit sichtbarem Text „[Platzhalter: Karte mit Anfahrt – folgt.]" (kein Kartendienst eingebunden, wie vorgegeben). Beide Blöcke stecken jetzt in `.visit-grid`: auf Desktop nebeneinander, bei ≤900px gestapelt, gleiche Optik wie der Anruf-Block (Streifenmuster-Platzhalter wiederverwendet von `.bauart-row-img.placeholder`, keine neuen Design-Werte).
+- Info-Block unter dem Formular: Überschrift „Komm vorbei" → „So findest du uns" (Dopplung mit dem neuen Besuchs-Block oben).
+- Placeholder-Text der Textarea „Maße / Gewicht / Stückzahl des Equipments": Beispielgegenstände „Mischpult“/„Lautsprecher“ → „Steuerschrank“/„Ersatzteil-Baugruppe“, Stückzahlen/Gewichte exakt wie in `content/kontakt.md` (1x/4x, „je ca. 8 kg“ beim zweiten Gegenstand).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow, Formularfluss (Datenschutz-Link, Absenden-Button) unverändert.
+
 ## 2026-10-04 (später) – Header-Bilder auf den Hub-Seiten eingebaut
 - Neue Komponente `.hub-header` (Engineering, Manufaktur, Produkte): Bild als Hintergrund, H1 (+ optionaler Text) links darüber, wie beim Startseiten-Hero – gleiches Seitenverhältnis 1800/725 (Bildformat der 3 Header-Fotos), gleiche Verlauf-Werte, gleiche Schrift-Tokens. Bild als `<img>` statt CSS-Hintergrund (wie `.case-tile`), damit ein echter Alt-Text aus dem Content möglich ist. Ersetzt `.page-head` auf diesen 3 Seiten.
 - Engineering: `header-engineering-zeichner.jpg` eingesetzt, H1 „Engineering, das dein Case zu Ende denkt“ (neuer, längerer Content-Text seit 2026-09-29), kein Text darunter (Content sieht hier keinen vor). Der bisherige Intro-Satz über dem 5-Schritte-Prozess bleibt unverändert darunter stehen.
