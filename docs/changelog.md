@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-09-29 (Nachtrag 2) – Kontaktseite: Besuchs-Block ergänzt
+- `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für eine Karte (Entscheidung Jascha: vorerst nur Platzhalter, kein Kartendienst – die Einbindung ist datenschutzrelevant und wird vor dem Livegang entschieden).
+- Der Info-Block unter dem Formular heißt deshalb jetzt „So findest du uns“ statt „Komm vorbei“, damit sich die Formulierung nicht doppelt.
+
+## 2026-09-29 (Nachtrag) – Kontaktformular: Platzhalter branchenneutral
+- `content/kontakt.md`, Feld „Maße / Gewicht / Stückzahl des Equipments“: Beispieltext von Mischpult/Lautsprecher auf Steuerschrank/Ersatzteil-Baugruppe geändert (Entscheidung Jascha). Grund: Der bisherige Platzhalter kam aus der Veranstaltungstechnik und schränkte den Eindruck der Zielgruppe unnötig ein.
+
 ## 2026-10-04 – Header-Bild Manufaktur
 - `assets/images/manufaktur/header-manufaktur-werkstatt.jpg` neu: Werkstatt-Panorama von Jascha, mittig auf 1800 × 725 zugeschnitten (Original 5689 × 1960, 2,9:1 → Header-Format 2,48:1, links und rechts je ca. 200 px beschnitten).
 - Bearbeitung bewusst anders als beim Engineering-Header (Entscheidung Jascha, nach zwei verworfenen Varianten): keine Abdunklung und keine Entsättigung, nur Deckenleuchten und Oberlichter in CI-Türkis plus Lichthof und Schimmer auf hellen Reflexen.
