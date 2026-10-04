@@ -322,10 +322,12 @@
    die generische .contact-... / .team-... Basis oben (auf anderen Seiten ungenutzt)
    nicht ueberschreibt. ===== */
 .contact-page { padding: 20px 0 70px; }
-/* Einleitungssatz (Vorbild Mercedes-Kontaktformular, Text seit 2026-09-27 final, C7). */
+/* Einleitungssatz (Vorbild Mercedes-Kontaktformular, Text seit 2026-09-27 final, C7).
+   Seit 2026-09-29 (jetzt echte H1 statt teal Kicker-Zeile, siehe Kontaktseiten-Umbau):
+   Farbe Anthrazit statt Teal (wie alle anderen H1 im page-head), mehr Abstand oben/unten. */
 .contact-page .intro-headline {
   font-family: var(--headline-alt-font); font-weight: 600; font-size: var(--fs-h2);
-  color: var(--teal); line-height: 1.3; max-width: 960px; margin: 0 auto 20px;
+  color: var(--anthrazit); line-height: 1.3; max-width: 960px; margin: 44px auto 32px;
 }
 .contact-page .intro-headline.placeholder { color: var(--grau-text); font-style: italic; font-weight: 400; }
 /* Seit 2026-09-29: kein Hintergrundkasten mehr (Jascha-Feedback: "sieht immer doof aus"),
@@ -460,11 +462,19 @@
 .data-table.spec-sheet th, .data-table.spec-sheet td { white-space: normal; }
 .data-table.spec-sheet th { width: 220px; }
 @media (max-width: 900px) {
-  .pg-silent-rack .data-table-wrap { padding-left: 48px; padding-right: 48px; }
   .data-table.spec-sheet th { width: 130px; padding-left: 12px; padding-right: 8px; }
   .data-table.spec-sheet td { padding-left: 8px; }
 }
 .placeholder-text { color: var(--grau-text); font-style: italic; }
+
+/* Technische Daten + Rating-Balken nebeneinander (Produktseiten, neu 2026-09-29) */
+.specs-flex { display: flex; gap: 48px; align-items: flex-start; }
+.specs-table-col { flex: 1 1 460px; min-width: 0; overflow-x: auto; }
+.specs-ratings-col { flex: 0 0 280px; padding-top: 4px; }
+@media (max-width: 900px) {
+  .specs-flex { flex-direction: column; gap: 28px; }
+  .specs-ratings-col { flex-basis: auto; width: 100%; }
+}
 
 /* ===== RECHTLICHES (Übersicht + AGB-Downloads, 2026-09-28) ===== */
 .legal-list { list-style: none; max-width: var(--max-width); margin: 0 auto 20px; padding: 0 var(--side-pad); }

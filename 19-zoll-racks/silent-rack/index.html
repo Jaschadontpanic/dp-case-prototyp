@@ -109,7 +109,7 @@
     <p class="tagline">Vollständig gekühlt, völlig geräuschlos</p>
     <div class="hero-bar-actions">
       <a href="../../kontakt/#kontaktformular" class="btn btn-primary">Individualisiert anfragen!</a>
-      <button type="button" class="btn btn-outline btn-call" onclick="dpOpenPhonePopup()">
+      <button type="button" class="btn btn-outline-light btn-call" onclick="dpOpenPhonePopup()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Anrufen
       </button>
@@ -187,8 +187,6 @@
   <a href="../../kontakt/#kontaktformular" class="btn btn-primary">Jetzt unverbindliches Angebot anfragen</a>
 </div>
 
-<p style="text-align:center; font-weight:600; color:var(--teal); font-size:var(--fs-card-title); margin:0 0 50px;">Seit 30 Jahren – made in Hamburg.</p>
-
 <div class="section-heading"><h2>Häufige Fragen zum Silent Rack</h2></div>
 <section class="faq">
   <details class="faq-item">
@@ -217,25 +215,27 @@
   </details>
 </section>
 
-<div class="section-heading"><h2>Technische Daten</h2></div>
-<div class="data-table-wrap">
-  <table class="data-table spec-sheet">
-    <tbody>
-      <tr><th>Bauart</th><td>Ultra Protect Flightcase (Double-Door-Case)</td></tr>
-      <tr><th>Plattenmaterial</th><td>Birken-Multiplex 9mm</td></tr>
-      <tr><th>Oberfläche</th><td>Natur Birke geölt</td></tr>
-      <tr><th>Verschluss</th><td>Butterfly mit Öse – vorhängeschlosstauglich</td></tr>
-      <tr><th>Griffe</th><td>8x Einbau-Klappgriff, 2x Kantengriff</td></tr>
-      <tr><th>Stromversorgung</th><td>Schuko-Steckdosenleiste 8-fach (ungeschaltet), Kabelzugentlastung</td></tr>
-      <tr><th>Außenmaße</th><td>580 x 1327 x 1010 mm</td></tr>
-      <tr><th>Gewicht</th><td>59 kg</td></tr>
-    </tbody>
-  </table>
-</div>
-<!-- Rating als visuelle Skala statt nackter Zahl (Vorgabe content/19-zoll-racks/silent-rack.md) -
-     Wiederverwendung der Balken-Komponente von der Bauart-Seite (.bauart-rating-*). -->
-<div class="text-section">
-  <div style="max-width:320px;">
+<div class="section-heading"><h2>Seit 30 Jahren – made in Hamburg.</h2></div>
+<!-- Tabelle + Rating-Balken nebeneinander unter gemeinsamer Überschrift (Nutzerwunsch 2026-09-29,
+     ersetzt vorherige Zwischenüberschrift "Technische Daten" + separate freistehende Trust-Zeile). -->
+<div class="text-section specs-flex">
+  <div class="specs-table-col">
+    <table class="data-table spec-sheet">
+      <tbody>
+        <tr><th>Bauart</th><td>Ultra Protect Flightcase (Double-Door-Case)</td></tr>
+        <tr><th>Plattenmaterial</th><td>Birken-Multiplex 9mm</td></tr>
+        <tr><th>Oberfläche</th><td>Natur Birke geölt</td></tr>
+        <tr><th>Verschluss</th><td>Butterfly mit Öse – vorhängeschlosstauglich</td></tr>
+        <tr><th>Griffe</th><td>8x Einbau-Klappgriff, 2x Kantengriff</td></tr>
+        <tr><th>Stromversorgung</th><td>Schuko-Steckdosenleiste 8-fach (ungeschaltet), Kabelzugentlastung</td></tr>
+        <tr><th>Außenmaße</th><td>580 x 1327 x 1010 mm</td></tr>
+        <tr><th>Gewicht</th><td>59 kg</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Rating als visuelle Skala statt nackter Zahl (Vorgabe content/19-zoll-racks/silent-rack.md) -
+       Wiederverwendung der Balken-Komponente von der Bauart-Seite (.bauart-rating-*). -->
+  <div class="specs-ratings-col">
     <div class="bauart-rating-label"><span>Rating Stabilität</span><span>10/10</span></div>
     <div class="bauart-rating-track"><div class="bauart-rating-fill" style="width:100%"></div></div>
     <div class="bauart-rating-label" style="margin-top:14px;"><span>Rating Gewicht</span><span>9/10</span></div>

@@ -16,6 +16,20 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Hinweis: Keine der drei Hub-Seiten hatte bisher ein Header-Bild – nur die Startseite hat eins.
 - Engineering bekommt als erste ein Header-Bild: `assets/images/engineering/header-engineering-zeichner.jpg` (Foto von Jascha, im Stil des Startseiten-Heros bearbeitet – entsättigt, abgedunkelt von links/oben/unten bis zur Monitorkante, CI-Teal in Schatten und Lichtern; Bildschirm vom Effekt ausgenommen, Konstruktion darauf in CI-Teal). Vor dem Livegang zu klären: Einwilligung der abgebildeten Person und ob die auf dem Bildschirm erkennbaren Dateinamen/Konstruktionen unkritisch sind.
 
+## 2026-09-29 (später, 11) – Silent-Rack: Technische Daten + Rating-Balken zusammengelegt
+- `19-zoll-racks/silent-rack/index.html`: Tabelle „Technische Daten“ und die Rating-Balken (Stabilität/Gewicht) standen bisher untereinander mit eigener Zwischenüberschrift „Technische Daten“ plus einer separaten freistehenden Zeile „Seit 30 Jahren – made in Hamburg.“ weiter oben auf der Seite. Auf Wunsch zusammengelegt: neue gemeinsame Überschrift „Seit 30 Jahren – made in Hamburg.“ (bestehender Trust-Zeilen-Text aus dem Content, wiederverwendet statt neu erfunden) direkt über beiden Elementen, Tabelle und Balken liegen ab jetzt nebeneinander (`.specs-flex`, neue Komponente). Die alte freistehende Zeile weiter oben entfernt (Dopplung). Bei ≤900px stapelt sich der Block (Tabelle oben, Balken darunter).
+- Nebenbei: toter CSS-Rest `.pg-silent-rack .data-table-wrap` entfernt (Klasse wird auf der Seite nicht mehr verwendet).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
+
+## 2026-09-29 (später, 10) – Silent-Rack: „Anrufen“-Button im Hero-Bar-Bereich korrigiert
+- `19-zoll-racks/silent-rack/index.html`, oberer Hero-Bar-Bereich (`.product-hero-bar`, heller Farbverlauf): „Anrufen“-Button nutzte `.btn-outline` (weißer Rand/weiße Schrift, für dunkle Flächen gedacht) – auf dem hellen Hintergrund praktisch unlesbar. Auf `.btn-outline-light` (schwarzer Rand/schwarze Schrift, bereits bestehende Komponente) umgestellt. Der zweite „Anrufen“-Button weiter unten im dunklen `.cta-band` bleibt unverändert bei `.btn-outline` (dort korrekt).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
+
+## 2026-09-29 (später, 9) – Kontaktseite: Überschrift „Lass uns dein perfektes Case entwickeln.“ überarbeitet
+- `.contact-page .intro-headline`: Farbe von Teal auf Anthrazit geändert (wie alle anderen H1 im page-head, Teal wirkte hier unpassend als Fließtext-Farbe), Abstand oben 0 → 44px, Abstand unten 20px → 32px – auf Wunsch „passend zum Mercedes-Stil“, mehr Luft um die Überschrift.
+- Geprüft: Desktop/Tablet/Mobile (kein horizontaler Overflow).
+- Stichprobe auf Teal-Überschriften sitewide: Keine weiteren H1/H2-Überschriften in Teal gefunden – alle übrigen `color: var(--teal)`-Stellen sind kleine Labels/Kicker/Links/Fokus-Rahmen (bewusste Sekundärfarbe), keine Headlines.
+
 ## 2026-09-29 (später, 8) – Wissen-Bereich, Breadcrumb sitewide entfernt, Button-Hover, Overflow-Fixes
 - **Wissen-Bereich (C9)**: `/wissen` (Übersicht, 2 Kacheln), `/wissen/hoeheneinheiten`, `/wissen/tsa-schloss` neu als HTML angelegt – ausschließlich bestehende Komponenten (`page-head`, `text-section`, `hub-grid.cols-2`, FAQ, `cta-band`), keine neuen Design-Werte. Interne Links wie gefordert gesetzt; Schwing-Rack und Kamera-Case-Produktseite existieren noch nicht als HTML (nur Silent Rack ist fertig) – dorthin `href="#"` mit TODO-Kommentar, gleiches Muster wie bei anderen fehlenden Seiten. Footer-Link „Wissen" auf allen 20 Seiten mit Footer ergänzt (Navigationsentscheidung: nur Footer, nicht Hauptnav – bereits früher im Chat bestätigt).
 - Punkt 3 der Aufgabe (Platzhalter-Link in der Kamera-Case-FAQ im HTML verlinken) bleibt offen – die Kamera-Case-Produktseite existiert noch nicht als HTML, es gibt nichts zu verlinken.
