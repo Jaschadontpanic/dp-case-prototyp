@@ -158,17 +158,43 @@
 .team-card .quote { font-size: var(--fs-body-small); color: var(--grau-text); font-style: italic; margin-bottom: 16px; min-height: 60px; }
 .team-card .btn-link { font-size: 14px; }
 
-/* ===== PAGE HEAD / PAGE INTRO (alle Unterseiten) =====
-   Default = Wert aus engineering/engineering-formen/manufaktur/kontakt (10px, fs-h1).
-   produkte.html hat abweichend 30px Bottom-Padding, kontakt.html abweichend fs-h2
-   statt fs-h1 -> als Original-Unterschiede per Body-Klasse erhalten. */
+/* ===== HUB HEADER (Engineering/Manufaktur/Produkte, neu 2026-10-04) =====
+   Bild + H1 (+ optionaler Text darunter) nach Vorbild des Startseiten-Heros (.hero in base.css):
+   gleiches Seitenverhaeltnis (1800/725, Bildformat der 3 Header-Fotos), identische
+   Verlauf-Werte (links + unten), identische Schrift-Tokens - keine neuen Design-Werte.
+   Bild als <img> (nicht CSS-background) analog .case-tile, damit ein echter Alt-Text aus
+   dem Content moeglich ist statt eines rein dekorativen Hintergrunds. */
+/* Kein overflow:hidden (anders als man erwarten wuerde): das <img> füllt die Box per
+   object-fit:cover immer exakt aus, auch wenn sie durch langen Text (volle Saetze statt
+   kurzer <br>-Zeilen wie beim Hero) ueber die aspect-ratio-Hoehe hinaus waechst - mit
+   overflow:hidden wuerde der Text stattdessen abgeschnitten (so gefunden beim Mobil-Test). */
+.hub-header { position: relative; aspect-ratio: 1800 / 725; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 0 0 50px; }
+.hub-header img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hub-header::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 8%, rgba(0,0,0,0) 30%),
+    linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 8%, rgba(0,0,0,0) 22%);
+}
+.hub-header .wrap { position: relative; z-index: 2; width: 100%; }
+.hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; }
+.hub-header p.desc { max-width: 640px; font-size: var(--fs-body); color: #ddd; }
+@media (max-width: 900px) {
+  /* 48px statt 120px Seitenrand wie bei .page-head (s.u.) - die H1-Texte sind volle Saetze
+     (nicht wie beim Hero manuell per <br> kurz gehalten), bei 120px sonst zu wenig Breite. */
+  .hub-header h1 { font-size: 32px; }
+  .hub-header .wrap { padding-left: 48px; padding-right: 48px; }
+}
+
+/* ===== PAGE HEAD / PAGE INTRO (restliche Unterseiten) =====
+   Default = Wert aus engineering-formen/kontakt (10px, fs-h1). Engineering/Manufaktur/
+   Produkte nutzen seit 2026-10-04 .hub-header statt .page-head (s.o.); .page-intro bleibt
+   bei Engineering fuer den Intro-Satz ueber dem 5-Schritte-Prozess bestehen. */
 .page-head { padding: 56px var(--side-pad) 10px; max-width: var(--max-width); margin: 0 auto; }
 .page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; }
 .page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
-.pg-produkte .page-head { padding-bottom: 30px; }
 .pg-engineering .page-intro,
-.pg-engineering-formen .page-intro,
-.pg-manufaktur .page-intro { padding-bottom: 26px; max-width: 70ch; }
+.pg-engineering-formen .page-intro { padding-bottom: 26px; max-width: 70ch; }
 .pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
 /* Seit 2026-09-29: bei <=900px 48px statt 120px Seitenrand (wie Bauart-Row/Silent-Rack/
    Trust-Liste) - bei laengeren H1 (z.B. "HE, U und RU - Hoeheneinheiten im Rack",

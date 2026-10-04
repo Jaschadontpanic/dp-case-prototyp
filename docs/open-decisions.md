@@ -37,6 +37,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
 | B5 | „Unsere Empfehlungen“: Case-Tile-Komponente ist umgesetzt (Bild + Text getrennt, textfreie Fotos seit 2026-09-28 im Einsatz), aber Branchen-Tag/Titel/Story-Text pro Kachel fehlen noch (Datenfelder aus `content/startseite.md` Abschnitt 3 nicht ausgefüllt) | Aufgabe |
 | B6 | Silent-Rack-Highlights (7 Kacheln): alle zeigen Platzhalterbild (Hero-Foto), echte Fotos SOAZMA0010_10–_16 fehlen | Aufgabe |
+| B7 | Produkte-Hub-Header: zeigt `hero-case-foto.jpg` als Platzhalter (identisch zum Startseiten-Hero), echtes Foto laut `content/produkte/index.md` noch offen; danach Alt-Text ergänzen (aktuell `alt=""`, da Platzhalter) | Aufgabe |
 
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |
