@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-05 – Kontaktseite: Kartenplatzhalter verkleinert
+- `.map-placeholder` (Besuchs-Block) nahm bisher die volle Spaltenbreite ein und wirkte dadurch deutlich größer/dominanter als der Anruf-Block links daneben. Auf Wunsch auf 50% Breite reduziert (`width: 50%`, Seitenverhältnis 4/3 unverändert).
+- Geprüft: Desktop/Tablet/Mobile, kein horizontaler Overflow.
+
 ## 2026-09-29 (Nachtrag 2) – Kontaktseite: Besuchs-Block ergänzt
 - `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für eine Karte (Entscheidung Jascha: vorerst nur Platzhalter, kein Kartendienst – die Einbindung ist datenschutzrelevant und wird vor dem Livegang entschieden).
 - Der Info-Block unter dem Formular heißt deshalb jetzt „So findest du uns“ statt „Komm vorbei“, damit sich die Formulierung nicht doppelt.
