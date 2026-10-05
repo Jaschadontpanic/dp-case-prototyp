@@ -378,7 +378,7 @@
 /* Kartenplatzhalter (kein Kartendienst eingebunden) - Streifenmuster wiederverwendet von
    .bauart-row-img.placeholder / .form-card.placeholder, gleiche Werte, keine neue Design-Optik. */
 .contact-page .map-placeholder {
-  aspect-ratio: 4/3; border-radius: 14px;
+  width: 50%; aspect-ratio: 4/3; border-radius: 14px;
   background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px);
   display: flex; align-items: center; justify-content: center; text-align: center;
   color: #b7b7b0; font-size: var(--fs-body-small); font-style: italic; padding: 16px;
