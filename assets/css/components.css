@@ -79,6 +79,34 @@
   .trust { padding-left: 48px; padding-right: 48px; }
 }
 
+/* ===== CLIENT LIST (Kundennamen im Trust-Bereich der Startseite, Blocksatz, neu 2026-10-05) =====
+   Eigenstaendige Komponente fuer index.html, NICHT .trust-list/.tier/.t1-.t8 oben - die bleiben
+   unveraendert bestehen, weil standards-werte/index.html dieselbe Trust-Zeile mit den alten
+   Klassen (feste Groessenstufen je Firma) weiterverwendet und laut Aufgabe nicht angefasst
+   werden soll. Alle Namen gleiche Schriftgroesse/Farbe (anders als .t1-.t8), damit der
+   Blocksatz-Effekt (Breite nur ueber Abstaende ausgeglichen) funktioniert.
+   - Ohne JS: .client-list ist ein Flex-Container mit flex-wrap, justify-content:space-between
+     wirkt bei mehrzeiligem Flex-Wrap automatisch PRO ZEILE (inkl. letzter Zeile) - echter
+     Blocksatz ganz ohne JavaScript, "o.ae."-Variante zu text-align-last:justify.
+   - Mit JS (assets/js/trust-justify.js): Namen werden in .client-row-Bloecke gruppiert
+     (gleiche Flex-Technik pro Zeile), dabei letzte Zeile ggf. per Umsortierung/Weglassen auf
+     den Fuellstand gebracht, s. JS-Datei fuer die genaue Logik. */
+.client-list { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 6px; }
+/* flex:0 0 100% ist noetig, weil .client-row selbst ein Flex-Item des aeusseren .client-list
+   ist (sobald JS die Zeilen-Divs einfuegt) - ohne feste volle Breite wuerde der aeussere
+   Flex-Umbruch mehrere schmale .client-row nebeneinander auf dieselbe Zeile packen UND der
+   inneren justify-content:space-between fehlte der Platz zum Verteilen (Bug beim ersten Test
+   gefunden: Namen standen ohne Abstand nebeneinander). */
+.client-list .client-row { display: flex; flex: 0 0 100%; justify-content: space-between; margin-bottom: 6px; }
+.client-list .client-name {
+  white-space: nowrap; font-family: var(--heading-font); font-size: var(--fs-body-small); color: var(--grau-text);
+}
+/* Trenner (bestehendes Zeichen " ·", unveraendert) nur zwischen Namen - per :not(:last-child)
+   nie als letztes Element einer Zeile (weder im Flat- noch im Row-Markup), nie am Zeilenanfang,
+   da er immer als Suffix am VORHERIGEN Namen haengt, nie als eigenes Element vorangestellt. */
+.client-list .client-name:not(:last-child)::after { content: " ·"; white-space: nowrap; }
+.client-list .client-hidden { display: none; }
+
 /* ===== PROCESS / STEP (Startseite + Engineering) =====
    step-top: Radius 24px + Verlauf #000 -> #112f2f aus engineering.html uebernommen,
    gilt jetzt einheitlich fuer alle Seiten (Backlog T6). */
