@@ -2,6 +2,16 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-05 – Kundennamen im Trust-Bereich der Startseite: echter Blocksatz
+- Ist-Zustand vorher: Die ~101 Kundennamen standen in `index.html` in 13 fest kuratierten `.tier`-Zeilen (`t1`–`t8`) mit 8 Größenstufen (32px bis 13px) – jede Zeile ein manueller Zeilenumbruch, kein dynamischer Fließtext. Dieselbe Komponente (`.trust`/`.trust-list`/`.tier`/`.t1`–`.t8`) wird auch auf `standards-werte/index.html` verwendet – die bleibt unverändert, deshalb wurde diese Komponente NICHT verändert, sondern eine neue, eigenständige Komponente nur für `index.html` ergänzt.
+- Neu: `.client-list`/`.client-name`/`.client-row` (neue Klassen, components.css) + `assets/js/trust-justify.js`. Alle Namen jetzt gleiche Schriftgröße/-farbe (`--fs-body-small`, `--grau-text`), Zeilenumbruch dynamisch je nach Breite statt fester Zeilen.
+- Ohne JavaScript: `.client-list` ist ein Flex-Container mit `flex-wrap` + `justify-content:space-between`, das ergibt bereits echten Blocksatz pro Zeile inkl. letzter Zeile, ganz ohne JS (Progressive Enhancement).
+- Mit JavaScript: zusätzlich Trenner garantiert nie am Zeilenanfang/-ende, und die letzte Zeile wird bei Bedarf zuerst umsortiert (max. 2 Positionen, tatsächlich nachgemessen statt angenommen – ein einzelner Zug kann durch Kaskadeneffekte beim Neu-Umbruch auch frühere Zeilen verschieben) und erst danach vom Ende der Liste weggelassen (ausgeblendet per `hidden`-Attribut, nicht gelöscht), bis die letzte Zeile mindestens 75 % gefüllt ist (`MIN_LAST_LINE_FILL`, als Konstante leicht anpassbar). Neuberechnung bei Laden, `document.fonts.ready` und Resize (debounced 150ms).
+- Bug beim ersten Test gefunden und behoben: `.client-row` brauchte `flex: 0 0 100%`, sonst wurde es selbst vom äußeren Flex-Umbruch der Liste als schmales Element behandelt (mehrere Zeilen nebeneinander statt gestapelt, kein Abstand zwischen den Namen).
+- Bekannte, dokumentierte Grenze: Der längste Name „Universitätsklinikum Schleswig-Holstein" (308px) passt erst ab ~360px Breite in den Container – darunter overflowt er zwangsläufig, da „Namen nicht trennen" ein Umbrechen verbietet. Betrifft nur Breiten unterhalb der getesteten 360px.
+- Geprüft: 360/768/1280/1920px, Verschiebung ≤2 Positionen (automatisiert über ~105 Breiten von 340–1920px verifiziert), Trenner nie am Zeilenrand, `standards-werte/index.html` unverändert (eigene Stichprobe), Resize-Verhalten ohne Overflow.
+- Pull Request wird nicht selbst gemerged (Vorgabe).
+
 ## 2026-09-29 (Nachtrag 2) – Kontaktseite: Besuchs-Block ergänzt
 - `content/kontakt.md`: Neuer kurzer Block neben bzw. über dem Anruf-Block – „Gern auch bei uns – komm vorbei in Hamburg-Bergedorf.“ plus Platzhalterfläche für eine Karte (Entscheidung Jascha: vorerst nur Platzhalter, kein Kartendienst – die Einbindung ist datenschutzrelevant und wird vor dem Livegang entschieden).
 - Der Info-Block unter dem Formular heißt deshalb jetzt „So findest du uns“ statt „Komm vorbei“, damit sich die Formulierung nicht doppelt.
