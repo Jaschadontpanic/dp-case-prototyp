@@ -355,12 +355,30 @@
   .product-hero-imgwrap img { max-height: 50vh; }
 }
 
-/* ===== BEGRIFFE-BOX / FORM-CARD / TYPEN-TEASER (Engineering – Flightcase-Formen) ===== */
-.begriffe-box { background: var(--hell); border-radius: 16px; margin: 0 var(--side-pad) 46px; max-width: calc(var(--max-width) - 2*var(--side-pad)); margin-left:auto; margin-right:auto; padding: 22px 28px; }
-.begriffe-box .label { font-weight:700; font-size: 13px; color: var(--anthrazit); margin-bottom: 10px; }
-.begriffe-list { display: flex; flex-wrap: wrap; gap: 22px; }
-.begriffe-list div { font-size: 13px; color: var(--grau-text); }
-.begriffe-list b { color: var(--anthrazit); }
+/* ===== FEATURE-BAND (neu 2026-10-12, Vorbild mercedes-benz.de GLA-Element) =====
+   Flächiges Bild-Text-Band, Standard-Seitenrand (.wrap = --max-width/--side-pad), --hell-Hintergrund
+   durchgehend über die volle Bandbreite. Zweispaltig (Text links, Freisteller-Bild rechts); Modifier
+   .feature-band--no-image für Baustein ohne Bildspalte (erste Anwendung: Begriffssystem, s.u.). */
+.feature-band { background: var(--hell); padding: 46px 0; margin: 46px 0; }
+.feature-band .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.feature-band--no-image .wrap { grid-template-columns: 1fr; }
+.feature-band-text h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: var(--anthrazit); margin-bottom: 12px; }
+.feature-band-text p { font-size: var(--fs-body); color: var(--grau-text); margin-bottom: 24px; max-width: 480px; }
+.feature-band-text .btn + .btn { margin-left: 16px; }
+.feature-band-img { display: flex; justify-content: center; align-items: center; }
+.feature-band-img img { max-width: 100%; max-height: 360px; object-fit: contain; filter: drop-shadow(0 20px 20px rgba(0,0,0,.15)); }
+@media (max-width: 900px) {
+  .feature-band .wrap { grid-template-columns: 1fr; }
+  .feature-band-img { order: -1; }
+}
+
+/* Begriffssystem (Engineering – Flightcase-Formen): erste Anwendung von .feature-band, ohne Bild
+   (kein Freisteller vorhanden) – Titel + Begriffsliste statt Unterzeile/Buttons. */
+.feature-band-text .begriffe-list { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 4px; }
+.feature-band-text .begriffe-list div { font-size: 13px; color: var(--grau-text); }
+.feature-band-text .begriffe-list b { color: var(--anthrazit); }
+
+/* ===== FORM-CARD / TYPEN-TEASER (Engineering – Flightcase-Formen) ===== */
 
 .form-group { max-width: var(--max-width); margin: 0 auto; padding: 30px var(--side-pad) 0; }
 .form-group h2 { font-size: 15px; letter-spacing: .06em; color: var(--teal); font-weight: 700; margin-bottom: 18px; }

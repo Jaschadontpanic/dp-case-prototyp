@@ -90,9 +90,21 @@ Bild-Text-Band fuer eine einzelne Aussage/ein einzelnes Produkt oder Thema, wied
   dem `--hell`-Grau), analog dem Produkt-Hero auf der Silent-Rack-Seite (freigestelltes
   Produktbild mit Bodenschatten, `max-height` + `object-fit:contain` statt festem
   `aspect-ratio`). Jede Bildlieferung fuer dieses Element braucht daher einen Freisteller, kein
-  normales Foto.
-- **Offen:** Spaltenverhaeltnis Text:Bild, erste konkrete Anwendung (welche Seite/welches
-  Produkt), ob Bodenschatten wie beim Produkt-Hero übernommen wird. Noch nicht implementiert.
+  normales Foto. Bodenschatten per `filter: drop-shadow(0 20px 20px rgba(0,0,0,.15))` auf dem
+  `<img>` (Wiederverwendung des Schattens vom Produkt-Hero, kein neuer Design-Wert).
+- **Modifier `.feature-band--no-image`:** einspaltig (`.wrap` ohne `grid-template-columns`-Split),
+  fuer Anwendungen ohne Bild – z. B. kein Freisteller vorhanden.
+
+**Umgesetzt (2026-10-12): Begriffssystem** (`/engineering/flightcase-formen`) – erste Anwendung,
+mit `.feature-band--no-image` (kein Bild vorhanden, auf Jascha-Wunsch bewusst ohne). Ersetzt die
+bisherige `.begriffe-box` (jetzt entfernt). Struktur angepasst an den Inhalt (Glossar statt
+Produkt-Pitch): `<h2>Begriffssystem</h2>` statt Headline+Unterzeile+Buttons, darunter die
+bestehende Begriffsliste (`.begriffe-list`, unveraendert: Deckel/Klappdeckel/Tür/Frontdeckel).
+Keine Buttons, da hier keine sinnvolle CTA-Zielseite existiert.
+
+**Offen:** erste Anwendung MIT Bild (Spaltenverhaeltnis/Bodenschatten lassen sich erst an einem
+echten Freisteller final pruefen – aktuelle Werte oben sind ein erster Entwurf, noch nicht an
+echtem Bildmaterial verifiziert).
 
 ## Case-Tile (umgesetzt 2026-09-28)
 „Unsere Empfehlungen“-Kacheln (`.cases-grid`, Startseite) benötigen jetzt nur noch **Bild + Text getrennt** (Titel, Story-Text, Branchen-Tag) statt wie bisher fertig bebilderter Kacheln mit eingebranntem Text. Optik bleibt gleich (Verlauf, Branchen-Tag oben links, Titel/Text unten links, weiß).

@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (zuallerletzt) – Feature-Band erste Anwendung: Begriffssystem
+- `.feature-band` (CSS-Grundgerüst aus dem vorherigen Eintrag) jetzt erstmals eingesetzt: Begriffssystem auf `/engineering/flightcase-formen` nutzt den neuen Baustein statt der alten `.begriffe-box` (CSS-Klasse entfernt, keine toten Selektoren).
+- Modifier `.feature-band--no-image` ergänzt (einspaltig) – hier auf Jascha-Wunsch bewusst ohne Bild, da kein Freisteller vorhanden.
+- Inhalt inhaltlich unverändert (Glossar Deckel/Klappdeckel/Tür/Frontdeckel), nur Titel von kleinem `.label` (13px) auf echte `<h2>` nach Feature-Band-Spezifikation angehoben.
+- Bodenschatten für die Bild-Variante ergänzt (`drop-shadow`, Wiederverwendung vom Produkt-Hero) – noch nicht an echtem Freisteller-Bild getestet, da hier noch kein Bild vorliegt.
+- Geprüft: Desktop/Tablet/Mobile (Grid bricht bei ≤900px einspaltig um, Begriffsliste bleibt lesbar, kein Overflow).
+
 ## 2026-10-12 (ganz zuletzt) – Engineering: Intro-Satz ins Headerbild verschoben
 - Jascha-Feedback: Der Satz „Was soll dein Case können, und was würde es perfekt machen? ..." gehört ins Headerbild, so wie auf der Startseite (Hero: H1 + `p.desc` im Bild).
 - Text unverändert (war bereits als `.page-intro`-Absatz direkt unter dem Header vorhanden), nur verschoben: jetzt als `p.desc` innerhalb von `.hub-header .wrap`, analog zu Manufaktur/Produkte, die diesen Aufbau bereits nutzen.
