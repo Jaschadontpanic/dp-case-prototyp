@@ -69,20 +69,26 @@ Design-Stil (Schrift im Bild, Branchen-Tag oben links) bleibt. Offene Design-Fra
 Ecken beim querformatigen Element vs. 45-Grad-Fase bei den Elementen darunter - laut Jascha
 im Design-Chat bereits geloest.
 
-**Kachel-Inhalte (neu 2026-09-29 – vorher überall Platzhalter „[Branche] / [Case-Titel] /
-[Story-Text folgt]“, ohne Button und ohne Link):**
+**Kachel-Inhalte (Stand 2026-10-12 – Galerie auf 3 Bild-Kacheln + 2 CTA-Kacheln reduziert,
+siehe Entscheidung unten):**
 
-Jede Kachel hat: Bild, Branchen-Tag, Titel, Story (1 Satz), Button-Text, Ziel-Link.
-Die Bilder sind vorerst Platzhalter – es gibt nur drei Fotos für fünf Kacheln, zwei werden
-doppelt verwendet (siehe B5).
+Jede der 3 Case-Kacheln hat: Bild, Branchen-Tag, Titel, Story (1 Satz), Button-Text, Ziel-Link.
+Die Case-Tiles 4 und 5 (Wartungsset-Case, Schwing-Rack) sind entfallen – es gab nur drei echte
+Fotos für fuenf Kacheln, zwei wurden doppelt verwendet. Jascha-Entscheidung (2026-10-12): Dubletten
+raus, an deren Stelle ruecken die beiden CTA-Kacheln "Weitere Produkte" / "Engineering" (vormals
+separat am Ende) und werden zu echten Bild-Kacheln.
 
 | # | Bild | Branchen-Tag | Titel | Story | Button | Ziel |
 |---|---|---|---|---|---|---|
 | 1 (breit) | cases-backstage-kaffeebar.jpg | Catering | Barista Bar | Deckel ab, Schubladen auf, servieren – hochwertiger Kaffee im Backstage-Bereich, ganz ohne Rüstzeit. | Case ansehen | /moebel-cases/barista-bar |
 | 2 | cases-luftfahrt-schablonen-flightcase.jpg | Luftfahrt | Bohrschablonen-Case | Schablonen für den Flugzeugbau sicher transportiert und übersichtlich präsentiert – fehlt eine, sieht man es sofort. | Case ansehen | /komplettset-cases/bohrschablonen-case |
 | 3 | cases-broadcast-pult-workstation.jpg | Broadcast | Silent Rack | Aktiv belüftete Technik im Seminarraum – vollständig gekühlt und dabei völlig geräuschlos. | Case ansehen | /19-zoll-racks/silent-rack |
-| 4 | cases-luftfahrt-schablonen-flightcase.jpg (Platzhalter) | Industrie | Wartungsset-Case | Ein hochwertiges Wartungsset, das unkompliziert und sicher beim Kunden ankommt. | Case ansehen | /komplettset-cases/wartungsset-case |
-| 5 | cases-broadcast-pult-workstation.jpg (Platzhalter) | Veranstaltung | Schwing-Rack | Empfindliche Elektronik auf Schwingungsdämpfern – Stöße und Vibrationen kommen nicht am Equipment an. | Case ansehen | /19-zoll-racks/schwing-rack |
+
+**Offen:** Titel/Story/Branchen-Tag/Link sind in der Content-Doku hier final, aber im HTML
+(index.html) noch als Platzhalter `[Branche]/[Case-Titel]/[Story-Text folgt]` hinterlegt – noch
+nicht umgesetzt. Ausserdem haben nur Silent Rack (`/19-zoll-racks/silent-rack/`) eine fertig
+gebaute Produktseite; Barista Bar und Bohrschablonen-Case existieren im Prototyp bisher nur als
+Content-Daten, nicht als HTML-Seite (Links wuerden derzeit ins Leere fuehren).
 
 **Datenfelder pro Case-Kachel:**
 - Fliesstext = Story-Feld
@@ -92,18 +98,16 @@ doppelt verwendet (siehe B5).
 - Masse Aussen (Breite, Hoehe, Tiefe)
 - Gewicht
 
-**Zusaetzliche Kacheln am Ende der Galerie (normale Kachelbreite, nicht doppelbreit):**
-
-**Kachel "Weitere Produkte":**
-- Bild: Case-Turm-Foto (Case-Turm_TBF_Schwarzer_Hintergrund.jpg), passend zugeschnitten.
-  Bis das Foto vorliegt: `cases-backstage-kaffeebar.jpg` als Hintergrund-Platzhalter (2026-09-29).
+**Kachel "Weitere Produkte" (Position 4, jetzt echte Bild-Kachel):**
+- Bild: Header-Bild der Produkte-Hub-Seite (`assets/images/startseite/hero-case-foto.jpg`) als
+  Platzhalter (2026-10-12, auf Jascha-Wunsch) – eigenes Motiv (z. B. Case-Turm-Foto) folgt später.
 - Ueberschrift: Weitere Produkte entdecken
 - Text: Jedes Case individuell entwickelt – ob Einzelstueck oder Serie.
 - Button: Weitere Produkte -> /produkte
 
-**Kachel "Engineering":**
-- Bild: noch offen (z.B. CAD-Rendering oder Werkstatt-Bild).
-  Bis dahin: `cases-broadcast-pult-workstation.jpg` als Hintergrund-Platzhalter (2026-09-29).
+**Kachel "Engineering" (Position 5, jetzt echte Bild-Kachel):**
+- Bild: Header-Bild der Engineering-Hub-Seite (`assets/images/engineering/header-engineering-zeichner.jpg`)
+  als Platzhalter (2026-10-12, auf Jascha-Wunsch) – eigenes Motiv folgt später.
 - Ueberschrift: Engineering, das den Unterschied macht
 - Text: Von der ersten Idee bis zur Fertigung – unser 5-Schritte-Prozess sorgt dafuer, dass
   dein Case genau das kann, was es koennen muss.

@@ -62,6 +62,21 @@
 .cases-grid .cta-tile p { font-size: var(--fs-body-small); color: #ddd; margin-bottom: 14px; line-height: 1.5; }
 .cases-grid .cta-tile .btn { align-self: flex-start; }
 
+/* .cta-tile--img: Bild-Hintergrund-Variante von .cta-tile (2026-10-12), Platzhalterbilder statt
+   flaecher Anthrazit-Flaeche. Bild + abdunkelnder Verlauf (analog .case-tile::after), Inhalt bleibt
+   wie bei .cta-tile (Titel, Text, Button). */
+.cases-grid .cta-tile--img { position: relative; overflow: hidden; }
+.cases-grid .cta-tile--img img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;
+}
+.cases-grid .cta-tile--img::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: linear-gradient(to top, #000 15%, rgba(0,0,0,.2) 55%, rgba(0,0,0,.4) 100%);
+}
+.cases-grid .cta-tile--img h3,
+.cases-grid .cta-tile--img p,
+.cases-grid .cta-tile--img .btn { position: relative; z-index: 2; }
+
 /* ===== TRUST LIST (nur Startseite) ===== */
 .trust { max-width: var(--max-width); margin: 70px auto; padding: 0 var(--side-pad); }
 .trust h2 { margin-bottom: 34px; }
