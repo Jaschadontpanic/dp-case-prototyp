@@ -528,11 +528,6 @@
 .contact-page .contact-form label.checkbox-inline, .contact-page .contact-form label.checkbox { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; font-weight: 400 !important; font-size: 13px; margin-right: 20px; }
 .contact-page .hint { display: block; font-size: 11px; color: var(--grau-text); font-weight: 400; margin-top: 4px; }
 
-.contact-page .contact-info { display: flex; flex-direction: column; gap: 24px; }
-.contact-page .info-block { background: var(--hell); border-radius: 16px; padding: 26px 28px; }
-.contact-page .info-block h3 { font-size: 15px; margin-bottom: 10px; }
-.contact-page .info-block p { font-size: 13.5px; color: var(--grau-text); line-height: 1.6; margin: 2px 0; }
-
 .contact-page .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 @media (max-width: 900px) { .contact-page .team-grid { grid-template-columns: repeat(2,1fr); } }
 .contact-page .team-card { text-align: center; }

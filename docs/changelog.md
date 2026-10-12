@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (allerletzt) – Kontaktseite: Info-Blöcke „Lieber direkt?“/„So findest du uns“ entfernt
+- Jascha-Entscheidung: Das Element komplett raus – Dopplung zum Anruf-/Besuchs-Block (`.visit-grid`, `.call-cta-top`/`.visit-cta-top`) weiter oben auf derselben Seite, der E-Mail bzw. Adresse ohnehin schon sinngemäß abdeckt.
+- `.contact-info`-Block mit den beiden `.info-block`-Kacheln aus `kontakt/index.html` entfernt.
+- Zugehöriges, dadurch totes CSS entfernt: `.contact-page .contact-info`, `.contact-page .info-block` (+ Kind-Selektoren). Die generische, bereits vorher als ungenutzt dokumentierte Basis-Regel `.contact-info`/`.info-block` aus dem `index.html`-Grundgerüst (Kommentar in `components.css` Zeile 161–164) bewusst nicht angefasst – nicht durch diese Änderung verursacht.
+- `docs/design-system.md` (Kontakt-Abschnitt) entsprechend aktualisiert.
+- Geprüft: Desktop/Tablet/Mobile – Formular endet jetzt direkt mit dem Team-Grid, kein Leerraum/Bruch, keine toten Links auf die entfernte E-Mail-Adresse von anderswo auf der Seite.
+
 ## 2026-10-12 (zuallerletzt) – Feature-Band erste Anwendung: Begriffssystem
 - `.feature-band` (CSS-Grundgerüst aus dem vorherigen Eintrag) jetzt erstmals eingesetzt: Begriffssystem auf `/engineering/flightcase-formen` nutzt den neuen Baustein statt der alten `.begriffe-box` (CSS-Klasse entfernt, keine toten Selektoren).
 - Modifier `.feature-band--no-image` ergänzt (einspaltig) – hier auf Jascha-Wunsch bewusst ohne Bild, da kein Freisteller vorhanden.
