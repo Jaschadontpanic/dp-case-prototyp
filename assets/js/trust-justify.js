@@ -1,103 +1,160 @@
-/* Kundennamen-Blocksatz im Trust-Bereich der Startseite (#clientList).
+/* Kundennamen-Blocksatz mit Groessenstaffelung im Trust-Bereich der Startseite (#clientList).
    Nur fuer index.html - andere Seiten/Komponenten (z.B. die .trust-list/.tier-Struktur auf
    standards-werte/index.html) bleiben unberuehrt, dieses Script wird dort nicht eingebunden.
 
    Ohne dieses Script ist #clientList bereits per CSS (.client-list { display:flex; flex-wrap:
-   wrap; justify-content:space-between }) ein echter, mehrzeiliger Blocksatz inkl. letzter Zeile
-   (Progressive Enhancement). Dieses Script ergaenzt nur die Feinheiten, die reines CSS nicht
-   leisten kann:
-   - letzte Zeile ggf. umsortieren/kuerzen, wenn sie sonst zu grosse Luecken haette
-   - Trenner garantiert nie am Zeilenanfang/-ende (reines CSS kann das bei natuerlichem
-     Zeilenumbruch nicht ausschliessen, siehe PR-Beschreibung)
+   wrap; justify-content:space-between }) ein echter, mehrzeiliger Blocksatz inkl. letzter Zeile,
+   nur ohne die Groessenstaffelung (die braucht bekannte Zeilengrenzen, also JS) - Progressive
+   Enhancement, der Text ist in jedem Fall vollstaendig im HTML und fuer SEO lesbar.
 
-   Technik: Namen werden unveraendert (gleiche Reihenfolge, gleicher Text) in #clientList
-   flach gerendert, der Browser macht per CSS-Flexwrap den eigentlichen Zeilenumbruch - wir
-   lesen per offsetTop nur aus, WELCHE Namen dabei auf welcher Zeile landen (kein eigenes
-   Breitenmess-/Wrap-Modell noetig, garantiert pixelgenau zum echten Rendering). */
+   Technik: Da jede Zeile eine ANDERE Schriftgroesse hat (groesste oben, kleinste unten - siehe
+   ROW_FONT_SIZES, muss exakt mit den :nth-child-Regeln in components.css uebereinstimmen),
+   kann die Zeilenzuordnung nicht wie bei einheitlicher Groesse per "flach rendern und offsetTop
+   auslesen" ermittelt werden (Henne-Ei-Problem: die Groesse einer Zeile haengt von ihrem Index
+   ab, der wiederum erst nach dem Packen feststeht). Stattdessen wird mit einem <canvas>
+   (measureText) pro Zeile greedy gepackt: so viele Namen wie bei der fuer diese Zeile gueltigen
+   Schriftgroesse hineinpassen, dann naechste (kleinere) Groesse fuer die naechste Zeile. */
 (function () {
   'use strict';
 
-  // Schwellwert "letzte Zeile muss vor dem Strecken zu mindestens X% gefuellt sein" -
-  // als Konstante angelegt, damit er leicht anpassbar ist.
+  // Muss exakt mit den .client-row:nth-child(n)-Regeln in components.css uebereinstimmen
+  // (1:1 von den alten .t1-.t8-Werten uebernommen, keine neuen Design-Werte).
+  var ROW_FONT_SIZES = [32, 26, 22, 19, 14, 14, 13, 13];
+  var ROW_GAP = 6; // .client-list { row-gap: 6px } - Abstand ZWISCHEN Zeilen, fuer die Hoehenrechnung
+
+  // Schwellwert "letzte Zeile muss vor dem Strecken zu mindestens X% gefuellt sein".
   var MIN_LAST_LINE_FILL = 0.75;
 
   // "Ein Name darf um maximal 2 Positionen verschoben werden."
   var MAX_POSITION_SHIFT = 2;
+
+  // Ab dieser Breite gilt eine Seite als "Handy" - dort zusaetzlich zur normalen
+  // Blocksatz-Korrektur so viele Namen vom Listenende weglassen, bis der Abschnitt nicht
+  // hoeher als der sichtbare Bereich ist (s. fitMobileHeight).
+  var MOBILE_BREAKPOINT_PX = 600;
+  var MOBILE_BOTTOM_MARGIN_PX = 24;
 
   var RESIZE_DEBOUNCE_MS = 150;
 
   var list = document.getElementById('clientList');
   if (!list) return;
 
-  // Kanonische Original-Reihenfolge einmalig aus dem Markup lesen - einzige Quelle der
-  // Wahrheit fuer jede Neuberechnung (Namen werden nie geloescht, nur die Darstellung/
-  // Reihenfolge/Sichtbarkeit aendert sich je nach Breite).
   var originalNames = Array.prototype.map.call(
     list.querySelectorAll('.client-name'),
     function (el) { return el.textContent; }
   );
   var allIndices = originalNames.map(function (_, i) { return i; });
-
   if (!originalNames.length) return;
 
-  // Rendert die Namen in der gegebenen Reihenfolge FLACH (ein Flex-Container, kein
-  // Row-Markup) - Grundlage fuer die offsetTop-Messung, s.o.
-  function renderFlat(order) {
-    var frag = document.createDocumentFragment();
-    for (var i = 0; i < order.length; i++) {
-      var span = document.createElement('span');
-      span.className = 'client-name';
-      span.textContent = originalNames[order[i]];
-      frag.appendChild(span);
-    }
-    list.innerHTML = '';
-    list.appendChild(frag);
-    return list.querySelectorAll('.client-name');
+  function fontSizeForRow(rowIndex) {
+    return ROW_FONT_SIZES[Math.min(rowIndex, ROW_FONT_SIZES.length - 1)];
   }
 
-  // Liest nach dem Rendern aus, welche Namen (per offsetTop) auf derselben Zeile liegen.
-  function measureRows(order) {
-    var items = renderFlat(order);
-    var rows = [];
-    var currentTop = null;
-    var currentRow = [];
-    for (var i = 0; i < items.length; i++) {
-      var top = items[i].offsetTop;
-      if (currentTop === null || Math.abs(top - currentTop) > 1) {
-        if (currentRow.length) rows.push(currentRow);
-        currentRow = [];
-        currentTop = top;
-      }
-      currentRow.push({ origIndex: order[i], el: items[i] });
+  // ---- Messen (Canvas statt DOM-Reflow, da pro Zeile eine andere Groesse gemessen wird und
+  // fuer die Mobil-Trunkierung ggf. viele Kandidaten-Laengen durchprobiert werden). ----
+  var measureCanvas = document.createElement('canvas');
+  var measureCtx = measureCanvas.getContext('2d');
+
+  function getFontInfo() {
+    var probe = document.createElement('div');
+    probe.className = 'client-row';
+    probe.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:-9999px;';
+    document.body.appendChild(probe);
+    var cs = getComputedStyle(probe);
+    var info = { family: cs.fontFamily, weight: cs.fontWeight };
+    document.body.removeChild(probe);
+    return info;
+  }
+
+  var sepWidthCache = {};
+  function sepWidth(fontSize, fontInfo) {
+    var key = fontSize;
+    if (!(key in sepWidthCache)) {
+      measureCtx.font = fontInfo.weight + ' ' + fontSize + 'px ' + fontInfo.family;
+      sepWidthCache[key] = measureCtx.measureText(' ·').width;
     }
-    if (currentRow.length) rows.push(currentRow);
+    return sepWidthCache[key];
+  }
+
+  function textWidth(text, fontSize, fontInfo) {
+    measureCtx.font = fontInfo.weight + ' ' + fontSize + 'px ' + fontInfo.family;
+    return measureCtx.measureText(text).width;
+  }
+
+  function rowWidthPx(origIndices, fontSize, fontInfo) {
+    var used = 0;
+    for (var i = 0; i < origIndices.length; i++) {
+      var w = textWidth(originalNames[origIndices[i]], fontSize, fontInfo);
+      used += (i === 0) ? w : (sepWidth(fontSize, fontInfo) + w);
+    }
+    return used;
+  }
+
+  // Tatsaechliche gerenderte Zeilenhoehe (OHNE Abstand zum naechsten Element) je Schriftgroesse -
+  // per Mini-DOM-Probe gemessen statt eines geschaetzten line-height-Faktors, damit die
+  // Mobil-Hoehenrechnung zur echten Darstellung passt. Pro Groesse nur einmal gemessen (Cache),
+  // es gibt max. 8 verschiedene Groessen. Der Abstand ZWISCHEN Zeilen (row-gap, s.u.) wird
+  // separat in totalHeight() addiert, nicht hier - sonst doppelt gezaehlt.
+  var rowHeightCache = {};
+  function rowHeightForSize(sizePx) {
+    if (rowHeightCache[sizePx] != null) return rowHeightCache[sizePx];
+    var probe = document.createElement('div');
+    probe.className = 'client-row';
+    probe.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:-9999px;font-size:' + sizePx + 'px;';
+    probe.textContent = 'X';
+    document.body.appendChild(probe);
+    var h = probe.offsetHeight;
+    document.body.removeChild(probe);
+    rowHeightCache[sizePx] = h;
+    return h;
+  }
+
+  // ---- Packen ----
+  // Greedy: Zeile fuer Zeile, mit der fuer den jeweiligen Zeilenindex gueltigen Schriftgroesse,
+  // so viele Namen wie passen. Ein einzelner Name breiter als der Container bekommt trotzdem
+  // eine eigene Zeile (sonst Endlosschleife) - dasselbe dokumentierte Verhalten wie zuvor.
+  function packRows(order, containerWidth, fontInfo) {
+    var rows = [];
+    var idx = 0;
+    while (idx < order.length) {
+      var fontSize = fontSizeForRow(rows.length);
+      var row = [];
+      var used = 0;
+      while (idx < order.length) {
+        var origIdx = order[idx];
+        var w = textWidth(originalNames[origIdx], fontSize, fontInfo);
+        var candidateUsed = row.length === 0 ? w : used + sepWidth(fontSize, fontInfo) + w;
+        if (row.length > 0 && candidateUsed > containerWidth) break;
+        row.push(origIdx);
+        used = candidateUsed;
+        idx++;
+      }
+      if (row.length === 0) { row.push(order[idx]); idx++; }
+      rows.push(row);
+    }
     return rows;
   }
 
-  // Fuellstand der letzten Zeile: Summe der tatsaechlich gerenderten Namensbreiten
-  // (inkl. Trenner, der ist Teil des Textinhalts) im Verhaeltnis zur Containerbreite.
-  function lastRowFillRatio(rows) {
+  function fillRatio(rows, containerWidth, fontInfo) {
     if (!rows.length) return 1;
     var lastRow = rows[rows.length - 1];
-    var sum = 0;
-    for (var i = 0; i < lastRow.length; i++) sum += lastRow[i].el.offsetWidth;
-    var containerWidth = list.clientWidth || 1;
-    return sum / containerWidth;
+    var fontSize = fontSizeForRow(rows.length - 1);
+    return rowWidthPx(lastRow, fontSize, fontInfo) / containerWidth;
   }
 
-  function orderFromRows(rows) {
+  function totalHeight(rows) {
+    var h = 0;
+    for (var i = 0; i < rows.length; i++) h += rowHeightForSize(fontSizeForRow(i));
+    if (rows.length > 1) h += ROW_GAP * (rows.length - 1); // row-gap zwischen den Zeilen, s.o.
+    return h;
+  }
+
+  function flatten(rows) {
     var order = [];
-    rows.forEach(function (row) {
-      row.forEach(function (item) { order.push(item.origIndex); });
-    });
+    rows.forEach(function (row) { order = order.concat(row); });
     return order;
   }
 
-  // Groesste Verschiebung, die IRGENDEIN Name durch "order" gegenueber seiner
-  // kanonischen Original-Position (origIndex === Index im Original-Array) erfaehrt.
-  // Wird nach jedem Umsortierungsversuch tatsaechlich nachgemessen statt angenommen,
-  // weil ein einzelner Zug durch Kaskadeneffekte beim Neu-Umbruch theoretisch auch
-  // fruehere Zeilen verschieben kann (mehr als nur die betroffene Zeile).
   function maxPositionShift(order) {
     var max = 0;
     for (var newPos = 0; newPos < order.length; newPos++) {
@@ -107,58 +164,86 @@
     return max;
   }
 
-  function compute() {
-    var order = allIndices.slice();
-    var rows = measureRows(order);
+  // Verfuegbare Hoehe fuer die Namens-Zeilen, WENN der .trust-Abschnitt oben im Viewport steht
+  // (window.innerHeight = echte Geraetehoehe, bewusst nicht auf eine konkrete iPhone-Pixelzahl
+  // hartkodiert, damit es fuer jedes aktuelle/zukuenftige Geraet automatisch stimmt). Bewusst
+  // NICHT der aktuelle Scroll-Abstand (list.getBoundingClientRect().top waere beim ersten
+  // Laden, wenn der Abschnitt noch gar nicht im Bild ist, ein riesiger Wert und wuerde die
+  // Liste faelschlich fast komplett leerraeumen) - stattdessen der feste Abstand INNERHALB des
+  // .trust-Abschnitts von dessen Oberkante bis zur Listenspitze (H2 + Abstand), der ist
+  // scroll-unabhaengig, weil beide Rects sich beim Scrollen gleich mitbewegen.
+  function availableMobileHeight() {
+    var section = list.closest('.trust');
+    var localOffset = section
+      ? list.getBoundingClientRect().top - section.getBoundingClientRect().top
+      : 0;
+    var available = window.innerHeight - localOffset - MOBILE_BOTTOM_MARGIN_PX;
+    return Math.max(available, rowHeightForSize(fontSizeForRow(0)));
+  }
 
-    // 1) Umsortieren im Rahmen von max. 2 Positionen: den letzten Namen der vorletzten
-    //    Zeile ans Ende der Gesamtliste verschieben, damit er auf die letzte Zeile rutscht
-    //    und sie sich dadurch mehr fuellt. Jeder Versuch wird NACH der Neuberechnung
-    //    tatsaechlich geprueft (maxPositionShift) - erst dann uebernommen. Max. so viele
-    //    Versuche wie MAX_POSITION_SHIFT, danach lieber Namen weglassen (Schritt 2).
+  function compute() {
+    var containerWidth = list.clientWidth || 1;
+    var fontInfo = getFontInfo();
+    var order = allIndices.slice();
+    var rows = packRows(order, containerWidth, fontInfo);
+
+    // 1) Umsortieren im Rahmen von max. 2 Positionen (letzter Name der vorletzten Zeile ans
+    //    Ende der Gesamtliste, dadurch rutscht er auf die letzte Zeile). Nach jedem Versuch wird
+    //    die tatsaechliche Verschiebung nachgemessen statt angenommen (ein Zug kann durch
+    //    Kaskadeneffekte beim Neu-Packen auch frueher liegende Zeilen verschieben).
     for (var attempt = 0; attempt < MAX_POSITION_SHIFT; attempt++) {
-      if (rows.length < 2 || lastRowFillRatio(rows) >= MIN_LAST_LINE_FILL) break;
+      if (rows.length < 2 || fillRatio(rows, containerWidth, fontInfo) >= MIN_LAST_LINE_FILL) break;
       var secondLast = rows[rows.length - 2];
-      if (secondLast.length <= 1) break; // vorletzte Zeile darf nicht leer werden
-      var movedOrigIdx = secondLast[secondLast.length - 1].origIndex;
-      var candidate = orderFromRows(rows);
+      if (secondLast.length <= 1) break;
+      var movedOrigIdx = secondLast[secondLast.length - 1];
+      var candidate = flatten(rows);
       var fromPos = candidate.indexOf(movedOrigIdx);
       candidate.splice(fromPos, 1);
       candidate.push(movedOrigIdx);
-      if (maxPositionShift(candidate) > MAX_POSITION_SHIFT) break; // Grenze erreicht
+      if (maxPositionShift(candidate) > MAX_POSITION_SHIFT) break;
       order = candidate;
-      rows = measureRows(order);
+      rows = packRows(order, containerWidth, fontInfo);
     }
 
-    // 2) Wenn das nicht reicht: Namen vom Ende der (ggf. schon umsortierten) Liste
-    //    weglassen (ausblenden, nicht loeschen), bis die letzte Zeile die Mindestfuellung
-    //    erreicht oder nur noch ein Name uebrig ist.
+    // 2) Wenn das nicht reicht: Namen vom Ende der Liste weglassen (ausblenden, nicht
+    //    loeschen), bis die letzte Zeile die Mindestfuellung erreicht.
     var hiddenIndices = [];
     var safety = 0;
-    while (rows.length >= 1 && lastRowFillRatio(rows) < MIN_LAST_LINE_FILL && order.length > 1 && safety < 20) {
-      order = orderFromRows(rows);
+    while (rows.length >= 1 && fillRatio(rows, containerWidth, fontInfo) < MIN_LAST_LINE_FILL && order.length > 1 && safety < 20) {
+      order = flatten(rows);
       hiddenIndices.push(order.pop());
-      rows = measureRows(order);
+      rows = packRows(order, containerWidth, fontInfo);
       safety++;
+    }
+
+    // 3) Nur auf Handy-Breiten: zusaetzlich so lange weitere Namen vom Listenende weglassen,
+    //    bis der gesamte Namensblock in den sichtbaren Bereich passt (kein Scrollen "in" den
+    //    Abschnitt hinein noetig, bevor man ihn ganz sieht).
+    if (window.innerWidth <= MOBILE_BREAKPOINT_PX) {
+      var available = availableMobileHeight();
+      var safety2 = 0;
+      while (rows.length >= 1 && totalHeight(rows) > available && order.length > 1 && safety2 < originalNames.length) {
+        order = flatten(rows);
+        hiddenIndices.push(order.pop());
+        rows = packRows(order, containerWidth, fontInfo);
+        safety2++;
+      }
     }
 
     render(rows, hiddenIndices);
   }
 
-  // Baut das finale Markup: ein .client-row je Zeile (gleiche Flex-Technik wie der
-  // flache Vor-Zustand, aber pro Zeile fest statt browser-berechnet), dadurch ist der
-  // Trenner (CSS :not(:last-child)::after) garantiert nie der erste/letzte sichtbare
-  // Teil einer Zeile - er haengt immer an einem Namen, der nicht das letzte Element
-  // SEINER Zeile ist.
+  // Baut das finale Markup: ein .client-row je Zeile (Groesse/Farbe kommt per :nth-child aus
+  // components.css), Trenner per CSS :not(:last-child) garantiert nie am Zeilenrand.
   function render(rows, hiddenIndices) {
     var frag = document.createDocumentFragment();
     rows.forEach(function (row) {
       var rowEl = document.createElement('div');
       rowEl.className = 'client-row';
-      row.forEach(function (item) {
+      row.forEach(function (origIdx) {
         var span = document.createElement('span');
         span.className = 'client-name';
-        span.textContent = originalNames[item.origIndex];
+        span.textContent = originalNames[origIdx];
         rowEl.appendChild(span);
       });
       frag.appendChild(rowEl);
@@ -186,10 +271,7 @@
     resizeTimer = setTimeout(compute, RESIZE_DEBOUNCE_MS);
   }
 
-  // Initial (DOM bereits geparst, Script steht am Body-Ende) ...
   compute();
-  // ... und erneut, sobald Webfonts fertig geladen sind (verhindert falsche Umbrueche
-  // durch Font-Swap, da sich Zeichenbreiten dadurch aendern koennen).
   if (window.document && document.fonts && document.fonts.ready) {
     document.fonts.ready.then(compute);
   }

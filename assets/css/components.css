@@ -79,28 +79,46 @@
   .trust { padding-left: 48px; padding-right: 48px; }
 }
 
-/* ===== CLIENT LIST (Kundennamen im Trust-Bereich der Startseite, Blocksatz, neu 2026-10-05) =====
+/* ===== CLIENT LIST (Kundennamen im Trust-Bereich der Startseite, Blocksatz, neu 2026-10-05,
+   Groessenstaffelung 2026-10-12) =====
    Eigenstaendige Komponente fuer index.html, NICHT .trust-list/.tier/.t1-.t8 oben - die bleiben
    unveraendert bestehen, weil standards-werte/index.html dieselbe Trust-Zeile mit den alten
-   Klassen (feste Groessenstufen je Firma) weiterverwendet und laut Aufgabe nicht angefasst
-   werden soll. Alle Namen gleiche Schriftgroesse/Farbe (anders als .t1-.t8), damit der
-   Blocksatz-Effekt (Breite nur ueber Abstaende ausgeglichen) funktioniert.
+   Klassen weiterverwendet und laut Aufgabe nicht angefasst werden soll. Die Groessen-/Farbstufen
+   unten sind bewusst 1:1 von dort uebernommen (t1-t8-Werte), keine neuen Design-Werte erfunden.
    - Ohne JS: .client-list ist ein Flex-Container mit flex-wrap, justify-content:space-between
      wirkt bei mehrzeiligem Flex-Wrap automatisch PRO ZEILE (inkl. letzter Zeile) - echter
-     Blocksatz ganz ohne JavaScript, "o.ae."-Variante zu text-align-last:justify.
-   - Mit JS (assets/js/trust-justify.js): Namen werden in .client-row-Bloecke gruppiert
-     (gleiche Flex-Technik pro Zeile), dabei letzte Zeile ggf. per Umsortierung/Weglassen auf
-     den Fuellstand gebracht, s. JS-Datei fuer die genaue Logik. */
+     Blocksatz ganz ohne JavaScript, "o.ae."-Variante zu text-align-last:justify. In diesem
+     Fallback einheitliche Groesse (.client-list > .client-name, direktes Kind) - die
+     Groessenstaffelung braucht bekannte Zeilengrenzen und damit JS (Progressive Enhancement:
+     Kernfunktion/Text funktioniert ohne JS, die Staffelung on top mit JS).
+   - Mit JS (assets/js/trust-justify.js): Namen werden in .client-row-Bloecke gruppiert (gleiche
+     Flex-Technik pro Zeile). Jede Zeile bekommt per :nth-child ihre Groesse/Farbe (Kaskade an
+     die Namen vererbt) - JS kennt dieselbe Werteliste (dort als Kommentar referenziert), um beim
+     Packen pro Zeile mit der richtigen Schriftgroesse zu rechnen. Ab Zeile 8 bleibt es bei der
+     kleinsten Stufe (t8-Werte). */
 .client-list { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 6px; }
+.client-list > .client-name {
+  white-space: nowrap; font-family: var(--heading-font); font-size: var(--fs-body-small); color: var(--grau-text);
+}
 /* flex:0 0 100% ist noetig, weil .client-row selbst ein Flex-Item des aeusseren .client-list
    ist (sobald JS die Zeilen-Divs einfuegt) - ohne feste volle Breite wuerde der aeussere
    Flex-Umbruch mehrere schmale .client-row nebeneinander auf dieselbe Zeile packen UND der
-   inneren justify-content:space-between fehlte der Platz zum Verteilen (Bug beim ersten Test
-   gefunden: Namen standen ohne Abstand nebeneinander). */
-.client-list .client-row { display: flex; flex: 0 0 100%; justify-content: space-between; margin-bottom: 6px; }
-.client-list .client-name {
-  white-space: nowrap; font-family: var(--heading-font); font-size: var(--fs-body-small); color: var(--grau-text);
-}
+   inneren justify-content:space-between fehlte der Platz zum Verteilen. */
+/* Kein eigenes margin-bottom hier - der Abstand zwischen Zeilen kommt ausschliesslich vom
+   row-gap:6px des aeusseren .client-list (sonst doppelter Abstand, da jede .client-row wegen
+   flex:0 0 100% selbst eine Flex-Wrap-Zeile des Containers ist - Bug beim Testen gefunden: die
+   reale Hoehe war durch die Dopplung ca. 120px groesser als die von JS fuer die Mobil-
+   Trunkierung berechnete). */
+.client-list .client-row { display: flex; flex: 0 0 100%; align-items: baseline; justify-content: space-between; font-family: var(--heading-font); }
+.client-list .client-row:nth-child(1) { font-size: 32px; color: #1a1a1a; }
+.client-list .client-row:nth-child(2) { font-size: 26px; color: #333; }
+.client-list .client-row:nth-child(3) { font-size: 22px; color: #444; }
+.client-list .client-row:nth-child(4) { font-size: 19px; color: #555; }
+.client-list .client-row:nth-child(5) { font-size: var(--fs-body-small); color: #666; }
+.client-list .client-row:nth-child(6) { font-size: var(--fs-body-small); color: #777; }
+.client-list .client-row:nth-child(7) { font-size: 13px; color: #888; }
+.client-list .client-row:nth-child(n+8) { font-size: 13px; color: #939393; }
+.client-list .client-name { white-space: nowrap; }
 /* Trenner (bestehendes Zeichen " ·", unveraendert) nur zwischen Namen - per :not(:last-child)
    nie als letztes Element einer Zeile (weder im Flat- noch im Row-Markup), nie am Zeilenanfang,
    da er immer als Suffix am VORHERIGEN Namen haengt, nie als eigenes Element vorangestellt. */
