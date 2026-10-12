@@ -259,7 +259,6 @@
 .page-head { padding: 56px var(--side-pad) var(--fs-h1); max-width: var(--max-width); margin: 0 auto; }
 .page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; }
 .page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
-.pg-engineering .page-intro,
 .pg-engineering-formen .page-intro { padding-bottom: 26px; max-width: 70ch; }
 .pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
 /* Seit 2026-09-29: bei <=900px 48px statt 120px Seitenrand (wie Bauart-Row/Silent-Rack/
