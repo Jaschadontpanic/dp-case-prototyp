@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (noch später) – Abstand Seitenkopf → Inhalt (alle Unterseiten außer Startseite)
+- Jascha-Feedback: Unter den Seitenköpfen soll immer etwas Platz bleiben, bis der Inhalt beginnt (ca. eine Überschriftenhöhe) – auf allen Seiten außer der Startseite, die bereits gut aussah.
+- Befund: `.hub-header` (Engineering/Manufaktur/Produkte) und `.page-head` (restliche Unterseiten) hatten praktisch keinen eigenen Abstand nach unten; die jeweils folgenden Elemente (`.page-intro`, `.product-grid`, `.hub-grid`, `.text-section` usw.) haben alle `padding-top:0`. Auf der Startseite übernimmt `.stats-row` mit eigenem `padding:40px` diese Funktion bereits selbst – deshalb dort unverändert.
+- Fix: `.hub-header` bekommt `margin-bottom: var(--fs-h1)` (32px ≤900px, passend zur dortigen H1-Größe), `.page-head` bekommt `padding-bottom: var(--fs-h1)` statt bisher 10px, Kontakt-`.intro-headline` von fix 32px auf `var(--fs-h2)` (36px) angeglichen. Keine neuen Design-Werte – überall nur die jeweils eigene H1-Font-Size-Variable wiederverwendet.
+- Silent Rack hatte durch `.product-hero-bar-inner`s 34px Padding + dem seitenspezifischen `.text-section{padding-top:20px}` bereits ausreichend Abstand (zusammen 54px) und wurde nicht angefasst.
+- Geprüft: Desktop (1600px)/Tablet (768px)/Mobile (375px) auf Engineering, Manufaktur, Produkte, Standards & Werte, Wissen, Kontakt, Rechtliches – sichtbarer, einheitlicher Abstand, kein Overflow, keine Überlappung. Regel in `docs/design-system.md` dokumentiert.
+
 ## 2026-10-12 (später) – Startseite: 5 Textkorrekturen (direkt auf main, auf Wunsch)
 - Alle Texte waren bereits wortgleich in `content/startseite.md` als freigegebener Content hinterlegt, `index.html` war nur nicht nachgezogen worden.
 - Überschrift „Mehr als nur gut verpackt" → „Alles, was ein Case können kann".

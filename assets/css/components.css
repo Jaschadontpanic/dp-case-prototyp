@@ -229,7 +229,7 @@
    object-fit:cover immer exakt aus, auch wenn sie durch langen Text (volle Saetze statt
    kurzer <br>-Zeilen wie beim Hero) ueber die aspect-ratio-Hoehe hinaus waechst - mit
    overflow:hidden wuerde der Text stattdessen abgeschnitten (so gefunden beim Mobil-Test). */
-.hub-header { position: relative; aspect-ratio: 1800 / 725; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 0 0 50px; }
+.hub-header { position: relative; aspect-ratio: 1800 / 725; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 0 0 50px; margin-bottom: var(--fs-h1); }
 .hub-header img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
 .hub-header::before {
   content: ""; position: absolute; inset: 0; z-index: 1;
@@ -245,13 +245,18 @@
      (nicht wie beim Hero manuell per <br> kurz gehalten), bei 120px sonst zu wenig Breite. */
   .hub-header h1 { font-size: 32px; }
   .hub-header .wrap { padding-left: 48px; padding-right: 48px; }
+  /* margin-bottom folgt der mobilen H1-Groesse (s.o.), s. Designrichtlinie "Abstand Header -> Inhalt". */
+  .hub-header { margin-bottom: 32px; }
 }
 
 /* ===== PAGE HEAD / PAGE INTRO (restliche Unterseiten) =====
    Default = Wert aus engineering-formen/kontakt (10px, fs-h1). Engineering/Manufaktur/
    Produkte nutzen seit 2026-10-04 .hub-header statt .page-head (s.o.); .page-intro bleibt
-   bei Engineering fuer den Intro-Satz ueber dem 5-Schritte-Prozess bestehen. */
-.page-head { padding: 56px var(--side-pad) 10px; max-width: var(--max-width); margin: 0 auto; }
+   bei Engineering fuer den Intro-Satz ueber dem 5-Schritte-Prozess bestehen.
+   padding-bottom = fs-h1: Designrichtlinie "Abstand Header -> Inhalt" (s. design-system.md) -
+   unter jedem Seitenkopf bleibt ca. eine Ueberschriftenhoehe Platz, bevor der naechste Inhalt
+   beginnt (ausser Startseite, dort uebernimmt .stats-row das bereits selbst). */
+.page-head { padding: 56px var(--side-pad) var(--fs-h1); max-width: var(--max-width); margin: 0 auto; }
 .page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; }
 .page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
 .pg-engineering .page-intro,
@@ -414,7 +419,7 @@
    Farbe Anthrazit statt Teal (wie alle anderen H1 im page-head), mehr Abstand oben/unten. */
 .contact-page .intro-headline {
   font-family: var(--headline-alt-font); font-weight: 600; font-size: var(--fs-h2);
-  color: var(--anthrazit); line-height: 1.3; max-width: 960px; margin: 44px auto 32px;
+  color: var(--anthrazit); line-height: 1.3; max-width: 960px; margin: 44px auto var(--fs-h2);
 }
 .contact-page .intro-headline.placeholder { color: var(--grau-text); font-style: italic; font-weight: 400; }
 /* Seit 2026-09-29: kein Hintergrundkasten mehr (Jascha-Feedback: "sieht immer doof aus"),
