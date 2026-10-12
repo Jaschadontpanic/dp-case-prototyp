@@ -16,6 +16,10 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Silent Rack hatte durch `.product-hero-bar-inner`s 34px Padding + dem seitenspezifischen `.text-section{padding-top:20px}` bereits ausreichend Abstand (zusammen 54px) und wurde nicht angefasst.
 - Geprüft: Desktop (1600px)/Tablet (768px)/Mobile (375px) auf Engineering, Manufaktur, Produkte, Standards & Werte, Wissen, Kontakt, Rechtliches – sichtbarer, einheitlicher Abstand, kein Overflow, keine Überlappung. Regel in `docs/design-system.md` dokumentiert.
 
+## 2026-10-12 (noch später) – Flächen-Grau umgestellt, neues Feature-Band dokumentiert
+- `--hell` von #F0F5EB (Beige) auf #F8F8F8 (neutrales Grau) geändert – Jascha-Vorgabe, Vorbild mercedes-benz.de (GLA-Konfigurator-Element), Wert per Pixel-Messung aus dem Referenz-Screenshot ermittelt. Keine neue Variable, bestehender Wert korrigiert – wirkt automatisch an allen 8 Stellen, die `--hell` als Flächen-Hintergrund nutzen: Begriffssystem, Mehr-zur-Bauart-Teaser (Bauformen), Deckel-Tür-oder-beides-Teaser (Bauart), Dein-perfektes-Silent-Rack-Teaser (Produktseite, gleiche Klasse `.typen-teaser`), Prozess-Teaser (Produkte-Hub), Tabellenkopf (u. a. Flightcase Maße – damit verbindlicher Standard für Tabellenfarbgebung sitewide), Kontaktseiten-Infoboxen, Rating-Balken-Hintergrund. Altes Beige kommt nirgends mehr vor.
+- Neue Komponente **Feature-Band** (`.feature-band`) in `docs/design-system.md` dokumentiert (noch nicht implementiert, nur Spezifikation): Bild-Text-Band mit `--hell`-Hintergrund, Headline/Unterzeile/1–2 Buttons links, **freigestelltes** Bild rechts (Freisteller-Pflicht, kein Rechteck-Foto). Offen: erste konkrete Anwendung, Spaltenverhältnis, Bodenschatten ja/nein.
+
 ## 2026-10-12 (später) – Startseite: 5 Textkorrekturen (direkt auf main, auf Wunsch)
 - Alle Texte waren bereits wortgleich in `content/startseite.md` als freigegebener Content hinterlegt, `index.html` war nur nicht nachgezogen worden.
 - Überschrift „Mehr als nur gut verpackt" → „Alles, was ein Case können kann".

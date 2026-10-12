@@ -1,7 +1,7 @@
 :root {
   --teal: #2D8282;
   --anthrazit: #242223;
-  --hell: #F0F5EB;
+  --hell: #F8F8F8; /* war #F0F5EB (warmes Beige) - 2026-10-12 auf neutrales Grau umgestellt (Vorbild mercedes-benz.de, GLA-Element), gilt fuer alle Flaechen-Hintergruende sitewide */
   --schwarz: #1D1D1B;
   --grau-text: #6b6b6b;
   --heading-font: 'Clear Sans Bold', Arial, sans-serif;

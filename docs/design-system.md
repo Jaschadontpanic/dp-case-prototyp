@@ -7,7 +7,7 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 |---|---|---|
 | `--teal` | #2D8282 | Akzent, Primär-Button, Links |
 | `--anthrazit` | #242223 | dunkle Flächen, Überschriften auf hell |
-| `--hell` | #F0F5EB | helle Sektionen, Info-Boxen |
+| `--hell` | #F8F8F8 | helle Sektionen, Info-Boxen (seit 2026-10-12 neutrales Grau statt #F0F5EB/Beige, Vorbild mercedes-benz.de – gilt als Standard-Flächengrau sitewide, siehe Feature-Band-Eintrag unten) |
 | `--schwarz` | #1D1D1B | Fließtext |
 | `--grau-text` | #6b6b6b | Sekundärtext |
 | `--heading-font` | 'Clear Sans Bold', Arial, sans-serif | Überschriften |
@@ -61,6 +61,38 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 - **FAQ + CTA-Band, Reihenfolge**: siteweit einheitlich Content → (Teaser) → Allgemeine FAQ → CTA-Band (CTA immer als letztes Element vor dem Footer).
 - **Bauart-Row** (`.bauart-row`, neu 2026-09-28, Flightcase-Bauart-Seite, mit Jascha abgestimmt): alternierende Bild/Text-Zeile per CSS-Grid-Areas (Desktop: Bild 42% Breite abwechselnd links/rechts neben Titel/Text/Specs/Rating; Mobil gestapelt in fester Reihenfolge Titel → Bild → Text → Rating, Bild randlos ohne Radius, Textblock mit 48px Seitenrand statt der sonst 120px `--side-pad` – sonst zu wenig Platz für Text). Rating als Balken (`.bauart-rating-track`/`-fill`, Teal auf `--hell`, Beschriftung „Label X/10“ daneben). „Light“/„Ultra Light“-Suffix als eigenes Badge (`.bauart-badge`, Teal-Outline-Pille, Mono-Font, reuse aus Tag-Mustern) statt Teil des Fließnamens. Bauart-Name auf `--fs-card-title` (Token, kein Freihandwert).
 - **Produkt-Detailseite, Vorlage** (Silent Rack, vollständig 2026-09-28): Hero → Breadcrumb → Story → Use-Case → Highlights (`.product-grid`) → Konfigurierbarkeit+CTA (`.typen-teaser`) → Trust-Zeile (einzeiliger `--teal`-Satz, zentriert) → eigene Produkt-FAQ → Technische Daten (`.data-table.spec-sheet` – Modifier für lange Textwerte: `white-space:normal` statt `nowrap`, schmalere Label-Spalte, bei ≤900px zusätzlich 48px statt 120px Seitenrand wie bei Bauart-Row) → Rating-Balken (Wiederverwendung `.bauart-rating-*`) → Branchen-Tags (Wiederverwendung `.bauart-badge`) → Kundenreferenz → Allgemeine FAQ → CTA-Band. Schema.org: BreadcrumbList + Product + FAQPage (3 separate `<script type="application/ld+json">`). Als Muster für die weiteren 9 Produktseiten gedacht.
+
+## Flächen-Grau (`--hell`), Umstellung 2026-10-12
+Jascha-Entscheidung, Vorbild mercedes-benz.de (GLA-Konfigurator-Element): `--hell` von #F0F5EB
+(warmes Beige) auf #F8F8F8 (neutrales Grau) umgestellt – per Pixel-Messung aus dem
+Referenz-Screenshot ermittelt. Kein neuer Design-Wert, bestehende Variable nur im Wert korrigiert,
+daher wirkt die Aenderung automatisch ueberall, wo `--hell` als Flaechen-Hintergrund dient:
+`.begriffe-box` (Begriffssystem, Bauformen), `.typen-teaser` (Mehr-zur-Bauart-Teaser auf Bauformen,
+Deckel-Tuer-oder-beides-Teaser auf Bauart, Dein-perfektes-Silent-Rack-Teaser auf der Produktseite),
+`.process-teaser` (Produkte-Hub), `.data-table th` (Tabellenkopf, u. a. Flightcase Maße – damit ist
+Grau jetzt die verbindliche Standard-Tabellenkopffarbe sitewide), `.contact-info` /
+`.info-block.call-cta-top` / `.contact-page .info-block` (Kontaktseite, Info-Boxen) und
+`.bauart-rating-track` (Rating-Balken-Hintergrund). Altes Beige (#F0F5EB) kommt an keiner Stelle
+mehr als Hintergrund vor.
+
+## Feature-Band (`.feature-band`, neu 2026-10-12)
+Vorbild mercedes-benz.de (GLA-Konfigurator-Element, Screenshot von Jascha). Flächiges
+Bild-Text-Band fuer eine einzelne Aussage/ein einzelnes Produkt oder Thema, wiederverwendbar.
+
+- **Hintergrund:** `--hell` (#F8F8F8), durchgehend über die ganze Bandbreite.
+- **Breite/Rand:** wie alle anderen Sektionen `--max-width` + `--side-pad`, kein Sonderwert.
+- **Aufbau:** zweispaltig (Desktop) – links Headline (`--fs-h2`/`--headline-alt-font`, wie „Unsere
+  Empfehlungen“) + Unterzeile (`--fs-body`, `--grau-text`) + 1–2 Buttons (`.btn-primary` +
+  optional `.btn-outline-light`); rechts Bild. Bei ≤900px gestapelt (Bild unter Text), analog
+  `.vp-grid`/`.cases-grid`.
+- **Bild: Freisteller-Pflicht.** Kein rechteckiges Foto mit `object-fit:cover` wie bei den
+  Case-Tiles – das Produkt/Objekt muss freigestellt sein (transparenter Hintergrund, schwebt auf
+  dem `--hell`-Grau), analog dem Produkt-Hero auf der Silent-Rack-Seite (freigestelltes
+  Produktbild mit Bodenschatten, `max-height` + `object-fit:contain` statt festem
+  `aspect-ratio`). Jede Bildlieferung fuer dieses Element braucht daher einen Freisteller, kein
+  normales Foto.
+- **Offen:** Spaltenverhaeltnis Text:Bild, erste konkrete Anwendung (welche Seite/welches
+  Produkt), ob Bodenschatten wie beim Produkt-Hero übernommen wird. Noch nicht implementiert.
 
 ## Case-Tile (umgesetzt 2026-09-28)
 „Unsere Empfehlungen“-Kacheln (`.cases-grid`, Startseite) benötigen jetzt nur noch **Bild + Text getrennt** (Titel, Story-Text, Branchen-Tag) statt wie bisher fertig bebilderter Kacheln mit eingebranntem Text. Optik bleibt gleich (Verlauf, Branchen-Tag oben links, Titel/Text unten links, weiß).
