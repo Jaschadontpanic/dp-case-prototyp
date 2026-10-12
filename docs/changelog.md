@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (ganz zuletzt) – Engineering: Intro-Satz ins Headerbild verschoben
+- Jascha-Feedback: Der Satz „Was soll dein Case können, und was würde es perfekt machen? ..." gehört ins Headerbild, so wie auf der Startseite (Hero: H1 + `p.desc` im Bild).
+- Text unverändert (war bereits als `.page-intro`-Absatz direkt unter dem Header vorhanden), nur verschoben: jetzt als `p.desc` innerhalb von `.hub-header .wrap`, analog zu Manufaktur/Produkte, die diesen Aufbau bereits nutzen.
+- `.pg-engineering .page-intro`-Regel in `components.css` entfernt (toter Selektor, da die Seite kein `.page-intro`-Element mehr hat); `.pg-engineering-formen .page-intro` bleibt unverändert.
+- `docs/design-system.md` entsprechend aktualisiert.
+- Geprüft: Desktop (1600px)/Tablet (768px)/Mobile (375px) – Text sitzt lesbar im vorhandenen Verlauf, Box wächst wie gehabt mit dem Inhalt mit (kein `overflow:hidden`).
+
 ## 2026-10-12 (noch später) – Abstand Seitenkopf → Inhalt (alle Unterseiten außer Startseite)
 - Jascha-Feedback: Unter den Seitenköpfen soll immer etwas Platz bleiben, bis der Inhalt beginnt (ca. eine Überschriftenhöhe) – auf allen Seiten außer der Startseite, die bereits gut aussah.
 - Befund: `.hub-header` (Engineering/Manufaktur/Produkte) und `.page-head` (restliche Unterseiten) hatten praktisch keinen eigenen Abstand nach unten; die jeweils folgenden Elemente (`.page-intro`, `.product-grid`, `.hub-grid`, `.text-section` usw.) haben alle `padding-top:0`. Auf der Startseite übernimmt `.stats-row` mit eigenem `padding:40px` diese Funktion bereits selbst – deshalb dort unverändert.
