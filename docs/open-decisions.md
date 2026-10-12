@@ -38,6 +38,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | B5 | „Unsere Empfehlungen“: Case-Tile-Komponente ist umgesetzt (Bild + Text getrennt, textfreie Fotos seit 2026-09-28 im Einsatz), aber Branchen-Tag/Titel/Story-Text pro Kachel fehlen noch (Datenfelder aus `content/startseite.md` Abschnitt 3 nicht ausgefüllt) | Aufgabe |
 | B6 | Silent-Rack-Highlights (7 Kacheln): alle zeigen Platzhalterbild (Hero-Foto), echte Fotos SOAZMA0010_10–_16 fehlen | Aufgabe |
 | B7 | Produkte-Hub-Header: zeigt `hero-case-foto.jpg` als Platzhalter (identisch zum Startseiten-Hero), echtes Foto laut `content/produkte/index.md` noch offen; danach Alt-Text ergänzen (aktuell `alt=""`, da Platzhalter) | Aufgabe |
+| B8 | Team-Fotos: Jascha-Foto von Jascha geliefert (2026-10-12), `assets/images/manufaktur/team/jascha.jpg`, auf der Kontaktseite eingesetzt (ersetzt den Buchstaben-Avatar „J“). Oleg/Ole/Michaela weiterhin Buchstaben-Avatar – deren Fotos fehlen noch. Auf `/manufaktur/ueber-uns` haben die Team-Bios ohnehin noch gar keinen Bild-Slot (nur Text) – das ist eine eigene, größere Layout-Frage, hier bewusst nicht mit angefasst. **Für die Entwicklerin:** Jaschas Foto ist das finale Bild, nicht nur Platzhalter. | Aufgabe (Oleg/Ole/Michaela-Fotos, Bild-Slot auf Über-uns) |
 
 ## Technik (Migration, Claude Code)
 | # | Punkt | Status |

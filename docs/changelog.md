@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (ganz allerletzt) – Jaschas Team-Foto ergänzt
+- Von Jascha geliefertes Porträtfoto gespeichert unter `assets/images/manufaktur/team/jascha.jpg` (skaliert auf 700px Breite, komprimiert auf ~34 KB).
+- Kontaktseiten-Team-Kachel „Jascha" nutzt jetzt dieses Foto statt des Buchstaben-Avatars „J". CSS für Foto-Avatare ergänzt (`.team-card .avatar img`, rund zugeschnitten per `object-fit:cover`), Oleg/Ole/Michaela unverändert mit Buchstaben-Avatar, da deren Fotos noch fehlen.
+- `/manufaktur/ueber-uns` bewusst nicht angefasst – die Team-Bios dort haben aktuell gar keinen Bild-Slot (nur Text), das ist eine eigene Layout-Entscheidung.
+- In `docs/open-decisions.md` (B8) vermerkt: Jaschas Foto ist final, keine weiteren Fotos vorhanden – als Hinweis für die Entwicklerin.
+- Geprüft: Desktop/Tablet/Mobile, Foto füllt den runden Avatar sauber aus, kein Verzerren.
+
 ## 2026-10-12 (allerletzt) – Kontaktseite: Info-Blöcke „Lieber direkt?“/„So findest du uns“ entfernt
 - Jascha-Entscheidung: Das Element komplett raus – Dopplung zum Anruf-/Besuchs-Block (`.visit-grid`, `.call-cta-top`/`.visit-cta-top`) weiter oben auf derselben Seite, der E-Mail bzw. Adresse ohnehin schon sinngemäß abdeckt.
 - `.contact-info`-Block mit den beiden `.info-block`-Kacheln aus `kontakt/index.html` entfernt.
