@@ -12,7 +12,7 @@
 }
 .vp-card .vp-text { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 2; color: #fff; }
 .vp-card .vp-text h3 { font-size: var(--fs-card-title); margin-bottom: 6px; }
-.vp-card .vp-text p { font-size: var(--fs-body-small); color: #e6e6e6; }
+.vp-card .vp-text p { font-size: var(--fs-body-small); color: #e6e6e6; line-height: 1.4; }
 .vp-handling { background-image: url('../images/startseite/wert-smartes-handling.jpg'); }
 .vp-schutz { background-image: url('../images/startseite/wert-maximaler-schutz.jpg'); }
 .vp-details { background-image: url('../images/startseite/wert-clevere-details.jpg'); }
@@ -599,6 +599,11 @@
 /* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
 @media (max-width: 900px) {
   .vp-grid, .cases-grid { grid-template-columns: 1fr; }
+  /* Kachel-Texte wurden 2026-10-12 vervollständigt (vorher mitten im Satz abgeschnitten) und
+     brauchen dadurch etwas mehr Platz; auf Mobil (1-spaltig, schmalste Kachelbreite) reichte die
+     feste Kartenhoehe von 300px sonst nicht mehr, Text wurde durch overflow:hidden abgeschnitten.
+     +40px nur hier (Desktop/Tablet unveraendert, dort passt der Text bereits bei 300px). */
+  .vp-card { height: 340px; }
   .cases-grid .span-2 { grid-column: span 1; }
   .process-row { flex-direction: column; gap: 24px; }
   .contact-grid, .contact-page .contact-grid { grid-template-columns: 1fr; }

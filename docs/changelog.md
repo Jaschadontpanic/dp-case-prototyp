@@ -2,6 +2,17 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-12 (später) – Startseite: 5 Textkorrekturen (direkt auf main, auf Wunsch)
+- Alle Texte waren bereits wortgleich in `content/startseite.md` als freigegebener Content hinterlegt, `index.html` war nur nicht nachgezogen worden.
+- Überschrift „Mehr als nur gut verpackt" → „Alles, was ein Case können kann".
+- Reihenfolge der 4 Wert-Kacheln geändert zu: Smartes Handling → Clevere Details → Minimales Gewicht → Maximaler Schutz (vorher: Handling → Schutz → Details → Gewicht).
+- Alle 4 Kachel-Texte vervollständigt (waren mitten im Satz abgeschnitten).
+- Trust-Überschrift „30 Jahre Lösungen für anspruchsvolle Partner" → „... anspruchsvolle Kunden".
+- CTA-Text unter „Dein Case, egal wie speziell." ersetzt (war noch eine ältere Fassung).
+- **Nebenbei behoben**: Die vervollständigten Kachel-Texte passten auf Mobil (1-spaltig) nicht mehr in die feste Kartenhöhe von 300px – Text wurde durch `overflow:hidden` teils mitten im Wort abgeschnitten. `line-height` des Kachel-Texts leicht verdichtet (1.5 → 1.4) und Kartenhöhe nur auf Mobil (≤900px) auf 340px erhöht; Desktop/Tablet bleiben bei 300px (Abschnitt wird dort nicht höher, wie in `content/startseite.md` gefordert).
+- Geprüft: Desktop/Tablet/Mobile, keine abgeschnittenen Texte mehr, keine Konsolenfehler außer einem vorbestehenden harmlosen 404 (fehlendes Favicon, nicht durch diese Änderung verursacht).
+- Auf ausdrücklichen Wunsch direkt auf `main` committed und gepusht (nicht über Branch/PR), damit GitHub Pages die Änderung sofort veröffentlicht.
+
 ## 2026-10-05 – Kundennamen im Trust-Bereich der Startseite: echter Blocksatz
 - Ist-Zustand vorher: Die ~101 Kundennamen standen in `index.html` in 13 fest kuratierten `.tier`-Zeilen (`t1`–`t8`) mit 8 Größenstufen (32px bis 13px) – jede Zeile ein manueller Zeilenumbruch, kein dynamischer Fließtext. Dieselbe Komponente (`.trust`/`.trust-list`/`.tier`/`.t1`–`.t8`) wird auch auf `standards-werte/index.html` verwendet – die bleibt unverändert, deshalb wurde diese Komponente NICHT verändert, sondern eine neue, eigenständige Komponente nur für `index.html` ergänzt.
 - Neu: `.client-list`/`.client-name`/`.client-row` (neue Klassen, components.css) + `assets/js/trust-justify.js`. Alle Namen jetzt gleiche Schriftgröße/-farbe (`--fs-body-small`, `--grau-text`), Zeilenumbruch dynamisch je nach Breite statt fester Zeilen.
