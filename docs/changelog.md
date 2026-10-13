@@ -2,6 +2,16 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (2. Korrektur) – Desktop-Dropdown zu großem, linksbündigem Panel (Vorbild Mercedes)
+- Jascha-Feedback mit Mercedes-Screenshot: „Ich will das Menü vom Stil her in den größeren (Desktop & Pad) Auflösungen so haben: linksbündig, mit Umrandung des Navigationspunkts, und die Schrift mit den hier zu sehenden Größen und Abstufungen. Nur dass nach Klick auf einen Punkt auch die Unterpunkte angezeigt werden, sofern vorhanden."
+- **Vorher** (letzter Stand): kleine, 220px breite Dropdown-Box direkt unter dem Nav-Link.
+- **Jetzt:** großes, linksbündiges Panel über die volle Höhe (`position:fixed;left:0`, Breite 420px), startet unterhalb des Headers statt ihn zu verdecken. Eigener Schließen-Button (×) oben rechts im Panel, große Überschrift mit dem Nav-Label, Liste im Stil/Größe des Mobil-Panels (gleiche Einträge: „Unser Engineering"/„Unsere Manufaktur" fett oben, dann die Unterseiten). Trigger-Button bekommt im geöffneten Zustand eine Pillen-Umrandung (wie der Header-CTA) und bleibt dabei sichtbar.
+- Abgedunkelter Hintergrund über den Rest der Seite (reine CSS-Lösung über eine `body`-Klasse, kein zusätzliches Markup auf den 25 Seiten nötig) – schließt das Panel bei Klick darauf.
+- **Dabei gefunden und behoben:** Erster Versuch positionierte das Panel ab `top:0`, dadurch lag es (trotz niedrigerem z-index als der Header) INNERHALB von dessen eigenem Stacking-Context über den eigenen Nav-Buttons und verdeckte „Produkte"/„Engineering" im Header selbst. Fix: Panel beginnt erst bei `top:96px` (Header-Höhe ungescrollt).
+- Produkte/Kontakt bleiben wie bereits bestätigt normale Direkt-Links.
+- Geprüft (Playwright): 1920px und 1400px (Panel + Pillen-Umrandung sichtbar, Header bleibt bedienbar), Klick auf ×-Button schließt, Klick auf abgedunkelten Hintergrund schließt, Klick auf Unterseiten-Link navigiert korrekt, Mobil-Panel (375px) unverändert funktionsfähig.
+- `docs/design-system.md` entsprechend verfeinert.
+
 ## 2026-10-13 (Korrektur) – Desktop: Link-Reihe bleibt, Dropdown statt Burger+Panel
 - Jascha-Korrektur zum letzten Eintrag: „Ich will aber auch nicht auf jeder Größe ein Burger-Menü, sondern nur auf den kleinen Größen. Auf den größeren Auflösungen will ich, dass die Navigation bleibt und sich das Menü öffnet, wenn man auf einen der Navigations-Links klickt."
 - **Zurückgebaut:** `.nav-links` ist wieder am ursprünglichen 1380px-Breakpoint gekoppelt (Burger nur darunter), nicht mehr sitewide ausgeblendet.
