@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Bauart: Kachel-Slider statt Bild-Slider
+- Jascha-Vorgabe: Slider für Case/Platte/Kante als Kacheln (Vorbild Mercedes-Kachel: Bild + Titel + Text), nächste Kachel immer angeschnitten sichtbar, dezente Pfeile links/rechts, Desktop wie Mobil als Slider.
+- `.bauart-slider`/`bauart-slider.js` entfernt, neu `.tile-slider` + `assets/js/tile-slider.js`. 10 Bauart-Zeilen auf `/engineering/flightcase-bauart/` umgestellt.
+- Kachel-Texte: Case = Bauart-Name; Platte = Name + Stärke, Biegesteifigkeit, Punktlast, kg/m² aus der Matrix (HDF: kg/m² „–“ ausgelassen); Kante = Bezeichnung + Stärke (3. Maß der Bezeichnung). Keine neuen Texte erfunden. **Offen:** Jascha nannte als Beispiel „Aluminium 2 mm Stärke“ – „Aluminium“ steht für die Kantenschutz-Profile nirgends im Repo, daher nicht ergänzt (Freigabe/Text nötig).
+- Per Playwright (Desktop 1440px, Mobil 390px) geprüft: kein horizontaler Overflow, Pfeil blättert, keine Fehler.
+
 ## 2026-10-13 (Bauart-Fotos) – Case-Fotos abgelegt und eingebunden, fehlende als Dummy
 - 11 Fotos von Jascha als WebP (längste Kante max. 1600 px) unter `assets/images/engineering/bauart/` abgelegt. **Namensschema:** Hauptbild = Bauart-Name aus dem Content (Kleinbuchstaben, Bindestriche), weitere Fotos derselben Bauart = Name + `-2`, `-3` … (weitere Ansichten, keine Detailbilder – daher nicht `-detail-N`).
 - Zuordnung (Jaschas Dateiname → Repo): Bauart Ultra Protect Flightcase - Ultralight → `ultra-protect-flightcase-ultra-light` · Ultralight Gewichtstest → `ultra-protect-flightcase-ultra-light-2` · Ultraprotect Flightcase - Light → `ultra-protect-flightcase-light` · Plus Protect Flightcase → `plus-protect-flightcase` · Standard Protect Flightcase - Light (rot) → `standard-protect-flightcase-light` · N-Case.png → `n-case` · N-Case Alternative → `n-case-2` · Easy-Case-Light → `easy-case-light` · Spezial Cases - ALL BLACK → `custom-cases` · Transportkiste Heavy Duty → `transportkisten-heavy-duty` · Hartschalenkoffer → `hartschalen-koffer`.
