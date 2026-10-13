@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (ganz zuletzt) – Plattenmaterialien: Hub + 3 Materialseiten
+- Neu angelegt: `/engineering/materialien/plattenmaterialien/` (Hub) sowie `/multiplex/`, `/pp-hohlkammer/`, `/ultraleicht/` nach `content/engineering/materialien/plattenmaterialien/`. Title/Meta/H1/Intro/Matrizen wie im Content, BreadcrumbList-Schema (5 Ebenen). Hub-Kachel im Materialien-Hub verlinkt jetzt dorthin.
+- **Jascha-Entscheidung:** „Phenolharz statt PVC“ ist keine eigene Seite mehr, sondern ein ausklappbares Element (`<details id="phenolharz-statt-pvc">`) direkt unter H1/Intro der Multiplex-Seite. Die Content-Datei `phenolharz-statt-pvc.md` bleibt unverändert (Entscheidung nur in `docs/seitenstruktur.md` vermerkt).
+- **Vergleichsmatrix (Hub):** Tabelle wird klein als Übersicht gezeigt (nicht lesbar), Klick öffnet sie groß in einem Dialog, in dem man scrollen kann (neu: `assets/js/table-zoom.js`, CSS `.table-zoom*`). Ohne JS bleibt die Tabelle normal lesbar.
+- Bildslots: je Materialseite ein Platzhalter (`.material-hero`), echte Bilder folgen (kommen von Jascha).
+- Nicht übernommen (interne Content-Hinweise, keine Seitentexte): „neu ergänzt aus …“-Notizen, Siebdruck-Hinweis, Correx/Stegplatte-Hinweis, Penn-Elcom-Gewichtshinweis. Sichtbare Kurzsätze/Überschriften ergänzt: „Vergleichsmatrix“, „Die Materialien im Detail“, „Hintergrund“ (Ausklapper), Unterseiten-Teaser „Alle Plattenmaterialien im Vergleich“ – nicht im Content, bitte prüfen.
+- Mobil: auf den neuen Seiten Seitenrand 48px für Tabellen/Ausklapper (sonst blieb der 120px-Rand, Elemente wurden zu schmal) – gilt nur für diese Seiten.
+
 ## 2026-10-13 (zuletzt) – Olegs Team-Foto eingesetzt
 - Von Jascha geliefertes Foto als `assets/images/manufaktur/team/oleg.jpg` (700px Breite, ~30 KB) gespeichert, auf Kontakt und `/manufaktur/ueber-uns` statt Platzhalter eingesetzt. Ole und Michaela bleiben Platzhalter.
 

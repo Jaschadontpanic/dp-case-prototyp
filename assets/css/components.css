@@ -683,6 +683,43 @@
   .bauart-row-img { border-radius: 0; }
 }
 
+/* ===== TABLE-ZOOM (neu 2026-10-13, Plattenmaterialien-Vergleichsmatrix): Tabelle wird klein als
+   Vorschau gezeigt (unlesbar, nur Uebersicht), Klick oeffnet sie gross und scrollbar in einem
+   Dialog. Ohne JS bleibt die Tabelle normal sichtbar (Scaling nur mit .is-ready). Nur bestehende Tokens. ===== */
+.table-zoom { max-width: var(--max-width); margin: 0 auto 40px; padding: 0 var(--side-pad); position: relative; }
+.table-zoom-inner { overflow-x: auto; }
+.table-zoom .data-table { min-width: 0; }
+.table-zoom-hint { display: none; }
+.table-zoom.is-ready { cursor: zoom-in; }
+.table-zoom.is-ready .table-zoom-clip { overflow: hidden; border: 1px solid #e4e4e0; border-radius: 10px; }
+.table-zoom.is-ready .table-zoom-inner { overflow: hidden; width: 2200px; transform-origin: top left; pointer-events: none; }
+.table-zoom.is-ready .table-zoom-inner .data-table { min-width: 2200px; }
+.table-zoom.is-ready .table-zoom-hint {
+  display: inline-block; position: absolute; right: calc(var(--side-pad) + 14px); bottom: 14px;
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+  color: #fff; background: var(--anthrazit); border-radius: 999px; padding: 6px 14px;
+}
+.table-zoom:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.table-zoom-dialog { border: none; border-radius: 16px; padding: 0; width: min(1200px, 94vw); max-height: 90vh; }
+.table-zoom-dialog::backdrop { background: rgba(0,0,0,.55); }
+.table-zoom-bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 1; }
+.table-zoom-bar strong { color: var(--anthrazit); font-size: var(--fs-card-title); }
+.table-zoom-close { border: none; background: none; font-size: 28px; line-height: 1; cursor: pointer; color: var(--anthrazit); }
+.table-zoom-scroll { overflow: auto; max-height: calc(90vh - 64px); }
+.table-zoom-scroll .data-table { min-width: 900px; }
+@media (max-width: 900px) { .table-zoom { padding: 0 48px; } .table-zoom.is-ready .table-zoom-hint { right: 62px; } }
+
+/* Material-Seiten (Plattenmaterialien, 2026-10-13): Bildslot oben, Text-Schnitte wie .page-intro/.faq */
+.material-hero { max-width: var(--max-width); margin: 0 auto 30px; padding: 0 var(--side-pad); }
+.material-hero .bauart-row-img { max-width: 640px; }
+@media (max-width: 900px) { .material-hero { padding: 0 48px; } .material-hero .bauart-row-img { border-radius: 20px; } }
+.material-details { padding-top: 0; padding-bottom: 30px; }
+/* Mobil: Seitenrand 48px wie .page-head/.page-intro (sonst bleibt der 120px-Rand und Tabelle/Details werden zu schmal) */
+@media (max-width: 900px) {
+  [class*="pg-engineering-plattenmaterialien"] .data-table-wrap,
+  [class*="pg-engineering-plattenmaterialien"] .faq { padding-left: 48px; padding-right: 48px; }
+}
+
 /* ===== Responsive (>900px Breakpoint, komponentenspezifisch) ===== */
 @media (max-width: 900px) {
   .vp-grid, .cases-grid { grid-template-columns: 1fr; }

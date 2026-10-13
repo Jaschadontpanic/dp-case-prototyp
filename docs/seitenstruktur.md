@@ -21,11 +21,11 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/engineering/flightcase-formen` | `content/engineering/flightcase-formen.md` | fertig | vorhanden (3 von 21 Bildern; Breadcrumb, Schema, FAQ, Teaser „Zu den Bauarten“ ergänzt) |
 | `/engineering/masse` | `content/engineering/masse.md` | fertig | vorhanden (neu angelegt 2026-09-28) |
 | `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | vorhanden (2026-09-28): 1 Kachel „Plattenmaterialien“ (weitere Kategorien laut Content erst bei fertigem Content), Zielseite selbst fehlt |
-| `/engineering/materialien/plattenmaterialien` | `…/plattenmaterialien/index.md` | fertig | fehlt |
-| `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | fehlt |
-| `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | fehlt |
-| `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | fehlt |
-| `…/plattenmaterialien/phenolharz-statt-pvc` | `…/phenolharz-statt-pvc.md` | fertig | fehlt |
+| `/engineering/materialien/plattenmaterialien` | `…/plattenmaterialien/index.md` | fertig | vorhanden (2026-10-13), Vergleichsmatrix mit Klick-Zoom |
+| `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
+| `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
+| `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
+| ~~`…/plattenmaterialien/phenolharz-statt-pvc`~~ | `…/phenolharz-statt-pvc.md` | fertig | **entfaellt als eigene Seite** (Jascha 2026-10-13): Inhalt steht als ausklappbares Element auf der Multiplex-Seite (`#phenolharz-statt-pvc`) |
 | `/manufaktur` | `content/manufaktur/index.md` | fertig | vorhanden |
 | `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | vorhanden (2026-09-28), Werkstatt-Bilder Platzhalter (B3) |
 | `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | vorhanden (2026-09-28), Hero-Bild Platzhalter (B3) |

@@ -113,6 +113,13 @@ sichtbar; unten im Bild Label-Chip (mono, wie `.bauart-badge`-Schrift) + Punkte 
 Platte-/Kante-Bilder werden aus „Plattenmaterialien“ bzw. „Kantenschutz“ wiederverwendet, nicht separat
 geliefert. Ohne Slider: Zeilen mit nur einem Bild (Custom Cases) nutzen weiter `.bauart-row-img`.
 
+## Table-Zoom (`.table-zoom`, neu 2026-10-13)
+Tabelle als kleine, bewusst unlesbare Übersicht (transform: scale, Breite 2200px → passt in die Spalte),
+Klick/Enter öffnet eine vergrößerte Kopie in einem `<dialog>` (`.table-zoom-dialog`) mit Scrollbereich
+(`assets/js/table-zoom.js`). Hinweis-Chip „Zum Vergrößern klicken“ unten rechts. Ohne JS normale Tabelle.
+Erste Anwendung: Vergleichsmatrix auf `/engineering/materialien/plattenmaterialien/`. Wiederverwendbar für
+jede breite `.data-table` (Wrapper `.table-zoom` + `.table-zoom-inner` + Tabelle, `data-zoom-title`).
+
 ## Team-Avatar (`.avatar` in `.team-card`/`.hub-card`, neu 2026-10-13)
 Bild-Slot für Team-Fotos, bisher nur auf der Kontaktseite (`.team-card`), seit 2026-10-13
 auch auf `/manufaktur/ueber-uns` (`.hub-card`) – dort gab es vorher gar keinen Bild-Slot, nur Text.
