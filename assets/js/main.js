@@ -34,18 +34,46 @@ function dpSetupExpandable(selector) {
   });
 }
 dpSetupExpandable('.mobile-menu-expand');
-dpSetupExpandable('.nav-dropdown-toggle');
 
-// Desktop-Dropdown schliessen bei Klick ausserhalb (Mobil-Panel braucht das nicht,
-// das schliesst sich nur ueber den X-Button).
-document.addEventListener('click', function (e) {
+// Desktop-Nav-Dropdown (grosses, linksbuendiges Panel, Vorbild mercedes-benz.de): eigene Logik
+// statt dpSetupExpandable, weil zusaetzlich ein abgedunkelter Hintergrund (body-Klasse) und ein
+// eigener Schliessen-Button im Panel gesteuert werden muessen.
+function dpCloseAllNavDropdowns() {
   document.querySelectorAll('.nav-dropdown-toggle[aria-expanded="true"]').forEach(function (btn) {
-    if (!btn.parentElement.contains(e.target)) {
-      btn.setAttribute('aria-expanded', 'false');
-      var menu = document.getElementById(btn.getAttribute('aria-controls'));
-      if (menu) menu.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    var menu = document.getElementById(btn.getAttribute('aria-controls'));
+    if (menu) menu.hidden = true;
+  });
+  document.body.classList.remove('nav-menu-open');
+}
+document.querySelectorAll('.nav-dropdown-toggle').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var submenu = document.getElementById(btn.getAttribute('aria-controls'));
+    var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+    dpCloseAllNavDropdowns();
+    if (!wasOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      if (submenu) submenu.hidden = false;
+      document.body.classList.add('nav-menu-open');
     }
   });
+});
+document.querySelectorAll('.nav-dropdown-close').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    dpCloseAllNavDropdowns();
+  });
+});
+// Klick auf den abgedunkelten Hintergrund (ausserhalb Panel/Trigger) schliesst das Menue.
+document.addEventListener('click', function (e) {
+  if (
+    document.body.classList.contains('nav-menu-open') &&
+    !e.target.closest('.nav-dropdown') &&
+    !e.target.closest('.nav-dropdown-toggle')
+  ) {
+    dpCloseAllNavDropdowns();
+  }
 });
 
 (function () {
