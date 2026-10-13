@@ -74,7 +74,12 @@ header.nav .nav-inner > .btn {
 header.nav .nav-inner > .btn:hover { color: var(--teal); border-color: var(--teal); }
 /* Nach dem Scrollen zusaetzlich ca. 10% kleiner (Nutzerwunsch 2026-09-29). */
 header.nav.scrolled .nav-inner > .btn { padding: 10px 19px; font-size: 13px; }
-header.nav .burger { display: none; }
+/* Seit 2026-10-13 (Jascha-Feedback "richtiges Navigationsmenü ... geht in Mobil UND Desktop
+   auf"): Burger+Panel ist jetzt die einzige Navigation, auf jeder Breite - die reine Link-Reihe
+   (.nav-links) wird nicht mehr verwendet. Logo-Groesse und Header-CTA-Sichtbarkeit bleiben
+   bewusst unveraendert am bisherigen 1380px-Breakpoint (eigenes Thema, hier nicht angefasst). */
+header.nav .nav-links { display: none; }
+header.nav .burger { display: flex; }
 
 /* ---- Mobile burger button ---- */
 .burger {
@@ -106,6 +111,24 @@ header.nav .burger { display: none; }
   padding: 18px 4px; border-bottom: 1px solid #eee; font-size: 19px; color: var(--schwarz);
 }
 .mobile-menu-list a span { color: #bbb; font-size: 22px; }
+/* Ausklappbare Unterpunkte (seit 2026-10-13, Jascha-Feedback "richtiges Navigationsmenü mit
+   Unterseiten"): Button sieht optisch identisch zu den Top-Level-Links aus, ist aber ein
+   <button>, kein <a> - oeffnet/schliesst die Unterseiten-Liste statt direkt zu navigieren. */
+.mobile-menu-list .mobile-menu-expand {
+  display: flex; justify-content: space-between; align-items: center; width: 100%;
+  padding: 18px 4px; border: none; border-bottom: 1px solid #eee; background: none;
+  font-family: inherit; font-size: 19px; color: var(--schwarz); cursor: pointer; text-align: left;
+}
+.mobile-menu-list .mobile-menu-expand .chevron { color: #bbb; font-size: 22px; transition: transform 0.2s ease; display: inline-block; }
+.mobile-menu-list .mobile-menu-expand[aria-expanded="true"] .chevron { transform: rotate(90deg); }
+.mobile-menu-submenu { display: flex; flex-direction: column; }
+.mobile-menu-submenu[hidden] { display: none; }
+/* Unterseiten zwei Schriftgroessen kleiner (19px -> 14px, vorhandener --fs-body-small-Token),
+   aber weiterhin linksbuendig wie alle anderen Menuepunkte (kein zusaetzlicher Einzug). */
+.mobile-menu-submenu a {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 4px; border-bottom: 1px solid #eee; font-size: var(--fs-body-small); color: var(--schwarz);
+}
 /* Seit 2026-09-29: wie der Header-Button (duenner Rand statt Vollflaeche), aber fuer den
    weissen Menue-Hintergrund in Schwarz/Anthrazit statt Weiss - .btn-primary-Markup bleibt
    unveraendert (17 Seiten), nur hier innerhalb .mobile-menu ueberschrieben. */
@@ -164,9 +187,9 @@ footer.site-footer {
    (letzter Nav-Link) einen kleineren Abstand zum Logo haette als die Nav-Punkte
    untereinander (40px) - exakter Umschlagpunkt liegt zwischen 1378px und 1379px, vorher
    sprang der Burger bei 900px viel zu spaet, Logo ueberlappte "Kontakt" bereits sichtbar. */
+/* Nav-Links/Burger seit 2026-10-13 unconditional oben (nicht mehr an diesen Breakpoint
+   gekoppelt) - Logo-Groesse und Header-CTA-Sichtbarkeit bleiben hier unveraendert. */
 @media (max-width: 1380px) {
-  header.nav .nav-links { display: none; }
-  header.nav .burger { display: flex; }
   header.nav > .nav-inner > .btn { display: none; }
   header.nav .logo { height: var(--logo-h-top-mobile); }
   header.nav.scrolled .logo { height: var(--logo-h-scrolled-mobile); }

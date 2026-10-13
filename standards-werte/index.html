@@ -45,8 +45,21 @@
   <input type="text" class="mobile-menu-search" placeholder="Wonach suchst du?">
   <nav class="mobile-menu-list">
     <a href="../produkte/">Produkte <span>&rsaquo;</span></a>
-    <a href="../engineering/">Engineering <span>&rsaquo;</span></a>
-    <a href="../manufaktur/">Manufaktur <span>&rsaquo;</span></a>
+    <button type="button" class="mobile-menu-expand" aria-expanded="false" aria-controls="nav-engineering">Engineering <span class="chevron">&rsaquo;</span></button>
+    <div class="mobile-menu-submenu" id="nav-engineering" hidden>
+      <a href="../engineering/" class="mobile-menu-sublink mobile-menu-sublink--main">Unser Engineering</a>
+      <a href="../engineering/flightcase-bauart/" class="mobile-menu-sublink">Flightcase Bauart</a>
+      <a href="../engineering/flightcase-formen/" class="mobile-menu-sublink">Flightcase Bauformen</a>
+      <a href="../engineering/masse/" class="mobile-menu-sublink">Flightcase Maße</a>
+      <a href="../engineering/materialien/" class="mobile-menu-sublink">Materialien</a>
+    </div>
+    <button type="button" class="mobile-menu-expand" aria-expanded="false" aria-controls="nav-manufaktur">Manufaktur <span class="chevron">&rsaquo;</span></button>
+    <div class="mobile-menu-submenu" id="nav-manufaktur" hidden>
+      <a href="../manufaktur/" class="mobile-menu-sublink mobile-menu-sublink--main">Unsere Manufaktur</a>
+      <a href="../manufaktur/fertigung/" class="mobile-menu-sublink">Fertigung</a>
+      <a href="../manufaktur/ueber-uns/" class="mobile-menu-sublink">Über uns</a>
+      <a href="../standards-werte/" class="mobile-menu-sublink">Standards &amp; Werte</a>
+    </div>
     <a href="../kontakt/">Kontakt <span>&rsaquo;</span></a>
   </nav>
     <a href="../kontakt/" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Dein Projekt anfragen</a>
