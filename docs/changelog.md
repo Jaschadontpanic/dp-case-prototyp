@@ -2,6 +2,8 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Überschriften nach Ebene vereinheitlicht
+- Jascha-Freigabe: H1/H2 Open Sans, H3/Karten-Titel Clear Sans Bold. Vorher erbten H1/H2 ohne eigene Komponentenregel Clear Sans Bold (Inkonsistenz). Fix: eine globale Regel `h1, h2 { font-family: var(--headline-alt-font) }` in `base.css`; Größen/Gewichte unverändert. Per Playwright auf allen 25 Seiten geprüft: alle H1/H2 Open Sans, kein H3 Open Sans.
 ## 2026-10-13 (Bauart-Fotos) – Case-Fotos abgelegt und eingebunden, fehlende als Dummy
 - 11 Fotos von Jascha als WebP (längste Kante max. 1600 px) unter `assets/images/engineering/bauart/` abgelegt. **Namensschema:** Hauptbild = Bauart-Name aus dem Content (Kleinbuchstaben, Bindestriche), weitere Fotos derselben Bauart = Name + `-2`, `-3` … (weitere Ansichten, keine Detailbilder – daher nicht `-detail-N`).
 - Zuordnung (Jaschas Dateiname → Repo): Bauart Ultra Protect Flightcase - Ultralight → `ultra-protect-flightcase-ultra-light` · Ultralight Gewichtstest → `ultra-protect-flightcase-ultra-light-2` · Ultraprotect Flightcase - Light → `ultra-protect-flightcase-light` · Plus Protect Flightcase → `plus-protect-flightcase` · Standard Protect Flightcase - Light (rot) → `standard-protect-flightcase-light` · N-Case.png → `n-case` · N-Case Alternative → `n-case-2` · Easy-Case-Light → `easy-case-light` · Spezial Cases - ALL BLACK → `custom-cases` · Transportkiste Heavy Duty → `transportkisten-heavy-duty` · Hartschalenkoffer → `hartschalen-koffer`.
