@@ -11,7 +11,7 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - **Zugeschnitten** (4:3 auf das Case, aus den Originalen): `plus-protect-flightcase`, `ultra-protect-flightcase-light`, `custom-cases`, `transportkisten-heavy-duty` – im unbeschnittenen Hochformat zeigte der 4:3-Bildrahmen nur Decke/Kabinenwand.
 - Alt-Texte aus Bauart-Name und Plattenmaterial abgeleitet (nicht im Content) – bitte im SEO-Alt-Text-Check (C5) prüfen.
 - Weitere Leistungen (Transportkisten, Hartschalen Koffer, Einbauten, Lautsprecher, Sonderkonstruktionen): Kacheln haben keinen Bild-Slot – Bilder `transportkisten-heavy-duty`/`hartschalen-koffer` liegen bereit, Einbindung braucht Layout-Freigabe.
-- Weitere Hinweise: `easy-case-light` nur 600 px (Original so klein). `n-case-2` und `ultra-protect-flightcase-ultra-light-2` nur abgelegt (Darstellung mehrerer Fotos pro Bauart offen). `ultra-protect-flightcase-ultra-light-2` zeigt eine erkennbare Person – Einwilligung vor Livegang prüfen.
+- Weitere Hinweise: `easy-case-light` nur 600 px (Original so klein). `n-case-2` und `ultra-protect-flightcase-ultra-light-2` nur abgelegt (Darstellung mehrerer Fotos pro Bauart offen). `ultra-protect-flightcase-ultra-light-2` zeigt eine erkennbare Person – Einwilligung vor Livegang prüfen. Nachgeliefert: bearbeitete Fassung des Gewichtstest-Fotos (dunkel, Original 1023 × 1537 px) ersetzt die erste Fassung unter demselben Namen.
 - Geprüft (Playwright): 1600/768/375 px, alle Bilder laden, kein horizontaler Overflow, Klick-Wechsel Case → Platte funktioniert.
 
 ## 2026-10-13 (Abschluss Chat) – Übergabe
