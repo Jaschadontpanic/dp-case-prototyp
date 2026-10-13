@@ -2,6 +2,15 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (Korrektur) – Desktop: Link-Reihe bleibt, Dropdown statt Burger+Panel
+- Jascha-Korrektur zum letzten Eintrag: „Ich will aber auch nicht auf jeder Größe ein Burger-Menü, sondern nur auf den kleinen Größen. Auf den größeren Auflösungen will ich, dass die Navigation bleibt und sich das Menü öffnet, wenn man auf einen der Navigations-Links klickt."
+- **Zurückgebaut:** `.nav-links` ist wieder am ursprünglichen 1380px-Breakpoint gekoppelt (Burger nur darunter), nicht mehr sitewide ausgeblendet.
+- **Neu:** Engineering/Manufaktur in der Desktop-Link-Reihe sind jetzt `<button>` statt `<a>` und öffnen per Klick ein Dropdown-Panel darunter (`.nav-dropdown`, weiß, Radius 14px, Schatten) mit denselben Einträgen wie im Mobil-Panel – „Unser Engineering"/„Unsere Manufaktur" fett oben, dann die echten Unterseiten. Schließt bei Klick außerhalb oder beim Öffnen des jeweils anderen Dropdowns.
+- Produkte/Kontakt bleiben wie zuvor bestätigt normale Direkt-Links, in beiden Varianten.
+- JS verallgemeinert (`dpSetupExpandable` in `assets/js/main.js`), bedient jetzt sowohl die Mobil-Panel-Buttons als auch die neuen Desktop-Dropdown-Buttons mit derselben Logik.
+- Geprüft (Playwright): Breakpoint-Grenze exakt bei 1380/1381px (Burger vs. Link-Reihe), Dropdown öffnet/schließt korrekt, schließt bei Außenklick, nur ein Dropdown gleichzeitig offen, Klick auf Unterseiten-Link navigiert richtig, Mobil-Panel-Verhalten unverändert.
+- `docs/design-system.md` entsprechend korrigiert.
+
 ## 2026-10-13 (ganz allerletzt) – Echtes Navigationsmenü mit ausklappbaren Unterseiten
 - Jascha-Feedback: "Wir brauchen ein richtiges Navigationsmenü" – bisher gab es auf breiten Bildschirmen (≥1380px) nur eine reine Link-Reihe ohne jede Interaktion, und nirgendwo im Menü waren die Unterseiten von Engineering/Manufaktur sichtbar, obwohl diese Seiten längst existieren (Bauart, Bauformen, Maße, Materialien bzw. Fertigung, Über uns, Standards & Werte).
 - **Burger+Panel jetzt sitewide:** Die reine Link-Reihe (`.nav-links`) ist komplett ausgeblendet, der Burger-Button + das Vollbild-Menü sind jetzt auf JEDER Breite die einzige Navigation (vorher nur <1380px). Logo-Größe und Header-CTA-Sichtbarkeit bleiben bewusst unverändert am bestehenden 1380px-Breakpoint (eigenständiges Thema).

@@ -74,12 +74,24 @@ header.nav .nav-inner > .btn {
 header.nav .nav-inner > .btn:hover { color: var(--teal); border-color: var(--teal); }
 /* Nach dem Scrollen zusaetzlich ca. 10% kleiner (Nutzerwunsch 2026-09-29). */
 header.nav.scrolled .nav-inner > .btn { padding: 10px 19px; font-size: 13px; }
-/* Seit 2026-10-13 (Jascha-Feedback "richtiges Navigationsmenü ... geht in Mobil UND Desktop
-   auf"): Burger+Panel ist jetzt die einzige Navigation, auf jeder Breite - die reine Link-Reihe
-   (.nav-links) wird nicht mehr verwendet. Logo-Groesse und Header-CTA-Sichtbarkeit bleiben
-   bewusst unveraendert am bisherigen 1380px-Breakpoint (eigenes Thema, hier nicht angefasst). */
-header.nav .nav-links { display: none; }
-header.nav .burger { display: flex; }
+header.nav .burger { display: none; }
+/* Dropdown fuer Engineering/Manufaktur in der Desktop-Nav-Reihe (seit 2026-10-13, Korrektur:
+   Jascha wollte die Link-Reihe auf grossen Breiten behalten, nicht durchgehend Burger+Panel -
+   das Menue soll sich stattdessen OEFFNEN, wenn man auf den jeweiligen Nav-Link klickt). */
+header.nav .nav-links .nav-item { position: relative; }
+header.nav .nav-links .nav-dropdown-toggle {
+  background: none; border: none; font: inherit; color: inherit; cursor: pointer; padding: 0;
+}
+header.nav .nav-links .nav-dropdown-toggle:hover { color: var(--teal); }
+header.nav .nav-dropdown {
+  position: absolute; top: calc(100% + 26px); left: 0; background: #fff; color: var(--schwarz);
+  border-radius: 14px; box-shadow: 0 12px 32px rgba(0,0,0,0.18); padding: 8px; min-width: 220px;
+  display: flex; flex-direction: column; z-index: 10;
+}
+header.nav .nav-dropdown[hidden] { display: none; }
+header.nav .nav-dropdown a { padding: 10px 14px; border-radius: 8px; font-size: var(--fs-nav); color: var(--schwarz); }
+header.nav .nav-dropdown a:hover { background: var(--hell); color: var(--teal); }
+header.nav .nav-dropdown a.nav-dropdown-main { font-weight: 700; border-bottom: 1px solid #eee; margin-bottom: 4px; padding-bottom: 14px; }
 
 /* ---- Mobile burger button ---- */
 .burger {
@@ -190,6 +202,8 @@ footer.site-footer {
 /* Nav-Links/Burger seit 2026-10-13 unconditional oben (nicht mehr an diesen Breakpoint
    gekoppelt) - Logo-Groesse und Header-CTA-Sichtbarkeit bleiben hier unveraendert. */
 @media (max-width: 1380px) {
+  header.nav .nav-links { display: none; }
+  header.nav .burger { display: flex; }
   header.nav > .nav-inner > .btn { display: none; }
   header.nav .logo { height: var(--logo-h-top-mobile); }
   header.nav.scrolled .logo { height: var(--logo-h-scrolled-mobile); }

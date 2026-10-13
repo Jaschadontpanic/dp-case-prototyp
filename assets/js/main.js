@@ -12,12 +12,39 @@ function dpCloseMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
-document.querySelectorAll('.mobile-menu-expand').forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    var submenu = document.getElementById(btn.getAttribute('aria-controls'));
-    var isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    if (submenu) submenu.hidden = isOpen;
+function dpSetupExpandable(selector) {
+  var buttons = document.querySelectorAll(selector);
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var submenu = document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // Innerhalb derselben Gruppe (Mobil-Panel bzw. Desktop-Nav) immer nur ein
+      // Dropdown gleichzeitig offen - andere zuerst schliessen.
+      buttons.forEach(function (other) {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          var otherMenu = document.getElementById(other.getAttribute('aria-controls'));
+          if (otherMenu) otherMenu.hidden = true;
+        }
+      });
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (submenu) submenu.hidden = isOpen;
+    });
+  });
+}
+dpSetupExpandable('.mobile-menu-expand');
+dpSetupExpandable('.nav-dropdown-toggle');
+
+// Desktop-Dropdown schliessen bei Klick ausserhalb (Mobil-Panel braucht das nicht,
+// das schliesst sich nur ueber den X-Button).
+document.addEventListener('click', function (e) {
+  document.querySelectorAll('.nav-dropdown-toggle[aria-expanded="true"]').forEach(function (btn) {
+    if (!btn.parentElement.contains(e.target)) {
+      btn.setAttribute('aria-expanded', 'false');
+      var menu = document.getElementById(btn.getAttribute('aria-controls'));
+      if (menu) menu.hidden = true;
+    }
   });
 });
 
