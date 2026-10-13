@@ -9,6 +9,7 @@ body { font-family: var(--body-font); color: var(--schwarz); background: #fff; l
 img { max-width: 100%; display: block; }
 .wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad); }
 h1, h2, h3 { font-family: var(--heading-font); font-weight: 700; line-height: 1.15; }
+h1, h2 { font-family: var(--headline-alt-font); } /* H1/H2 Open Sans sitewide, H3/Karten-Titel Clear Sans Bold (2026-10-13) */
 h2 { font-size: var(--fs-h2); }
 a { color: inherit; text-decoration: none; }
 .btn {
