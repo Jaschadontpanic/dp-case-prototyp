@@ -254,32 +254,13 @@
   .hub-header { margin-bottom: 32px; }
 }
 
-/* ===== PAGE HEAD / PAGE INTRO (restliche Unterseiten) =====
-   Default = Wert aus engineering-formen/kontakt (10px, fs-h1). Engineering/Manufaktur/
-   Produkte nutzen seit 2026-10-04 .hub-header statt .page-head (s.o.); .page-intro bleibt
-   bei Engineering fuer den Intro-Satz ueber dem 5-Schritte-Prozess bestehen.
-   padding-bottom = fs-h1: Designrichtlinie "Abstand Header -> Inhalt" (s. design-system.md) -
-   unter jedem Seitenkopf bleibt ca. eine Ueberschriftenhoehe Platz, bevor der naechste Inhalt
-   beginnt (ausser Startseite, dort uebernimmt .stats-row das bereits selbst). */
-.page-head { padding: 56px var(--side-pad) var(--fs-h1); max-width: var(--max-width); margin: 0 auto; }
-/* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de: Headline links,
-   schmale Spalte statt volle Breite) - gilt einheitlich fuer alle Seitenkoepfe, nicht nur
-   Hub-Header mit Bild. */
-.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; max-width: 40%; }
-/* Textbreite 640px seit 2026-10-13 (Jascha-Feedback: Unterschrift im Header soll ueberall
-   gleich schmal sein wie auf der Startseite) - gleicher Wert wie .hero/.hub-header p.desc.
-   margin:0 statt vorher 0 auto (sonst wuerde die jetzt schmalere Box zentriert statt wie die
-   H1 am linken Rand zu bleiben) - Linksbuendigkeit kommt weiterhin ueber padding-left. */
+/* ===== PAGE INTRO (restliche Unterseiten) =====
+   .page-head selbst ist seit 2026-10-13 nirgends mehr im Einsatz (alle 18 Seiten ohne
+   Hub-Header-Bild nutzen jetzt .feature-band--no-image als Seitenkopf-Platzhalter, s.u. bzw.
+   "Feature-Band" weiter unten in dieser Datei) - die toten .page-head-Regeln wurden entfernt.
+   .page-intro bleibt bestehen: wird auf einigen Materialseiten weiterhin als allgemeiner
+   Absatzstil mitten im Seiteninhalt wiederverwendet (nicht nur als Seitenkopf-Unterschrift). */
 .page-intro { padding: 0 var(--side-pad) 30px; max-width: 640px; margin: 0; font-size: var(--fs-body); color: var(--grau-text); }
-.pg-engineering-formen .page-intro { padding-bottom: 26px; max-width: 70ch; }
-.pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
-/* Seitenrand auf Mobil seit 2026-10-13 ueber --side-pad selbst geregelt (tokens.css); bei
-   laengeren H1 (z.B. "HE, U und RU - Hoeheneinheiten im Rack", "PPWR-Stellungnahme") reichte
-   120px nicht (echter horizontaler Overflow, gemessen: scrollWidth > clientWidth) - der neue,
-   kleinere Mobil-Wert loest das ebenfalls. */
-@media (max-width: 900px) {
-  .page-head h1 { max-width: none; }
-}
 .section-heading { padding: 40px var(--side-pad) 20px; max-width: var(--max-width); margin: 0 auto; }
 .section-heading h2 { font-size: var(--fs-h2); color: var(--anthrazit); }
 
@@ -389,7 +370,12 @@
 .feature-band { background: var(--hell); padding: 46px 0; margin: 46px 0; }
 .feature-band .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .feature-band--no-image .wrap { grid-template-columns: 1fr; }
-.feature-band-text h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: var(--anthrazit); margin-bottom: 12px; }
+/* h1 seit 2026-10-13 ergaenzt: Feature-Band jetzt auch als Seitenkopf-Platzhalter auf 18
+   Unterseiten ohne Hub-Header-Bild im Einsatz (Jascha-Vorgabe, "bis ein Header-Bild kommt"),
+   genau wie die bestehende Begriffssystem-Anwendung - dieselbe Groesse/Optik wie h2, kein neuer
+   Design-Wert. overflow-wrap:break-word als Sicherheitsnetz fuer lange Titel (Uebernahme aus
+   .page-head h1, dort noetig fuer z.B. "HE, U und RU - Hoeheneinheiten im Rack"). */
+.feature-band-text h1, .feature-band-text h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: var(--anthrazit); margin-bottom: 12px; overflow-wrap: break-word; }
 .feature-band-text p { font-size: var(--fs-body); color: var(--grau-text); margin-bottom: 24px; max-width: 480px; }
 .feature-band-text .btn + .btn { margin-left: 16px; }
 .feature-band-img { display: flex; justify-content: center; align-items: center; }
