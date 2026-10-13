@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Überschriften nach Ebene vereinheitlicht
+- Jascha-Freigabe: H1/H2 Open Sans, H3/Karten-Titel Clear Sans Bold. Vorher erbten H1/H2 ohne eigene Komponentenregel Clear Sans Bold (Inkonsistenz). Fix: eine globale Regel `h1, h2 { font-family: var(--headline-alt-font) }` in `base.css`; Größen/Gewichte unverändert. Per Playwright auf allen 25 Seiten geprüft: alle H1/H2 Open Sans, kein H3 Open Sans.
+
 ## 2026-10-13 (Abschluss Chat) – Übergabe
 - Stand: alle Änderungen dieses Chats sind auf `main` (Team-Fotos Jascha/Oleg, Bauart-Slider mit Platte/Kante, Plattenmaterialien Hub + 3 Seiten mit Klick-Zoom-Matrix und Galerien, Kantenschutz-Ablage, Feature-Band, Kontakt-Bereinigung). Offene Punkte: `docs/open-decisions.md` (B1, B8, B9, B10, C5, C15, C16 u. a.).
 
