@@ -2,6 +2,16 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (5. Korrektur) – Desktop-Nav-Panel: Pille kleiner, Ausrichtung am ersten Navigationspunkt
+- Jascha-Feedback mit direktem Seite-an-Seite-Vergleichsscreenshot (unser Panel vs. mercedes.de, identischer 1920px-Viewport) – zwei konkrete Unterschiede benannt:
+  1. „Die Kreise um die Seiten in der Navigationsleiste bitte an die Größe von Mercedes anpassen" – unsere Pillen-Umrandung um „Engineering"/„Manufaktur" im geöffneten Zustand war deutlich größer/ausladender als bei mercedes.de.
+  2. „Weiter ist das Menü linksbündig, es sollte linksbündig mit der Umrandung des ersten Navigationspunktes sein" – das Panel saß linksbündig am Viewport-/Header-Rand statt am ersten Nav-Link „Produkte" (bei mercedes.de beginnt der weiße Kasten exakt unter „Modelle", dem ersten Punkt, unabhängig davon, dass „Kaufen" angeklickt wurde).
+- **Pille:** `padding`/`margin` der aktiven Trigger-Umrandung von `8px 18px` auf `5px 14px` reduziert – enger, näher an der mercedes.de-Proportion.
+- **Ausrichtung:** `.nav-dropdown` lief vorher auf `position:fixed;top:96px;left:0` – zwei eigenständige Probleme gefunden: `top:96px` war hart auf die Höhe des *ungescrollten* Headers gemünzt und stimmte im gescrollten Zustand nicht mehr; `left:0` positionierte am Viewport-Rand, nicht am ersten Nav-Link. Fix: `position:absolute;top:100%;left:var(--side-pad)` relativ zu `.nav-inner` (bereits `position:relative`) – `top:100%` sitzt dadurch in jedem Scroll-Zustand automatisch exakt unter der Nav-Zeile, `left:var(--side-pad)` trifft die linke Kante von „Produkte" unabhängig davon, welcher der beiden Nav-Punkte geöffnet wurde (per Playwright-Bounding-Box verifiziert: Panel und „Produkte" exakt bei x=208 auf 1920px, sowohl ungescrollt als auch gescrollt).
+- `.nav-item { position: relative }` dadurch überflüssig und entfernt (nur noch für diese Positionierung eingeführt worden).
+- Geprüft (Playwright): 1920px (ungescrollt + gescrollt) und 1400px – Panel exakt an „Produkte" ausgerichtet, startet in beiden Scroll-Zuständen direkt unter dem Header, Pille sichtbar kompakter. Mobil-Panel (375px) unverändert, nicht betroffen (eigene CSS-Klassen).
+- `docs/design-system.md` entsprechend aktualisiert.
+
 ## 2026-10-13 (4. Korrektur) – Seitenköpfe ohne Header-Bild: grauer Kasten statt nacktem Titel
 - Jascha-Feedback: „Alle Seiten, die noch kein Header haben, bitte die Überschrift und Unterschrift in einen grauen Kasten, so wie wir es schon zusammen als Standardelement angelegt haben." Auf Nachfrage bestätigt: Aufbau 1:1 wie das bestehende Feature-Band, zunächst als Platzhalter bis ein echtes Header-Bild kommt; Umfang = die 18 vorgeschlagenen Seiten ohne Hub-Header.
 - **Umgesetzt:** `<div class="page-head">`/`.page-intro` als Seitenkopf ersetzt durch `.feature-band.feature-band--no-image.page-head-band` (H1 + optionale Unterzeile(n) in `.feature-band-text`) auf allen 18 Seiten: Flightcase Bauart, Flightcase Bauformen, Kantenschutz, Materialien (Übersicht + Multiplex + PP-Hohlkammer + UltraFlite), Fertigung, Über uns, Rechtliches (Übersicht + Impressum + Datenschutz), Standards & Werte (+ PPWR-Stellungnahme), Wissen (Übersicht + Höheneinheiten + TSA-Schloss).
