@@ -10,9 +10,9 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--hell` | #F8F8F8 | helle Sektionen, Info-Boxen (seit 2026-10-12 neutrales Grau statt #F0F5EB/Beige, Vorbild mercedes-benz.de – gilt als Standard-Flächengrau sitewide, siehe Feature-Band-Eintrag unten) |
 | `--schwarz` | #1D1D1B | Fließtext |
 | `--grau-text` | #6b6b6b | Sekundärtext |
-| `--heading-font` | 'Clear Sans Bold', Arial, sans-serif | Überschriften |
+| `--heading-font` | 'Clear Sans Bold', Arial, sans-serif | H3, Karten-Titel, Zahlen/Kicker |
 | `--body-font` | 'Clear Sans Bold', Arial, Helvetica, sans-serif | Fließtext |
-| `--headline-alt-font` | 'Open Sans', Arial, sans-serif (Google Fonts, 400/600/700) | Seitenköpfe (page-head), CTA-Bänder, Telefon-Popup |
+| `--headline-alt-font` | 'Open Sans', Arial, sans-serif (Google Fonts, 400/600/700) | H1/H2 sitewide (seit 2026-10-13, global in `base.css`), Seitenköpfe, CTA-Bänder, Telefon-Popup |
 | `--mono-font` | 'DejaVu Sans Mono', 'Courier New', monospace | Kicker, Tags |
 | `--fs-h1` | 52px (mobil ≤900px: 32px) | Hero-Headline |
 | `--fs-h2` | 36px | Sektions-Überschriften |
@@ -33,7 +33,7 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--transition-fast` | 220ms ease | Logo-Crossfade, Padding-Übergang im Header |
 
 ## Grundlagen
-- Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`.
+- Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`. **Schrift nach Ebene** (seit 2026-10-13, Jascha-Freigabe): H1/H2 = `--headline-alt-font` (Open Sans), H3 und Karten-Titel = `--heading-font` (Clear Sans Bold); global in `base.css`, Größen unverändert (vorhandene Tokens).
 - `.wrap`: max-width + side-pad, zentriert.
 - Breakpoints: **1380px** (Nav → Burger, Logo 36px→22px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px, `--side-pad` 120px→20px). Formularzeilen zusätzlich bei 640px.
 - **Seitenrand Mobil** (`--side-pad`, seit 2026-10-13, Jascha-Feedback/Vorbild mercedes-benz.de): bei ≤900px wird der Token selbst in `tokens.css` auf 20px reduziert (statt 120px), dadurch sitewide konsistent für ALLE Komponenten, die darüber ihren Seitenrand beziehen. Vorher hatten nur einzelne Komponenten (`.page-head`, `.text-section`, `.trust`, `.hub-header`) eine eigene 48px-Ausnahme, viele andere (u. a. `.cta-band`, `.faq`, `.valueprops`, `.cases`, Footer, Formular, Hub-/Produkt-Grids, Legal-Listen, Header-Nav) hatten gar keine und blieben fälschlich bei vollen 120px auf Mobil (per `getComputedStyle` bestätigt). Die alten 48px-Einzelausnahmen sind entfernt. `.bauart-row-*` ist die einzige Ausnahme (eigener, nicht an `--side-pad` gekoppelter Wert, da die Spalte innerhalb eines CSS-Grids liegt) – dort nur der Zahlenwert von 48px auf 20px angepasst.

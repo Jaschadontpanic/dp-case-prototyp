@@ -7,7 +7,7 @@
   --heading-font: 'Clear Sans Bold', Arial, sans-serif;
   --body-font: 'Clear Sans Bold', Arial, Helvetica, sans-serif;
   --mono-font: 'DejaVu Sans Mono', 'Courier New', monospace;
-  --headline-alt-font: 'Open Sans', Arial, sans-serif; /* Font 1: nur Hero-H1, "Mehr als nur gut verpackt", "Unsere Empfehlungen" */
+  --headline-alt-font: 'Open Sans', Arial, sans-serif; /* H1/H2 sitewide (seit 2026-10-13), Seitenkoepfe, CTA-Baender, Telefon-Popup */
   --max-width: 1744px;
   --side-pad: 120px; /* war 48px, jetzt 2.5x */
 
