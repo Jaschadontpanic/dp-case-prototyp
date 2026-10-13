@@ -9,6 +9,11 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Alt-Texte ergänzt (vorher leer/Platzhalter): „Gestapelte Flightcases unterschiedlicher Größe vor dunklem Hintergrund".
 - Geprüft: Desktop (1600px) und Mobile (375px) auf Startseite, Produkte, Flightcase Maße.
 
+## 2026-10-13 (Materialbilder) – Dateien abgelegt, noch nicht eingebunden
+- 15 Materialbilder als WebP (max. 1000 px) unter `assets/images/engineering/materialien/plattenmaterialien/` abgelegt. **Namensschema (Jascha):** Ansichtsbild = Werkstoffname aus der Matrix (Kleinbuchstaben, Bindestriche, Komma → Bindestrich), Detailbilder = Name + `-detail-N` (ab 1 fortlaufend je Werkstoff). Beispiel: `pp-hohlkammer-hd-11mm.webp`, `pp-hohlkammer-hd-11mm-detail-1.webp`.
+- Zuordnung: Multiplex 6,5 mm: Ansicht phenol glatt, detail-1 strukturiert, detail-2 Hexagon · Multiplex 9 mm: Ansicht phenol glatt, detail-1 Hexagon, detail-2 strukturiert, detail-3 Natur · Multiplex 15 mm: Ansicht glatt · PP 6,8 mm: Ansicht, detail-1, detail-2 (Farben blau/rot) · PP 9,4 mm: Ansicht · PP HD 11 mm: Ansicht + detail-1 (Greifgummi-Muster) · HDF 3mm + HPL: Ansicht.
+- Noch nicht abgelegt (Klärung offen): Siebfilm-Bild, `Multiplex_Siebdruck_9mm`, zwei PP-Farben-Bilder grau/schwarz, `PP_Hohlkammer_94_Detail` (nur 200 px, zu klein). Siehe `docs/open-decisions.md` B10.
+
 ## 2026-10-13 (ganz zuletzt) – Plattenmaterialien: Hub + 3 Materialseiten
 - Neu angelegt: `/engineering/materialien/plattenmaterialien/` (Hub) sowie `/multiplex/`, `/pp-hohlkammer/`, `/ultraleicht/` nach `content/engineering/materialien/plattenmaterialien/`. Title/Meta/H1/Intro/Matrizen wie im Content, BreadcrumbList-Schema (5 Ebenen). Hub-Kachel im Materialien-Hub verlinkt jetzt dorthin.
 - **Jascha-Entscheidung:** „Phenolharz statt PVC“ ist keine eigene Seite mehr, sondern ein ausklappbares Element (`<details id="phenolharz-statt-pvc">`) direkt unter H1/Intro der Multiplex-Seite. Die Content-Datei `phenolharz-statt-pvc.md` bleibt unverändert (Entscheidung nur in `docs/seitenstruktur.md` vermerkt).
