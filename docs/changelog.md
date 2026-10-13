@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Bild-Slots für alle 4 Team-Mitglieder (Kontakt + Über uns)
+- Kontaktseite: Oleg, Ole, Michaela zeigen jetzt `avatar placeholder` (sitewide Platzhalter-Streifenmuster) statt normalem Buchstaben-Avatar, bis echte Fotos vorliegen. Jascha unverändert mit Foto.
+- `/manufaktur/ueber-uns`: Bild-Slot (`.avatar`) für alle 4 Team-Bios neu ergänzt (gab es dort bisher gar nicht). Jascha nutzt das echte Foto (`assets/images/manufaktur/team/jascha.jpg`), Oleg/Ole/Michaela zeigen `avatar placeholder`.
+- CSS: neue Regel `.hub-card .avatar` (96px, rund, gleiches Prinzip wie `.team-card .avatar` auf der Kontaktseite, nur größer) + gemeinsame `.placeholder`-Regel für alle drei Avatar-Kontexte (`.hub-card`, `.team-card`, `.contact-page .team-card`) in `assets/css/components.css` ergänzt. Keine neuen Design-Werte, nur bestehende Platzhalter-Optik wiederverwendet.
+- Oleg-Foto von der alten Seite (`https://dp-case.de/wp-content/uploads/2023/11/olegvCube.png`) konnte nicht automatisch geholt werden – Sandbox-Netzwerk lässt nur eine feste Allowlist zu (Paket-Registries, GitHub), `dp-case.de` wird vom Proxy abgelehnt. Siehe `docs/open-decisions.md` (B8).
+- Geprüft: Desktop/Tablet/Mobile (Avatar/h3/p stapeln sich in `.hub-card` korrekt, da `flex-direction: column` bereits vorhanden), Links unverändert, keine kaputten Bildpfade (Platzhalter-Divs ohne `<img>`).
+
 ## 2026-10-12 (ganz allerletzt) – Jaschas Team-Foto ergänzt
 - Von Jascha geliefertes Porträtfoto gespeichert unter `assets/images/manufaktur/team/jascha.jpg` (skaliert auf 700px Breite, komprimiert auf ~34 KB).
 - Kontaktseiten-Team-Kachel „Jascha" nutzt jetzt dieses Foto statt des Buchstaben-Avatars „J". CSS für Foto-Avatare ergänzt (`.team-card .avatar img`, rund zugeschnitten per `object-fit:cover`), Oleg/Ole/Michaela unverändert mit Buchstaben-Avatar, da deren Fotos noch fehlen.

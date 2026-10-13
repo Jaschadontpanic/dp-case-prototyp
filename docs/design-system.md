@@ -106,6 +106,22 @@ Keine Buttons, da hier keine sinnvolle CTA-Zielseite existiert.
 echten Freisteller final pruefen – aktuelle Werte oben sind ein erster Entwurf, noch nicht an
 echtem Bildmaterial verifiziert).
 
+## Team-Avatar (`.avatar` in `.team-card`/`.hub-card`, neu 2026-10-13)
+Bild-Slot für Team-Fotos, bisher nur auf der Kontaktseite (`.team-card`), seit 2026-10-13
+auch auf `/manufaktur/ueber-uns` (`.hub-card`) – dort gab es vorher gar keinen Bild-Slot, nur Text.
+
+- **Form/Größe:** Kreis, `border-radius: 50%`; `.team-card` 72px (Kontakt, unverändert), `.hub-card`
+  96px (Über uns, neu – größer, da die Kachel insgesamt mehr Platz hat).
+- **Mit Foto:** `<img>` per `object-fit:cover` zugeschnitten, füllt den Kreis vollständig.
+- **Ohne Foto (`.placeholder`-Modifier):** sitewide Platzhalter-Streifenmuster
+  (`repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px)`, Text
+  `#b7b7b0`), identisch zu `.form-card.placeholder`/`.bauart-row-img.placeholder` – kein neuer
+  Design-Wert, nur bestehende Platzhalter-Optik wiederverwendet. Buchstabe (Initiale) bleibt als
+  Text im Div erhalten.
+- **Stand 2026-10-13:** Jascha hat auf beiden Seiten das echte Foto
+  (`assets/images/manufaktur/team/jascha.jpg`), Oleg/Ole/Michaela zeigen auf beiden Seiten den
+  Platzhalter.
+
 ## Case-Tile (umgesetzt 2026-09-28)
 „Unsere Empfehlungen“-Kacheln (`.cases-grid`, Startseite) benötigen jetzt nur noch **Bild + Text getrennt** (Titel, Story-Text, Branchen-Tag) statt wie bisher fertig bebilderter Kacheln mit eingebranntem Text. Optik bleibt gleich (Verlauf, Branchen-Tag oben links, Titel/Text unten links, weiß).
 
