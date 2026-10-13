@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (Bauart-Fotos) – Case-Fotos abgelegt, noch nicht eingebunden
+- 11 Fotos von Jascha als WebP (längste Kante max. 1600 px) unter `assets/images/engineering/bauart/` abgelegt. **Namensschema:** Hauptbild = Bauart-Name aus dem Content (Kleinbuchstaben, Bindestriche), weitere Fotos derselben Bauart = Name + `-2`, `-3` … (weitere Ansichten, keine Detailbilder – daher nicht `-detail-N`).
+- Zuordnung (Jaschas Dateiname → Repo): Bauart Ultra Protect Flightcase - Ultralight → `ultra-protect-flightcase-ultra-light` · Ultralight Gewichtstest → `ultra-protect-flightcase-ultra-light-2` · Ultraprotect Flightcase - Light → `ultra-protect-flightcase-light` · Plus Protect Flightcase → `plus-protect-flightcase` · Standard Protect Flightcase - Light (rot) → `standard-protect-flightcase-light` · N-Case.png → `n-case` · N-Case Alternative → `n-case-2` · Easy-Case-Light → `easy-case-light` · Spezial Cases - ALL BLACK → `custom-cases` · Transportkiste Heavy Duty → `transportkisten-heavy-duty` · Hartschalenkoffer → `hartschalen-koffer`.
+- Nicht abgelegt (Zuordnung offen, siehe B1): „Standard Protect Alternative“ (schwarz, Werkbank) und „Woodrack“ (kein Eintrag im Bauart-Content).
+- Hinweise für die Einbindung: `easy-case-light` liegt nur in 600 px vor (Original so klein). `plus-protect-flightcase`, `custom-cases`, `transportkisten-heavy-duty`, `n-case-2` haben viel Decke/Kabine bzw. Hintergrund im Bild – vor der Einbindung auf das Case zuschneiden. `ultra-protect-flightcase-ultra-light-2` zeigt eine erkennbare Person – Einwilligung vor Livegang prüfen.
+
 ## 2026-10-13 (Abschluss Chat) – Übergabe
 - Stand: alle Änderungen dieses Chats sind auf `main` (Team-Fotos Jascha/Oleg, Bauart-Slider mit Platte/Kante, Plattenmaterialien Hub + 3 Seiten mit Klick-Zoom-Matrix und Galerien, Kantenschutz-Ablage, Feature-Band, Kontakt-Bereinigung). Offene Punkte: `docs/open-decisions.md` (B1, B8, B9, B10, C5, C15, C16 u. a.).
 
