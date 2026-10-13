@@ -75,19 +75,22 @@ header.nav .nav-inner > .btn:hover { color: var(--teal); border-color: var(--tea
 /* Nach dem Scrollen zusaetzlich ca. 10% kleiner (Nutzerwunsch 2026-09-29). */
 header.nav.scrolled .nav-inner > .btn { padding: 10px 19px; font-size: 13px; }
 header.nav .burger { display: none; }
-/* Dropdown fuer Engineering/Manufaktur in der Desktop-Nav-Reihe (seit 2026-10-13, 2x korrigiert:
+/* Dropdown fuer Engineering/Manufaktur in der Desktop-Nav-Reihe (seit 2026-10-13, 3x korrigiert:
    erst kleine Box direkt unterm Link, dann auf Jascha-Vorgabe - Vorbild mercedes-benz.de
    Mega-Menue-Screenshot - auf ein grosses, linksbuendiges Panel umgestellt, Optik/Groessen-
    staffelung wie im Mobil-Menue, Trigger-Button bekommt im offenen Zustand eine Pille-Umrandung
-   wie der Header-CTA). */
-header.nav .nav-links .nav-item { position: relative; }
+   wie der Header-CTA; 3. Korrektur: Pille kleiner/enger wie bei mercedes.de, Panel linksbuendig
+   mit dem ERSTEN Navigationspunkt statt mit dem Viewport-Rand, s.u.). Kein eigenes
+   position:relative mehr auf .nav-item noetig - .nav-dropdown haengt sich fuer die Positionierung
+   an .nav-inner (bereits position:relative, s.o.), damit es unabhaengig davon, welcher Nav-Punkt
+   geklickt wurde, immer am ersten Nav-Link (Produkte) ausgerichtet ist. */
 header.nav .nav-links .nav-dropdown-toggle {
   background: none; border: 1px solid transparent; border-radius: 999px; font: inherit; color: inherit;
   cursor: pointer; padding: 0; margin: 0; transition: border-color var(--transition-fast);
 }
 header.nav .nav-links .nav-dropdown-toggle:hover { color: var(--teal); }
 header.nav .nav-links .nav-dropdown-toggle[aria-expanded="true"] {
-  border-color: rgba(255,255,255,0.6); padding: 8px 18px; margin: -8px -18px;
+  border-color: rgba(255,255,255,0.6); padding: 5px 14px; margin: -5px -14px;
 }
 /* Abgedunkelter Hintergrund hinter dem Panel (Vorbild mercedes-benz.de), reines CSS ueber eine
    body-Klasse statt zusaetzlichem Markup auf allen 25 Seiten. */
@@ -97,14 +100,25 @@ header.nav .nav-links .nav-dropdown-toggle[aria-expanded="true"] {
 body.nav-menu-open::after {
   content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.18); z-index: 9;
 }
-/* top:96px = Hoehe des ungescrollten Headers (2x 18px Innenabstand + 60px Logo), damit das
-   Panel unter dem Header beginnt statt ihn zu verdecken - der Trigger-Button (mit Pille-
-   Umrandung, s.o.) bleibt dadurch sichtbar, wie bei mercedes.de.
+/* position:absolute statt fixed (seit 2026-10-13, 3. Korrektur): haengt sich an .nav-inner
+   (bereits position:relative) statt an den Viewport - top:100% = direkt unter der Nav-Zeile,
+   unabhaengig von Scroll-Zustand (vorher fix top:96px, nur fuer den ungescrollten Header
+   korrekt). left:0 = buendig mit der linken Kante von .nav-inner = linke Kante des ERSTEN
+   Nav-Links (Produkte) - Jascha-Vorgabe per Mercedes-Vergleichsscreenshot: Panel soll immer am
+   ersten Navigationspunkt ausgerichtet sein, nicht am jeweils geklickten und nicht am
+   Viewport-Rand. Der Trigger-Button (mit Pille-Umrandung, s.o.) bleibt dadurch sichtbar.
    height:auto/max-height (seit 2026-10-13, Korrektur): vorher height:calc(100vh - 96px) fest -
    bei kurzen Listen blieb darunter viel leerer weisser Platz bis zum Seitenende, bei mercedes.de
-   endet das Panel direkt nach dem letzten Eintrag (eigener Schatten rundum statt nur rechts). */
+   endet das Panel direkt nach dem letzten Eintrag (eigener Schatten rundum statt nur rechts).
+   max-height jetzt 70vh (vorher an die alte top:96px-Annahme gekoppelt) - reines Sicherheitsnetz
+   fuer sehr lange Listen, aktuell nie ausgereizt (laengste Liste hat 5 Eintraege).
+   left:var(--side-pad) statt 0: der Containing Block eines position:absolute-Kindes ist die
+   PADDING-BOX des positionierten Vorfahren (.nav-inner), deren linke Kante bei border-box-Breite
+   VOR dem eigentlichen padding-left liegt (per Playwright gemessen: left:0 landete bei x=88,
+   der erste Nav-Link "Produkte" aber bei x=208 = 88 + side-pad). Mit left:var(--side-pad) landet
+   das Panel exakt auf der linken Kante von "Produkte". */
 header.nav .nav-dropdown {
-  position: fixed; top: 96px; left: 0; height: auto; max-height: calc(100vh - 96px);
+  position: absolute; top: 100%; left: var(--side-pad); height: auto; max-height: 70vh;
   width: 420px; max-width: 90vw;
   background: #fff; color: var(--schwarz); box-shadow: 6px 10px 32px rgba(0,0,0,0.2);
   z-index: 10; overflow-y: auto; padding: 32px;
