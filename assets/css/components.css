@@ -240,6 +240,11 @@
 }
 .hub-header .wrap { position: relative; z-index: 2; width: 100%; }
 .hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; }
+/* text-shadow seit 2026-10-13: der Verlauf allein (s.o.) reicht nicht bei jedem Foto - beim
+   neuen Case-Turm-Bild (heller/mittig als die bisherigen dunklen Werkstatt-Fotos) war der
+   Text auf Mobil streckenweise schlecht lesbar. Dezent genug, um bei dunklen Fotos nicht
+   auf zufallen. */
+.hub-header h1, .hub-header p.desc { text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
 .hub-header p.desc { max-width: 640px; font-size: var(--fs-body); color: #ddd; }
 @media (max-width: 900px) {
   /* 48px statt 120px Seitenrand wie bei .page-head (s.u.) - die H1-Texte sind volle Saetze

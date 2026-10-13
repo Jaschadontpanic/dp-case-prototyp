@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (noch später) – Case-Turm-Foto eingebaut (Produkte-Header, Startseiten-Kachel, Maße-Seite)
+- Jascha hat das finale "Case-Turm"-Foto geliefert (`Case-Turm_TBF_Schwarzer_Hintergrund.jpg` lt. Content, hier als `assets/images/global/case-turm.jpg` abgelegt – ein Bild, drei Verwendungen, daher `global/` statt seitenspezifischem Ordner).
+- Ersetzt an allen 3 in `content/produkte/index.md` und `content/engineering/masse.md` genannten Stellen: Produkte-Hub-Header (vorher Platzhalter `hero-case-foto.jpg`), Startseiten-Kachel „Weitere Produkte entdecken" (vorher ebenfalls `hero-case-foto.jpg` als Übergangslösung), und neu: `/engineering/masse` bekommt jetzt denselben `.hub-header`-Aufbau (Bild + H1 + Intro-Satz als `p.desc`) wie Engineering/Manufaktur/Produkte, vorher nur schlichter Text-`.page-head` ohne Bild.
+- **Nebenbei gefunden und behoben:** Das neue Foto ist deutlich heller/mittiger als die bisherigen dunklen Werkstatt-Fotos (Engineering/Manufaktur) – der vorhandene Verlauf allein reichte auf Mobil streckenweise nicht für guten Kontrast. `.hub-header h1`/`p.desc` bekommen zusätzlich einen dezenten `text-shadow`, als generelle Absicherung für jedes künftige Header-Foto (nicht nur dieses).
+- Alt-Texte ergänzt (vorher leer/Platzhalter): „Gestapelte Flightcases unterschiedlicher Größe vor dunklem Hintergrund".
+- Geprüft: Desktop (1600px) und Mobile (375px) auf Startseite, Produkte, Flightcase Maße.
+
 ## 2026-10-13 (ganz zuletzt) – Plattenmaterialien: Hub + 3 Materialseiten
 - Neu angelegt: `/engineering/materialien/plattenmaterialien/` (Hub) sowie `/multiplex/`, `/pp-hohlkammer/`, `/ultraleicht/` nach `content/engineering/materialien/plattenmaterialien/`. Title/Meta/H1/Intro/Matrizen wie im Content, BreadcrumbList-Schema (5 Ebenen). Hub-Kachel im Materialien-Hub verlinkt jetzt dorthin.
 - **Jascha-Entscheidung:** „Phenolharz statt PVC“ ist keine eigene Seite mehr, sondern ein ausklappbares Element (`<details id="phenolharz-statt-pvc">`) direkt unter H1/Intro der Multiplex-Seite. Die Content-Datei `phenolharz-statt-pvc.md` bleibt unverändert (Entscheidung nur in `docs/seitenstruktur.md` vermerkt).
