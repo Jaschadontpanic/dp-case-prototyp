@@ -111,6 +111,23 @@ Keine Buttons, da hier keine sinnvolle CTA-Zielseite existiert.
 echten Freisteller final pruefen – aktuelle Werte oben sind ein erster Entwurf, noch nicht an
 echtem Bildmaterial verifiziert).
 
+**Zweitverwendung als Seitenkopf-Platzhalter (seit 2026-10-13):** Jascha-Feedback: „Alle Seiten,
+die noch keinen Header haben, bitte Überschrift und Unterschrift in einen grauen Kasten, so wie
+wir es schon als Standardelement angelegt haben." Auf den 18 Unterseiten ohne eigenes Hub-Header-
+Bild ersetzt `.feature-band.feature-band--no-image` (zusätzliche Klasse `page-head-band` zur
+Unterscheidung) jetzt den bisherigen `.page-head`/`.page-intro`-Seitenkopf – bewusst als
+Übergangslösung, bis echte Header-Bilder geliefert werden (dann Wechsel auf `.hub-header` wie auf
+den bereits bebilderten Seiten). Aufbau 1:1 wie die bestehende Begriffssystem-Anwendung: H1 +
+optional Unterzeile(n) in `.feature-band-text`, kein Bild, keine Buttons. `.feature-band-text h1`
+nutzt jetzt denselben Stil wie `.feature-band-text h2` (`--fs-h2`/`--headline-alt-font`), plus
+`overflow-wrap:break-word` als Sicherheitsnetz für lange Titel. Betroffen: Flightcase Bauart,
+Flightcase Bauformen, Kantenschutz, Materialien (Übersicht + die 4 Plattenmaterial-Unterseiten),
+Fertigung, Über uns, alle 3 Rechtliches-Seiten, Standards & Werte (+ PPWR-Stellungnahme), Wissen
+(Übersicht + Höheneinheiten + TSA-Schloss). Die alten `.page-head`/`.page-head h1`-Regeln sind
+damit sitewide ungenutzt und wurden aus `components.css` entfernt; `.page-intro` bleibt als
+Komponente bestehen (einige Materialseiten nutzen sie weiterhin als allgemeinen Absatzstil mitten
+im Seiteninhalt, nicht nur als Seitenkopf-Unterschrift).
+
 ## Bauart-Slider (`.bauart-slider`, neu 2026-10-13)
 Bildelement der `.bauart-row` mit 3 Slides: Case-Foto → Platte → Kante. Klick/Enter/Pfeiltasten wechselt
 (`assets/js/bauart-slider.js`). Slides (`.bauart-slide`) liegen absolut übereinander, nur `.is-active`
@@ -174,7 +191,7 @@ Drei neue Seiten, ausschließlich bestehende Komponenten (`page-head`, `page-int
 
 ## Aus anderen Seiten übernommene Elemente
 - **Prozess-Kacheln** (`engineering.html`): `.step` mit Rand #e6e6e2, Radius 24px; `.step-top` Verlauf `#000 → #112f2f`, Radius 24px; Icons 72×72px.
-- **Page-Head** (Unterseiten): `.page-head` 56px oben, `padding-bottom: var(--fs-h1)` (seit 2026-10-12, vorher 10px) für den Abstand zum folgenden Inhalt, siehe „Abstand Seitenkopf → Inhalt" oben. H1 in `--headline-alt-font`, `max-width:40%` (Desktop, seit 2026-10-13, siehe Hero oben), auf Mobil wieder `max-width:none`. Seitenrand auf Mobil seit 2026-10-13 über `--side-pad` selbst geregelt (s. o.) – vorher hatte `.page-head`/`.page-intro` eine eigene 48px-Ausnahme, die bei langen H1 (z.B. „HE, U und RU – Höheneinheiten im Rack", „PPWR-Stellungnahme") eingeführt wurde (bei 120px blieb nur ~150px Textbreite, dadurch echter horizontaler Overflow auf schmalen Viewports, per Playwright `scrollWidth`-Check gefunden) – der neue, kleinere Mobil-Wert löst das ebenfalls. Zusätzlich `overflow-wrap:break-word` auf `.page-head h1` als Sicherheitsnetz für einzelne, nicht umbrechbare lange Wörter. **`.page-intro`** (die Unterschrift direkt unter `.page-head`, z. B. Wissen, Fertigung, Materialseiten) bekommt seit 2026-10-13 `max-width:640px; margin:0` statt vorher `max-width:var(--max-width); margin:0 auto` – derselbe 640px-Wert wie bei `.hero`/`.hub-header p.desc` (siehe „Breite Überschrift + Unterschrift im Header" oben). `margin:0` statt `auto` ist nötig, weil die Box sonst durch die neue, viel schmalere `max-width` zentriert statt linksbündig unter der H1 gehalten würde – die Linksbündigkeit kommt weiterhin über `padding-left`. `.page-intro` wird auf einigen Materialseiten auch mehrfach als allgemeiner Absatzstil mitten im Seiteninhalt wiederverwendet, nicht nur direkt unter der H1 – bekommt dieselbe schmalere Breite automatisch mit.
+- **Page-Head (obsolet seit 2026-10-13):** `.page-head` als Seitenkopf-Komponente wird nirgends mehr verwendet – alle 18 Seiten ohne Hub-Header-Bild nutzen jetzt `.feature-band--no-image` als Platzhalter-Seitenkopf, siehe „Feature-Band" oben (Abschnitt „Zweitverwendung als Seitenkopf-Platzhalter"). Die `.page-head`/`.page-head h1`-Regeln wurden aus `components.css` entfernt. **`.page-intro`** bleibt als Komponente bestehen: `max-width:640px; margin:0` (seit 2026-10-13, derselbe 640px-Wert wie bei `.hero`/`.hub-header p.desc`), wird aber nur noch auf einigen Materialseiten als allgemeiner Absatzstil mitten im Seiteninhalt wiederverwendet, nicht mehr als Seitenkopf-Unterschrift.
 - **Hub-/Produktkarten**: Rand #eee, Radius 16px, Hover-Schatten. `.hub-grid`/`.hub-grid-single` Default 3 Spalten; Spaltenzahl seit 2026-09-29 per Modifier-Klasse `.cols-2`/`.cols-4` (Wissen-Übersicht, Über-uns-Team, Engineering: 4 Spalten) statt Inline-Style – ein Inline-`grid-template-columns` hatte höhere Spezifität als die 900px-Media-Query und verhinderte den Umbruch auf 1 Spalte bei schmalen Viewports (echter horizontaler Overflow, per Playwright `scrollWidth`-Check gefunden).
 - **Produkt-Hero** (`produkte-silent-rack.html`): Grau-Verlauf-Hintergrund, H1 36px zentriert, freigestelltes Produktbild mit Bodenschatten. Seit 2026-09-27: kein festes `aspect-ratio` mehr (Produktbild muss auf jeder Auflösung komplett sichtbar sein, egal welches Seitenverhältnis das Foto hat) – Bild wird per `max-height` (65vh Desktop / 50vh ≤900px) + `object-fit: contain` begrenzt, Container passt sich an.
 - **Bauform-Karten** (`engineering-formen.html`): 4-Spalten-Grid, Karte 150px, Bild ragt oben heraus.

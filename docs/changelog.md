@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (4. Korrektur) – Seitenköpfe ohne Header-Bild: grauer Kasten statt nacktem Titel
+- Jascha-Feedback: „Alle Seiten, die noch kein Header haben, bitte die Überschrift und Unterschrift in einen grauen Kasten, so wie wir es schon zusammen als Standardelement angelegt haben." Auf Nachfrage bestätigt: Aufbau 1:1 wie das bestehende Feature-Band, zunächst als Platzhalter bis ein echtes Header-Bild kommt; Umfang = die 18 vorgeschlagenen Seiten ohne Hub-Header.
+- **Umgesetzt:** `<div class="page-head">`/`.page-intro` als Seitenkopf ersetzt durch `.feature-band.feature-band--no-image.page-head-band` (H1 + optionale Unterzeile(n) in `.feature-band-text`) auf allen 18 Seiten: Flightcase Bauart, Flightcase Bauformen, Kantenschutz, Materialien (Übersicht + Multiplex + PP-Hohlkammer + UltraFlite), Fertigung, Über uns, Rechtliches (Übersicht + Impressum + Datenschutz), Standards & Werte (+ PPWR-Stellungnahme), Wissen (Übersicht + Höheneinheiten + TSA-Schloss).
+- `components.css`: `.feature-band-text h1` bekommt denselben Stil wie `.feature-band-text h2` (bisher nur H2 vorgesehen), plus `overflow-wrap:break-word` als Sicherheitsnetz für lange Titel (z. B. „HE, U und RU – Höheneinheiten im Rack"). Die jetzt überall ungenutzten `.page-head`/`.page-head h1`-Regeln entfernt. `.page-intro` bleibt (Materialseiten nutzen sie weiterhin als Absatzstil mitten im Content).
+- Geprüft (Playwright, 1600px + 375px, 6 Stichproben-Seiten inkl. Mehrabsatz-Seite „Über uns" und reinem Titel-ohne-Unterzeile-Fall „Rechtliches"): grauer Kasten korrekt, Inhalt darunter (Hub-Grid, FAQ, Datentabelle, Text-Sections) unverändert, kein horizontaler Overflow auf Mobil.
+- `docs/design-system.md` entsprechend ergänzt (Feature-Band-Zweitverwendung + Page-Head als obsolet markiert).
+
 ## 2026-10-13 (3. Korrektur) – Nav-Panel: Höhe passt sich an Inhalt an, Hintergrund heller
 - Jascha-Feedback mit direktem Seite-an-Seite-Vergleich (Screenshot: unser Panel vs. mercedes.de, identischer 1920px-Viewport) – zwei konkrete Unterschiede benannt und behoben:
 - **Panel-Höhe:** lief vorher fest über `calc(100vh - 96px)`, dadurch viel leerer weißer Platz unter der letzten Zeile bis zum Seitenende. Bei mercedes.de endet das Panel direkt nach dem letzten Eintrag. Fix: `height:auto` mit `max-height:calc(100vh - 96px)` (Sicherheitsnetz bei sehr langen Listen, dann eigener Scroll statt Überlauf) – Panel passt sich jetzt der Listenlänge an, Schatten jetzt rundum (`box-shadow` rechts+unten) statt vorher nur rechts.
