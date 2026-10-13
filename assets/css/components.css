@@ -90,9 +90,8 @@
 .t6 { font-size: var(--fs-body-small); color: #777; }
 .t7 { font-size: 13px; color: #888; }
 .t8 { font-size: 13px; color: #939393; }
-@media (max-width: 900px) {
-  .trust { padding-left: 48px; padding-right: 48px; }
-}
+/* Mobil-Seitenrand seit 2026-10-13 ueber --side-pad selbst geregelt (tokens.css),
+   eigene Ausnahme hier entfernt (war redundant, identischer Mechanismus). */
 
 /* ===== CLIENT LIST (Kundennamen im Trust-Bereich der Startseite, Blocksatz, neu 2026-10-05,
    Groessenstaffelung 2026-10-12) =====
@@ -239,18 +238,18 @@
     linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 8%, rgba(0,0,0,0) 22%);
 }
 .hub-header .wrap { position: relative; z-index: 2; width: 100%; }
-.hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; }
+/* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de Hero: Headline
+   steht links, schmale Spalte statt ueber die volle Breite) - Box waechst bei Bedarf trotzdem
+   mit (kein overflow:hidden, s.o.), bei langen Saetzen also mehr Zeilen statt mehr Breite. */
+.hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; max-width: 40%; }
 /* text-shadow seit 2026-10-13: der Verlauf allein (s.o.) reicht nicht bei jedem Foto - beim
-   neuen Case-Turm-Bild (heller/mittig als die bisherigen dunklen Werkstatt-Fotos) war der
-   Text auf Mobil streckenweise schlecht lesbar. Dezent genug, um bei dunklen Fotos nicht
-   auf zufallen. */
+   Case-Turm-Bild (heller/mittig als die bisherigen dunklen Werkstatt-Fotos) war der Text auf
+   Mobil streckenweise schlecht lesbar. Dezent genug, um bei dunklen Fotos nicht aufzufallen. */
 .hub-header h1, .hub-header p.desc { text-shadow: 0 2px 10px rgba(0,0,0,0.55); }
 .hub-header p.desc { max-width: 640px; font-size: var(--fs-body); color: #ddd; }
 @media (max-width: 900px) {
-  /* 48px statt 120px Seitenrand wie bei .page-head (s.u.) - die H1-Texte sind volle Saetze
-     (nicht wie beim Hero manuell per <br> kurz gehalten), bei 120px sonst zu wenig Breite. */
-  .hub-header h1 { font-size: 32px; }
-  .hub-header .wrap { padding-left: 48px; padding-right: 48px; }
+  /* Seitenrand auf Mobil seit 2026-10-13 ueber --side-pad selbst geregelt (tokens.css). */
+  .hub-header h1 { font-size: 32px; max-width: none; }
   /* margin-bottom folgt der mobilen H1-Groesse (s.o.), s. Designrichtlinie "Abstand Header -> Inhalt". */
   .hub-header { margin-bottom: 32px; }
 }
@@ -263,16 +262,23 @@
    unter jedem Seitenkopf bleibt ca. eine Ueberschriftenhoehe Platz, bevor der naechste Inhalt
    beginnt (ausser Startseite, dort uebernimmt .stats-row das bereits selbst). */
 .page-head { padding: 56px var(--side-pad) var(--fs-h1); max-width: var(--max-width); margin: 0 auto; }
-.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; }
-.page-intro { padding: 0 var(--side-pad) 30px; max-width: var(--max-width); margin: 0 auto; font-size: var(--fs-body); color: var(--grau-text); }
+/* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de: Headline links,
+   schmale Spalte statt volle Breite) - gilt einheitlich fuer alle Seitenkoepfe, nicht nur
+   Hub-Header mit Bild. */
+.page-head h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); color: var(--anthrazit); overflow-wrap: break-word; max-width: 40%; }
+/* Textbreite 640px seit 2026-10-13 (Jascha-Feedback: Unterschrift im Header soll ueberall
+   gleich schmal sein wie auf der Startseite) - gleicher Wert wie .hero/.hub-header p.desc.
+   margin:0 statt vorher 0 auto (sonst wuerde die jetzt schmalere Box zentriert statt wie die
+   H1 am linken Rand zu bleiben) - Linksbuendigkeit kommt weiterhin ueber padding-left. */
+.page-intro { padding: 0 var(--side-pad) 30px; max-width: 640px; margin: 0; font-size: var(--fs-body); color: var(--grau-text); }
 .pg-engineering-formen .page-intro { padding-bottom: 26px; max-width: 70ch; }
 .pg-kontakt .page-head h1 { font-size: var(--fs-h2); }
-/* Seit 2026-09-29: bei <=900px 48px statt 120px Seitenrand (wie Bauart-Row/Silent-Rack/
-   Trust-Liste) - bei laengeren H1 (z.B. "HE, U und RU - Hoeheneinheiten im Rack",
-   "PPWR-Stellungnahme") blieb bei 120px nur ~150px Textbreite, dadurch echter horizontaler
-   Overflow auf schmalen Viewports (gemessen: scrollWidth > clientWidth). */
+/* Seitenrand auf Mobil seit 2026-10-13 ueber --side-pad selbst geregelt (tokens.css); bei
+   laengeren H1 (z.B. "HE, U und RU - Hoeheneinheiten im Rack", "PPWR-Stellungnahme") reichte
+   120px nicht (echter horizontaler Overflow, gemessen: scrollWidth > clientWidth) - der neue,
+   kleinere Mobil-Wert loest das ebenfalls. */
 @media (max-width: 900px) {
-  .page-head, .page-intro { padding-left: 48px; padding-right: 48px; }
+  .page-head h1 { max-width: none; }
 }
 .section-heading { padding: 40px var(--side-pad) 20px; max-width: var(--max-width); margin: 0 auto; }
 .section-heading h2 { font-size: var(--fs-h2); color: var(--anthrazit); }
@@ -585,7 +591,8 @@
 
 /* ===== DATA-TABLE / TEXT-SECTION (Maße-Seite, 2026-09-28) - nur bestehende Tokens ===== */
 .text-section { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 30px; }
-@media (max-width: 900px) { .text-section { padding-left: 48px; padding-right: 48px; } }
+/* Mobil-Seitenrand seit 2026-10-13 ueber --side-pad selbst geregelt (tokens.css), eigene
+   Ausnahme hier entfernt (war redundant, identischer Mechanismus). */
 .text-section h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 6px; }
 .text-section p, .text-section ul { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; max-width: 70ch; }
 .text-section ul { padding-left: 20px; margin-top: 8px; }
@@ -684,7 +691,7 @@
     grid-template-areas: "title" "img" "text" "specs" "rating";
     padding-left: 0; padding-right: 0; row-gap: 14px;
   }
-  .bauart-row-title, .bauart-row-text, .bauart-row-specs, .bauart-row-ratings { padding: 0 48px; align-self: auto; }
+  .bauart-row-title, .bauart-row-text, .bauart-row-specs, .bauart-row-ratings { padding: 0 20px; align-self: auto; }
   .bauart-row-img { border-radius: 0; }
 }
 

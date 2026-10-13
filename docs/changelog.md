@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (ganz zuletzt) – Unterschrift im Header: Breite wie auf der Startseite, überall
+- Jascha-Feedback: Die Breite von Überschrift UND Unterschrift in den Headern soll sitewide so sein wie auf der Startseite (Hero) – war auf anderen Seiten nicht so.
+- H1-Breite (`max-width:40%`) war bereits Teil dieses PRs. Neu ergänzt: `.page-intro` (die "Unterschrift" auf allen `.page-head`-Seiten, z. B. Wissen, Standards & Werte, Fertigung, Materialseiten) bekommt jetzt `max-width:640px` – derselbe Wert wie `.hero`/`.hub-header p.desc`, damit die Unterschrift auf jedem Header-Typ gleich schmal wirkt.
+- Dabei `margin:0` statt vorher `margin:0 auto` gesetzt: Die Box war bisher nur über `max-width:var(--max-width)` (1744px) begrenzt, bei allen echten Bildschirmbreiten also praktisch nie schmaler als der Viewport – `margin:auto` hatte daher keine sichtbare Wirkung. Mit der neuen 640px-Grenze hätte `margin:auto` die Unterschrift zentriert statt linksbündig unter der H1 zu halten; `margin:0` + das vorhandene `padding-left` hält sie am selben linken Rand wie die Überschrift.
+- `.page-intro` wird auf einigen Materialseiten auch mehrfach als allgemeiner Absatzstil mitten im Seiteninhalt wiederverwendet (nicht nur direkt unter der H1) – betrifft dieselbe Änderung gleich mit, optisch unauffällig (alle Vorkommen sind kurze Sätze).
+- Geprüft: Desktop (1600px) und Mobile (375px) auf Wissen, Birken-Multiplex, Fertigung, Standards & Werte (ohne `.page-intro`, unverändert) – Unterschrift bleibt linksbündig unter der H1, Mobil unverändert (640px greift dort ohnehin nicht, da der Viewport schmaler ist).
+- Regel in `docs/design-system.md` zusammengefasst dokumentiert.
+
 ## 2026-10-13 (noch später) – Case-Turm-Foto eingebaut (Produkte-Header, Startseiten-Kachel, Maße-Seite)
 - Jascha hat das finale "Case-Turm"-Foto geliefert (`Case-Turm_TBF_Schwarzer_Hintergrund.jpg` lt. Content, hier als `assets/images/global/case-turm.jpg` abgelegt – ein Bild, drei Verwendungen, daher `global/` statt seitenspezifischem Ordner).
 - Ersetzt an allen 3 in `content/produkte/index.md` und `content/engineering/masse.md` genannten Stellen: Produkte-Hub-Header (vorher Platzhalter `hero-case-foto.jpg`), Startseiten-Kachel „Weitere Produkte entdecken" (vorher ebenfalls `hero-case-foto.jpg` als Übergangslösung), und neu: `/engineering/masse` bekommt jetzt denselben `.hub-header`-Aufbau (Bild + H1 + Intro-Satz als `p.desc`) wie Engineering/Manufaktur/Produkte, vorher nur schlichter Text-`.page-head` ohne Bild.
@@ -40,6 +48,12 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - CSS: neue Regel `.hub-card .avatar` (96px, rund, gleiches Prinzip wie `.team-card .avatar` auf der Kontaktseite, nur größer) + gemeinsame `.placeholder`-Regel für alle drei Avatar-Kontexte (`.hub-card`, `.team-card`, `.contact-page .team-card`) in `assets/css/components.css` ergänzt. Keine neuen Design-Werte, nur bestehende Platzhalter-Optik wiederverwendet.
 - Oleg-Foto von der alten Seite (`https://dp-case.de/wp-content/uploads/2023/11/olegvCube.png`) konnte nicht automatisch geholt werden – Sandbox-Netzwerk lässt nur eine feste Allowlist zu (Paket-Registries, GitHub), `dp-case.de` wird vom Proxy abgelehnt. Siehe `docs/open-decisions.md` (B8).
 - Geprüft: Desktop/Tablet/Mobile (Avatar/h3/p stapeln sich in `.hub-card` korrekt, da `flex-direction: column` bereits vorhanden), Links unverändert, keine kaputten Bildpfade (Platzhalter-Divs ohne `<img>`).
+
+## 2026-10-13 – Mobil-Seitenrand sitewide verkleinert, Header-Überschriften schmaler
+- Jascha-Feedback (Vorbild mercedes-benz.de, Screenshots Desktop + Mobil): Seitenränder auf Mobil sollen deutlich kleiner werden; Header-Überschriften sollen nicht über die volle Breite laufen, sondern links schmal stehen wie bei Mercedes.
+- **Mobil-Seitenrand:** `--side-pad` wird jetzt selbst bei ≤900px auf 20px reduziert (`tokens.css`), statt wie bisher einzelne Komponenten (`.page-head`, `.text-section`, `.trust`, `.hub-header`) mit einer eigenen 48px-Ausnahme zu versehen. Dabei gefunden: etliche andere Komponenten hatten gar keine Mobil-Ausnahme und standen bisher fälschlich bei vollen 120px Seitenrand (u. a. `.cta-band`, `.faq`, `.valueprops`, `.cases`, Footer, Header-Nav, Formular, Hub-/Produkt-Grids, Legal-Listen) – per `getComputedStyle` bestätigt (`.cta-band` z. B. 120px statt der gewünschten Schmalversion). Die alten 48px-Einzelausnahmen wurden entfernt (jetzt redundant), `.bauart-row-*` behält einen eigenen Wert (nicht über `--side-pad` geregelt), nur von 48px auf 20px angepasst.
+- **Header-Überschriften:** `.hero h1`, `.hub-header h1` und `.page-head h1` bekommen `max-width: 40%` (Desktop), auf Mobil wieder `max-width: none` (volle Breite nötig für die vollständigen Sätze). Kein neuer Design-Wert, nur eine Breitenbegrenzung auf vorhandenen Selektoren.
+- Geprüft: Desktop (1600px), Tablet (768px), Mobile (375px) auf Startseite, Engineering, Standards & Werte, Flightcase-Bauart – kein Overflow, keine abgeschnittenen Texte, CTA-Band-Buttons nutzen jetzt die volle verfügbare Mobil-Breite statt vorher ~135px.
 
 ## 2026-10-12 (ganz allerletzt) – Jaschas Team-Foto ergänzt
 - Von Jascha geliefertes Porträtfoto gespeichert unter `assets/images/manufaktur/team/jascha.jpg` (skaliert auf 700px Breite, komprimiert auf ~34 KB).
