@@ -91,15 +91,22 @@ header.nav .nav-links .nav-dropdown-toggle[aria-expanded="true"] {
 }
 /* Abgedunkelter Hintergrund hinter dem Panel (Vorbild mercedes-benz.de), reines CSS ueber eine
    body-Klasse statt zusaetzlichem Markup auf allen 25 Seiten. */
+/* Deutlich heller als ein erster Versuch (seit 2026-10-13 2x verfeinert, Vorbild-Screenshot
+   direkt mit mercedes.de verglichen: deren Verlauf dimmt nur leicht, Seite dahinter bleibt
+   gut lesbar). */
 body.nav-menu-open::after {
-  content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 9;
+  content: ""; position: fixed; inset: 0; background: rgba(0,0,0,0.18); z-index: 9;
 }
 /* top:96px = Hoehe des ungescrollten Headers (2x 18px Innenabstand + 60px Logo), damit das
    Panel unter dem Header beginnt statt ihn zu verdecken - der Trigger-Button (mit Pille-
-   Umrandung, s.o.) bleibt dadurch sichtbar, wie bei mercedes.de. */
+   Umrandung, s.o.) bleibt dadurch sichtbar, wie bei mercedes.de.
+   height:auto/max-height (seit 2026-10-13, Korrektur): vorher height:calc(100vh - 96px) fest -
+   bei kurzen Listen blieb darunter viel leerer weisser Platz bis zum Seitenende, bei mercedes.de
+   endet das Panel direkt nach dem letzten Eintrag (eigener Schatten rundum statt nur rechts). */
 header.nav .nav-dropdown {
-  position: fixed; top: 96px; left: 0; height: calc(100vh - 96px); width: 420px; max-width: 90vw;
-  background: #fff; color: var(--schwarz); box-shadow: 8px 0 32px rgba(0,0,0,0.18);
+  position: fixed; top: 96px; left: 0; height: auto; max-height: calc(100vh - 96px);
+  width: 420px; max-width: 90vw;
+  background: #fff; color: var(--schwarz); box-shadow: 6px 10px 32px rgba(0,0,0,0.2);
   z-index: 10; overflow-y: auto; padding: 32px;
 }
 header.nav .nav-dropdown[hidden] { display: none; }
