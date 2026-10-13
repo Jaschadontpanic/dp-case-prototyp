@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (ganz zuletzt) – Unterschrift im Header: Breite wie auf der Startseite, überall
+- Jascha-Feedback: Die Breite von Überschrift UND Unterschrift in den Headern soll sitewide so sein wie auf der Startseite (Hero) – war auf anderen Seiten nicht so.
+- H1-Breite (`max-width:40%`) war bereits Teil dieses PRs. Neu ergänzt: `.page-intro` (die "Unterschrift" auf allen `.page-head`-Seiten, z. B. Wissen, Standards & Werte, Fertigung, Materialseiten) bekommt jetzt `max-width:640px` – derselbe Wert wie `.hero`/`.hub-header p.desc`, damit die Unterschrift auf jedem Header-Typ gleich schmal wirkt.
+- Dabei `margin:0` statt vorher `margin:0 auto` gesetzt: Die Box war bisher nur über `max-width:var(--max-width)` (1744px) begrenzt, bei allen echten Bildschirmbreiten also praktisch nie schmaler als der Viewport – `margin:auto` hatte daher keine sichtbare Wirkung. Mit der neuen 640px-Grenze hätte `margin:auto` die Unterschrift zentriert statt linksbündig unter der H1 zu halten; `margin:0` + das vorhandene `padding-left` hält sie am selben linken Rand wie die Überschrift.
+- `.page-intro` wird auf einigen Materialseiten auch mehrfach als allgemeiner Absatzstil mitten im Seiteninhalt wiederverwendet (nicht nur direkt unter der H1) – betrifft dieselbe Änderung gleich mit, optisch unauffällig (alle Vorkommen sind kurze Sätze).
+- Geprüft: Desktop (1600px) und Mobile (375px) auf Wissen, Birken-Multiplex, Fertigung, Standards & Werte (ohne `.page-intro`, unverändert) – Unterschrift bleibt linksbündig unter der H1, Mobil unverändert (640px greift dort ohnehin nicht, da der Viewport schmaler ist).
+- Regel in `docs/design-system.md` zusammengefasst dokumentiert.
+
 ## 2026-10-13 (noch später) – Case-Turm-Foto eingebaut (Produkte-Header, Startseiten-Kachel, Maße-Seite)
 - Jascha hat das finale "Case-Turm"-Foto geliefert (`Case-Turm_TBF_Schwarzer_Hintergrund.jpg` lt. Content, hier als `assets/images/global/case-turm.jpg` abgelegt – ein Bild, drei Verwendungen, daher `global/` statt seitenspezifischem Ordner).
 - Ersetzt an allen 3 in `content/produkte/index.md` und `content/engineering/masse.md` genannten Stellen: Produkte-Hub-Header (vorher Platzhalter `hero-case-foto.jpg`), Startseiten-Kachel „Weitere Produkte entdecken" (vorher ebenfalls `hero-case-foto.jpg` als Übergangslösung), und neu: `/engineering/masse` bekommt jetzt denselben `.hub-header`-Aufbau (Bild + H1 + Intro-Satz als `p.desc`) wie Engineering/Manufaktur/Produkte, vorher nur schlichter Text-`.page-head` ohne Bild.
