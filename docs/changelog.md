@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (3. Korrektur) – Nav-Panel: Höhe passt sich an Inhalt an, Hintergrund heller
+- Jascha-Feedback mit direktem Seite-an-Seite-Vergleich (Screenshot: unser Panel vs. mercedes.de, identischer 1920px-Viewport) – zwei konkrete Unterschiede benannt und behoben:
+- **Panel-Höhe:** lief vorher fest über `calc(100vh - 96px)`, dadurch viel leerer weißer Platz unter der letzten Zeile bis zum Seitenende. Bei mercedes.de endet das Panel direkt nach dem letzten Eintrag. Fix: `height:auto` mit `max-height:calc(100vh - 96px)` (Sicherheitsnetz bei sehr langen Listen, dann eigener Scroll statt Überlauf) – Panel passt sich jetzt der Listenlänge an, Schatten jetzt rundum (`box-shadow` rechts+unten) statt vorher nur rechts.
+- **Hintergrund-Abdunkelung:** war mit `rgba(0,0,0,0.45)` deutlich dunkler als bei mercedes.de (Seite dahinter blieb dort gut lesbar, bei uns wirkte es sehr schwer) – auf `rgba(0,0,0,0.18)` aufgehellt.
+- Geprüft (Playwright, 1920px): Panel-Höhe passt sich jetzt der Listenlänge an (gemessen: 483px statt vorher 984px bei identischem Inhalt), Hintergrund sichtbar heller/Seite besser lesbar. Mobil-Panel (375px) unverändert, nicht betroffen (eigene CSS-Klassen).
+
 ## 2026-10-13 (2. Korrektur) – Desktop-Dropdown zu großem, linksbündigem Panel (Vorbild Mercedes)
 - Jascha-Feedback mit Mercedes-Screenshot: „Ich will das Menü vom Stil her in den größeren (Desktop & Pad) Auflösungen so haben: linksbündig, mit Umrandung des Navigationspunkts, und die Schrift mit den hier zu sehenden Größen und Abstufungen. Nur dass nach Klick auf einen Punkt auch die Unterpunkte angezeigt werden, sofern vorhanden."
 - **Vorher** (letzter Stand): kleine, 220px breite Dropdown-Box direkt unter dem Nav-Link.
