@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (zuletzt) – Olegs Team-Foto eingesetzt
+- Von Jascha geliefertes Foto als `assets/images/manufaktur/team/oleg.jpg` (700px Breite, ~30 KB) gespeichert, auf Kontakt und `/manufaktur/ueber-uns` statt Platzhalter eingesetzt. Ole und Michaela bleiben Platzhalter.
+
 ## 2026-10-13 (später) – Bauart-Seite: Bild-Slider (Case / Platte / Kante)
 - Jascha-Vorgabe: je Bauart drei Bilder – Case-Foto, verwendete Platte, verwendete Kante. Klick auf das Bild wechselt Case → Platte → Kante → Case.
 - `/engineering/flightcase-bauart/`: 10 der 11 Bauart-Zeilen auf `.bauart-slider` umgestellt (3 Slides, Label-Chip + Punkte unten im Bild). „Custom Cases“ bleibt bewusst ohne Slider (Platte/Kante „variabel“, ein Bild).
