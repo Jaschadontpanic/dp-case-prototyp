@@ -30,3 +30,17 @@
   --logo-h-scrolled-mobile: 22px; /* Logo-Hoehe Mobile/Tablet, gescrollt (2026-09-29: ca. 10% kleiner als bisher 24px) */
   --transition-fast: 220ms ease;  /* Logo-Crossfade, Padding-Uebergang */
 }
+
+/* Seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de Mobilansicht, am Seitenrand
+   gemessen ~20px statt wie bisher voller --side-pad von 120px): --side-pad selbst wird bei
+   ≤900px kleiner, dadurch ziehen ALLE Komponenten, die padding/margin darueber beziehen
+   (Header, Footer, Hero, Stats-Zeile, Wert-Kacheln, Cases-Grid, CTA-Baender, FAQ, Formular,
+   Hub-/Produkt-Grids, Legal-Listen usw.), automatisch mit - vorher hatten nur einzelne
+   Komponenten (.page-head, .text-section, .trust, .hub-header) eine eigene 48px-Ausnahme,
+   der Rest (u.a. .cta-band, .faq, .valueprops, .cases, Footer) hatte gar keine
+   Mobil-Reduzierung und blieb faelschlich bei vollen 120px Seitenrand (per Playwright
+   getComputedStyle bestaetigt). Die bisherigen 48px-Einzelausnahmen wurden entfernt, damit
+   sitewide ein einziger, konsistenter Wert gilt. */
+@media (max-width: 900px) {
+  :root { --side-pad: 20px; }
+}

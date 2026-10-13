@@ -133,7 +133,10 @@ header.nav .burger { display: none; }
     linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 8%, rgba(0,0,0,0) 22%);
 }
 .hero .wrap { position: relative; z-index: 1; width: 100%; }
-.hero h1 { font-size: var(--fs-h1); margin-bottom: 22px; }
+/* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de Hero: Headline
+   links, schmale Spalte statt volle Breite) - die manuellen <br>-Zeilenumbrueche bleiben
+   innerhalb dieser Breite unveraendert kurz genug. */
+.hero h1 { font-size: var(--fs-h1); margin-bottom: 22px; max-width: 40%; }
 .hero p.desc { max-width: 640px; font-size: var(--fs-body); color: #ddd; margin-bottom: 28px; }
 .hero .buttons { display: flex; gap: 16px; }
 
@@ -169,7 +172,7 @@ footer.site-footer {
   header.nav.scrolled .logo { height: var(--logo-h-scrolled-mobile); }
 }
 @media (max-width: 900px) {
-  .hero h1 { font-size: 32px; }
+  .hero h1 { font-size: 32px; max-width: none; }
   .stats-row { grid-template-columns: 1fr; }
   .stats-row .kicker { grid-column: span 1; }
 }
