@@ -17,6 +17,11 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Alt-Texte ergänzt (vorher leer/Platzhalter): „Gestapelte Flightcases unterschiedlicher Größe vor dunklem Hintergrund".
 - Geprüft: Desktop (1600px) und Mobile (375px) auf Startseite, Produkte, Flightcase Maße.
 
+## 2026-10-13 (Kantenschutz-Bilder) – Ablageseite befüllt, Bauart-Slider Slide „Kante“
+- 5 Kantenschutz-Bilder von Jascha als WebP unter `assets/images/engineering/kantenschutz/` abgelegt. Abgleich Jaschas Dateinamen ↔ Content-Bezeichnungen (Bauart-Specs): `Kantenschutz_22x22` ↔ „Kantenschutz 22x22x1,5“ · `_30x30` ↔ „30x30x1,5“ · `_35x35` ↔ „35x35x2“ · `_Easy` ↔ „Easy Hohlkammerkante“ · `_N-Case` ↔ „N-Case-Hohlkammerprofil“. Stärken (1,5 / 2 mm) stehen nur im Content, nicht im Dateinamen – im Content gibt es je Kantenmaß nur eine Stärke, daher eindeutig.
+- Dateinamen im Repo: `kantenschutz-22x22x1-5`, `kantenschutz-30x30x1-5`, `kantenschutz-35x35x2`, `easy-hohlkammerkante`, `n-case-hohlkammerprofil`.
+- Unveröffentlichte Ablage `/engineering/kantenschutz/` zeigt jetzt die 5 Profile (noindex, nicht verlinkt). Bauart-Slider: Slide 3 „Kante“ nutzt dieselben Bilder (10 Bauarten, Custom Cases ohne Slider). Damit sind alle Slider-Slides außer dem Case-Foto (B1) mit Bildern belegt.
+
 ## 2026-10-13 (Materialbilder eingebunden) – Galerien + Bauart-Slider Slide „Platte“
 - Alle Materialbilder (23 Dateien, davon 2 nur abgelegt: `multiplex-siebfilm`, `multiplex-siebdruck-9mm` – Hub/Spezialbauten, noch ohne Content, und `hdf-3mm-hpl` nur im Bauart-Slider) auf den drei Materialseiten eingebunden: je Stärke eine Galerie (Ansichtsbild groß 2x2, Details daneben, Klick = Vergrößerung per `assets/js/image-zoom.js`). Der alte Platzhalter-Slot oben entfällt. Layout-Test auf Jaschas Wunsch („testen wir mal“).
 - Neu abgelegt: `ultraflite-9-7mm` (+ `-detail-1`, `-detail-2`), `pp-hohlkammer-9-4mm-detail-2`, `pp-hohlkammer-6-8mm-detail-3` (Zuordnung von Jascha bestätigt). Das erneut gelieferte „Multiplex strukturiert 9mm“ ist pixelgleich mit `birken-multiplex-9mm-detail-2` (kein neues File).
