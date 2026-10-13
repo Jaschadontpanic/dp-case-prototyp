@@ -33,7 +33,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 ## Bilder
 | # | Punkt | Status |
 |---|---|---|
-| B1 | Bauart-Seite: alle 11 Bauarten zeigen „Bild folgt“-Platzhalter, echte Fotos fehlen komplett | Aufgabe |
+| B1 | Bauart-Seite: Case-Fotos (Slide 1) – seit 2026-10-13 liegen 11 Fotos unter `assets/images/engineering/bauart/` und sind eingebunden (Zuordnung siehe Changelog „Bauart-Fotos“). Noch Dummy, Foto kommt von Jascha: Standard Protect Flightcase, Plus Protect Flightcase – Light, Ultra Protect Flightcase, Easy-Case; Weitere Leistungen: Einbauten, Lautsprecher, Sonderkonstruktionen. Offen: Zuordnung „Standard Protect Alternative“ (Standard Protect oder 2. Bild Light?) und „Woodrack“ (welcher Eintrag?); Darstellung mehrerer Case-Fotos pro Bauart (Empfehlung: Galerie mit Klick-Zoom wie Materialseiten, Slider bleibt bei 3 Slides); Bild-Slot für Weitere Leistungen vorhanden? | Aufgabe |
 | B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
