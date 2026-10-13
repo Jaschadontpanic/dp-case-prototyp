@@ -555,7 +555,10 @@
 .contact-page .contact-form label.checkbox-inline, .contact-page .contact-form label.checkbox { display: inline-flex; flex-direction: row; align-items: center; gap: 8px; font-weight: 400 !important; font-size: 13px; margin-right: 20px; }
 .contact-page .hint { display: block; font-size: 11px; color: var(--grau-text); font-weight: 400; margin-top: 4px; }
 
-.contact-page .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+/* max-width 960px seit 2026-10-13 (Jascha-Feedback: Elemente unter dem Kontaktformular auf
+   die passende Breite) - vorher ungebremst volle .contact-page-Breite (bis 1744px), deutlich
+   breiter als .visit-grid/.contact-grid/.intro-headline (alle 960px) direkt darueber. */
+.contact-page .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
 @media (max-width: 900px) { .contact-page .team-grid { grid-template-columns: repeat(2,1fr); } }
 .contact-page .team-card { text-align: center; }
 .contact-page .team-card .avatar {
@@ -567,7 +570,7 @@
 .contact-page .team-card h4 { font-size: 14px; margin-bottom: 2px; }
 .contact-page .team-card .role { font-size: 11.5px; color: var(--teal); font-weight: 600; }
 .contact-page .team-card .quote { font-size: 11.5px; color: var(--grau-text); font-style: italic; margin: 8px 0; }
-.contact-page .team-grid-note { font-size: var(--fs-body-small); color: var(--grau-text); text-align: center; margin-top: 24px; }
+.contact-page .team-grid-note { font-size: var(--fs-body-small); color: var(--grau-text); text-align: center; max-width: 960px; margin: 24px auto 0; }
 /* Inline-Link in der Datenschutz-Checkbox: sonst per globalem Reset unsichtbar (a{color:inherit}). */
 .contact-page .contact-form label.checkbox a { color: var(--teal); text-decoration: underline; }
 
@@ -576,8 +579,10 @@
    aktuell nur auf der Kontaktseite eingebaut). Wiederverwendung des .optional-fields-Stils. ===== */
 .faq { max-width: var(--max-width); margin: 0 auto; padding: 20px var(--side-pad) 70px; }
 /* Auf der Kontaktseite steht die FAQ direkt unter .contact-page, das sein eigenes
-   Seiten-Padding mitbringt (0 statt --side-pad) - Randabstand hier nicht doppeln. */
-.pg-kontakt .faq { padding-left: 0; padding-right: 0; }
+   Seiten-Padding mitbringt (0 statt --side-pad) - Randabstand hier nicht doppeln.
+   max-width 960px seit 2026-10-13 (Jascha-Feedback: passende Breite wie Formular/Team-Grid
+   darueber) - vorher lief die FAQ ungebremst ueber die volle .contact-page-Breite. */
+.pg-kontakt .faq { max-width: 960px; margin: 0 auto; padding-left: 0; padding-right: 0; }
 .faq h2 { margin-bottom: 20px; }
 .faq-item { border: 1px solid #e4e4e0; border-radius: 10px; padding: 4px 20px; margin-bottom: 12px; }
 .faq-item summary {

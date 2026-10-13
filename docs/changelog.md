@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (ganz zuletzt) – Kontaktseite: Team-Grid und FAQ auf die Formular-Breite gebracht
+- Jascha-Feedback: Elemente unter dem Kontaktformular auf die passende Breite bringen, Rest der Seite auf weitere Breitenfehler prüfen.
+- Befund (per Playwright nachgemessen, 1920px Viewport): `.visit-grid`, `.contact-grid` und `.intro-headline` sind bereits bewusst auf `max-width:960px; margin:0 auto` begrenzt (eigene, schmalere Spalte, Vorbild Mercedes-Kontaktformular). `.team-grid`, die Notiz „Fragen zur Buchhaltung …" (`.team-grid-note`) und die Allgemeine-FAQ-Sektion darunter hatten diese Begrenzung nicht und liefen über die volle `.contact-page`-Breite (bis 1744px) – deutlich breiter als das Formular darüber, sichtbar versetzter linker Rand.
+- Fix: `max-width:960px; margin:0 auto` auch auf `.contact-page .team-grid`, `.contact-page .team-grid-note` und `.pg-kontakt .faq` ergänzt. Keine neuen Design-Werte – überall derselbe 960px-Wert, der auf dieser Seite schon für Formular/Besuchs-Block/Überschrift gilt.
+- Rest der Seite geprüft: Header, Footer unverändert (sitewide, nicht Kontakt-spezifisch). Keine weiteren Breitenabweichungen gefunden.
+- Geprüft: Desktop (1920px, Playwright-Breitenmessung aller Elemente), Tablet (768px), Mobile (375px) – auf schmalen Viewports ohnehin kein Unterschied sichtbar, da 960px dort nicht greift.
+
 ## 2026-10-13 (ganz zuletzt) – Unterschrift im Header: Breite wie auf der Startseite, überall
 - Jascha-Feedback: Die Breite von Überschrift UND Unterschrift in den Headern soll sitewide so sein wie auf der Startseite (Hero) – war auf anderen Seiten nicht so.
 - H1-Breite (`max-width:40%`) war bereits Teil dieses PRs. Neu ergänzt: `.page-intro` (die "Unterschrift" auf allen `.page-head`-Seiten, z. B. Wissen, Standards & Werte, Fertigung, Materialseiten) bekommt jetzt `max-width:640px` – derselbe Wert wie `.hero`/`.hub-header p.desc`, damit die Unterschrift auf jedem Header-Typ gleich schmal wirkt.
