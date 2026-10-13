@@ -641,6 +641,26 @@
   background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px);
   display: flex; align-items: center; justify-content: center; color: #b7b7b0; font-size: 13px;
 }
+/* Bauart-Slider (neu 2026-10-13): 3 Bilder pro Bauart (Case / Platte / Kante), Klick auf das Bild
+   schaltet weiter. Slides liegen uebereinander, nur .is-active sichtbar. Platzhalter-Optik wie
+   .bauart-row-img.placeholder, nur bestehende Tokens/Werte. Ohne JS bleibt Slide 1 sichtbar. */
+.bauart-slider { position: relative; cursor: pointer; }
+.bauart-slider:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.bauart-slide { position: absolute; inset: 0; display: none; }
+.bauart-slide.is-active { display: flex; }
+.bauart-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bauart-slide.placeholder {
+  background: repeating-linear-gradient(135deg,#f3f3f0,#f3f3f0 10px,#ececE7 10px,#ececE7 20px);
+  align-items: center; justify-content: center; text-align: center; padding: 0 24px; color: #b7b7b0; font-size: 13px;
+}
+.bauart-slider-ui { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.bauart-slider-label {
+  font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--anthrazit); background: #fff; border-radius: 999px; padding: 4px 12px;
+}
+.bauart-slider-dots { display: flex; gap: 6px; }
+.bauart-slider-dots i { width: 8px; height: 8px; border-radius: 50%; background: #fff; border: 1px solid var(--anthrazit); display: block; }
+.bauart-slider-dots i.on { background: var(--teal); border-color: var(--teal); }
 .bauart-row-title { grid-area: title; display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; align-self: end; }
 .bauart-row-title h3 { font-size: var(--fs-card-title); color: var(--anthrazit); }
 .bauart-badge {

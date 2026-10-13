@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (später) – Bauart-Seite: Bild-Slider (Case / Platte / Kante)
+- Jascha-Vorgabe: je Bauart drei Bilder – Case-Foto, verwendete Platte, verwendete Kante. Klick auf das Bild wechselt Case → Platte → Kante → Case.
+- `/engineering/flightcase-bauart/`: 10 der 11 Bauart-Zeilen auf `.bauart-slider` umgestellt (3 Slides, Label-Chip + Punkte unten im Bild). „Custom Cases“ bleibt bewusst ohne Slider (Platte/Kante „variabel“, ein Bild).
+- Neu: `assets/js/bauart-slider.js` (Vanilla-JS, Klick/Enter/Leertaste/Pfeiltasten, ohne JS bleibt Slide 1 sichtbar), CSS `.bauart-slider*` in `components.css` (nur bestehende Tokens/Platzhalter-Optik).
+- Alle 3 Slides aktuell Platzhalter; Slides 2/3 tragen die Werte aus der Specs-Zeile („Platte: Multiplex 6,5“, „Kante: Kantenschutz 22x22x1,5“).
+- Neue, **nicht veröffentlichte** Ablageseite `/engineering/kantenschutz/` (noindex, nirgends verlinkt) für die Kantenschutzprofil-Bilder: 5 Platzhalter-Kacheln (22x22x1,5 / 30x30x1,5 / 35x35x2 / N-Case-Hohlkammerprofil / Easy Hohlkammerkante). Die Seite „Plattenmaterialien“ existiert als HTML noch nicht.
+- Geprüft: Klick-Wechsel Desktop und Mobil (Playwright), Bildschirmfoto Desktop ok.
+
 ## 2026-10-13 – Bild-Slots für alle 4 Team-Mitglieder (Kontakt + Über uns)
 - Kontaktseite: Oleg, Ole, Michaela zeigen jetzt `avatar placeholder` (sitewide Platzhalter-Streifenmuster) statt normalem Buchstaben-Avatar, bis echte Fotos vorliegen. Jascha unverändert mit Foto.
 - `/manufaktur/ueber-uns`: Bild-Slot (`.avatar`) für alle 4 Team-Bios neu ergänzt (gab es dort bisher gar nicht). Jascha nutzt das echte Foto (`assets/images/manufaktur/team/jascha.jpg`), Oleg/Ole/Michaela zeigen `avatar placeholder`.

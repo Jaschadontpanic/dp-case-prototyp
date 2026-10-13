@@ -106,6 +106,13 @@ Keine Buttons, da hier keine sinnvolle CTA-Zielseite existiert.
 echten Freisteller final pruefen – aktuelle Werte oben sind ein erster Entwurf, noch nicht an
 echtem Bildmaterial verifiziert).
 
+## Bauart-Slider (`.bauart-slider`, neu 2026-10-13)
+Bildelement der `.bauart-row` mit 3 Slides: Case-Foto → Platte → Kante. Klick/Enter/Pfeiltasten wechselt
+(`assets/js/bauart-slider.js`). Slides (`.bauart-slide`) liegen absolut übereinander, nur `.is-active`
+sichtbar; unten im Bild Label-Chip (mono, wie `.bauart-badge`-Schrift) + Punkte (aktiv `--teal`).
+Platte-/Kante-Bilder werden aus „Plattenmaterialien“ bzw. „Kantenschutz“ wiederverwendet, nicht separat
+geliefert. Ohne Slider: Zeilen mit nur einem Bild (Custom Cases) nutzen weiter `.bauart-row-img`.
+
 ## Team-Avatar (`.avatar` in `.team-card`/`.hub-card`, neu 2026-10-13)
 Bild-Slot für Team-Fotos, bisher nur auf der Kontaktseite (`.team-card`), seit 2026-10-13
 auch auf `/manufaktur/ueber-uns` (`.hub-card`) – dort gab es vorher gar keinen Bild-Slot, nur Text.
