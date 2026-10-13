@@ -115,6 +115,9 @@ sichtbar; unten im Bild Label-Chip (mono, wie `.bauart-badge`-Schrift) + Punkte 
 Platte-/Kante-Bilder werden aus „Plattenmaterialien“ bzw. „Kantenschutz“ wiederverwendet, nicht separat
 geliefert. Ohne Slider: Zeilen mit nur einem Bild (Custom Cases) nutzen weiter `.bauart-row-img`.
 
+## Material-Galerie (`.material-gallery`, neu 2026-10-13)
+Raster für Materialbilder: Ansichtsbild (`.material-img.is-main`) 2x2 groß, Detailbilder je 1x1 daneben (4 Spalten Desktop, 2 Spalten Mobil). Klick öffnet das Bild groß in einem Dialog (`assets/js/image-zoom.js`, Stil `.img-zoom-dialog`). Dateinamen: Ansicht = Werkstoffname aus der Matrix, Details = Name + `-detail-N`. Einsatz: Plattenmaterialien (Multiplex je Stärke, PP je Stärke, UltraFlite). Erstes Layout zum Testen (Jascha), noch nicht endgültig.
+
 ## Table-Zoom (`.table-zoom`, neu 2026-10-13)
 Tabelle als kleine, bewusst unlesbare Übersicht (transform: scale, Breite 2200px → passt in die Spalte),
 Klick/Enter öffnet eine vergrößerte Kopie in einem `<dialog>` (`.table-zoom-dialog`) mit Scrollbereich

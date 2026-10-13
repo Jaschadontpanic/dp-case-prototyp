@@ -17,6 +17,12 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Alt-Texte ergänzt (vorher leer/Platzhalter): „Gestapelte Flightcases unterschiedlicher Größe vor dunklem Hintergrund".
 - Geprüft: Desktop (1600px) und Mobile (375px) auf Startseite, Produkte, Flightcase Maße.
 
+## 2026-10-13 (Materialbilder eingebunden) – Galerien + Bauart-Slider Slide „Platte“
+- Alle Materialbilder (23 Dateien, davon 2 nur abgelegt: `multiplex-siebfilm`, `multiplex-siebdruck-9mm` – Hub/Spezialbauten, noch ohne Content, und `hdf-3mm-hpl` nur im Bauart-Slider) auf den drei Materialseiten eingebunden: je Stärke eine Galerie (Ansichtsbild groß 2x2, Details daneben, Klick = Vergrößerung per `assets/js/image-zoom.js`). Der alte Platzhalter-Slot oben entfällt. Layout-Test auf Jaschas Wunsch („testen wir mal“).
+- Neu abgelegt: `ultraflite-9-7mm` (+ `-detail-1`, `-detail-2`), `pp-hohlkammer-9-4mm-detail-2`, `pp-hohlkammer-6-8mm-detail-3` (Zuordnung von Jascha bestätigt). Das erneut gelieferte „Multiplex strukturiert 9mm“ ist pixelgleich mit `birken-multiplex-9mm-detail-2` (kein neues File).
+- Bauart-Slider: Slide 2 „Platte“ zeigt jetzt das Ansichtsbild des Plattenmaterials der jeweiligen Bauart (Multiplex 6,5 / 9, PP 6,8 / 9,4 / HD 11, UltraFlite 9,7, HDF+HPL). Slide 3 „Kante“ bleibt Platzhalter (Bilder aus der unveröffentlichten Kantenschutz-Ablage folgen).
+- Alt-Texte aus den Content-Vorgaben und Jaschas Bezeichnungen abgeleitet (z. B. „Birken-Multiplex-Platte 9 mm mit Hexagon-Oberfläche, schwarz“) – bitte im SEO-Alt-Text-Check (C5) prüfen.
+
 ## 2026-10-13 (Materialbilder) – Dateien abgelegt, noch nicht eingebunden
 - 15 Materialbilder als WebP (max. 1000 px) unter `assets/images/engineering/materialien/plattenmaterialien/` abgelegt. **Namensschema (Jascha):** Ansichtsbild = Werkstoffname aus der Matrix (Kleinbuchstaben, Bindestriche, Komma → Bindestrich), Detailbilder = Name + `-detail-N` (ab 1 fortlaufend je Werkstoff). Beispiel: `pp-hohlkammer-hd-11mm.webp`, `pp-hohlkammer-hd-11mm-detail-1.webp`.
 - Zuordnung: Multiplex 6,5 mm: Ansicht phenol glatt, detail-1 strukturiert, detail-2 Hexagon · Multiplex 9 mm: Ansicht phenol glatt, detail-1 Hexagon, detail-2 strukturiert, detail-3 Natur · Multiplex 15 mm: Ansicht glatt · PP 6,8 mm: Ansicht, detail-1, detail-2 (Farben blau/rot) · PP 9,4 mm: Ansicht · PP HD 11 mm: Ansicht + detail-1 (Greifgummi-Muster) · HDF 3mm + HPL: Ansicht.
