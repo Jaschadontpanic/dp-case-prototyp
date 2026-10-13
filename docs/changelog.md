@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Logo Mobil ca. 20 % kleiner
+- Jascha-Feedback: Logo mobil ca. 20 % kleiner; Startseite und Unterseiten gleich groß. `--logo-h-top-mobile` 45px → 36px (≤900px, Scroll-Position 0). Desktop (60px) und gescrolltes Logo (29px/22px) unverändert. `docs/design-system.md` angepasst.
+
 ## 2026-10-13 (Abschluss Chat) – Übergabe
 - Stand: alle Änderungen dieses Chats sind auf `main` (Team-Fotos Jascha/Oleg, Bauart-Slider mit Platte/Kante, Plattenmaterialien Hub + 3 Seiten mit Klick-Zoom-Matrix und Galerien, Kantenschutz-Ablage, Feature-Band, Kontakt-Bereinigung). Offene Punkte: `docs/open-decisions.md` (B1, B8, B9, B10, C5, C15, C16 u. a.).
 
