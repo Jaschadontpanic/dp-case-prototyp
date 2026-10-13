@@ -12,6 +12,15 @@ function dpCloseMobileMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
+document.querySelectorAll('.mobile-menu-expand').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var submenu = document.getElementById(btn.getAttribute('aria-controls'));
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    if (submenu) submenu.hidden = isOpen;
+  });
+});
+
 (function () {
   var header = document.querySelector('header.nav');
   if (!header) return;
