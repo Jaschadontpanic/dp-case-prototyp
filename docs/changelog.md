@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 (Abschluss Chat) – Übergabe
+- Stand: alle Änderungen dieses Chats sind auf `main` (Team-Fotos Jascha/Oleg, Bauart-Slider mit Platte/Kante, Plattenmaterialien Hub + 3 Seiten mit Klick-Zoom-Matrix und Galerien, Kantenschutz-Ablage, Feature-Band, Kontakt-Bereinigung). Offene Punkte: `docs/open-decisions.md` (B1, B8, B9, B10, C5, C15, C16 u. a.).
+
 ## 2026-10-13 (5. Korrektur) – Desktop-Nav-Panel: Pille kleiner, Ausrichtung am ersten Navigationspunkt
 - Jascha-Feedback mit direktem Seite-an-Seite-Vergleichsscreenshot (unser Panel vs. mercedes.de, identischer 1920px-Viewport) – zwei konkrete Unterschiede benannt:
   1. „Die Kreise um die Seiten in der Navigationsleiste bitte an die Größe von Mercedes anpassen" – unsere Pillen-Umrandung um „Engineering"/„Manufaktur" im geöffneten Zustand war deutlich größer/ausladender als bei mercedes.de.
