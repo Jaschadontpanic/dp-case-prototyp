@@ -669,15 +669,16 @@
   grid-template-areas: "title img" "text img" "specs img" "rating img";
 }
 /* Bauart-Seite: seit Wegfall der H2 „Flightcase-Bauarten“ (2026-10-14) ist die erste Zeile ein gerades Kind –
-   Wechsel hier umgedreht, damit die erste Bauart wie bisher mit dem Bild links beginnt. Nur Desktop, mobil gestapelt. */
+   Wechsel hier umgedreht, damit die erste Bauart wie bisher mit dem Bild links beginnt. Nur Desktop, mobil gestapelt.
+   Spalten Slider : Text = 1 : 1 (Jascha 2026-10-14: Kachel nach Buendigkeit ca. 25 % kleiner, Text rueckt nach). */
 @media (min-width: 901px) {
   .pg-engineering-bauart .bauart-row { grid-template-rows: 1fr auto auto auto auto 1fr; }
   .pg-engineering-bauart .bauart-row:nth-child(even) {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "img ." "img title" "img text" "img specs" "img rating" "img .";
   }
   .pg-engineering-bauart .bauart-row:nth-child(odd) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: ". img" "title img" "text img" "specs img" "rating img" ". img";
   }
 }

@@ -7,6 +7,8 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Geprüft (Playwright): 1600 px eine Zeile; 375 px bricht zwischen den Einträgen um (nie mitten in einem Eintrag), kein horizontaler Overflow.
 - Kachel-Slider bündig mit der Inhaltskante (Jascha): kein seitlicher Einzug mehr für die Pfeile, Bildkante steht auf derselben Linie wie H1/Text darüber (Desktop x=120 bei 1600 px, mobil 20px Seitenrand wie der Text). Pfeile liegen innen auf dem Bild.
 - Abstand zwischen den Bauart-Zeilen auf dem Desktop 224px → 134px (−40 %, Jascha); mobil bleibt 112px.
+- Kachel ca. 25 % kleiner (Jascha): Spalten Slider : Text auf Desktop 1 : 1 statt 2 : 1, Text rückt nach. Bild bei 1600 px 650 × 488 px (vorher 870 × 650 nach Bündigkeit), bei 1280 px 490 × 368 px.
+- Geprüft (Playwright): 1600/1280/1024/768/375 px – Slider-Außenkante bündig mit H1/Text, Pfeile vor/zurück, kein horizontaler Overflow.
 
 ## 2026-10-14 – Bauart-Seite: Überschriften, LIGHT im Titel, Seitenkopf, Abstände, Bilder 2/3
 - Jascha-Vorgaben: H1 „Flightcase Bauart“ → „Flightcase Bauarten“; H2 „Flightcase-Bauarten“ entfällt; Zusatz Light/Ultra Light nicht mehr als Pillen-Label, sondern in der H3 mit Gedankenstrich und in Versalien („Standard Protect Flightcase – LIGHT“), Teal hervorgehoben (`.bauart-suffix`; `.bauart-badge` bleibt für die Branchen-Tags auf Silent Rack). Content (`flightcase-bauart.md`: H1, Design-Hinweis, Gruppe 1 ohne sichtbare H2) entsprechend nachgezogen.

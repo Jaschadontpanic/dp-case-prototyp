@@ -202,8 +202,9 @@ Drei neue Seiten, ausschließlich bestehende Komponenten (`page-head`, `page-int
 - Erste Anwendung: Standards & Werte (Nachhaltigkeit, Soziale Verantwortung).
 
 ## Bauart-Zeile, Stand 2026-10-14
-- Desktop: Kachel-Slider 2/3, Textblock 1/3, Zeilenabstand 224px; erste Zeile Bild links, dann abwechselnd.
+- Desktop: Kachel-Slider : Textblock = 1 : 1, Zeilenabstand 134px; erste Zeile Bild links, dann abwechselnd. Kachel bündig mit der Inhaltskante (kein Pfeil-Einzug), Pfeile innen auf dem Bild.
+- Eigenschaften der Platte-/Kante-Kacheln in einer Zeile, getrennt mit „ ·“.
 - Zusatz LIGHT/ULTRA LIGHT in der H3: „Name – LIGHT“, Versalien im Text, `.bauart-suffix` (Teal). Kein Pillen-Label mehr.
 - Kacheln (Desktop): Bild fest 4:3, Titel/Eigenschaften darunter; Textblock vertikal mittig neben dem Slider (ersetzt „Slider-Höhe = Textblock“).
-- Mobil: Überschrift, Text, Specs, Skalen oben, Kachel-Slider zuletzt, 112px Abstand zur nächsten Bauart.
+- Mobil: Überschrift, Text, Specs, Skalen oben, Kachel-Slider zuletzt (20px Seitenrand wie der Text), 112px Abstand zur nächsten Bauart.
 - Seitenkopf `.page-head-band` (grauer Kasten ohne Bild): ohne Abstand direkt unter dem Header.
