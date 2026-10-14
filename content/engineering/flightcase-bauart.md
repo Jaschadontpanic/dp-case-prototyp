@@ -13,17 +13,20 @@ URL: /engineering/flightcase-bauart
 **Meta Description:** Leicht zu tragen und trotzdem sicher: Mit der passenden Materialkombination spart dein Flightcase Gewicht, ohne beim Schutz nachzugeben. Finde deine Bauart.
 **Breadcrumb:** Start > Engineering > Bauart
 
-**H1:** Flightcase Bauart (final)
+**H1:** Flightcase Bauarten (Jascha 2026-10-14, vorher „Flightcase Bauart“)
 
 **Intro-Satz:** Vom Standard Protect bis zum Custom Case ohne Grenzen – wir finden die
 Bauart, die zu deinem Projekt passt.
 
-**Design-Hinweis:** Der Zusatz "Light"/"Ultra Light" steht immer direkt an den Bauart-Namen
-angehaengt (kein Zeilenumbruch), aber farblich/optisch hervorgehoben (andere Farbe o.ae.) -
-Hinweis fuer Design-Chat/Entwicklerin.
+**Design-Hinweis:** Der Zusatz "Light"/"Ultra Light" steht in der Ueberschrift, getrennt durch
+einen Gedankenstrich und in Versalien, farblich hervorgehoben (kein separates Button-Label) -
+z. B. "Standard Protect Flightcase – LIGHT", "Ultra Protect Flightcase – ULTRA LIGHT",
+"Easy-Case – LIGHT" (Jascha 2026-10-14).
 
 **GRUPPE 1: Flightcase-Bauarten** (11 Eintraege, inkl. Custom Cases als "wir kombinieren/
 erfinden auch ausserhalb des Systems")
+(Interne Gruppenbezeichnung – keine sichtbare Zwischenueberschrift; die H2 "Flightcase-Bauarten"
+entfaellt, Jascha 2026-10-14. Gruppe 2 behaelt ihre Zwischenueberschrift "Weitere Leistungen".)
 
 Texte aus Bauart-Tabellenblatt WOERTLICH uebernommen (Jascha-Entscheidung: Texte bleiben erstmal
 so, kein Eindampfen auf kuerzeren Stil). Rating als visuelle Skala zeigen (Punkte/Balken), nie

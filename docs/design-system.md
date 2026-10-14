@@ -200,3 +200,10 @@ Drei neue Seiten, ausschließlich bestehende Komponenten (`page-head`, `page-int
 - Erweiterung von `.text-section`: Bild neben H3 + Text, Modifier `--img-right` setzt das Bild nach rechts (abwechselnd wie `.bauart-row`).
 - Bildspalte 300px (Originalgröße der Werte-Bilder), Spaltenabstand 56px, Radius 20px – Werte aus `.bauart-row`. ≤900px einspaltig, Bild oben, max. 300px.
 - Erste Anwendung: Standards & Werte (Nachhaltigkeit, Soziale Verantwortung).
+
+## Bauart-Zeile, Stand 2026-10-14
+- Desktop: Kachel-Slider 2/3, Textblock 1/3, Zeilenabstand 224px; erste Zeile Bild links, dann abwechselnd.
+- Zusatz LIGHT/ULTRA LIGHT in der H3: „Name – LIGHT“, Versalien im Text, `.bauart-suffix` (Teal). Kein Pillen-Label mehr.
+- Kacheln (Desktop): Bild fest 4:3, Titel/Eigenschaften darunter; Textblock vertikal mittig neben dem Slider (ersetzt „Slider-Höhe = Textblock“).
+- Mobil: Überschrift, Text, Specs, Skalen oben, Kachel-Slider zuletzt, 112px Abstand zur nächsten Bauart.
+- Seitenkopf `.page-head-band` (grauer Kasten ohne Bild): ohne Abstand direkt unter dem Header.
