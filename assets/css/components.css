@@ -661,9 +661,9 @@
   display: grid; column-gap: 56px;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-areas: "img title" "img text" "img specs" "img rating";
-  max-width: var(--max-width); margin: 0 auto 224px; padding: 0 var(--side-pad);
+  max-width: var(--max-width); margin: 0 auto 134px; padding: 0 var(--side-pad);
 }
-/* 2026-10-14 (Jascha): Bild/Slider 2/3, Textblock 1/3 (vorher 42 % Bild), Zeilenabstand 56px -> 112px -> 224px (zweimal +100 %, Desktop; mobil 112px). */
+/* 2026-10-14 (Jascha): Bild/Slider 2/3, Textblock 1/3 (vorher 42 % Bild), Zeilenabstand 56px -> 112px -> 224px -> 134px (Jascha: -40 %, Desktop; mobil 112px). */
 .bauart-row:nth-child(even) {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   grid-template-areas: "title img" "text img" "specs img" "rating img";
@@ -741,6 +741,12 @@
 .tile-slider:not(.tile-slider--wide).is-loop .tile-slider-track { scroll-padding-left: 0; }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+/* Bauart (Jascha 2026-10-14): Kachel buendig mit der Inhaltskante (kein Einzug fuer die Pfeile mehr) – Bildkante sitzt seitlich
+   auf derselben Linie wie die Elemente darueber. Pfeile liegen dafuer innen auf dem Bild (12px vom Rand, Bildmitte). */
+.tile-slider.bauart-row-slider .tile-slider-track { margin: 0; }
+.tile-slider.bauart-row-slider .tile-slider-arrow { top: calc(100cqw * .375); opacity: .85; }
+.tile-slider.bauart-row-slider .tile-slider-arrow.prev { left: 12px; }
+.tile-slider.bauart-row-slider .tile-slider-arrow.next { right: 12px; }
 /* Bauart, Desktop (Jascha 2026-10-14, ersetzt „Slider-Hoehe = Textblock“ und den Vorschlag „Eigenschaften neben dem Bild“):
    jede Kachel zeigt das Bild fest im Format 4:3, Titel/Eigenschaften darunter. Der Textblock steht vertikal mittig neben dem Slider
    (leere 1fr-Zeilen oben/unten im Grid, s. .pg-engineering-bauart .bauart-row). Mobil siehe unten. */
@@ -781,6 +787,8 @@
     margin-bottom: 112px;
   }
   .pg-engineering-bauart .bauart-row-ratings { margin-bottom: 10px; }
+  /* Kachel mobil buendig mit dem Text darueber (gleicher Seitenrand statt Bildschirmrand). */
+  .pg-engineering-bauart .bauart-row-slider { margin: 0 var(--side-pad); }
 }
 
 /* ===== TABLE-ZOOM (neu 2026-10-13, Plattenmaterialien-Vergleichsmatrix): Tabelle wird klein als
