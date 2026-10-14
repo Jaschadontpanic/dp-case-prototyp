@@ -114,7 +114,7 @@
      kleinsten Stufe (t8-Werte). */
 .client-list { display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 6px; }
 .client-list > .client-name {
-  white-space: nowrap; font-family: var(--heading-font); font-size: var(--fs-body-small); color: var(--grau-text);
+  white-space: nowrap; font-family: var(--heading-font); font-size: 14px; color: var(--grau-text); /* Kundenliste bewusst nicht von der Desktop-Skalierung betroffen (Jascha 2026-10-14) */
 }
 /* flex:0 0 100% ist noetig, weil .client-row selbst ein Flex-Item des aeusseren .client-list
    ist (sobald JS die Zeilen-Divs einfuegt) - ohne feste volle Breite wuerde der aeussere
@@ -130,8 +130,8 @@
 .client-list .client-row:nth-child(2) { font-size: 26px; color: #333; }
 .client-list .client-row:nth-child(3) { font-size: 22px; color: #444; }
 .client-list .client-row:nth-child(4) { font-size: 19px; color: #555; }
-.client-list .client-row:nth-child(5) { font-size: var(--fs-body-small); color: #666; }
-.client-list .client-row:nth-child(6) { font-size: var(--fs-body-small); color: #777; }
+.client-list .client-row:nth-child(5) { font-size: 14px; color: #666; }
+.client-list .client-row:nth-child(6) { font-size: 14px; color: #777; }
 .client-list .client-row:nth-child(7) { font-size: 13px; color: #888; }
 .client-list .client-row:nth-child(n+8) { font-size: 13px; color: #939393; }
 .client-list .client-name { white-space: nowrap; }
@@ -243,7 +243,7 @@
 /* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de Hero: Headline
    steht links, schmale Spalte statt ueber die volle Breite) - Box waechst bei Bedarf trotzdem
    mit (kein overflow:hidden, s.o.), bei langen Saetzen also mehr Zeilen statt mehr Breite. */
-.hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; max-width: 40%; }
+.hub-header h1 { font-family: var(--headline-alt-font); font-size: var(--fs-h1); margin-bottom: 16px; overflow-wrap: break-word; max-width: max(40%, 10em); }
 /* text-shadow seit 2026-10-13: der Verlauf allein (s.o.) reicht nicht bei jedem Foto - beim
    Case-Turm-Bild (heller/mittig als die bisherigen dunklen Werkstatt-Fotos) war der Text auf
    Mobil streckenweise schlecht lesbar. Dezent genug, um bei dunklen Fotos nicht aufzufallen. */
@@ -797,3 +797,12 @@
   .contact-grid, .contact-page .contact-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ===== Desktop-Schriftgroessen (2026-10-14, Option A): feste 13px-Lesetexte folgen dem Token --fs-body-small ===== */
+@media (min-width: 901px) {
+  .team-card .role, .product-card-body p, .feature-band-text .begriffe-list div,
+  .contact-page .contact-form label, .contact-page .contact-pref legend, .contact-page .checkbox-group legend { font-size: var(--fs-body-small); }
+}
+/* Seitenkopf-Band: lange Woerter (z. B. Datenschutzerklaerung) duerfen die Grid-Spalte nicht aufweiten (Mobil-Overflow 423px bei 390px) */
+.feature-band-text { min-width: 0; }
+.feature-band-text h1 { overflow-wrap: anywhere; }

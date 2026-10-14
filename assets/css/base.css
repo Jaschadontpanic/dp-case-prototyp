@@ -216,7 +216,7 @@ header.nav .nav-dropdown a.nav-dropdown-main { font-weight: 700; }
 /* max-width 40% seit 2026-10-13 (Jascha-Feedback, Vorbild mercedes-benz.de Hero: Headline
    links, schmale Spalte statt volle Breite) - die manuellen <br>-Zeilenumbrueche bleiben
    innerhalb dieser Breite unveraendert kurz genug. */
-.hero h1 { font-size: var(--fs-h1); margin-bottom: 22px; max-width: 40%; }
+.hero h1 { font-size: var(--fs-h1); margin-bottom: 22px; max-width: max(40%, 10em); }
 .hero p.desc { max-width: 640px; font-size: var(--fs-body); color: #ddd; margin-bottom: 28px; }
 .hero .buttons { display: flex; gap: 16px; }
 

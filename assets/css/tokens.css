@@ -12,14 +12,14 @@
   --side-pad: 120px; /* war 48px, jetzt 2.5x */
 
   /* ===== Type scale — one size per role, used everywhere ===== */
-  --fs-h1: 52px;          /* hero headline */
-  --fs-h2: 36px;          /* section headings: "Mehr als nur gut verpackt", "Unsere Empfehlungen", Trust-Headline */
-  --fs-body: 18px;        /* running paragraph text (hero description) */
-  --fs-body-small: 14px;  /* secondary/caption copy inside cards & process steps */
-  --fs-nav: 16px;         /* nav links + buttons */
-  --fs-card-title: 20px;  /* h3 inside cards */
+  --fs-h1: 56px;          /* hero headline */
+  --fs-h2: 40px;          /* section headings: "Mehr als nur gut verpackt", "Unsere Empfehlungen", Trust-Headline */
+  --fs-body: 20px;        /* running paragraph text (hero description) */
+  --fs-body-small: 16px;  /* secondary/caption copy inside cards & process steps */
+  --fs-nav: 17px;         /* nav links + buttons */
+  --fs-card-title: 22px;  /* h3 inside cards */
   --fs-stat-number: 30px; /* big stat numbers */
-  --fs-small: 14px;       /* stat labels / mono kicker */
+  --fs-small: 16px;       /* stat labels / mono kicker */
 
   /* ===== Header (Scroll-Logo, Vorbild mercedes-benz.de, 2026-09-27) ===== */
   --header-pad-v: 18px;           /* Innenabstand oben/unten, Scroll-Position 0 (bisheriger Wert) */
@@ -41,6 +41,12 @@
    Mobil-Reduzierung und blieb faelschlich bei vollen 120px Seitenrand (per Playwright
    getComputedStyle bestaetigt). Die bisherigen 48px-Einzelausnahmen wurden entfernt, damit
    sitewide ein einziger, konsistenter Wert gilt. */
+/* Schriftgroessen: Desktop ca. 15 % groesser (2026-10-14, Jascha: Vergleich mit mercedes-benz.de bei 1920px, Option A),
+   Mobil bleibt bei den bisherigen Werten (Jascha: "nur Desktop"). */
 @media (max-width: 900px) {
-  :root { --side-pad: 20px; }
+  :root {
+    --side-pad: 20px;
+    --fs-h1: 52px; --fs-h2: 36px; --fs-body: 18px; --fs-body-small: 14px;
+    --fs-nav: 16px; --fs-card-title: 20px; --fs-small: 14px;
+  }
 }

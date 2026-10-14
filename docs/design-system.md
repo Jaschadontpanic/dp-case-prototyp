@@ -14,14 +14,14 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--body-font` | 'Clear Sans Bold', Arial, Helvetica, sans-serif | Fließtext |
 | `--headline-alt-font` | 'Open Sans', Arial, sans-serif (Google Fonts, 400/600/700) | H1/H2 sitewide (seit 2026-10-13, global in `base.css`), Seitenköpfe, CTA-Bänder, Telefon-Popup |
 | `--mono-font` | 'DejaVu Sans Mono', 'Courier New', monospace | Kicker, Tags |
-| `--fs-h1` | 52px (mobil ≤900px: 32px) | Hero-Headline |
-| `--fs-h2` | 36px | Sektions-Überschriften |
-| `--fs-body` | 18px | Hero-Beschreibung, Intros |
-| `--fs-body-small` | 14px | Karten-/Prozess-Text |
-| `--fs-nav` | 16px | Navigation, Buttons |
-| `--fs-card-title` | 20px | H3 in Karten |
+| `--fs-h1` | 56px (mobil ≤900px: 32px) | Hero-Headline |
+| `--fs-h2` | 40px (mobil 36px) | Sektions-Überschriften |
+| `--fs-body` | 20px (mobil 18px) | Hero-Beschreibung, Intros |
+| `--fs-body-small` | 16px (mobil 14px) | Karten-/Prozess-Text |
+| `--fs-nav` | 17px (mobil 16px) | Navigation, Buttons |
+| `--fs-card-title` | 22px (mobil 20px) | H3 in Karten |
 | `--fs-stat-number` | 30px | Statistik-Zahlen, Kicker |
-| `--fs-small` | 14px | Labels |
+| `--fs-small` | 16px (mobil 14px) | Labels |
 | `--max-width` | 1744px | Inhaltsbreite |
 | `--side-pad` | 120px | Seitenrand Inhalte; seit 2026-09-29 auch im Header (vorher dort fix 48px) |
 | `--header-pad-v` | 18px | Header-Innenabstand oben/unten, Scroll-Position 0 |
@@ -33,6 +33,7 @@ Quelle: `index.html` (Stand 2026-09-25) – verbindliche Design-Basis. Aus ander
 | `--transition-fast` | 220ms ease | Logo-Crossfade, Padding-Übergang im Header |
 
 ## Grundlagen
+- **Schriftgrößen Desktop ca. 15 % größer** (seit 2026-10-14, Jascha: Vergleich mit mercedes-benz.de bei 1920px, Option A; Werte in der Tabelle oben). Mobil ≤900px bleiben die bisherigen Werte (in `tokens.css` im ≤900px-Block zurückgesetzt). Feste 13px-Lesetexte (Team-Rolle, Produktkarten-Text, Begriffsliste, Kontaktformular-Labels) folgen auf Desktop `--fs-body-small`. **Ausnahme Kundenliste** (`.client-list`, Jascha): bleibt bei den festen Werten (32/26/22/19/14/14/13/13px), weil `trust-justify.js` mit exakt diesen Größen misst. Kleine Mono-Tags/Hinweise (11px) unverändert. H1 in Hero/Hub-Header: `max-width:max(40%,10em)`, damit „Herausforderung“ bei 56px nicht mitten im Wort bricht.
 - Body: weiß, `line-height: 1.5`; Überschriften `font-weight: 700`, `line-height: 1.15`. **Schrift nach Ebene** (seit 2026-10-13, Jascha-Freigabe): H1/H2 = `--headline-alt-font` (Open Sans), H3 und Karten-Titel = `--heading-font` (Clear Sans Bold); global in `base.css`, Größen unverändert (vorhandene Tokens).
 - `.wrap`: max-width + side-pad, zentriert.
 - Breakpoints: **1380px** (Nav → Burger, Logo 36px→22px gescrollt, CTA-Button im Header ausgeblendet – seit 2026-09-29 eigener Wert statt 900px, siehe Header-Abschnitt unten) und **900px** (Grids einspaltig, Hero-H1 32px, `--side-pad` 120px→20px). Formularzeilen zusätzlich bei 640px.

@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Schriftgrößen Desktop ca. 15 % größer (Option A)
+- Jascha: Vergleich mit mercedes-benz.de bei 1920px – Schrift wirkte deutlich kleiner. Tokens in `tokens.css` nur für Desktop erhöht (H1 52→56, H2 36→40, Body 18→20, Body-small/Small 14→16, Nav 16→17, Karten-Titel 20→22px), Mobil ≤900px zurückgesetzt auf die alten Werte. 13px-Lesetexte (Team-Rolle, Produktkarten-Text, Begriffsliste, Kontaktformular-Labels) folgen auf Desktop `--fs-body-small`. Kundenliste auf Wunsch ausgenommen (feste Werte). H1 in Hero/Hub-Header `max-width:max(40%,10em)` gegen Wortbruch.
+- Nebenbei: Mobil-Overflow auf `/rechtliches/datenschutz/` behoben (Seitenkopf-Band: `min-width:0`, `overflow-wrap:anywhere`; war schon vorher vorhanden, 423px bei 390px).
+- Geprüft (Playwright, alle 25 Seiten): kein horizontaler Overflow bei 1920/1440/390px, Kundenliste Zeilengrößen identisch zu vorher. **Hinweis:** In meiner Testumgebung lädt Open Sans (Google Fonts) nicht, Messungen liefen mit Fallback-Schrift – bitte Umbrüche in der Vorschau mit echter Open Sans prüfen.
+
 ## 2026-10-14 – Silent Rack: Highlights als Kachel-Slider
 - Jascha: Slider-Lösung auch bei Silent Rack (Entscheidung Mobil-Accordion vs. Slider → Slider, Desktop wie Mobil). Die 7 Highlight-Kacheln (`.product-grid`/`.product-card`) sind jetzt `.tile-slider.tile-slider--wide` mit `assets/js/tile-slider.js`; Texte unverändert übernommen, Bild-Platzhalter (Hero-Foto, B6) bleiben bis zur Lieferung der Highlight-Fotos. Per Playwright 1440/390px geprüft, keine Fehler, kein Overflow.
 - **Offen:** Layout „Vollständig gekühlt“ (Tagline-Leiste unter dem Hero, Heading/Text-Positionierung) – Vorstellung von Jascha nötig, noch nicht angefasst.
