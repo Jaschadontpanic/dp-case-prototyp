@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: H1 zweizeilig (C14 erledigt)
+- Jascha-Entscheidung Option C. H1 `Silent 19" Rack – Vollständig gekühlt, völlig geräuschlos` (wörtlich aus `content/19-zoll-racks/silent-rack.md`), gesetzt als zwei Zeilen: „Silent 19" Rack“ groß, „Vollständig gekühlt, völlig geräuschlos“ kleiner darunter. Die Tagline in der Hero-Leiste entfällt, die Leiste enthält nur noch die Buttons (zentriert). Title, Meta und Schema.org unverändert (enthielten die Content-Fassung bereits). Zweite Zeile in Anthrazit statt Grau, weil der Hero-Verlauf oben dunkel ist. Per Playwright/Screenshot 1920/390px geprüft, `h1.textContent` entspricht exakt dem Content.
+
 ## 2026-10-14 – Standards & Werte: Bilder Nachhaltigkeit und Soziale Verantwortung eingebunden
 - 2 Bilder von Jascha als WebP unter `assets/images/standards-werte/` abgelegt: `nachhaltigkeit.webp` (Glaskugel mit Weltkarte auf Moos) → Abschnitt „Nachhaltigkeit“, `soziale-verantwortung.webp` (Silhouetten beim Ballspiel, eine Person im Rollstuhl) → Abschnitt „Soziale Verantwortung“.
 - Eingebunden auf `/standards-werte/` (Jascha-Entscheidung: abwechselnd links/rechts wie die Bauart-Zeilen): Nachhaltigkeit Bild links, Soziale Verantwortung Bild rechts; ≤900px gestapelt, Bild oben. Neuer Modifier `.text-section--img` / `--img-right` in `components.css` (Bildspalte 300px = Originalgröße, Abstand 56px und Radius 20px wie `.bauart-row`, keine neuen Design-Werte). Texte unverändert.

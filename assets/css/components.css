@@ -353,10 +353,14 @@
   z-index: 1;
 }
 .product-hero-bar-inner {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
   gap: 20px; padding: 22px var(--side-pad) 34px;
 }
-.product-hero-bar .tagline { font-size: var(--fs-body-small); color: var(--anthrazit); max-width: 44ch; font-weight: 600; }
+/* H1 zweizeilig (seit 2026-10-14, Content-H1 aus content/19-zoll-racks/silent-rack.md): erste Zeile gross, zweite Zeile
+   (nach dem Gedankenstrich) kleiner (Anthrazit, da der Hero-Verlauf oben dunkel ist – Grau waere unlesbar); der Gedankenstrich bleibt fuer Screenreader/Suchmaschinen im Text, ist optisch ausgeblendet. */
+.product-hero h1 .product-hero-dash { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.product-hero h1 .product-hero-sub { display: block; margin-top: 8px; font-size: var(--fs-card-title); font-weight: 600; color: var(--anthrazit); }
+.product-hero-bar .hero-bar-actions { justify-content: center; }
 @media (max-width: 900px) {
   .product-hero { padding-top: 32px; }
   .product-hero h1 { font-size: 32px; }
