@@ -661,9 +661,9 @@
   display: grid; column-gap: 56px;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-areas: "img title" "img text" "img specs" "img rating";
-  max-width: var(--max-width); margin: 0 auto 112px; padding: 0 var(--side-pad);
+  max-width: var(--max-width); margin: 0 auto 224px; padding: 0 var(--side-pad);
 }
-/* 2026-10-14 (Jascha): Bild/Slider 2/3, Textblock 1/3 (vorher 42 % Bild), Zeilenabstand 56px -> 112px (+100 %). */
+/* 2026-10-14 (Jascha): Bild/Slider 2/3, Textblock 1/3 (vorher 42 % Bild), Zeilenabstand 56px -> 112px -> 224px (zweimal +100 %, Desktop; mobil 112px). */
 .bauart-row:nth-child(even) {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   grid-template-areas: "title img" "text img" "specs img" "rating img";
@@ -671,13 +671,14 @@
 /* Bauart-Seite: seit Wegfall der H2 „Flightcase-Bauarten“ (2026-10-14) ist die erste Zeile ein gerades Kind –
    Wechsel hier umgedreht, damit die erste Bauart wie bisher mit dem Bild links beginnt. Nur Desktop, mobil gestapelt. */
 @media (min-width: 901px) {
+  .pg-engineering-bauart .bauart-row { grid-template-rows: 1fr auto auto auto auto 1fr; }
   .pg-engineering-bauart .bauart-row:nth-child(even) {
     grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    grid-template-areas: "img title" "img text" "img specs" "img rating";
+    grid-template-areas: "img ." "img title" "img text" "img specs" "img rating" "img .";
   }
   .pg-engineering-bauart .bauart-row:nth-child(odd) {
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    grid-template-areas: "title img" "text img" "specs img" "rating img";
+    grid-template-areas: ". img" "title img" "text img" "specs img" "rating img" ". img";
   }
 }
 .bauart-row-slider { grid-area: img; align-self: center; }
@@ -735,29 +736,12 @@
 .tile-slider:not(.tile-slider--wide).is-loop .tile-slider-track { scroll-padding-left: 0; }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
-/* Bauart, Desktop (Jascha 2026-10-14): Slider ist genau so hoch wie der Textblock daneben – von der Oberkante der Ueberschrift bis zur
-   Unterkante der Gewicht-Skala. Der Slider selbst hat keine eigene Hoehe (Track absolut), die Zeilenhoehen kommen allein vom Text; das Bild
-   der Kachel nimmt den Platz ueber dem Textteil ein. Mobil (gestapelt) bleibt das 4:3-Bild. */
+/* Bauart, Desktop (Jascha 2026-10-14, ersetzt „Slider-Hoehe = Textblock“ und den Vorschlag „Eigenschaften neben dem Bild“):
+   jede Kachel zeigt das Bild fest im Format 4:3, Titel/Eigenschaften darunter. Der Textblock steht vertikal mittig neben dem Slider
+   (leere 1fr-Zeilen oben/unten im Grid, s. .pg-engineering-bauart .bauart-row). Mobil siehe unten. */
 @media (min-width: 901px) {
-  .bauart-row-slider { align-self: stretch; min-height: 15rem; }
-  .tile-slider.bauart-row-slider:not(.tile-slider--wide) .tile-slider-track { position: absolute; top: 0; bottom: 0; left: calc(var(--tile-peek) + var(--tile-gap)); right: calc(var(--tile-peek) + var(--tile-gap)); margin: 0; padding: 0; }
-  .bauart-row-slider .tile { height: 100%; }
-  .bauart-row-slider .tile-img { aspect-ratio: auto; flex: 1 1 0; min-height: 0; }
-  .bauart-row-slider .tile-body { flex: 0 0 auto; padding: 14px 18px 16px; }
-  .bauart-row-slider .tile-slider-arrow { top: 50%; }
+  .bauart-row-slider { align-self: center; }
 }
-/* Bauart, Desktop (Vorschlag 2026-10-14): Platte- und Kante-Kacheln zeigen die Eigenschaften RECHTS neben dem Bild statt darunter –
-   so bleibt bei der Hoehe = Textblock mehr Hoehe fuer das Bild. Case-Kacheln (Foto/Platzhalter) bleiben Bild oben, Titel unten. */
-@media (min-width: 901px) {
-  .bauart-row-slider .tile:has(img[src*="/materialien/"]), .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) { flex-direction: row; }
-  .bauart-row-slider .tile:has(img[src*="/materialien/"]) .tile-img, .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) .tile-img { flex: 1 1 auto; height: 100%; }
-  .bauart-row-slider .tile:has(img[src*="/materialien/"]) .tile-body, .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) .tile-body { flex: 0 0 34%; align-self: center; padding: 18px 22px; }
-}
-.tile-slider-arrow:hover, .tile-slider-arrow:focus-visible { opacity: 1; }
-.tile-slider-arrow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-.tile-slider-arrow.prev { left: 8px; }
-.tile-slider-arrow.next { right: 8px; }
-.tile-slider-arrow[hidden] { display: none; }
 @media (max-width: 900px) {
   .tile-slider { --tile-peek: 24px; }
   .tile-slider--wide { --tile-w: calc(100vw - 2 * (var(--tile-peek) + var(--tile-gap))); --tile-lead: calc(var(--tile-peek) + var(--tile-gap)); }
@@ -785,6 +769,13 @@
   }
   .bauart-row-title, .bauart-row-text, .bauart-row-specs, .bauart-row-ratings { padding: 0 20px; align-self: auto; }
   .bauart-row-img { border-radius: 0; }
+  /* Bauart-Seite mobil (Jascha 2026-10-14): Textblock mit Ueberschrift immer UEBER dem Bild, Bild zuletzt,
+     danach deutlicher Abstand (112px) zur naechsten Ueberschrift. */
+  .pg-engineering-bauart .bauart-row, .pg-engineering-bauart .bauart-row:nth-child(even) {
+    grid-template-areas: "title" "text" "specs" "rating" "img";
+    margin-bottom: 112px;
+  }
+  .pg-engineering-bauart .bauart-row-ratings { margin-bottom: 10px; }
 }
 
 /* ===== TABLE-ZOOM (neu 2026-10-13, Plattenmaterialien-Vergleichsmatrix): Tabelle wird klein als
