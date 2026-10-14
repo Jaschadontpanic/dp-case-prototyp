@@ -720,6 +720,17 @@
 .tile-slider:not(.tile-slider--wide).is-loop .tile-slider-track { scroll-padding-left: 0; }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
 .tile-slider:not(.tile-slider--wide) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+/* Bauart, Desktop (Jascha 2026-10-14): Slider ist genau so hoch wie der Textblock daneben – von der Oberkante der Ueberschrift bis zur
+   Unterkante der Gewicht-Skala. Der Slider selbst hat keine eigene Hoehe (Track absolut), die Zeilenhoehen kommen allein vom Text; das Bild
+   der Kachel nimmt den Platz ueber dem Textteil ein. Mobil (gestapelt) bleibt das 4:3-Bild. */
+@media (min-width: 901px) {
+  .bauart-row-slider { align-self: stretch; min-height: 15rem; }
+  .tile-slider.bauart-row-slider:not(.tile-slider--wide) .tile-slider-track { position: absolute; top: 0; bottom: 0; left: calc(var(--tile-peek) + var(--tile-gap)); right: calc(var(--tile-peek) + var(--tile-gap)); margin: 0; padding: 0; }
+  .bauart-row-slider .tile { height: 100%; }
+  .bauart-row-slider .tile-img { aspect-ratio: auto; flex: 1 1 0; min-height: 0; }
+  .bauart-row-slider .tile-body { flex: 0 0 auto; padding: 14px 18px 16px; }
+  .bauart-row-slider .tile-slider-arrow { top: 50%; }
+}
 .tile-slider-arrow:hover, .tile-slider-arrow:focus-visible { opacity: 1; }
 .tile-slider-arrow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .tile-slider-arrow.prev { left: 8px; }
