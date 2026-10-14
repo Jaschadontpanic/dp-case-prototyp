@@ -5,7 +5,7 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 ## 2026-10-13 – Bauart: Kachel-Slider statt Bild-Slider
 - Jascha-Vorgabe: Slider für Case/Platte/Kante als Kacheln (Vorbild Mercedes-Kachel: Bild + Titel + Text), nächste Kachel immer angeschnitten sichtbar, dezente Pfeile links/rechts, Desktop wie Mobil als Slider.
 - `.bauart-slider`/`bauart-slider.js` entfernt, neu `.tile-slider` + `assets/js/tile-slider.js`. 10 Bauart-Zeilen auf `/engineering/flightcase-bauart/` umgestellt.
-- Kachel-Texte: Case = Bauart-Name; Platte = Name + Stärke, Biegesteifigkeit, Punktlast, kg/m² aus der Matrix (HDF: kg/m² „–“ ausgelassen); Kante = Bezeichnung + Stärke (3. Maß der Bezeichnung). Keine neuen Texte erfunden. **Offen:** Jascha nannte als Beispiel „Aluminium 2 mm Stärke“ – „Aluminium“ steht für die Kantenschutz-Profile nirgends im Repo, daher nicht ergänzt (Freigabe/Text nötig).
+- Kachel-Texte: Case = Bauart-Name; Platte = Name + Stärke, Biegesteifigkeit, Punktlast, kg/m² aus der Matrix (HDF: kg/m² „–“ ausgelassen); Kante = Bezeichnung + Stärke (3. Maß der Bezeichnung). Keine neuen Texte erfunden. Kante-Kacheln zeigen zusätzlich die Zeile „Aluminium“ (Jascha-Freigabe 2026-10-14; Stärke-Zeile = 3. Maß der Bezeichnung, ebenfalls bestätigt).
 - Per Playwright (Desktop 1440px, Mobil 390px) geprüft: kein horizontaler Overflow, Pfeil blättert, keine Fehler.
 
 ## 2026-10-13 – Logo Mobil ca. 20 % kleiner
