@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: Kachelraster mit variablen Breiten (lückenlos)
+- Jascha: erste Kachel doppelt breit wie auf der Startseite, variable Größen, höchstens jede zweite Kachel doppelt, Reihen immer voll (3x1 oder 2+1), Position der Doppelten wechselt von Reihe zu Reihe. Neu: `assets/js/tile-spans.js` wählt die Doppelten dynamisch (Algorithmus s. `docs/design-system.md`), im HTML für 8 Kacheln vorgesetzt.
+- **Zu Jaschas Beispiel „1. und 7. Kachel doppelt“:** mit 8 Kacheln geht das rechnerisch nicht lückenlos auf (2+1 | 1+1+1 | 1+2 ließe Kachel 8 allein in der letzten Reihe, 10 Einheiten statt 9 oder 12). Lückenlose Lösungen für 8 Kacheln: nur Kachel 1 doppelt (2+3+3) oder 4 Doppelte (2+2+2+2). Umgesetzt: 4 Doppelte (Kachel 1, 4, 5, 8) im Wechsel vorn/hinten, genau jede zweite Kachel, wie vorgegeben „maximal“.
+- Geprüft (Playwright 1920/1440/1100px): 4 Reihen (D1 | 1D | D1 | 1D), alle Reihen voll, kein Überlauf; mobil eine Spalte. Screenshot Desktop gesichtet. Die freigestellten Platzhalterbilder wirken in den doppelten Kacheln klein (contain), echte Fotos (cover) füllen sie.
+
 ## 2026-10-14 – Vergleichsmatrix Plattenmaterialien: Standardschrift und Skalen
 - Jascha: Schriftgröße auf Standard, bei Biegesteifigkeit und Punktlast eine Skala wie bei den Produkten, „Einsatz“ als Unterschrift unter dem Material, wenn es nicht passt. Die Matrix ist jetzt eine normale Tabelle (16px Desktop / 14px Mobil) ohne Zoom-Dialog (`table-zoom.js` auf der Seite entfernt, Komponente bleibt verfügbar). Skalen = `.bauart-rating-*`-Balken mit Wert (gleiche Werte → gleich lange Balken), „auf Anfrage“ bleibt Text. „Einsatz“: ab 1200px eigene Spalte, darunter als Unterzeile unter dem Materialnamen. Alle Texte und Werte unverändert aus der bisherigen Tabelle.
 - Geprüft (Playwright 1920/1440/1100/390px): Schrift 16px/14px, Balkenbreiten einheitlich, kein Seiten-Overflow (mobil scrollt die Tabelle horizontal); Screenshots 1440px und 1100px gesichtet.
