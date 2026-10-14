@@ -22,10 +22,11 @@ Hauptnavigation: Produkte · Engineering · Manufaktur · Kontakt
 | `/engineering/masse` | `content/engineering/masse.md` | fertig | vorhanden (neu angelegt 2026-09-28) |
 | `/engineering/materialien` | `content/engineering/materialien/index.md` | fertig | vorhanden (2026-09-28): 1 Kachel „Plattenmaterialien“ (weitere Kategorien laut Content erst bei fertigem Content), Zielseite selbst fehlt |
 | `/engineering/materialien/plattenmaterialien` | `…/plattenmaterialien/index.md` | fertig | vorhanden (2026-10-13), Vergleichsmatrix mit Klick-Zoom |
-| `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
-| `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
-| `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | vorhanden (2026-10-13), Bildslot = Platzhalter |
-| ~~`…/plattenmaterialien/phenolharz-statt-pvc`~~ | `…/phenolharz-statt-pvc.md` | fertig | **entfaellt als eigene Seite** (Jascha 2026-10-13): Inhalt steht als ausklappbares Element auf der Multiplex-Seite (`#phenolharz-statt-pvc`) |
+| `…/plattenmaterialien/multiplex` | `…/multiplex.md` | fertig | vorhanden (2026-10-13), Galerien je Stärke, Ausklapper „Phenolharz statt PVC“ + „Hintergrund“ |
+| `…/plattenmaterialien/pp-hohlkammer` | `…/pp-hohlkammer.md` | fertig | vorhanden (2026-10-13), Galerien je Stärke |
+| `…/plattenmaterialien/ultraleicht` | `…/ultraleicht.md` | fertig | vorhanden (2026-10-13), Galerie, Ausklapper „Hintergrund“ |
+| ~~`…/plattenmaterialien/phenolharz-statt-pvc`~~ | – (Datei entfernt 2026-10-14, Text in `…/multiplex.md`) | – | **entfaellt als eigene Seite** (Jascha 2026-10-13): Inhalt steht als ausklappbares Element auf der Multiplex-Seite (`#phenolharz-statt-pvc`) |
+| `/engineering/kantenschutz` | – (keine Content-Datei) | intern | **unveröffentlichte Ablage** (noindex, nicht in Navigation, nicht verlinkt): 5 Kantenschutzprofile, Bilder werden in den Kante-Kacheln der Bauart-Seite genutzt |
 | `/manufaktur` | `content/manufaktur/index.md` | fertig | vorhanden |
 | `/manufaktur/fertigung` | `content/manufaktur/fertigung.md` | fertig (Bilder offen) | vorhanden (2026-09-28), Werkstatt-Bilder Platzhalter (B3) |
 | `/manufaktur/ueber-uns` | `content/manufaktur/ueber-uns.md` | fertig (Hero-Bild offen) | vorhanden (2026-09-28), Hero-Bild Platzhalter (B3) |
