@@ -39,7 +39,9 @@
 .cases-grid .case-tile { position: relative; display: block; text-decoration: none; color: inherit; }
 .cases-grid .case-tile::after {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(to top, #000 25%, rgba(0,0,0,0) 55%);
+  /* Abdunklung pro Kachel steuerbar (--tile-solid: bis wohin durchgehend schwarz, --tile-fade: ab wo transparent),
+     Standard 25 %/55 % – helle Bildmotive im unteren Drittel bekommen groessere Werte (2026-10-14) */
+  background: linear-gradient(to top, #000 var(--tile-solid, 25%), rgba(0,0,0,0) var(--tile-fade, 55%));
 }
 .cases-grid .case-tile-tag {
   position: absolute; top: 16px; left: 16px; z-index: 2;
