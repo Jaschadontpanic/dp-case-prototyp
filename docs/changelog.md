@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Produktübersicht: Branchen-Feld raus, einheitliche Kartenhöhe
+- Jascha-Feedback: Branchen-Feld (`.product-card-tag`, z. B. „19-Zoll-Racks“) entfernt (10 Karten, CSS-Regel gelöscht – Zuordnung bleibt im Content, nur nicht angezeigt); CTA-Button „Mehr erfahren →“ unverändert. `.product-grid` mit `grid-auto-rows:1fr`, damit alle Karten über alle Reihen gleich hoch sind (gemessen: alle 10 Karten 435px Desktop / 409px Mobil). `.product-grid` wird auch bei den Silent-Rack-Highlights genutzt, dort greift die einheitliche Höhe ebenfalls.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
