@@ -14,6 +14,9 @@ URL: /engineering/flightcase-formen
 **Breadcrumb:** Start > Engineering > Formen
 
 **H1:** Flightcase Bauformen
+
+**Header-Bild (2026-10-14, Jascha):** `assets/images/engineering/formen/header-formen-schubladen-case.jpg` – Case mit aufgeklapptem Deckel und zwei ausgezogenen Schubladen, freigestellt auf dunklem Verlauf (Stil wie Case-Turm/Produkte), Case rechts, H1 + Intro-Satz links im Bild.
+**Alt-Text Header:** Flightcase mit aufgeklapptem Deckel und zwei ausgezogenen Schubladen auf Rollen *(Prüfung C5)*
 **Unterueberschrift:** Klassisch, kombiniert oder voellig neu gedacht – jede Bauform ist
 moeglich, wenn sie deinem Case nuetzt.
 
