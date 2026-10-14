@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Standards & Werte: Bilder Nachhaltigkeit und Soziale Verantwortung abgelegt
+- 2 Bilder von Jascha als WebP unter `assets/images/standards-werte/` abgelegt: `nachhaltigkeit.webp` (Glaskugel mit Weltkarte auf Moos) → Abschnitt „Nachhaltigkeit“, `soziale-verantwortung.webp` (Silhouetten beim Ballspiel, eine Person im Rollstuhl) → Abschnitt „Soziale Verantwortung“.
+- Noch nicht eingebunden: Die Abschnitte sind reine `.text-section`-Blöcke ohne Bild-Slot, Platzierung braucht Layout-Freigabe (B12).
+- Beide Dateien liegen nur in 300 × 200 px vor (Größe der gelieferten Datei, nicht hochskaliert) – für eine größere Darstellung höher aufgelöste Originale nötig.
+- Herkunft/Bildrechte beider Bilder vor Livegang klären.
+
 ## 2026-10-14 – Teaser „Dein perfektes Silent Rack“ auf Inhaltsbreite
 - Jascha: Bereich zu breit, passt nicht zum Rest. Ursache: `.typen-teaser` hatte `margin-left/right:auto` (überschrieb den Seitenrand `--side-pad`) und `max-width:1504px`; unter 1744px Viewportbreite lief der graue Kasten dadurch randlos über die ganze Breite (1440px: 0–1440 statt 120–1320, Mobil 0–390 statt 20–370). Jetzt `width:calc(100% - 2*var(--side-pad))` + `margin:50px auto` – bündig mit Überschriften, Tabellen und Texten. Gilt auch für die übrigen Seiten mit `.typen-teaser` (Bauart, Formen, 3 Plattenmaterial-Seiten). Bei 1920px unverändert (208–1712).
 
