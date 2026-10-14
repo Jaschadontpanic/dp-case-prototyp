@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart-Slider ohne angeschnittene Nachbarkacheln
+- Jascha: Elemente links/rechts nicht mehr angeschnitten sichtbar; Gesamtbreite und Kachelbreite bleiben gleich, Pfeile weiter neben der Kachel. Nur CSS: der Track des Standard-Sliders (`.tile-slider` ohne `--wide`) ist um (`--tile-peek` + Gap) eingerückt und schneidet an der Kachelkante ab; Pfeile in den Rändern. Endlosschleife unverändert. Silent-Rack-Highlights (`--wide`) bewusst nicht geändert.
+- Geprüft (Playwright 1440/390px): immer genau eine Kachel sichtbar, Vor/Zurück über mehrere Runden stimmt, Screenshots Desktop und Mobil gesichtet.
+
 ## 2026-10-14 – C15 freigegeben
 - Jascha gibt die Wegweiser-Texte der Plattenmaterialien-Seiten frei (Hub-Überschriften „Vergleichsmatrix“/„Die Materialien im Detail“, Teaser „Alle Plattenmaterialien im Vergleich“). `docs/open-decisions.md` C15 auf erledigt, mit Korrektur zu den „Hintergrund“-Ausklappern (stehen im Content).
 

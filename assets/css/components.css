@@ -712,6 +712,14 @@
   cursor: pointer; opacity: .55; transition: opacity var(--transition-fast); z-index: 1;
 }
 .tile-slider--wide .tile-slider-arrow { top: calc(var(--tile-w) * .375); }
+/* Standard-Slider (Bauart): Nachbarkacheln NICHT angeschnitten sichtbar (Jascha 2026-10-14). Gesamtbreite und Kachelbreite bleiben
+   gleich: der Track ist links/rechts um (Peek+Gap) eingerueckt und schneidet genau an der Kachelkante ab, die Pfeile sitzen
+   in den freien Raendern neben der Kachel. Die Endlosschleife laeuft unveraendert (Nachbarn liegen nur ausserhalb des Tracks). */
+.tile-slider:not(.tile-slider--wide) .tile-slider-track { margin: 0 calc(var(--tile-peek) + var(--tile-gap)); }
+.tile-slider:not(.tile-slider--wide) .tile { flex-basis: 100%; }
+.tile-slider:not(.tile-slider--wide).is-loop .tile-slider-track { scroll-padding-left: 0; }
+.tile-slider:not(.tile-slider--wide) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+.tile-slider:not(.tile-slider--wide) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
 .tile-slider-arrow:hover, .tile-slider-arrow:focus-visible { opacity: 1; }
 .tile-slider-arrow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .tile-slider-arrow.prev { left: 8px; }
