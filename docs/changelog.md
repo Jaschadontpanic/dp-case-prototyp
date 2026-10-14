@@ -2,6 +2,16 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Materialien-Content an HTML-Prototyp angeglichen (C16)
+- Grundlage: HTML-Stand auf `main` als Referenz, Content hinkte hinterher. Alle sichtbaren Texte der 5 Seiten (Materialien, Plattenmaterialien-Hub, Multiplex, PP-Hohlkammer, Ultraleicht) per Skript gegen die Content-Dateien geprüft – nach der Änderung steht jeder sichtbare Text wörtlich im Content. Kein vorhandener Text umformuliert oder gekürzt.
+- `plattenmaterialien/phenolharz-statt-pvc.md` **entfernt**: keine eigene Seite mehr (Jascha 2026-10-13). Text wörtlich als „Ausklappbar – Phenolharz statt PVC“ (Anker `#phenolharz-statt-pvc`) in `multiplex.md`. URL, Title, Meta, Breadcrumb der Einzelseite entfallen. Grund: Ordner = URL – eine Datei ohne Seite wäre eine zweite Quelle für denselben Text und würde auseinanderlaufen.
+- `multiplex.md`: Ausklapper Phenolharz ergänzt; Galerie je Stärke mit den 8 Alt-Texten aus dem HTML (ersetzt die alte Alt-Text-Notiz; „Natur“ nur Detailbild 9 mm); Linktext im Ausklapper „Hintergrund“ an HTML angeglichen („Mehr dazu:“ statt „Links:“, Ziele benannt); Teaser „Alle Plattenmaterialien im Vergleich“ (C15); Siebdruck-Hinweis aktualisiert (nur Hub, /sonderkonstruktionen entfällt).
+- `pp-hohlkammer.md`, `ultraleicht.md`: Galerie-Alt-Texte aus dem HTML (9 bzw. 3), Teaser (C15), interne Quellen-Notizen aus den sichtbaren Zeilen „Farboptionen“ herausgelöst.
+- `plattenmaterialien/index.md`: Matrix mit den 12 HTML-Zeilen (Umlaute wie im HTML), H2 „Vergleichsmatrix“ und „Die Materialien im Detail“ (C15), 3 Kacheln mit Text + „Mehr erfahren →“, UI-Hinweis „Zum Vergrößern klicken“ (Freigabe offen C17), Siebfilm/Siebdruck als offener Punkt (C18), Schema BreadcrumbList.
+- `materialien/index.md`: Meta Description und Kacheltext aus dem HTML ergänzt (fehlten), Schema, Hinweis auf die interne Kantenschutz-Ablage.
+- `flightcase-bauart.md`: neue Tabelle „Kachel-Slider je Bauart“ (Case / Platte mit Matrix-Werten / Kante mit Material und Stärke) – bestehende Texte unverändert. Material „Aluminium“ als Content-Feld, im HTML noch nicht umgesetzt (T7).
+- Docs: C16 erledigt, neu C17, C18, T7; B10 auf erledigt; `seitenstruktur.md` (Phenolharz-Zeile, Kantenschutz-Ablage, veraltete „Platzhalter“-Vermerke) und `content-checklist.md` (Multiplex, Phenolharz, Sonderkonstruktionen, Hub) nachgezogen.
+
 ## 2026-10-14 – Bauart-Slider: Höhe = Textblock (Desktop)
 - Jascha: Das Bildelement soll nur so hoch sein, dass es von der Oberkante der Überschrift („Ultra Protect …“) bis zur Unterkante der Gewicht-Skala geht. Umgesetzt für >900px: Track absolut positioniert (Slider hat keine eigene Höhe, die Zeilenhöhen kommen allein vom Text), Kachel `height:100%`, Bild `flex:1` statt `aspect-ratio`, Textteil kompakter (14/18/16px Padding). Breite und Pfeile unverändert (Pfeile jetzt vertikal mittig). Mobil unverändert.
 - Gemessen (Playwright): Top-/Bottom-Differenz zu Überschrift/Skala 0px bei allen 10 Slider-Zeilen bei 1920/1440/1100px; kein horizontaler Overflow; Screenshots der Kachel Case und Platte gesichtet.

@@ -3,7 +3,7 @@ seite: Flightcase Bauart (Typen)
 url: /engineering/flightcase-bauart
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-27
+stand: 2026-10-14
 ---
 
 ### TYPEN (Unterseite) - final komplett
@@ -59,6 +59,35 @@ kein direkter Flightcase-Bauart-Vergleich):
 **Bild-Status:** Laut Bauart-Tabellenblatt hat bisher nur **Custom Cases** ein abgelegtes
 Referenzbild. Fuer alle anderen 10 Flightcase-Bauarten (Standard bis Easy-Case Light) sowie
 alle 5 Eintraege der Gruppe 2 fehlen noch Bilder.
+
+**Kachel-Slider je Bauart (Ergänzung 2026-10-14, Abgleich mit HTML-Prototyp):**
+Jede Bauart der Gruppe 1 (außer Custom Cases, dort nur ein Bild ohne Slider) zeigt neben dem Text
+einen Kachel-Slider mit 3 Kacheln: **Case** (Foto + Bauart-Name), **Platte** (Bild + Name aus der
+Vergleichsmatrix des Plattenmaterialien-Hubs + Werte aus der Matrix), **Kante** (Bild aus der
+internen Kantenschutz-Ablage + Bezeichnung, Material, Stärke). Datenquelle der Platte-Werte ist
+ausschließlich die Hub-Matrix (`content/engineering/materialien/plattenmaterialien/index.md`).
+Kante: Stärke = drittes Maß der Bezeichnung (z. B. 22x22x**1,5** → 1,5 mm); bei Hohlkammerprofilen
+ohne Maß in der Bezeichnung entfällt die Stärke-Zeile. Bestehende Bauart-Texte oben unverändert.
+
+| Bauart | Case-Kachel (Titel) | Platte-Kachel: Name | Stärke | Biegesteifigkeit | Punktlast | kg/m² | Kante-Kachel: Titel | Material | Stärke |
+|---|---|---|---|---|---|---|---|---|---|
+| Standard Protect Flightcase | Standard Protect Flightcase | Birken-Multiplex 6,5mm | 6,5 mm | 8/10 | 8/10 | 4,4 | Kantenschutz 22x22x1,5 | Aluminium | 1,5 mm |
+| Standard Protect Flightcase - Light | Standard Protect Flightcase Light | PP-Hohlkammer 6,8mm | 6,8 mm | 5/10 | 5/10 | 2,7 | Kantenschutz 30x30x1,5 | Aluminium | 1,5 mm |
+| Plus Protect Flightcase | Plus Protect Flightcase | Birken-Multiplex 6,5mm | 6,5 mm | 8/10 | 8/10 | 4,4 | Kantenschutz 30x30x1,5 | Aluminium | 1,5 mm |
+| Plus Protect Flightcase - Light | Plus Protect Flightcase Light | PP-Hohlkammer 9,4mm | 9,4 mm | 6/10 | 6/10 | 2,97 | Kantenschutz 35x35x2 | Aluminium | 2 mm |
+| Ultra Protect Flightcase | Ultra Protect Flightcase | Birken-Multiplex 9mm | 9 mm | 9,5/10 | 9,5/10 | 6,3 | Kantenschutz 35x35x2 | Aluminium | 2 mm |
+| Ultra Protect Flightcase - Light | Ultra Protect Flightcase Light | PP-Hohlkammer HD 11mm | 11 mm | 9/10 | 9/10 | 3,6 | Kantenschutz 35x35x2 | Aluminium | 2 mm |
+| Ultra Protect Flightcase - Ultra Light | Ultra Protect Flightcase Ultra Light | UltraFlite™ 9,7mm | 9,7 mm | 9,5/10 | 9,5/10 | 2,0 | Kantenschutz 35x35x2 | Aluminium | 2 mm |
+| N-Case | N-Case | HDF 3mm + HPL | 3 mm | 4,5/10 | 6/10 | – (in der Matrix ohne Wert, Zeile entfällt) | Kantenschutz N-Case-Hohlkammerprofil | Aluminium | – |
+| Easy-Case | Easy-Case | Birken-Multiplex 6,5mm | 6,5 mm | 8/10 | 8/10 | 4,4 | Kantenschutz Easy Hohlkammerkante | Aluminium | – |
+| Easy-Case - Light | Easy-Case Light | PP-Hohlkammer 6,8mm | 6,8 mm | 5/10 | 5/10 | 2,7 | Kantenschutz Easy Hohlkammerkante | Aluminium | – |
+
+Hinweis Material „Aluminium“: Laut Vorgabe Jascha (2026-10-14) zeigt jede Kante-Kachel die Zeile
+„Aluminium“. Im HTML-Prototyp ist sie noch nicht umgesetzt (Kacheln zeigen nur Titel + Stärke) –
+Umsetzung durch Claude Code, siehe T7 in `docs/open-decisions.md`.
+
+Hinweis Kantenschutz-Bilder: Die Profilbilder liegen auf der unveröffentlichten, internen Ablage
+`/engineering/kantenschutz` (noindex, nicht in der Navigation) – keine Content-Seite.
 
 **Nach der Bauart-Übersicht, vor dem finalen CTA – Teaser zu Formen (C1):**
 > **Deckel, Tür oder beides?**

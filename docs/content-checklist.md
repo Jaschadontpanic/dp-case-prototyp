@@ -40,10 +40,10 @@ Status: fertig – Verschluss/Griffe korrigiert nach Schneideplan (8x statt 4x),
 Status: fertig – NEU, zeigt aktuell nur Kachel "Plattenmaterialien" (weitere 6 Kategorien folgen später)
 
 ### Plattenmaterialien-Hub (/engineering/materialien/plattenmaterialien)
-Status: fertig – ehemals unter /engineering/materialien, jetzt umgezogen (Vergleichsmatrix der 3 Platten)
+Status: fertig – ehemals unter /engineering/materialien, jetzt umgezogen; Vergleichsmatrix mit 12 Zeilen, Wegweiser-Texte (C15) übernommen. Offen: Siebfilm/Siebdruck (C18), UI-Hinweis (C17)
 
 ### Multiplex (/engineering/materialien/plattenmaterialien/multiplex)
-Status: fertig – inkl. Siebdruck-Absatz, Breadcrumb aktualisiert (5-stufig)
+Status: fertig – Breadcrumb 5-stufig, Ausklapper „Phenolharz statt PVC“ integriert (2026-10-14), Galerie-Alt-Texte übernommen (Prüfung C5). Siebdruck NICHT hier, sondern im Hub (C18)
 
 ### PP-Hohlkammer (/engineering/materialien/plattenmaterialien/pp-hohlkammer)
 Status: fertig – Breadcrumb aktualisiert (5-stufig); Lieferanten-Zuordnung korrigiert:
@@ -54,10 +54,10 @@ Status: fertig – Breadcrumb aktualisiert (5-stufig); Lieferanten-Zuordnung kor
 Status: fertig – H1/Title auf UltraFlite™ zuerst korrigiert, Breadcrumb aktualisiert (5-stufig)
 
 ### Phenolharz statt PVC (/engineering/materialien/plattenmaterialien/phenolharz-statt-pvc)
-Status: fertig – Breadcrumb aktualisiert (5-stufig)
+Status: ENTFALLEN als eigene Seite (Jascha 2026-10-13) – Text ist Ausklapper auf Multiplex, Datei entfernt 2026-10-14
 
 ### Sonderkonstruktionen
-Status: ENTFALLEN – Inhalt in Multiplex-Seite integriert (Siebdruck-Absatz), keine eigene Seite mehr
+Status: ENTFALLEN als eigene Seite – Siebdruck/Siebfilm gehört in den Plattenmaterialien-Hub (Spezialbauten, Text offen C18); Leistung „Sonderkonstruktionen“ als Kachel auf der Bauart-Seite
 
 ### Barista Bar (/moebel-cases/barista-bar) [SOBC0040]
 Status: fertig – Technische Daten inkl. Dometic-Kuehlschrank, Drahtbuegelglas, Bluewheel-Rollen
