@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart-Kacheln: Eigenschaften in einer Zeile
+- Jascha: Eigenschaften der Platte-/Kante-Kacheln (Stärke, Biegesteifigkeit, Punktlast, kg/m²) nicht mehr untereinander, sondern in einer Zeile, getrennt mit „ ·“ wie bei den Kundennamen. Nur CSS (`.bauart-row-slider .tile-body ul`), Markup und Texte unverändert.
+- Geprüft (Playwright): 1600 px eine Zeile; 375 px bricht zwischen den Einträgen um (nie mitten in einem Eintrag), kein horizontaler Overflow.
+
 ## 2026-10-14 – Bauart-Seite: Überschriften, LIGHT im Titel, Seitenkopf, Abstände, Bilder 2/3
 - Jascha-Vorgaben: H1 „Flightcase Bauart“ → „Flightcase Bauarten“; H2 „Flightcase-Bauarten“ entfällt; Zusatz Light/Ultra Light nicht mehr als Pillen-Label, sondern in der H3 mit Gedankenstrich und in Versalien („Standard Protect Flightcase – LIGHT“), Teal hervorgehoben (`.bauart-suffix`; `.bauart-badge` bleibt für die Branchen-Tags auf Silent Rack). Content (`flightcase-bauart.md`: H1, Design-Hinweis, Gruppe 1 ohne sichtbare H2) entsprechend nachgezogen.
 - Grauer Seitenkopf sitzt direkt unter dem Header (`.feature-band.page-head-band { margin-top: 0 }`). Gilt für alle 18 Seiten mit diesem Seitenkopf, da es dasselbe Standardelement ist.

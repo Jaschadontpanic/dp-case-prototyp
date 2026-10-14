@@ -714,6 +714,11 @@
 .tile-body { padding: 18px 22px 22px; }
 .tile-body h4 { font-family: var(--heading-font); font-size: var(--fs-nav); line-height: 1.3; color: var(--anthrazit); }
 .tile-body ul { list-style: none; margin: 8px 0 0; padding: 0; font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; }
+/* Bauart-Kacheln (Jascha 2026-10-14): Eigenschaften in einer Zeile, getrennt mit „ ·“ wie die Kundennamen
+   (.client-list, gleiches Zeichen); bricht bei Platzmangel zwischen den Eintraegen um, nie innerhalb. */
+.bauart-row-slider .tile-body ul { display: flex; flex-wrap: wrap; column-gap: .35em; }
+.bauart-row-slider .tile-body li { white-space: nowrap; }
+.bauart-row-slider .tile-body li:not(:last-child)::after { content: " ·"; }
 .tile-body p { margin-top: 8px; font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; }
 /* Variante fuer volle Bildschirmbreite (z. B. Silent-Rack-Highlights): feste Kachelbreite, mehrere Kacheln
    gleichzeitig sichtbar. Aktive Kachel linksbuendig mit dem Seiteninhalt, links davon ragt die vorherige,
