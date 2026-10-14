@@ -230,11 +230,11 @@
    kurzer <br>-Zeilen wie beim Hero) ueber die aspect-ratio-Hoehe hinaus waechst - mit
    overflow:hidden wuerde der Text stattdessen abgeschnitten (so gefunden beim Mobil-Test). */
 .hub-header { position: relative; aspect-ratio: 1800 / 725; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 0 0 50px; margin-bottom: var(--fs-h1); }
-.hub-header img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hub-header img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--header-img-pos, 50% 50%); z-index: 0; }
 .hub-header::before {
   content: ""; position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.55) 8%, rgba(0,0,0,0) 30%),
+    linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 15%, rgba(0,0,0,0.45) 30%, rgba(0,0,0,0) 55%),
     linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 8%, rgba(0,0,0,0) 22%);
 }
 .hub-header .wrap { position: relative; z-index: 2; width: 100%; }

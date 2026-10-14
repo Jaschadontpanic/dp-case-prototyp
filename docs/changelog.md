@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Header: linker Verlauf dunkler, Bildposition per Variable
+- Jascha-Feedback: alle Header links etwas dunkler, wo die Schrift steht. Linker Verlauf von `.hero` (Startseite) und `.hub-header` (Engineering, Manufaktur, Produkte, Maße) identisch verlängert: 95 % → 70 % bei 15 % → 45 % bei 30 % → 0 bei 55 % Breite (vorher 95 % → 55 % bei 8 % → 0 bei 30 %). Unterer Verlauf unverändert.
+- `.hub-header img` bekommt `object-position: var(--header-img-pos, 50% 50%)` – Bildausschnitt pro Seite per CSS-Variable steuerbar (Jascha: CSS pro Seite statt JS). Aktuell überall Standard (Mitte), da die Bilder auf Desktop nicht beschnitten werden (aspect-ratio = Bildformat); Wert erst bei Bedarf pro Seite setzen.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
