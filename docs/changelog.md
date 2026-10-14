@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauformen: Header-Bild
+- Foto von Jascha (Case mit Deckel und zwei ausgezogenen Schubladen, weißer Studiohintergrund) zum Header-Bild im Format 1800 × 725 umgebaut: Case freigestellt (Hintergrund und Bodenschatten entfernt, Kante an Schubladen/Rollen von Hand nachgezogen), auf dunklen Verlauf wie beim Case-Turm (Produkte) gesetzt, rechts platziert, weicher Bodenschatten. Datei `assets/images/engineering/formen/header-formen-schubladen-case.jpg` (70 KB).
+- `/engineering/flightcase-formen/`: grauer Seitenkopf ersetzt durch `.hub-header` (wie Engineering/Manufaktur/Produkte) mit H1 und Intro-Satz im Bild – Texte unverändert. Bildausschnitt auf schmalen Bildschirmen nach rechts verschoben (`--header-img-pos: 85% 50%`), damit das Case sichtbar bleibt.
+- Content `content/engineering/flightcase-formen.md`: Header-Bild (Datei, Motiv, Aufbau) und Alt-Text unter H1/Unterüberschrift ergänzt. Alt-Text „Flightcase mit geöffnetem Klappdeckel und zwei ausgezogenen Schubladen auf Rollen“ – „Klappdeckel“ statt „aufgeklappter Deckel“ nach dem Begriffssystem der Seite (oben, schwenkbar); Prüfung im Alt-Text-Check C5.
+- Geprüft (Playwright): 1600/1024/768/375 px, Bild lädt, kein horizontaler Overflow. Mobil liegt der Text wie auf den anderen Seiten mit Header-Bild über dem Bild.
+- Nachbesserung Freisteller (Jascha): dunkler Saum an den Alu-Profilen entfernt (Kante nicht mehr pauschal beschnitten, nur an dunklen Platten wird der helle Hintergrundsaum entfernt); unten genauer ausgeschnitten – Unterkante Grundplatte/Alu-Rahmen, Lenkrolle mit Gabel und hinteres Rad von Hand nachgezogen, Bodenreste zwischen den Rollen entfernt, Schubladen-Seitenwand bis zur Unterkante erhalten.
+
 ## 2026-10-14 – Silent Rack: Hardfacts-Tabelle als letzte Kachel
 - Jascha: Die Tabelle mit Bauart etc. als letzte Kachel ins Highlights-Raster legen, „mal schauen wie das aussieht“. Die Tabelle samt bisheriger Abschnittsüberschrift „Seit 30 Jahren – made in Hamburg.“ liegt jetzt in `.case-tile.spec-tile` (dunkle Fläche wie `.cta-tile`, Tabelle in hellen Farben, kein Bildverlauf); der eigene Abschnitt entfällt. Texte und Werte unverändert.
 - Mit 9 Kacheln rechnet `tile-spans.js` neu: doppelt = Kachel 1, 4, 5, letzte Reihe = drei einfache (Reihen D1 | 1D | D1 | 111; Tabelle steht rechts unten als einfache Kachel). Höhen wie Startseite: Reihen mit Doppelter 663px (1920px), letzte Reihe 566px; bei schmaleren Breiten wächst die letzte Reihe mit der Tabelle (1440px: 582px statt 448px, die Nachbarkacheln strecken sich mit).
