@@ -194,3 +194,8 @@ Drei neue Seiten, ausschließlich bestehende Komponenten (`page-head`, `page-int
 - **Hub-/Produktkarten**: Rand #eee, Radius 16px, Hover-Schatten. `.hub-grid`/`.hub-grid-single` Default 3 Spalten; Spaltenzahl seit 2026-09-29 per Modifier-Klasse `.cols-2`/`.cols-4` (Wissen-Übersicht, Über-uns-Team, Engineering: 4 Spalten) statt Inline-Style – ein Inline-`grid-template-columns` hatte höhere Spezifität als die 900px-Media-Query und verhinderte den Umbruch auf 1 Spalte bei schmalen Viewports (echter horizontaler Overflow, per Playwright `scrollWidth`-Check gefunden).
 - **Produkt-Hero** (`produkte-silent-rack.html`): Grau-Verlauf-Hintergrund, H1 36px zentriert, freigestelltes Produktbild mit Bodenschatten. Seit 2026-09-27: kein festes `aspect-ratio` mehr (Produktbild muss auf jeder Auflösung komplett sichtbar sein, egal welches Seitenverhältnis das Foto hat) – Bild wird per `max-height` (65vh Desktop / 50vh ≤900px) + `object-fit: contain` begrenzt, Container passt sich an.
 - **Bauform-Karten** (`engineering-formen.html`): 4-Spalten-Grid, Karte 150px, Bild ragt oben heraus.
+
+## Text-Abschnitt mit Bild (`.text-section--img`, 2026-10-14)
+- Erweiterung von `.text-section`: Bild neben H3 + Text, Modifier `--img-right` setzt das Bild nach rechts (abwechselnd wie `.bauart-row`).
+- Bildspalte 300px (Originalgröße der Werte-Bilder), Spaltenabstand 56px, Radius 20px – Werte aus `.bauart-row`. ≤900px einspaltig, Bild oben, max. 300px.
+- Erste Anwendung: Standards & Werte (Nachhaltigkeit, Soziale Verantwortung).
