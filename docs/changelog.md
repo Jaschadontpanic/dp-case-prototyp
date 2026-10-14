@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – C15 freigegeben
+- Jascha gibt die Wegweiser-Texte der Plattenmaterialien-Seiten frei (Hub-Überschriften „Vergleichsmatrix“/„Die Materialien im Detail“, Teaser „Alle Plattenmaterialien im Vergleich“). `docs/open-decisions.md` C15 auf erledigt, mit Korrektur zu den „Hintergrund“-Ausklappern (stehen im Content).
+
 ## 2026-10-14 – Silent Rack: H1 zweizeilig (C14 erledigt)
 - Jascha-Entscheidung Option C. H1 `Silent 19" Rack – Vollständig gekühlt, völlig geräuschlos` (wörtlich aus `content/19-zoll-racks/silent-rack.md`), gesetzt als zwei Zeilen: „Silent 19" Rack“ groß, „Vollständig gekühlt, völlig geräuschlos“ kleiner darunter. Die Tagline in der Hero-Leiste entfällt, die Leiste enthält nur noch die Buttons (zentriert). Title, Meta und Schema.org unverändert (enthielten die Content-Fassung bereits). Zweite Zeile in Anthrazit statt Grau, weil der Hero-Verlauf oben dunkel ist. Per Playwright/Screenshot 1920/390px geprüft, `h1.textContent` entspricht exakt dem Content.
 
