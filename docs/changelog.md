@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Kachel-Slider endlos, Überlappung halbiert
+- Jascha: Slider soll in beide Richtungen weitere Inhalte zeigen (vor der ersten Kachel die letzte links davon), Überlappung auf die Hälfte reduzieren. `assets/js/tile-slider.js`: Kacheln werden davor/dahinter geklont (3 Sätze), Start im mittleren Satz, unsichtbarer Rücksprung um einen Satz nach dem Scrollen; Pfeile immer sichtbar. `--tile-peek` (Desktop 52px, Mobil 24px, vorher sichtbarer Anschnitt ca. 105px) steuert den Anschnitt links und rechts, Kachelbreite = Slider − 2×(Peek+Gap). Gilt für Bauart (3 Kacheln) und Silent-Rack-Highlights (`--wide`, jetzt randlos über die Bildschirmbreite).
+- Geprüft (Playwright 1440/390px, beide Seiten): Start zeigt letzte Kachel links; zurück/vor über mehrere Runden läuft ohne Sprung, logische Kachel stimmt (z. B. nach −1 und +9 = Kachel 2 bei 7 Kacheln), keine JS-Fehler; kein horizontaler Overflow bei 1920/1440/1100/390px.
+
 ## 2026-10-14 – Schriftgrößen Desktop ca. 15 % größer (Option A)
 - Jascha: Vergleich mit mercedes-benz.de bei 1920px – Schrift wirkte deutlich kleiner. Tokens in `tokens.css` nur für Desktop erhöht (H1 52→56, H2 36→40, Body 18→20, Body-small/Small 14→16, Nav 16→17, Karten-Titel 20→22px), Mobil ≤900px zurückgesetzt auf die alten Werte. 13px-Lesetexte (Team-Rolle, Produktkarten-Text, Begriffsliste, Kontaktformular-Labels) folgen auf Desktop `--fs-body-small`. Kundenliste auf Wunsch ausgenommen (feste Werte). H1 in Hero/Hub-Header `max-width:max(40%,10em)` gegen Wortbruch.
 - Nebenbei: Mobil-Overflow auf `/rechtliches/datenschutz/` behoben (Seitenkopf-Band: `min-width:0`, `overflow-wrap:anywhere`; war schon vorher vorhanden, 423px bei 390px).
