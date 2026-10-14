@@ -8,6 +8,12 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Annahmen: Branchen und Kundenreferenz (nicht in Jaschas Liste) stehen weiter direkt unter der Tabelle; der Slider enthält 9 Produkte (alle der Übersicht außer Silent Rack selbst); Kachelhöhe = Verhältnis 485:566 der unteren „Unsere Empfehlungen“-Reihe. Ergänzungsbild und Highlight-Fotos sind weiter Platzhalter (Hero-PNG); der Alt-Text „Silent Rack – Ansicht von rechts“ der ersten Kachel ist aus dem Dateinamen `…_20_ergaenzung_rechte-seite` abgeleitet, nicht aus dem Content (zu prüfen).
 - Geprüft (Playwright 1920/1440/390px): kein Overflow, Slider zeigt 3 (mobil 1) Kacheln, Vor/Zurück über 12 Schritte korrekt (Produkt 12 mod 9), keine Fehler. Bauart-Slider nicht angefasst.
 
+## 2026-10-14 – Bauart-Kacheln: Eigenschaften in einer Zeile, Slider bündig, Abstand −40 %
+- Jascha: Eigenschaften der Platte-/Kante-Kacheln (Stärke, Biegesteifigkeit, Punktlast, kg/m²) nicht mehr untereinander, sondern in einer Zeile, getrennt mit „ ·“ wie bei den Kundennamen. Nur CSS (`.bauart-row-slider .tile-body ul`), Markup und Texte unverändert.
+- Geprüft (Playwright): 1600 px eine Zeile; 375 px bricht zwischen den Einträgen um (nie mitten in einem Eintrag), kein horizontaler Overflow.
+- Kachel-Slider bündig mit der Inhaltskante (Jascha): kein seitlicher Einzug mehr für die Pfeile, Bildkante steht auf derselben Linie wie H1/Text darüber (Desktop x=120 bei 1600 px, mobil 20px Seitenrand wie der Text). Pfeile liegen innen auf dem Bild.
+- Abstand zwischen den Bauart-Zeilen auf dem Desktop 224px → 134px (−40 %, Jascha); mobil bleibt 112px.
+
 ## 2026-10-14 – Bauart-Seite: Überschriften, LIGHT im Titel, Seitenkopf, Abstände, Bilder 2/3
 - Jascha-Vorgaben: H1 „Flightcase Bauart“ → „Flightcase Bauarten“; H2 „Flightcase-Bauarten“ entfällt; Zusatz Light/Ultra Light nicht mehr als Pillen-Label, sondern in der H3 mit Gedankenstrich und in Versalien („Standard Protect Flightcase – LIGHT“), Teal hervorgehoben (`.bauart-suffix`; `.bauart-badge` bleibt für die Branchen-Tags auf Silent Rack). Content (`flightcase-bauart.md`: H1, Design-Hinweis, Gruppe 1 ohne sichtbare H2) entsprechend nachgezogen.
 - Grauer Seitenkopf sitzt direkt unter dem Header (`.feature-band.page-head-band { margin-top: 0 }`). Gilt für alle 18 Seiten mit diesem Seitenkopf, da es dasselbe Standardelement ist.
