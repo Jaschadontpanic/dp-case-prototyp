@@ -25,9 +25,6 @@
   // Schwellwert "letzte Zeile muss vor dem Strecken zu mindestens X% gefuellt sein".
   var MIN_LAST_LINE_FILL = 0.75;
 
-  // "Ein Name darf um maximal 2 Positionen verschoben werden."
-  var MAX_POSITION_SHIFT = 2;
-
   // Ab dieser Breite gilt eine Seite als "Handy" - dort zusaetzlich zur normalen
   // Blocksatz-Korrektur so viele Namen vom Listenende weglassen, bis der Abschnitt nicht
   // hoeher als der sichtbare Bereich ist (s. fitMobileHeight).
@@ -110,26 +107,37 @@
   }
 
   // ---- Packen ----
-  // Greedy: Zeile fuer Zeile, mit der fuer den jeweiligen Zeilenindex gueltigen Schriftgroesse,
-  // so viele Namen wie passen. Ein einzelner Name breiter als der Container bekommt trotzdem
-  // eine eigene Zeile (sonst Endlosschleife) - dasselbe dokumentierte Verhalten wie zuvor.
+  // Zeile fuer Zeile, mit der fuer den jeweiligen Zeilenindex gueltigen Schriftgroesse:
+  // 1) so viele Namen in Listenreihenfolge wie passen, 2) der Restplatz wird mit dem breitesten
+  // noch passenden Namen aus der gesamten uebrigen Liste aufgefuellt (beliebig weit vorgezogen) -
+  // dadurch kleinere Luecken im Blocksatz, vor allem auf schmalen Viewports. Ein einzelner Name
+  // breiter als der Container bekommt trotzdem eine eigene Zeile (sonst Endlosschleife).
   function packRows(order, containerWidth, fontInfo) {
     var rows = [];
-    var idx = 0;
-    while (idx < order.length) {
+    var remaining = order.slice();
+    while (remaining.length) {
       var fontSize = fontSizeForRow(rows.length);
+      var sep = sepWidth(fontSize, fontInfo);
       var row = [];
       var used = 0;
-      while (idx < order.length) {
-        var origIdx = order[idx];
-        var w = textWidth(originalNames[origIdx], fontSize, fontInfo);
-        var candidateUsed = row.length === 0 ? w : used + sepWidth(fontSize, fontInfo) + w;
+      while (remaining.length) {
+        var w = textWidth(originalNames[remaining[0]], fontSize, fontInfo);
+        var candidateUsed = row.length === 0 ? w : used + sep + w;
         if (row.length > 0 && candidateUsed > containerWidth) break;
-        row.push(origIdx);
+        row.push(remaining.shift());
         used = candidateUsed;
-        idx++;
       }
-      if (row.length === 0) { row.push(order[idx]); idx++; }
+      while (remaining.length) {
+        var best = -1;
+        var bestW = 0;
+        for (var i = 0; i < remaining.length; i++) {
+          var wi = textWidth(originalNames[remaining[i]], fontSize, fontInfo);
+          if (used + sep + wi <= containerWidth && wi > bestW) { best = i; bestW = wi; }
+        }
+        if (best < 0) break;
+        row.push(remaining.splice(best, 1)[0]);
+        used += sep + bestW;
+      }
       rows.push(row);
     }
     return rows;
@@ -155,15 +163,6 @@
     return order;
   }
 
-  function maxPositionShift(order) {
-    var max = 0;
-    for (var newPos = 0; newPos < order.length; newPos++) {
-      var shift = Math.abs(newPos - order[newPos]);
-      if (shift > max) max = shift;
-    }
-    return max;
-  }
-
   // Verfuegbare Hoehe fuer die Namens-Zeilen, WENN der .trust-Abschnitt oben im Viewport steht
   // (window.innerHeight = echte Geraetehoehe, bewusst nicht auf eine konkrete iPhone-Pixelzahl
   // hartkodiert, damit es fuer jedes aktuelle/zukuenftige Geraet automatisch stimmt). Bewusst
@@ -187,25 +186,10 @@
     var order = allIndices.slice();
     var rows = packRows(order, containerWidth, fontInfo);
 
-    // 1) Umsortieren im Rahmen von max. 2 Positionen (letzter Name der vorletzten Zeile ans
-    //    Ende der Gesamtliste, dadurch rutscht er auf die letzte Zeile). Nach jedem Versuch wird
-    //    die tatsaechliche Verschiebung nachgemessen statt angenommen (ein Zug kann durch
-    //    Kaskadeneffekte beim Neu-Packen auch frueher liegende Zeilen verschieben).
-    for (var attempt = 0; attempt < MAX_POSITION_SHIFT; attempt++) {
-      if (rows.length < 2 || fillRatio(rows, containerWidth, fontInfo) >= MIN_LAST_LINE_FILL) break;
-      var secondLast = rows[rows.length - 2];
-      if (secondLast.length <= 1) break;
-      var movedOrigIdx = secondLast[secondLast.length - 1];
-      var candidate = flatten(rows);
-      var fromPos = candidate.indexOf(movedOrigIdx);
-      candidate.splice(fromPos, 1);
-      candidate.push(movedOrigIdx);
-      if (maxPositionShift(candidate) > MAX_POSITION_SHIFT) break;
-      order = candidate;
-      rows = packRows(order, containerWidth, fontInfo);
-    }
+    // 1) Umsortieren passiert unbegrenzt direkt beim Packen (packRows fuellt Restplatz mit passenden
+    //    Namen aus der ganzen Liste auf, keine Positionsgrenze mehr, Jascha 2026-10-14).
 
-    // 2) Wenn das nicht reicht: Namen vom Ende der Liste weglassen (ausblenden, nicht
+    // 2) Wenn die letzte Zeile trotzdem zu leer bleibt: Namen vom Ende der Liste weglassen (ausblenden, nicht
     //    loeschen), bis die letzte Zeile die Mindestfuellung erreicht.
     var hiddenIndices = [];
     var safety = 0;

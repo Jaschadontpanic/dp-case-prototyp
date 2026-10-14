@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Kundenliste: Umsortierung ohne Grenze
+- Jascha-Vorgabe: Namen dürfen beliebig weit umsortiert werden, Hauptsache es sieht gut aus (Mobil war nicht schön). `packRows` in `assets/js/trust-justify.js` füllt jetzt den Restplatz jeder Zeile mit dem breitesten noch passenden Namen aus der ganzen Restliste auf; die alte 2-Positionen-Grenze (`MAX_POSITION_SHIFT`) und der separate Umsortier-Schritt sind entfernt. Weglassen vom Listenende (letzte Zeile < 75 %, Handy-Höhe) unverändert.
+- Gemessen (Playwright, Zeilenfüllung = Summe Namensbreiten / Zeilenbreite): Mobil 390px Zeilen vorher 48–97 %, jetzt 91–100 %; 360px vorher 68–100 %, jetzt 84–100 %; Desktop 1440px vorher 83–99 %, jetzt 97–100 %. Mobil-Screenshot 390px gesichtet.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
