@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Produktseite Silent Rack: Einleitungssatz neben den Buttons, Anrufen-Button kräftiger
+- Jascha: Der Satz „Dieses Rack wurde entwickelt …“ steht jetzt in derselben Zeile wie „Individualisiert anfragen!“ und „Anrufen“ (Text links, Buttons rechts, auf Inhaltsbreite). Unter 1200px untereinander, Text zuerst. Text unverändert, nur verschoben (vorher eigener Absatz unter der Button-Leiste).
+- „Anrufen“-Button in der Hero-Leiste kräftiger: Rand 2px Anthrazit statt 1px Hellgrau (bestehende Werte). Der zweite „Anrufen“-Button im dunklen CTA-Band unten bleibt unverändert.
+- Geprüft (Playwright): 1600/1280/1200/1024/375 px, kein horizontaler Overflow.
+
 ## 2026-10-14 – Bauformen: Header-Bild
 - Foto von Jascha (Case mit Deckel und zwei ausgezogenen Schubladen, weißer Studiohintergrund) zum Header-Bild im Format 1800 × 725 umgebaut: Case freigestellt (Hintergrund und Bodenschatten entfernt, Kante an Schubladen/Rollen von Hand nachgezogen), auf dunklen Verlauf wie beim Case-Turm (Produkte) gesetzt, rechts platziert, weicher Bodenschatten. Datei `assets/images/engineering/formen/header-formen-schubladen-case.jpg` (70 KB).
 - `/engineering/flightcase-formen/`: grauer Seitenkopf ersetzt durch `.hub-header` (wie Engineering/Manufaktur/Produkte) mit H1 und Intro-Satz im Bild – Texte unverändert. Bildausschnitt auf schmalen Bildschirmen nach rechts verschoben (`--header-img-pos: 85% 50%`), damit das Case sichtbar bleibt.
