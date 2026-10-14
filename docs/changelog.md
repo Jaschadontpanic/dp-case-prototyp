@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart: Bilder zu „Transportkisten – Heavy Duty“ und „Hartschalen Koffer“
+- Jascha: Bilder zu „Woodrack und Transportkiste Heavy Duty“ einbauen. Die beiden Karten unter „Weitere Leistungen“ (`.hub-card`) bekommen oben ein Bild (`.hub-card--img` / `.hub-card-img`, 4:3, randlos zur Kartenkante, `contain`): `transportkisten-heavy-duty.webp` und `hartschalen-koffer.webp` (lagen bereits unter `assets/images/engineering/bauart/`).
+- **Annahme:** „Woodrack“ gibt es im Bauart-Content nicht; ich habe es als „Hartschalen Koffer“ gelesen (zweite Karte mit passendem, bereits abgelegtem Foto). Alt-Texte stehen nicht im Content und sind von mir aus den Bildern beschrieben („Transportkiste Heavy Duty aus schwarzem Multiplex mit Fächern, auf Holzpalette“, „Hartschalen Koffer in Schwarz mit Rollen und Teleskopgriff“) – bitte prüfen.
+- Geprüft (Playwright 1920/1440/390px): beide Bilder laden, kein Overflow; Screenshot 1440px gesichtet. Die Reihe mit den Bildkarten ist höher (697px statt ca. 395px), die Textkarte „Einbauten“ daneben streckt sich mit.
+
 ## 2026-10-14 – Produktseite Silent Rack: Einleitungssatz neben den Buttons, Anrufen-Button kräftiger
 - Jascha: Der Satz „Dieses Rack wurde entwickelt …“ steht jetzt in derselben Zeile wie „Individualisiert anfragen!“ und „Anrufen“ (Text links, Buttons rechts, auf Inhaltsbreite). Unter 1200px untereinander, Text zuerst. Text unverändert, nur verschoben (vorher eigener Absatz unter der Button-Leiste).
 - „Anrufen“-Button in der Hero-Leiste kräftiger: Rand 2px Anthrazit statt 1px Hellgrau (bestehende Werte). Der zweite „Anrufen“-Button im dunklen CTA-Band unten bleibt unverändert.
