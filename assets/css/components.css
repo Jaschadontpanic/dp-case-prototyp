@@ -877,7 +877,11 @@
    485:566 gemessen bei 1920px). Erste Kachel = Ergaenzungsbild + Rating-Skalen im Textbereich, danach die Highlights. Platzhalterfotos sind
    freigestellt (PNG ohne Hintergrund): contain auf hellem Verlauf statt cover. */
 .cases.cases-product { margin: 0 auto 60px; }
-.cases-product .cases-grid .case-tile:not(.span-2) { aspect-ratio: 485 / 566; }
+.cases-product .cases-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } /* aspect-ratio der Kacheln darf die Spaltenbreite nicht aufweiten */
+.cases-product .cases-grid .case-tile { align-self: stretch; justify-self: stretch; width: 100%; aspect-ratio: 485 / 566; }
+/* Hoehen wie "Unsere Empfehlungen" auf der Startseite (gemessen: doppelt 995x663 = 3:2, einfach 485x566): Reihen mit einer doppelten
+   Kachel sind hoeher, die einfache Kachel daneben streckt sich auf diese Hoehe; Reihen aus drei einfachen Kacheln bleiben 485:566. */
+.cases-product .cases-grid .case-tile.span-2 { aspect-ratio: 3 / 2; }
 /* Bild absolut, damit seine Eigenmasse nicht die Reihenhoehe bestimmen (Hoehe kommt allein von den einfachen Kacheln) */
 .cases-product .cases-grid .case-tile > img { position: absolute; inset: 0; width: 100%; height: 100%; }
 /* Doppelt breite Kacheln (.span-2) stehen immer mit mindestens einer einfachen Kachel in einer Reihe und uebernehmen deren Hoehe
@@ -913,7 +917,7 @@
 }
 /* CTA-Band auf der Produktseite nur so breit wie der uebrige Inhalt (nicht randlos) */
 .pg-silent-rack .cta-band { width: calc(100% - 2 * var(--side-pad)); max-width: calc(var(--max-width) - 2 * var(--side-pad)); margin: 60px auto; border-radius: 16px; padding: 44px 48px; }
-@media (max-width: 900px) { .pg-silent-rack .cta-band { padding: 36px 24px; } .cases-product .cases-grid .case-tile.span-2 { grid-column: auto; } .cases-product .cases-grid .case-tile.span-2 img.is-cutout { padding: 8% 8% 34%; } }
+@media (max-width: 900px) { .cases-product .cases-grid { grid-template-columns: minmax(0, 1fr); } .pg-silent-rack .cta-band { padding: 36px 24px; } .cases-product .cases-grid .case-tile.span-2 { grid-column: auto; } .cases-product .cases-grid .case-tile.span-2 img.is-cutout { padding: 8% 8% 34%; } }
 
 /* ===== Vergleichsmatrix Plattenmaterialien (2026-10-14, Jascha): Standard-Schriftgroesse, Skalen statt Zahlen ===== */
 .matrix-table th, .matrix-table td { vertical-align: middle; white-space: normal; }

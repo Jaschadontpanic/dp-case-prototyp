@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: Kachelhöhen wie auf der Startseite
+- Jascha: Höhen der Kacheln stimmten nicht, auf die Höhen der Startseite („Unsere Empfehlungen“) anpassen. Nach der Umstellung auf variable Breiten (#71) hatten alle Reihen die Höhe der einfachen Kachel (566px bei 1920px), auf der Startseite sind Reihen mit einer doppelten Kachel höher (663px). Jetzt: doppelte Kachel `aspect-ratio: 3/2`, einfache Kachel daneben streckt sich auf diese Höhe. Gemessen identisch zur Startseite: 995×663 + 485×663 (1920px), 792×528 + 384×528 (1440px), 565×377 + 271×377 (1100px). Mobil: Doppelte 350×233 wie auf der Startseite.
+- **Annahme:** „Höhen“ = Kachelhöhen im Highlights-Raster; die Hero-Höhe (PR #73) ist davon nicht betroffen.
+
 ## 2026-10-14 – Produktseite: Hero ca. 30 % niedriger
 - Jascha: Header der Produktseite ca. 30 % niedriger. `.product-hero`: Bild `max-height` 65vh → 43vh (mobil 50vh → 30vh), Innenabstand 48/24px → 32/16px (mobil oben 20px). Gemessen (Hero-Höhe ohne Buttonleiste): 877 → 616px (1920×1080, −30 %), 760 → 538px (1440×900, −29 %), 546 → 381px (390px, −30 %). Kein Overflow; Screenshot 1920px gesichtet. Gilt für alle Produktseiten mit `.product-hero`.
 
