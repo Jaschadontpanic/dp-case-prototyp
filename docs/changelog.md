@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-13 – Logo Mobil ca. 20 % kleiner
+- Jascha-Feedback: Logo mobil ca. 20 % kleiner; Startseite und Unterseiten gleich groß. `--logo-h-top-mobile` 45px → 36px (≤900px, Scroll-Position 0). Desktop (60px) und gescrolltes Logo (29px/22px) unverändert. `docs/design-system.md` angepasst.
+
 ## 2026-10-13 – Überschriften nach Ebene vereinheitlicht
 - Jascha-Freigabe: H1/H2 Open Sans, H3/Karten-Titel Clear Sans Bold. Vorher erbten H1/H2 ohne eigene Komponentenregel Clear Sans Bold (Inkonsistenz). Fix: eine globale Regel `h1, h2 { font-family: var(--headline-alt-font) }` in `base.css`; Größen/Gewichte unverändert. Per Playwright auf allen 25 Seiten geprüft: alle H1/H2 Open Sans, kein H3 Open Sans.
 ## 2026-10-13 (Bauart-Fotos) – Case-Fotos abgelegt und eingebunden, fehlende als Dummy
