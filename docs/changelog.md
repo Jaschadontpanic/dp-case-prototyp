@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Teaser „Dein perfektes Silent Rack“ auf Inhaltsbreite
+- Jascha: Bereich zu breit, passt nicht zum Rest. Ursache: `.typen-teaser` hatte `margin-left/right:auto` (überschrieb den Seitenrand `--side-pad`) und `max-width:1504px`; unter 1744px Viewportbreite lief der graue Kasten dadurch randlos über die ganze Breite (1440px: 0–1440 statt 120–1320, Mobil 0–390 statt 20–370). Jetzt `width:calc(100% - 2*var(--side-pad))` + `margin:50px auto` – bündig mit Überschriften, Tabellen und Texten. Gilt auch für die übrigen Seiten mit `.typen-teaser` (Bauart, Formen, 3 Plattenmaterial-Seiten). Bei 1920px unverändert (208–1712).
+
 ## 2026-10-14 – Kachel-Slider endlos, Überlappung halbiert
 - Jascha: Slider soll in beide Richtungen weitere Inhalte zeigen (vor der ersten Kachel die letzte links davon), Überlappung auf die Hälfte reduzieren. `assets/js/tile-slider.js`: Kacheln werden davor/dahinter geklont (3 Sätze), Start im mittleren Satz, unsichtbarer Rücksprung um einen Satz nach dem Scrollen; Pfeile immer sichtbar. `--tile-peek` (Desktop 52px, Mobil 24px, vorher sichtbarer Anschnitt ca. 105px) steuert den Anschnitt links und rechts, Kachelbreite = Slider − 2×(Peek+Gap). Gilt für Bauart (3 Kacheln) und Silent-Rack-Highlights (`--wide`, jetzt randlos über die Bildschirmbreite).
 - Geprüft (Playwright 1440/390px, beide Seiten): Start zeigt letzte Kachel links; zurück/vor über mehrere Runden läuft ohne Sprung, logische Kachel stimmt (z. B. nach −1 und +9 = Kachel 2 bei 7 Kacheln), keine JS-Fehler; kein horizontaler Overflow bei 1920/1440/1100/390px.
