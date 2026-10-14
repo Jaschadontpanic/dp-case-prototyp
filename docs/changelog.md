@@ -2,6 +2,14 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart-Seite: Überschriften, LIGHT im Titel, Seitenkopf, Abstände, Bilder 2/3
+- Jascha-Vorgaben: H1 „Flightcase Bauart“ → „Flightcase Bauarten“; H2 „Flightcase-Bauarten“ entfällt; Zusatz Light/Ultra Light nicht mehr als Pillen-Label, sondern in der H3 mit Gedankenstrich und in Versalien („Standard Protect Flightcase – LIGHT“), Teal hervorgehoben (`.bauart-suffix`; `.bauart-badge` bleibt für die Branchen-Tags auf Silent Rack). Content (`flightcase-bauart.md`: H1, Design-Hinweis, Gruppe 1 ohne sichtbare H2) entsprechend nachgezogen.
+- Grauer Seitenkopf sitzt direkt unter dem Header (`.feature-band.page-head-band { margin-top: 0 }`). Gilt für alle 18 Seiten mit diesem Seitenkopf, da es dasselbe Standardelement ist.
+- Abstand zwischen den Bauart-Zeilen 56px → 112px (+100 %).
+- Spalten umgedreht: Kachel-Slider 2/3, Textblock 1/3 (vorher Bild 42 %). Da die erste Zeile durch die entfallene H2 ein anderes Kind-Index hat, ist der Links/Rechts-Wechsel seitenbezogen gedreht – die erste Bauart beginnt weiter mit dem Bild links.
+- **Vorschlag Bildgröße (zur Freigabe):** Platte- und Kante-Kacheln zeigen auf Desktop die Eigenschaften rechts neben dem Bild statt darunter, damit bei „Slider-Höhe = Textblock“ (#65) mehr Höhe fürs Bild bleibt. Case-Kacheln unverändert (Bild oben, Titel unten). Mobil unverändert.
+- Geprüft (Playwright): 1600/1280/768/375 px, kein horizontaler Overflow, Abstand Header → grauer Kasten 0 px, Zeilenabstand 112 px, Wechsel L/R korrekt, Kachel-Wechsel per Pfeil.
+
 ## 2026-10-14 – Materialien-Content an HTML-Prototyp angeglichen (C16)
 - Grundlage: HTML-Stand auf `main` als Referenz, Content hinkte hinterher. Alle sichtbaren Texte der 5 Seiten (Materialien, Plattenmaterialien-Hub, Multiplex, PP-Hohlkammer, Ultraleicht) per Skript gegen die Content-Dateien geprüft – nach der Änderung steht jeder sichtbare Text wörtlich im Content. Kein vorhandener Text umformuliert oder gekürzt.
 - `plattenmaterialien/phenolharz-statt-pvc.md` **entfernt**: keine eigene Seite mehr (Jascha 2026-10-13). Text wörtlich als „Ausklappbar – Phenolharz statt PVC“ (Anker `#phenolharz-statt-pvc`) in `multiplex.md`. URL, Title, Meta, Breadcrumb der Einzelseite entfallen. Grund: Ordner = URL – eine Datei ohne Seite wäre eine zweite Quelle für denselben Text und würde auseinanderlaufen.

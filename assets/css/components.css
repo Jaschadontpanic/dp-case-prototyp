@@ -373,6 +373,8 @@
    durchgehend über die volle Bandbreite. Zweispaltig (Text links, Freisteller-Bild rechts); Modifier
    .feature-band--no-image für Baustein ohne Bildspalte (erste Anwendung: Begriffssystem, s.u.). */
 .feature-band { background: var(--hell); padding: 46px 0; margin: 46px 0; }
+/* Seitenkopf ohne Header-Bild (2026-10-14, Jascha): grauer Kasten direkt unter dem Header, kein weisser Streifen dazwischen. */
+.feature-band.page-head-band { margin-top: 0; }
 .feature-band .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .feature-band--no-image .wrap { grid-template-columns: 1fr; }
 /* h1 seit 2026-10-13 ergaenzt: Feature-Band jetzt auch als Seitenkopf-Platzhalter auf 18
@@ -657,13 +659,26 @@
    Specs/Rating (abwechselnd links/rechts), Mobil gestapelt Titel -> Bild -> Text -> Rating. */
 .bauart-row {
   display: grid; column-gap: 56px;
-  grid-template-columns: 42% 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-areas: "img title" "img text" "img specs" "img rating";
-  max-width: var(--max-width); margin: 0 auto 56px; padding: 0 var(--side-pad);
+  max-width: var(--max-width); margin: 0 auto 112px; padding: 0 var(--side-pad);
 }
+/* 2026-10-14 (Jascha): Bild/Slider 2/3, Textblock 1/3 (vorher 42 % Bild), Zeilenabstand 56px -> 112px (+100 %). */
 .bauart-row:nth-child(even) {
-  grid-template-columns: 1fr 42%;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   grid-template-areas: "title img" "text img" "specs img" "rating img";
+}
+/* Bauart-Seite: seit Wegfall der H2 „Flightcase-Bauarten“ (2026-10-14) ist die erste Zeile ein gerades Kind –
+   Wechsel hier umgedreht, damit die erste Bauart wie bisher mit dem Bild links beginnt. Nur Desktop, mobil gestapelt. */
+@media (min-width: 901px) {
+  .pg-engineering-bauart .bauart-row:nth-child(even) {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-areas: "img title" "img text" "img specs" "img rating";
+  }
+  .pg-engineering-bauart .bauart-row:nth-child(odd) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-areas: "title img" "text img" "specs img" "rating img";
+  }
 }
 .bauart-row-slider { grid-area: img; align-self: center; }
 .bauart-row-img { grid-area: img; align-self: center; border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; background: #f3f3f0; }
@@ -731,6 +746,13 @@
   .bauart-row-slider .tile-body { flex: 0 0 auto; padding: 14px 18px 16px; }
   .bauart-row-slider .tile-slider-arrow { top: 50%; }
 }
+/* Bauart, Desktop (Vorschlag 2026-10-14): Platte- und Kante-Kacheln zeigen die Eigenschaften RECHTS neben dem Bild statt darunter –
+   so bleibt bei der Hoehe = Textblock mehr Hoehe fuer das Bild. Case-Kacheln (Foto/Platzhalter) bleiben Bild oben, Titel unten. */
+@media (min-width: 901px) {
+  .bauart-row-slider .tile:has(img[src*="/materialien/"]), .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) { flex-direction: row; }
+  .bauart-row-slider .tile:has(img[src*="/materialien/"]) .tile-img, .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) .tile-img { flex: 1 1 auto; height: 100%; }
+  .bauart-row-slider .tile:has(img[src*="/materialien/"]) .tile-body, .bauart-row-slider .tile:has(img[src*="/kantenschutz/"]) .tile-body { flex: 0 0 34%; align-self: center; padding: 18px 22px; }
+}
 .tile-slider-arrow:hover, .tile-slider-arrow:focus-visible { opacity: 1; }
 .tile-slider-arrow:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 .tile-slider-arrow.prev { left: 8px; }
@@ -742,6 +764,9 @@
 }
 .bauart-row-title { grid-area: title; display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; align-self: end; }
 .bauart-row-title h3 { font-size: var(--fs-card-title); color: var(--anthrazit); }
+/* Zusatz LIGHT / ULTRA LIGHT direkt in der Ueberschrift (2026-10-14, ersetzt .bauart-badge auf der Bauart-Seite):
+   Versalien stehen im Text, Farbe Teal als Hervorhebung. */
+.bauart-suffix { color: var(--teal); }
 .bauart-badge {
   font-family: var(--mono-font); font-size: 11px; letter-spacing: .04em; text-transform: uppercase;
   color: var(--teal); border: 1px solid var(--teal); border-radius: 999px; padding: 3px 12px;
