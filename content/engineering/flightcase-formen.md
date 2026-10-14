@@ -3,7 +3,7 @@ seite: Flightcase Bauformen
 url: /engineering/flightcase-formen
 content-status: Content fertig
 quelle: Master-MD, Abschnitt 17
-stand: 2026-09-27
+stand: 2026-10-14
 ---
 
 ### FORMEN (Unterseite) - final komplett
@@ -15,10 +15,14 @@ URL: /engineering/flightcase-formen
 
 **H1:** Flightcase Bauformen
 
-**Header-Bild (2026-10-14, Jascha):** `assets/images/engineering/formen/header-formen-schubladen-case.jpg` – Case mit aufgeklapptem Deckel und zwei ausgezogenen Schubladen, freigestellt auf dunklem Verlauf (Stil wie Case-Turm/Produkte), Case rechts, H1 + Intro-Satz links im Bild.
-**Alt-Text Header:** Flightcase mit aufgeklapptem Deckel und zwei ausgezogenen Schubladen auf Rollen *(Prüfung C5)*
 **Unterueberschrift:** Klassisch, kombiniert oder voellig neu gedacht – jede Bauform ist
 moeglich, wenn sie deinem Case nuetzt.
+
+**Header-Bild (2026-10-14, Jascha):** `assets/images/engineering/formen/header-formen-schubladen-case.jpg`
+(1800 × 725) – Case mit geöffnetem Klappdeckel und zwei ausgezogenen Schubladen, freigestellt auf
+dunklem Verlauf (Stil wie Case-Turm/Produkte), Case rechts; H1 und Unterüberschrift stehen links im Bild.
+**Alt-Text Header:** Flightcase mit geöffnetem Klappdeckel und zwei ausgezogenen Schubladen auf Rollen
+(Begriff „Klappdeckel“ nach dem Begriffssystem dieser Seite; Prüfung im Alt-Text-Check C5)
 
 **Begriffssystem (durchgaengig):**
 - Deckel = oben, abnehmbar

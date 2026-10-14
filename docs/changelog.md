@@ -5,7 +5,7 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 ## 2026-10-14 – Bauformen: Header-Bild
 - Foto von Jascha (Case mit Deckel und zwei ausgezogenen Schubladen, weißer Studiohintergrund) zum Header-Bild im Format 1800 × 725 umgebaut: Case freigestellt (Hintergrund und Bodenschatten entfernt, Kante an Schubladen/Rollen von Hand nachgezogen), auf dunklen Verlauf wie beim Case-Turm (Produkte) gesetzt, rechts platziert, weicher Bodenschatten. Datei `assets/images/engineering/formen/header-formen-schubladen-case.jpg` (70 KB).
 - `/engineering/flightcase-formen/`: grauer Seitenkopf ersetzt durch `.hub-header` (wie Engineering/Manufaktur/Produkte) mit H1 und Intro-Satz im Bild – Texte unverändert. Bildausschnitt auf schmalen Bildschirmen nach rechts verschoben (`--header-img-pos: 85% 50%`), damit das Case sichtbar bleibt.
-- Alt-Text neu („Flightcase mit aufgeklapptem Deckel und zwei ausgezogenen Schubladen auf Rollen“), in `content/engineering/flightcase-formen.md` ergänzt – Prüfung im Alt-Text-Check C5.
+- Content `content/engineering/flightcase-formen.md`: Header-Bild (Datei, Motiv, Aufbau) und Alt-Text unter H1/Unterüberschrift ergänzt. Alt-Text „Flightcase mit geöffnetem Klappdeckel und zwei ausgezogenen Schubladen auf Rollen“ – „Klappdeckel“ statt „aufgeklappter Deckel“ nach dem Begriffssystem der Seite (oben, schwenkbar); Prüfung im Alt-Text-Check C5.
 - Geprüft (Playwright): 1600/1024/768/375 px, Bild lädt, kein horizontaler Overflow. Mobil liegt der Text wie auf den anderen Seiten mit Header-Bild über dem Bild.
 
 ## 2026-10-14 – Silent Rack: Hardfacts-Tabelle als letzte Kachel
