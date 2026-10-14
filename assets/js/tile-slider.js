@@ -16,6 +16,8 @@
         var c = t.cloneNode(true);
         c.setAttribute('aria-hidden', 'true');
         c.classList.add('is-clone');
+        if (c.tagName === 'A') c.setAttribute('tabindex', '-1'); // Klone (aria-hidden) nicht per Tab erreichbar
+        c.querySelectorAll('a, button').forEach(function (el) { el.setAttribute('tabindex', '-1'); });
         frag.appendChild(c);
       });
       return frag;

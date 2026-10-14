@@ -637,10 +637,8 @@
 /* Technische Daten + Rating-Balken nebeneinander (Produktseiten, neu 2026-09-29) */
 .specs-flex { display: flex; gap: 48px; align-items: flex-start; }
 .specs-table-col { flex: 1 1 460px; min-width: 0; overflow-x: auto; }
-.specs-ratings-col { flex: 0 0 280px; padding-top: 4px; }
 @media (max-width: 900px) {
   .specs-flex { flex-direction: column; gap: 28px; }
-  .specs-ratings-col { flex-basis: auto; width: 100%; }
 }
 
 /* ===== RECHTLICHES (Übersicht + AGB-Downloads, 2026-09-28) ===== */
@@ -736,11 +734,11 @@
 /* Standard-Slider (Bauart): Nachbarkacheln NICHT angeschnitten sichtbar (Jascha 2026-10-14). Gesamtbreite und Kachelbreite bleiben
    gleich: der Track ist links/rechts um (Peek+Gap) eingerueckt und schneidet genau an der Kachelkante ab, die Pfeile sitzen
    in den freien Raendern neben der Kachel. Die Endlosschleife laeuft unveraendert (Nachbarn liegen nur ausserhalb des Tracks). */
-.tile-slider:not(.tile-slider--wide) .tile-slider-track { margin: 0 calc(var(--tile-peek) + var(--tile-gap)); }
-.tile-slider:not(.tile-slider--wide) .tile { flex-basis: 100%; }
-.tile-slider:not(.tile-slider--wide).is-loop .tile-slider-track { scroll-padding-left: 0; }
-.tile-slider:not(.tile-slider--wide) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
-.tile-slider:not(.tile-slider--wide) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+.tile-slider:not(.tile-slider--wide):not(.tile-slider--three) .tile-slider-track { margin: 0 calc(var(--tile-peek) + var(--tile-gap)); }
+.tile-slider:not(.tile-slider--wide):not(.tile-slider--three) .tile { flex-basis: 100%; }
+.tile-slider:not(.tile-slider--wide):not(.tile-slider--three).is-loop .tile-slider-track { scroll-padding-left: 0; }
+.tile-slider:not(.tile-slider--wide):not(.tile-slider--three) .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+.tile-slider:not(.tile-slider--wide):not(.tile-slider--three) .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
 /* Bauart (Jascha 2026-10-14): Kachel buendig mit der Inhaltskante (kein Einzug fuer die Pfeile mehr) – Bildkante sitzt seitlich
    auf derselben Linie wie die Elemente darueber. Pfeile liegen dafuer innen auf dem Bild (12px vom Rand, Bildmitte). */
 .tile-slider.bauart-row-slider .tile-slider-track { margin: 0; }
@@ -869,3 +867,41 @@
 /* Seitenkopf-Band: lange Woerter (z. B. Datenschutzerklaerung) duerfen die Grid-Spalte nicht aufweiten (Mobil-Overflow 423px bei 390px) */
 .feature-band-text { min-width: 0; }
 .feature-band-text h1 { overflow-wrap: anywhere; }
+
+/* ===== PRODUKTSEITE (Silent Rack, Umbau 2026-10-14, Jascha) ===== */
+/* Highlights als Kachelraster wie "Unsere Empfehlungen" (.cases-grid/.case-tile, 3 Spalten, gleiche Kachelhoehe wie dort: Verhaeltnis
+   485:566 gemessen bei 1920px). Erste Kachel = Ergaenzungsbild + Rating-Skalen im Textbereich, danach die Highlights. Platzhalterfotos sind
+   freigestellt (PNG ohne Hintergrund): contain auf hellem Verlauf statt cover. */
+.cases.cases-product { margin: 0 auto 60px; }
+.cases-product .cases-grid .case-tile { aspect-ratio: 485 / 566; }
+.cases-product .cases-grid .case-tile img.is-cutout { object-fit: contain; border-radius: 0; padding: 8% 8% 34%; background: linear-gradient(180deg,#eee,#fff); }
+.cases-product .case-tile-ratings { display: flex; flex-direction: column; gap: 6px; }
+.cases-product .case-tile-ratings .bauart-rating-label { color: #fff; margin-bottom: 0; }
+.cases-product .case-tile-ratings .bauart-rating-label + .bauart-rating-track + .bauart-rating-label { margin-top: 10px; }
+.cases-product .case-tile-ratings .bauart-rating-track { background: rgba(255,255,255,.25); }
+/* Slider "Weitere spannende Produkte": 3 Kacheln nebeneinander in Inhaltsbreite, links/rechts dezente Pfeile in den freien Raendern,
+   Endlosschleife (tile-slider.js). Mobil: eine Kachel, Pfeile in den Raendern. */
+.tile-slider--three { max-width: var(--max-width); margin: 0 auto 60px; padding: 0 var(--side-pad); }
+.tile-slider--three .tile-slider-track { margin: 0 calc(var(--tile-peek) + var(--tile-gap)); }
+.tile-slider--three.is-loop .tile-slider-track { scroll-padding-left: 0; }
+.tile-slider--three .tile { flex: 0 0 calc((100% - 2 * var(--tile-gap)) / 3); }
+.tile-slider--three .tile-slider-arrow { top: calc(((100cqw - 2 * (var(--tile-peek) + var(--tile-gap)) - 2 * var(--tile-gap)) / 3) * .375); }
+.tile-slider--three .tile-slider-arrow.prev { left: calc(var(--side-pad) + (var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+.tile-slider--three .tile-slider-arrow.next { right: calc(var(--side-pad) + (var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+.product-tile { text-decoration: none; color: inherit; transition: box-shadow .2s ease; }
+.product-tile:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.product-tile .tile-img { background: linear-gradient(180deg,#eee,#fff); }
+.product-tile .tile-img img { width: 78%; height: 78%; margin: auto; }
+.product-tile .tile-img { display: flex; align-items: center; justify-content: center; }
+.product-tile .tile-body { display: flex; flex-direction: column; flex: 1; }
+.product-tile .tile-body .btn-link { margin-top: auto; padding-top: 14px; }
+@media (max-width: 900px) {
+  .tile-slider--three { padding: 0; }
+  .tile-slider--three .tile { flex-basis: 100%; }
+  .tile-slider--three .tile-slider-arrow { top: calc((100cqw - 2 * (var(--tile-peek) + var(--tile-gap))) * .375); }
+  .tile-slider--three .tile-slider-arrow.prev { left: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+  .tile-slider--three .tile-slider-arrow.next { right: calc((var(--tile-peek) + var(--tile-gap)) / 2 - 16px); }
+}
+/* CTA-Band auf der Produktseite nur so breit wie der uebrige Inhalt (nicht randlos) */
+.pg-silent-rack .cta-band { width: calc(100% - 2 * var(--side-pad)); max-width: calc(var(--max-width) - 2 * var(--side-pad)); margin: 60px auto; border-radius: 16px; padding: 44px 48px; }
+@media (max-width: 900px) { .pg-silent-rack .cta-band { padding: 36px 24px; } }

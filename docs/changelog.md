@@ -2,6 +2,12 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent-Rack-Seite umgebaut (neue Produktseiten-Vorlage)
+- Jascha-Vorgabe: Highlights als Kacheln im 3er-Raster wie „Unsere Empfehlungen“ (gleiche Kachelhöhe); erste Kachel Ergänzungsbild mit den Skalen Stabilität 10/10 und Gewicht 9/10 im Text, danach die 7 Highlights; dann die Hardfacts-Tabelle, „Dein perfektes Silent Rack“, Häufige Fragen zum Silent Rack, Slider „Weitere spannende Produkte“ (3 Kacheln, Pfeile, Endlosrotation über alle Produkte der Übersicht), darunter die allgemeinen Häufigen Fragen, zuletzt das CTA-Band „Dein Case, egal wie speziell.“ nur in Inhaltsbreite.
+- Umsetzung: Highlights nutzen `.cases-grid`/`.case-tile` (Ratings in `.case-tile-ratings`), Slider ist die neue Variante `.tile-slider--three` von `tile-slider.js` (Klone bekommen `tabindex=-1`), CTA-Band per `.pg-silent-rack .cta-band`. Die Rating-Spalte neben der Tabelle und deren CSS (`.specs-ratings-col`) entfallen. Texte unverändert übernommen, nur umsortiert.
+- Annahmen: Branchen und Kundenreferenz (nicht in Jaschas Liste) stehen weiter direkt unter der Tabelle; der Slider enthält 9 Produkte (alle der Übersicht außer Silent Rack selbst); Kachelhöhe = Verhältnis 485:566 der unteren „Unsere Empfehlungen“-Reihe. Ergänzungsbild und Highlight-Fotos sind weiter Platzhalter (Hero-PNG); der Alt-Text „Silent Rack – Ansicht von rechts“ der ersten Kachel ist aus dem Dateinamen `…_20_ergaenzung_rechte-seite` abgeleitet, nicht aus dem Content (zu prüfen).
+- Geprüft (Playwright 1920/1440/390px): kein Overflow, Slider zeigt 3 (mobil 1) Kacheln, Vor/Zurück über 12 Schritte korrekt (Produkt 12 mod 9), keine Fehler. Bauart-Slider nicht angefasst.
+
 ## 2026-10-14 – Bauart-Kacheln: Eigenschaften in einer Zeile, Slider bündig, Abstand −40 %
 - Jascha: Eigenschaften der Platte-/Kante-Kacheln (Stärke, Biegesteifigkeit, Punktlast, kg/m²) nicht mehr untereinander, sondern in einer Zeile, getrennt mit „ ·“ wie bei den Kundennamen. Nur CSS (`.bauart-row-slider .tile-body ul`), Markup und Texte unverändert.
 - Geprüft (Playwright): 1600 px eine Zeile; 375 px bricht zwischen den Einträgen um (nie mitten in einem Eintrag), kein horizontaler Overflow.
