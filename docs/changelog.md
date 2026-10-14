@@ -5,6 +5,13 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 ## 2026-10-14 – Cases-Grid: Abdunklung pro Kachel steuerbar
 - Jascha-Empfehlung angenommen: fester CSS-Verlauf pro Kachel statt JS-Helligkeitsmessung (Canvas-Pixelzugriff scheitert bei lokalem `file://`-Öffnen). `.case-tile::after` nutzt jetzt `--tile-solid` (bis wohin durchgehend schwarz, Standard 25 %) und `--tile-fade` (ab wo transparent, Standard 55 %). Pro Kachel auf der Startseite per Inline-Variable gesetzt, nach gemessener Helligkeit des unteren Bilddrittels (Luftfahrt 20/48 % = dunkel, Backstage 28/58 %, Broadcast 32/62 % = hellere Mitte). Bei Foto-Tausch Werte pro Kachel nachziehen.
 
+## 2026-10-14 – Header: linker Verlauf dunkler, Bildposition per Variable
+- Jascha-Feedback: alle Header links etwas dunkler, wo die Schrift steht. Linker Verlauf von `.hero` (Startseite) und `.hub-header` (Engineering, Manufaktur, Produkte, Maße) identisch verlängert: 95 % → 70 % bei 15 % → 45 % bei 30 % → 0 bei 55 % Breite (vorher 95 % → 55 % bei 8 % → 0 bei 30 %). Unterer Verlauf unverändert.
+- `.hub-header img` bekommt `object-position: var(--header-img-pos, 50% 50%)` – Bildausschnitt pro Seite per CSS-Variable steuerbar (Jascha: CSS pro Seite statt JS). Aktuell überall Standard (Mitte), da die Bilder auf Desktop nicht beschnitten werden (aspect-ratio = Bildformat); Wert erst bei Bedarf pro Seite setzen.
+
+## 2026-10-14 – Produktübersicht: Branchen-Feld raus, einheitliche Kartenhöhe
+- Jascha-Feedback: Branchen-Feld (`.product-card-tag`, z. B. „19-Zoll-Racks“) entfernt (10 Karten, CSS-Regel gelöscht – Zuordnung bleibt im Content, nur nicht angezeigt); CTA-Button „Mehr erfahren →“ unverändert. `.product-grid` mit `grid-auto-rows:1fr`, damit alle Karten über alle Reihen gleich hoch sind (gemessen: alle 10 Karten 435px Desktop / 409px Mobil). `.product-grid` wird auch bei den Silent-Rack-Highlights genutzt, dort greift die einheitliche Höhe ebenfalls.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
