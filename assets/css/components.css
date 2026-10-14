@@ -413,7 +413,7 @@
 .form-card .tags { font-family: var(--mono-font); font-size: 10px; color: #999; line-height: 1.5; }
 .form-card .placeholder-label { color:#b7b7b0; font-size:11px; }
 
-.typen-teaser { background: var(--hell); border-radius: 16px; margin: 50px var(--side-pad); max-width: calc(var(--max-width) - 2*var(--side-pad)); margin-left:auto; margin-right:auto; padding: 34px 36px; text-align:center; }
+.typen-teaser { background: var(--hell); border-radius: 16px; margin: 50px auto; width: calc(100% - 2*var(--side-pad)); max-width: calc(var(--max-width) - 2*var(--side-pad)); padding: 34px 36px; text-align:center; }
 .typen-teaser h2 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 8px; }
 .typen-teaser p { font-size: var(--fs-body-small); color: var(--grau-text); margin-bottom: 16px; }
 
