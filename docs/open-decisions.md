@@ -36,7 +36,7 @@ Status: **offen** = Entscheidung von Jascha nötig · **Aufgabe** = entschieden,
 | # | Punkt | Status |
 |---|---|---|
 | B1 | Bauart-Seite: Case-Fotos (Slide 1) – seit 2026-10-13 liegen 11 Fotos unter `assets/images/engineering/bauart/` und sind eingebunden (Zuordnung siehe Changelog „Bauart-Fotos“). Noch Dummy, Foto kommt von Jascha: Standard Protect Flightcase, Plus Protect Flightcase – Light, Ultra Protect Flightcase, Easy-Case; Weitere Leistungen: Einbauten, Lautsprecher, Sonderkonstruktionen. Offen: Zuordnung „Standard Protect Alternative“ (Standard Protect oder 2. Bild Light?) und „Woodrack“ (welcher Eintrag?); Darstellung mehrerer Case-Fotos pro Bauart (Empfehlung: Galerie mit Klick-Zoom wie Materialseiten, Slider bleibt bei 3 Slides); Bild-Slot für Weitere Leistungen vorhanden? | Aufgabe |
-| B2 | Formen-Seite: 18 von 21 Bauform-Bildern fehlen im HTML (PDF-Quellen 1–21 vorhanden) | Aufgabe |
+| B2 | Formen-Seite: alle 21 Bauform-Bilder eingebunden (18 neue aus Jaschas PDFs, 2026-10-14) | erledigt (2026-10-14) |
 | B3 | Fertigung (Werkstatt-Bilder), Über uns (Hero-Bild), Kachel „Smartes Handling“ | Aufgabe |
 | B4 | Produkte-Hub: alle 10 Karten zeigen Platzhalterbild (Silent Rack) | Aufgabe |
 | B5 | „Unsere Empfehlungen“: Case-Tile-Komponente ist umgesetzt (Bild + Text getrennt, textfreie Fotos seit 2026-09-28 im Einsatz), aber Branchen-Tag/Titel/Story-Text pro Kachel fehlen noch (Datenfelder aus `content/startseite.md` Abschnitt 3 nicht ausgefüllt) | Aufgabe |

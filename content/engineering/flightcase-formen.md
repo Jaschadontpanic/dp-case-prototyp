@@ -95,6 +95,17 @@ eingebunden.)
 designt, Dateinamen 1-21 durchnummeriert (z.B. "1_Klapp-Deckel-Case.pdf" etc.) - Zuordnung
 Bild-zu-Bauform ist über Dateiname eindeutig.
 
+**Bilder eingebunden (2026-10-14):** Alle 21 Bauformen haben ein Bild in
+`assets/images/engineering/formen/` (PNG, transparent, 1710 px hoch, weiße Flächen/schwarze Linien wie die
+ersten drei). Zuordnung PDF → Datei: 4 hauben-case-geteilt · 5 tuer-case · 6 frontdeckel-case ·
+7 Double-Door-Case-Klappe → doppel-tuer-case · 8 Double-Door-Case-Deckel → doppel-frontdeckel-case ·
+9 tuer-case-einschiebbar · 10 Double-Sliding-Door → doppel-tuer-case-einschiebbar · 11 schubladen-case ·
+12 One-Door-Klappe-Schubladen → schubladen-case-tuer · 13 One-Door-Deckel-Schubladen → schubladen-case-frontdeckel ·
+14 paletten-case-haube · 15 paletten-case-haube-geteilt · 16 l-rack-case-vorn-durchgehend ·
+17 l-rack-case-oben-durchgehend · 18 u-rack-case-oben-durchgehend · 19 u-rack-case-vorn-durchgehend ·
+20 Schubladen-Case-Klappe-Oben → schubladen-case-klappdeckel · 21 alles-ist-moeglich.
+Alt-Text je Bild = Titel der Bauform (wie bei den ersten drei).
+
 **BreadcrumbList-Schema:**
 ```json
 {
