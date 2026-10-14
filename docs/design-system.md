@@ -128,12 +128,9 @@ damit sitewide ungenutzt und wurden aus `components.css` entfernt; `.page-intro`
 Komponente bestehen (einige Materialseiten nutzen sie weiterhin als allgemeinen Absatzstil mitten
 im Seiteninhalt, nicht nur als Seitenkopf-Unterschrift).
 
-## Bauart-Slider (`.bauart-slider`, neu 2026-10-13)
-Bildelement der `.bauart-row` mit 3 Slides: Case-Foto → Platte → Kante. Klick/Enter/Pfeiltasten wechselt
-(`assets/js/bauart-slider.js`). Slides (`.bauart-slide`) liegen absolut übereinander, nur `.is-active`
-sichtbar; unten im Bild Label-Chip (mono, wie `.bauart-badge`-Schrift) + Punkte (aktiv `--teal`).
-Platte-/Kante-Bilder werden aus „Plattenmaterialien“ bzw. „Kantenschutz“ wiederverwendet, nicht separat
-geliefert. Ohne Slider: Zeilen mit nur einem Bild (Custom Cases) nutzen weiter `.bauart-row-img`.
+## Kachel-Slider (`.tile-slider`, neu 2026-10-13, ersetzt den Bauart-Slider)
+Horizontale Kachelreihe, Desktop und Mobil gleich (`assets/js/tile-slider.js`). Jede Kachel (`.tile`, 82 % Breite, damit die nächste immer ein Stück sichtbar ist) = Bild (4:3) + Titel (`h4`, `--fs-nav`) + Eigenschaftenliste (`--fs-body-small`, `--grau-text`); Optik wie `.hub-card` (Rand #eee, Radius 16px). Wischen per CSS-Scroll-Snap (nativ, funktioniert ohne JS), dezente Pfeile links/rechts (32px, Deckkraft .55, blenden am Anfang/Ende aus, nur JS). Mobil ≤900px: Track mit 20px Einzug links/rechts. Pfeil-Höhe per `cqw` auf die Bildmitte gerechnet.
+Erste Anwendung: `/engineering/flightcase-bauart/`, 3 Kacheln je Bauart: Case (Titel = Bauart-Name, ggf. mit Light-Zusatz), Platte (Name, Stärke, Biegesteifigkeit, Punktlast, kg/m² – Werte 1:1 aus der Vergleichsmatrix der Plattenmaterialien), Kante (Bezeichnung, Stärke aus der Bezeichnung, z. B. „Kantenschutz 22x22x1,5“ → „Stärke 1,5 mm“). Platte-/Kante-Bilder werden aus „Plattenmaterialien“ bzw. „Kantenschutz“ wiederverwendet, nicht separat geliefert. Geplant: Silent-Rack-Highlights (Backlog-Punkt 1).
 
 ## Material-Galerie (`.material-gallery`, neu 2026-10-13)
 Raster für Materialbilder: Ansichtsbild (`.material-img.is-main`) 2x2 groß, Detailbilder je 1x1 daneben (4 Spalten Desktop, 2 Spalten Mobil). Klick öffnet das Bild groß in einem Dialog (`assets/js/image-zoom.js`, Stil `.img-zoom-dialog`). Dateinamen: Ansicht = Werkstoffname aus der Matrix, Details = Name + `-detail-N`. Einsatz: Plattenmaterialien (Multiplex je Stärke, PP je Stärke, UltraFlite). Erstes Layout zum Testen (Jascha), noch nicht endgültig.
