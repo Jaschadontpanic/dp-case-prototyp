@@ -931,3 +931,14 @@
   .matrix-table .matrix-use-col { display: none; }
   .matrix-table .matrix-use { display: block; }
 }
+
+/* Hardfacts-Tabelle als letzte Kachel im Highlights-Raster (.spec-tile, Jascha 2026-10-14): dunkle Flaeche wie .cta-tile,
+   Tabelle in hellen Farben, kein Bildverlauf. Waechst die Tabelle ueber das Kachelverhaeltnis hinaus (schmale Spalten), waechst die Kachel mit. */
+.cases-product .cases-grid .case-tile.spec-tile { background: var(--anthrazit); color: #fff; display: flex; flex-direction: column; padding: 24px; aspect-ratio: auto; min-height: 0; }
+.cases-product .cases-grid .case-tile.spec-tile::after { display: none; }
+.spec-tile h3 { font-size: var(--fs-card-title); margin-bottom: 12px; color: #fff; }
+.spec-tile .data-table { min-width: 0; font-size: var(--fs-body-small); }
+.spec-tile .data-table th, .spec-tile .data-table td { background: transparent; border-bottom: 1px solid rgba(255,255,255,.15); padding: 8px 10px 8px 0; white-space: normal; vertical-align: top; }
+.spec-tile .data-table th { color: #bbb; font-weight: 600; width: 36%; }
+.spec-tile .data-table td { color: #fff; }
+.spec-tile .data-table tr:last-child th, .spec-tile .data-table tr:last-child td { border-bottom: 0; }

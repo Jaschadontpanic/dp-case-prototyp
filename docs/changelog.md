@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: Hardfacts-Tabelle als letzte Kachel
+- Jascha: Die Tabelle mit Bauart etc. als letzte Kachel ins Highlights-Raster legen, „mal schauen wie das aussieht“. Die Tabelle samt bisheriger Abschnittsüberschrift „Seit 30 Jahren – made in Hamburg.“ liegt jetzt in `.case-tile.spec-tile` (dunkle Fläche wie `.cta-tile`, Tabelle in hellen Farben, kein Bildverlauf); der eigene Abschnitt entfällt. Texte und Werte unverändert.
+- Mit 9 Kacheln rechnet `tile-spans.js` neu: doppelt = Kachel 1, 4, 5, letzte Reihe = drei einfache (Reihen D1 | 1D | D1 | 111; Tabelle steht rechts unten als einfache Kachel). Höhen wie Startseite: Reihen mit Doppelter 663px (1920px), letzte Reihe 566px; bei schmaleren Breiten wächst die letzte Reihe mit der Tabelle (1440px: 582px statt 448px, die Nachbarkacheln strecken sich mit).
+- Geprüft (Playwright 1920/1440/1100/390px): Kachel erscheint, kein Overflow; Screenshots 1920 und 1440px gesichtet. Beim Einbau war die Kachel zunächst in die Kantengriff-Kachel gerutscht (HTML-Verschachtelung), per Parser-Check behoben.
+
 ## 2026-10-14 – Silent Rack: Kachelhöhen wie auf der Startseite
 - Jascha: Höhen der Kacheln stimmten nicht, auf die Höhen der Startseite („Unsere Empfehlungen“) anpassen. Nach der Umstellung auf variable Breiten (#71) hatten alle Reihen die Höhe der einfachen Kachel (566px bei 1920px), auf der Startseite sind Reihen mit einer doppelten Kachel höher (663px). Jetzt: doppelte Kachel `aspect-ratio: 3/2`, einfache Kachel daneben streckt sich auf diese Höhe. Gemessen identisch zur Startseite: 995×663 + 485×663 (1920px), 792×528 + 384×528 (1440px), 565×377 + 271×377 (1100px). Mobil: Doppelte 350×233 wie auf der Startseite.
 - **Annahme:** „Höhen“ = Kachelhöhen im Highlights-Raster; die Hero-Höhe (PR #73) ist davon nicht betroffen.
