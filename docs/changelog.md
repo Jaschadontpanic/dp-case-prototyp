@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: Highlights als Kachel-Slider
+- Jascha: Slider-Lösung auch bei Silent Rack (Entscheidung Mobil-Accordion vs. Slider → Slider, Desktop wie Mobil). Die 7 Highlight-Kacheln (`.product-grid`/`.product-card`) sind jetzt `.tile-slider.tile-slider--wide` mit `assets/js/tile-slider.js`; Texte unverändert übernommen, Bild-Platzhalter (Hero-Foto, B6) bleiben bis zur Lieferung der Highlight-Fotos. Per Playwright 1440/390px geprüft, keine Fehler, kein Overflow.
+- **Offen:** Layout „Vollständig gekühlt“ (Tagline-Leiste unter dem Hero, Heading/Text-Positionierung) – Vorstellung von Jascha nötig, noch nicht angefasst.
+
 ## 2026-10-14 – Kundenliste: Umsortierung ohne Grenze
 - Jascha-Vorgabe: Namen dürfen beliebig weit umsortiert werden, Hauptsache es sieht gut aus (Mobil war nicht schön). `packRows` in `assets/js/trust-justify.js` füllt jetzt den Restplatz jeder Zeile mit dem breitesten noch passenden Namen aus der ganzen Restliste auf; die alte 2-Positionen-Grenze (`MAX_POSITION_SHIFT`) und der separate Umsortier-Schritt sind entfernt. Weglassen vom Listenende (letzte Zeile < 75 %, Handy-Höhe) unverändert.
 - Gemessen (Playwright, Zeilenfüllung = Summe Namensbreiten / Zeilenbreite): Mobil 390px Zeilen vorher 48–97 %, jetzt 91–100 %; 360px vorher 68–100 %, jetzt 84–100 %; Desktop 1440px vorher 83–99 %, jetzt 97–100 %. Mobil-Screenshot 390px gesichtet.
