@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart-Kacheln: Hover-Zoom auf den Bildern
+- Jascha: Bilder im Kachel-Slider vergrößern sich beim Mouseover leicht – identischer Effekt wie bei „Unsere Empfehlungen“ und den Produktkarten (`scale(1.05)`, `transition: transform .35s ease`), kein neuer Design-Wert. Bild bleibt im Kachelrahmen (`overflow: hidden`).
+
 ## 2026-10-14 – Silent-Rack-Seite umgebaut (neue Produktseiten-Vorlage)
 - Jascha-Vorgabe: Highlights als Kacheln im 3er-Raster wie „Unsere Empfehlungen“ (gleiche Kachelhöhe); erste Kachel Ergänzungsbild mit den Skalen Stabilität 10/10 und Gewicht 9/10 im Text, danach die 7 Highlights; dann die Hardfacts-Tabelle, „Dein perfektes Silent Rack“, Häufige Fragen zum Silent Rack, Slider „Weitere spannende Produkte“ (3 Kacheln, Pfeile, Endlosrotation über alle Produkte der Übersicht), darunter die allgemeinen Häufigen Fragen, zuletzt das CTA-Band „Dein Case, egal wie speziell.“ nur in Inhaltsbreite.
 - Umsetzung: Highlights nutzen `.cases-grid`/`.case-tile` (Ratings in `.case-tile-ratings`), Slider ist die neue Variante `.tile-slider--three` von `tile-slider.js` (Klone bekommen `tabindex=-1`), CTA-Band per `.pg-silent-rack .cta-band`. Die Rating-Spalte neben der Tabelle und deren CSS (`.specs-ratings-col`) entfallen. Texte unverändert übernommen, nur umsortiert.

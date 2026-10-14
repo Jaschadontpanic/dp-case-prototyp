@@ -745,6 +745,10 @@
 .tile-slider.bauart-row-slider .tile-slider-arrow { top: calc(100cqw * .375); opacity: .85; }
 .tile-slider.bauart-row-slider .tile-slider-arrow.prev { left: 12px; }
 .tile-slider.bauart-row-slider .tile-slider-arrow.next { right: 12px; }
+/* Hover-Zoom auf den Kachelbildern (Jascha 2026-10-14) – gleicher Effekt wie Empfehlungs-Kacheln/Produktkarten (scale 1.05, .35s). */
+.bauart-row-slider .tile-img { overflow: hidden; }
+.bauart-row-slider .tile-img img { transition: transform .35s ease; }
+.bauart-row-slider .tile:hover .tile-img img { transform: scale(1.05); }
 /* Bauart, Desktop (Jascha 2026-10-14, ersetzt „Slider-Hoehe = Textblock“ und den Vorschlag „Eigenschaften neben dem Bild“):
    jede Kachel zeigt das Bild fest im Format 4:3, Titel/Eigenschaften darunter. Der Textblock steht vertikal mittig neben dem Slider
    (leere 1fr-Zeilen oben/unten im Grid, s. .pg-engineering-bauart .bauart-row). Mobil siehe unten. */
