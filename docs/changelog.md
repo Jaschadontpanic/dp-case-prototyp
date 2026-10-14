@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Silent Rack: Highlights als Kachel-Slider
+- Jascha: Slider-Lösung auch bei Silent Rack (Entscheidung Mobil-Accordion vs. Slider → Slider, Desktop wie Mobil). Die 7 Highlight-Kacheln (`.product-grid`/`.product-card`) sind jetzt `.tile-slider.tile-slider--wide` mit `assets/js/tile-slider.js`; Texte unverändert übernommen, Bild-Platzhalter (Hero-Foto, B6) bleiben bis zur Lieferung der Highlight-Fotos. Per Playwright 1440/390px geprüft, keine Fehler, kein Overflow.
+- **Offen:** Layout „Vollständig gekühlt“ (Tagline-Leiste unter dem Hero, Heading/Text-Positionierung) – Vorstellung von Jascha nötig, noch nicht angefasst.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
