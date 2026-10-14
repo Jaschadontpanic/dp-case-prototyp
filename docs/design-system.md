@@ -139,6 +139,9 @@ Erste Anwendung: `/engineering/flightcase-bauart/`, 3 Kacheln je Bauart: Case (T
 ## Material-Galerie (`.material-gallery`, neu 2026-10-13)
 Raster für Materialbilder: Ansichtsbild (`.material-img.is-main`) 2x2 groß, Detailbilder je 1x1 daneben (4 Spalten Desktop, 2 Spalten Mobil). Klick öffnet das Bild groß in einem Dialog (`assets/js/image-zoom.js`, Stil `.img-zoom-dialog`). Dateinamen: Ansicht = Werkstoffname aus der Matrix, Details = Name + `-detail-N`. Einsatz: Plattenmaterialien (Multiplex je Stärke, PP je Stärke, UltraFlite). Erstes Layout zum Testen (Jascha), noch nicht endgültig.
 
+## Vergleichsmatrix Plattenmaterialien (`.matrix-table`, 2026-10-14)
+Jascha: Schrift auf Standardgröße, Skalen bei Biegesteifigkeit und Punktlast wie bei den Produkten. Die Matrix ist jetzt eine normale Tabelle (`.data-table-wrap` > `.data-table.matrix-table`, Schrift `--fs-body-small` = Standard) statt der verkleinerten Zoom-Ansicht. Biegesteifigkeit/Punktlast: `.matrix-rating` = Balken (`.bauart-rating-track`/`-fill`, Teal auf `--hell`, Breite = Wert/10) + Wert mit fester Breite, damit gleiche Werte gleich lange Balken ergeben; Texte wie „auf Anfrage“ bleiben Text. „Einsatz“ ab 1200px als eigene Spalte, darunter (≤1199px) als Unterzeile unter dem Materialnamen (gleicher Text zweimal im Markup, per CSS umgeschaltet). Mobil: Tabelle scrollt horizontal. Die Komponente Table-Zoom (unten) bleibt für andere breite Tabellen verfügbar, wird auf dieser Seite nicht mehr verwendet.
+
 ## Table-Zoom (`.table-zoom`, neu 2026-10-13)
 Tabelle als kleine, bewusst unlesbare Übersicht (transform: scale, Breite 2200px → passt in die Spalte),
 Klick/Enter öffnet eine vergrößerte Kopie in einem `<dialog>` (`.table-zoom-dialog`) mit Scrollbereich

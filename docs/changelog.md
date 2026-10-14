@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Vergleichsmatrix Plattenmaterialien: Standardschrift und Skalen
+- Jascha: Schriftgröße auf Standard, bei Biegesteifigkeit und Punktlast eine Skala wie bei den Produkten, „Einsatz“ als Unterschrift unter dem Material, wenn es nicht passt. Die Matrix ist jetzt eine normale Tabelle (16px Desktop / 14px Mobil) ohne Zoom-Dialog (`table-zoom.js` auf der Seite entfernt, Komponente bleibt verfügbar). Skalen = `.bauart-rating-*`-Balken mit Wert (gleiche Werte → gleich lange Balken), „auf Anfrage“ bleibt Text. „Einsatz“: ab 1200px eigene Spalte, darunter als Unterzeile unter dem Materialnamen. Alle Texte und Werte unverändert aus der bisherigen Tabelle.
+- Geprüft (Playwright 1920/1440/1100/390px): Schrift 16px/14px, Balkenbreiten einheitlich, kein Seiten-Overflow (mobil scrollt die Tabelle horizontal); Screenshots 1440px und 1100px gesichtet.
+
 ## 2026-10-14 – Bauart-Kacheln: Hover-Zoom auf den Bildern
 - Jascha: Bilder im Kachel-Slider vergrößern sich beim Mouseover leicht – identischer Effekt wie bei „Unsere Empfehlungen“ und den Produktkarten (`scale(1.05)`, `transition: transform .35s ease`), kein neuer Design-Wert. Bild bleibt im Kachelrahmen (`overflow: hidden`).
 

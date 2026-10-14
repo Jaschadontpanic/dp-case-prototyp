@@ -909,3 +909,16 @@
 /* CTA-Band auf der Produktseite nur so breit wie der uebrige Inhalt (nicht randlos) */
 .pg-silent-rack .cta-band { width: calc(100% - 2 * var(--side-pad)); max-width: calc(var(--max-width) - 2 * var(--side-pad)); margin: 60px auto; border-radius: 16px; padding: 44px 48px; }
 @media (max-width: 900px) { .pg-silent-rack .cta-band { padding: 36px 24px; } }
+
+/* ===== Vergleichsmatrix Plattenmaterialien (2026-10-14, Jascha): Standard-Schriftgroesse, Skalen statt Zahlen ===== */
+.matrix-table th, .matrix-table td { vertical-align: middle; white-space: normal; }
+.matrix-table td.matrix-mat { white-space: normal; color: var(--anthrazit); font-weight: 700; min-width: 220px; }
+.matrix-table .matrix-use { display: none; margin-top: 2px; font-weight: 400; color: var(--grau-text); }
+.matrix-rating { display: flex; align-items: center; gap: 12px; min-width: 150px; }
+.matrix-rating .bauart-rating-track { flex: 1 1 90px; min-width: 70px; }
+.matrix-rating span { flex: 0 0 3.9em; text-align: right; white-space: nowrap; }
+.matrix-table td:nth-child(4) { white-space: nowrap; }
+@media (max-width: 1199px) {
+  .matrix-table .matrix-use-col { display: none; }
+  .matrix-table .matrix-use { display: block; }
+}
