@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Kundenliste: Umsortierung ohne Grenze
+- Jascha-Vorgabe: Namen dürfen beliebig weit umsortiert werden, Hauptsache es sieht gut aus (Mobil war nicht schön). `packRows` in `assets/js/trust-justify.js` füllt jetzt den Restplatz jeder Zeile mit dem breitesten noch passenden Namen aus der ganzen Restliste auf; die alte 2-Positionen-Grenze (`MAX_POSITION_SHIFT`) und der separate Umsortier-Schritt sind entfernt. Weglassen vom Listenende (letzte Zeile < 75 %, Handy-Höhe) unverändert.
+- Gemessen (Playwright, Zeilenfüllung = Summe Namensbreiten / Zeilenbreite): Mobil 390px Zeilen vorher 48–97 %, jetzt 91–100 %; 360px vorher 68–100 %, jetzt 84–100 %; Desktop 1440px vorher 83–99 %, jetzt 97–100 %. Mobil-Screenshot 390px gesichtet.
+
 ## 2026-10-14 – Cases-Grid: Abdunklung pro Kachel steuerbar
 - Jascha-Empfehlung angenommen: fester CSS-Verlauf pro Kachel statt JS-Helligkeitsmessung (Canvas-Pixelzugriff scheitert bei lokalem `file://`-Öffnen). `.case-tile::after` nutzt jetzt `--tile-solid` (bis wohin durchgehend schwarz, Standard 25 %) und `--tile-fade` (ab wo transparent, Standard 55 %). Pro Kachel auf der Startseite per Inline-Variable gesetzt, nach gemessener Helligkeit des unteren Bilddrittels (Luftfahrt 20/48 % = dunkel, Backstage 28/58 %, Broadcast 32/62 % = hellere Mitte). Bei Foto-Tausch Werte pro Kachel nachziehen.
 
