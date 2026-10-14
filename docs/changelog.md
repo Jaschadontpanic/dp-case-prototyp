@@ -2,6 +2,10 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauart-Slider: Höhe = Textblock (Desktop)
+- Jascha: Das Bildelement soll nur so hoch sein, dass es von der Oberkante der Überschrift („Ultra Protect …“) bis zur Unterkante der Gewicht-Skala geht. Umgesetzt für >900px: Track absolut positioniert (Slider hat keine eigene Höhe, die Zeilenhöhen kommen allein vom Text), Kachel `height:100%`, Bild `flex:1` statt `aspect-ratio`, Textteil kompakter (14/18/16px Padding). Breite und Pfeile unverändert (Pfeile jetzt vertikal mittig). Mobil unverändert.
+- Gemessen (Playwright): Top-/Bottom-Differenz zu Überschrift/Skala 0px bei allen 10 Slider-Zeilen bei 1920/1440/1100px; kein horizontaler Overflow; Screenshots der Kachel Case und Platte gesichtet.
+
 ## 2026-10-14 – Bauart-Slider ohne angeschnittene Nachbarkacheln
 - Jascha: Elemente links/rechts nicht mehr angeschnitten sichtbar; Gesamtbreite und Kachelbreite bleiben gleich, Pfeile weiter neben der Kachel. Nur CSS: der Track des Standard-Sliders (`.tile-slider` ohne `--wide`) ist um (`--tile-peek` + Gap) eingerückt und schneidet an der Kachelkante ab; Pfeile in den Rändern. Endlosschleife unverändert. Silent-Rack-Highlights (`--wide`) bewusst nicht geändert.
 - Geprüft (Playwright 1440/390px): immer genau eine Kachel sichtbar, Vor/Zurück über mehrere Runden stimmt, Screenshots Desktop und Mobil gesichtet.
