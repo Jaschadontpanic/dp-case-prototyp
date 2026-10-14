@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – CTA-Band: Buttons neben der Headline
+- Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
+
 ## 2026-10-13 – Bauart: Kachel-Slider statt Bild-Slider
 - Jascha-Vorgabe: Slider für Case/Platte/Kante als Kacheln (Vorbild Mercedes-Kachel: Bild + Titel + Text), nächste Kachel immer angeschnitten sichtbar, dezente Pfeile links/rechts, Desktop wie Mobil als Slider.
 - `.bauart-slider`/`bauart-slider.js` entfernt, neu `.tile-slider` + `assets/js/tile-slider.js`. 10 Bauart-Zeilen auf `/engineering/flightcase-bauart/` umgestellt.

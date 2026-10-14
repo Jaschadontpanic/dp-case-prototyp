@@ -425,6 +425,16 @@
 .cta-band { background: var(--anthrazit); padding: 50px var(--side-pad); text-align: center; }
 .cta-band h2 { font-family: var(--headline-alt-font); font-size: var(--fs-h2); color: #fff; margin-bottom: 12px; }
 .cta-band p { color: #ddd; font-size: var(--fs-body-small); max-width: 60ch; margin: 0 auto 22px; }
+/* CTA-Band, Desktop (seit 2026-10-14): Buttons rechts neben Headline/Text statt darunter, deutlich kleiner
+   (Padding/Schrift wie gescrollter Header-CTA, nur bestehende Werte). Mobil <=900px: wie bisher gestapelt, zentriert. */
+@media (min-width: 901px) {
+  .cta-band { display: grid; grid-template-columns: 1fr auto; column-gap: 48px; align-items: center; text-align: left; }
+  .cta-band h2 { grid-column: 1; }
+  .cta-band p { grid-column: 1; margin: 0; max-width: 60ch; }
+  .cta-band .hero-bar-actions { grid-column: 2; grid-row: 1 / span 2; flex-wrap: nowrap; }
+  .cta-band .btn { padding: 10px 19px; font-size: 13px; }
+  .cta-band .btn-call svg { width: 14px; height: 14px; }
+}
 .pg-engineering-formen .cta-band { padding: 54px var(--side-pad); margin-top: 40px; }
 
 /* ===== PHONE POPUP / BTN-CALL (T3: global statt nur index.html) ===== */
