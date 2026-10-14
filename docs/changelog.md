@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Cases-Grid: Abdunklung pro Kachel steuerbar
+- Jascha-Empfehlung angenommen: fester CSS-Verlauf pro Kachel statt JS-Helligkeitsmessung (Canvas-Pixelzugriff scheitert bei lokalem `file://`-Öffnen). `.case-tile::after` nutzt jetzt `--tile-solid` (bis wohin durchgehend schwarz, Standard 25 %) und `--tile-fade` (ab wo transparent, Standard 55 %). Pro Kachel auf der Startseite per Inline-Variable gesetzt, nach gemessener Helligkeit des unteren Bilddrittels (Luftfahrt 20/48 % = dunkel, Backstage 28/58 %, Broadcast 32/62 % = hellere Mitte). Bei Foto-Tausch Werte pro Kachel nachziehen.
+
 ## 2026-10-14 – CTA-Band: Buttons neben der Headline
 - Jascha-Feedback: Buttons neben der Headline statt darunter, viel kleiner. Rein CSS (`@media (min-width:901px)`, Grid 1fr/auto), kein HTML geändert; Mobil bleibt gestapelt. Per Playwright 1440/1000/390px geprüft, kein Overflow.
 
