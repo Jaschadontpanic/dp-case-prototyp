@@ -8,6 +8,9 @@ Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen
 - Kachel-Texte: Case = Bauart-Name; Platte = Name + Stärke, Biegesteifigkeit, Punktlast, kg/m² aus der Matrix (HDF: kg/m² „–“ ausgelassen); Kante = Bezeichnung + Stärke (3. Maß der Bezeichnung). Keine neuen Texte erfunden. **Offen:** Jascha nannte als Beispiel „Aluminium 2 mm Stärke“ – „Aluminium“ steht für die Kantenschutz-Profile nirgends im Repo, daher nicht ergänzt (Freigabe/Text nötig).
 - Per Playwright (Desktop 1440px, Mobil 390px) geprüft: kein horizontaler Overflow, Pfeil blättert, keine Fehler.
 
+## 2026-10-13 – Logo Mobil ca. 20 % kleiner
+- Jascha-Feedback: Logo mobil ca. 20 % kleiner; Startseite und Unterseiten gleich groß. `--logo-h-top-mobile` 45px → 36px (≤900px, Scroll-Position 0). Desktop (60px) und gescrolltes Logo (29px/22px) unverändert. `docs/design-system.md` angepasst.
+
 ## 2026-10-13 – Überschriften nach Ebene vereinheitlicht
 - Jascha-Freigabe: H1/H2 Open Sans, H3/Karten-Titel Clear Sans Bold. Vorher erbten H1/H2 ohne eigene Komponentenregel Clear Sans Bold (Inkonsistenz). Fix: eine globale Regel `h1, h2 { font-family: var(--headline-alt-font) }` in `base.css`; Größen/Gewichte unverändert. Per Playwright auf allen 25 Seiten geprüft: alle H1/H2 Open Sans, kein H3 Open Sans.
 ## 2026-10-13 (Bauart-Fotos) – Case-Fotos abgelegt und eingebunden, fehlende als Dummy

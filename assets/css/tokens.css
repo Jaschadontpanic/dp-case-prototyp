@@ -25,7 +25,7 @@
   --header-pad-v: 18px;           /* Innenabstand oben/unten, Scroll-Position 0 (bisheriger Wert) */
   --header-pad-v-scrolled: 9px;   /* Innenabstand oben/unten, gescrollt (2026-09-29: ca. 10% kleiner als bisher 10px) */
   --logo-h-top: 60px;             /* Logo-Hoehe Desktop, Scroll-Position 0 (1,5x von 40px) */
-  --logo-h-top-mobile: 45px;      /* Logo-Hoehe Mobile/Tablet (<=900px), Scroll-Position 0 (1,5x von 30px) */
+  --logo-h-top-mobile: 36px;      /* Logo-Hoehe Mobile/Tablet (<=900px), Scroll-Position 0 (2026-10-13: ca. 20% kleiner als bisher 45px) */
   --logo-h-scrolled: 29px;        /* Logo-Hoehe Desktop, gescrollt (2026-09-29: ca. 10% kleiner als bisher 32px) */
   --logo-h-scrolled-mobile: 22px; /* Logo-Hoehe Mobile/Tablet, gescrollt (2026-09-29: ca. 10% kleiner als bisher 24px) */
   --transition-fast: 220ms ease;  /* Logo-Crossfade, Padding-Uebergang */
