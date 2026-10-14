@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Produktseite: Hero ca. 30 % niedriger
+- Jascha: Header der Produktseite ca. 30 % niedriger. `.product-hero`: Bild `max-height` 65vh → 43vh (mobil 50vh → 30vh), Innenabstand 48/24px → 32/16px (mobil oben 20px). Gemessen (Hero-Höhe ohne Buttonleiste): 877 → 616px (1920×1080, −30 %), 760 → 538px (1440×900, −29 %), 546 → 381px (390px, −30 %). Kein Overflow; Screenshot 1920px gesichtet. Gilt für alle Produktseiten mit `.product-hero`.
+
 ## 2026-10-14 – Silent Rack: Kachelraster mit variablen Breiten (lückenlos)
 - Jascha: erste Kachel doppelt breit wie auf der Startseite, variable Größen, höchstens jede zweite Kachel doppelt, Reihen immer voll (3x1 oder 2+1), Position der Doppelten wechselt von Reihe zu Reihe. Neu: `assets/js/tile-spans.js` wählt die Doppelten dynamisch (Algorithmus s. `docs/design-system.md`), im HTML für 8 Kacheln vorgesetzt.
 - **Zu Jaschas Beispiel „1. und 7. Kachel doppelt“:** mit 8 Kacheln geht das rechnerisch nicht lückenlos auf (2+1 | 1+1+1 | 1+2 ließe Kachel 8 allein in der letzten Reihe, 10 Einheiten statt 9 oder 12). Lückenlose Lösungen für 8 Kacheln: nur Kachel 1 doppelt (2+3+3) oder 4 Doppelte (2+2+2+2). Umgesetzt: 4 Doppelte (Kachel 1, 4, 5, 8) im Wechsel vorn/hinten, genau jede zweite Kachel, wie vorgegeben „maximal“.
