@@ -2,9 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
-## 2026-10-14 – Standards & Werte: Bilder Nachhaltigkeit und Soziale Verantwortung abgelegt
+## 2026-10-14 – Standards & Werte: Bilder Nachhaltigkeit und Soziale Verantwortung eingebunden
 - 2 Bilder von Jascha als WebP unter `assets/images/standards-werte/` abgelegt: `nachhaltigkeit.webp` (Glaskugel mit Weltkarte auf Moos) → Abschnitt „Nachhaltigkeit“, `soziale-verantwortung.webp` (Silhouetten beim Ballspiel, eine Person im Rollstuhl) → Abschnitt „Soziale Verantwortung“.
-- Noch nicht eingebunden: Die Abschnitte sind reine `.text-section`-Blöcke ohne Bild-Slot, Platzierung braucht Layout-Freigabe (B12).
+- Eingebunden auf `/standards-werte/` (Jascha-Entscheidung: abwechselnd links/rechts wie die Bauart-Zeilen): Nachhaltigkeit Bild links, Soziale Verantwortung Bild rechts; ≤900px gestapelt, Bild oben. Neuer Modifier `.text-section--img` / `--img-right` in `components.css` (Bildspalte 300px = Originalgröße, Abstand 56px und Radius 20px wie `.bauart-row`, keine neuen Design-Werte). Texte unverändert.
+- Alt-Texte aus dem Bildinhalt abgeleitet (nicht im Content) – bitte im SEO-Alt-Text-Check (C5) prüfen.
+- Geprüft (Playwright): 1600/768/375 px, Bilder in Originalgröße (nicht hochskaliert), kein horizontaler Overflow.
 - Beide Dateien liegen nur in 300 × 200 px vor (Größe der gelieferten Datei, nicht hochskaliert) – für eine größere Darstellung höher aufgelöste Originale nötig.
 - Herkunft/Bildrechte beider Bilder vor Livegang klären.
 

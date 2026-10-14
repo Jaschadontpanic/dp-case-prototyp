@@ -600,6 +600,18 @@
 .text-section ul { padding-left: 20px; margin-top: 8px; }
 .text-section li { margin-bottom: 6px; }
 .text-section a { color: var(--teal); font-weight: 600; text-decoration: underline; }
+/* Text-Abschnitt mit Bild (neu 2026-10-14, Standards & Werte): Bild neben Überschrift/Text, mit
+   --img-right abwechselnd rechts (wie .bauart-row). Bild max. 300px = Originalgröße (B12), Radius/Abstand
+   wie .bauart-row. ≤900px gestapelt, Bild oben. */
+.text-section--img { display: grid; grid-template-columns: 300px 1fr; column-gap: 56px; align-items: center; }
+.text-section--img-right { grid-template-columns: 1fr 300px; }
+.text-section--img-right .text-section-img { order: 2; }
+.text-section-img { width: 100%; height: auto; border-radius: 20px; display: block; }
+@media (max-width: 900px) {
+  .text-section--img, .text-section--img-right { grid-template-columns: 1fr; row-gap: 16px; }
+  .text-section--img-right .text-section-img { order: 0; }
+  .text-section-img { max-width: 300px; }
+}
 .data-table-wrap { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--side-pad) 40px; overflow-x: auto; }
 .data-table { width: 100%; min-width: 420px; border-collapse: collapse; font-size: var(--fs-body-small); }
 .data-table th, .data-table td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #eee; white-space: nowrap; }
