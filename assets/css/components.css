@@ -285,6 +285,10 @@
 .hub-card h3 { font-size: var(--fs-card-title); color: var(--anthrazit); margin-bottom: 12px; }
 .hub-card p { font-size: var(--fs-body-small); color: var(--grau-text); line-height: 1.6; margin-bottom: 18px; }
 .hub-card .btn-link { margin-top: auto; }
+/* Hub-Karte mit Bild (2026-10-14, Bauart-Seite "Weitere Leistungen"): Bild 4:3 oben, randlos zur Kartenkante, freigestellt/weiss (contain) */
+.hub-card--img { overflow: hidden; }
+.hub-card-img { margin: -28px -26px 18px; aspect-ratio: 4 / 3; background: #fff; border-bottom: 1px solid #eee; }
+.hub-card-img img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* Team-Avatar in .hub-card (neu 2026-10-13, Über uns) – gleiches Prinzip wie .team-card .avatar
    (Kontaktseite), nur größer. .placeholder-Modifier nutzt das sitewide Platzhalter-Streifenmuster
