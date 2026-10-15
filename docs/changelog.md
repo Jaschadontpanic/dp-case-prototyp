@@ -2,6 +2,13 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-14 – Bauformen: alle 21 Bilder eingebunden (B2 erledigt)
+- 18 fehlende Bauform-Bilder aus Jaschas PDFs (Nr. 4–21) erzeugt und auf `/engineering/flightcase-formen/` statt „Bild folgt“ eingesetzt. Gleiche Optik wie die drei vorhandenen: PNG mit transparentem Hintergrund, Höhe 1710 px, Flächen weiß gefüllt, Linien schwarz, Außenkontur kräftiger, 18 px Rand. Dateien unter `assets/images/engineering/formen/` (37–55 KB je Bild), Zuordnung PDF → Datei in `content/engineering/flightcase-formen.md`.
+- PDF 20 (Schubladen-Case mit Klappdeckel) enthielt einen Seitenrahmen – entfernt, Linienlücken an den Kreuzungspunkten geschlossen. PDF 3 (Hauben-Case) entspricht dem vorhandenen Bild, unverändert.
+- Alt-Text je Bild = Titel der Bauform (wie bisher).
+- Kartenlayout: Zeichnung und Text überlagerten sich bei breiten Bildern/langen Texten (vorher schon bei „Hauben-Case geteilt“). Text jetzt links auf ca. 55 % der Kartenbreite begrenzt und über dem Bild, Zeichnung rechts etwas schmaler (`left 50 %`, `width 48 %` statt `32 %`/`62 %`).
+- Geprüft (Playwright): 1600/1280/768/375 px, alle 21 Bilder laden, kein Text unter einer Zeichnung, kein horizontaler Overflow.
+
 ## 2026-10-14 – Bauart: Bilder zu „Transportkisten – Heavy Duty“ und „Hartschalen Koffer“
 - Jascha: Bilder zu „Woodrack und Transportkiste Heavy Duty“ einbauen. Die beiden Karten unter „Weitere Leistungen“ (`.hub-card`) bekommen oben ein Bild (`.hub-card--img` / `.hub-card-img`, 4:3, randlos zur Kartenkante, `contain`): `transportkisten-heavy-duty.webp` und `hartschalen-koffer.webp` (lagen bereits unter `assets/images/engineering/bauart/`).
 - **Annahme:** „Woodrack“ gibt es im Bauart-Content nicht; ich habe es als „Hartschalen Koffer“ gelesen (zweite Karte mit passendem, bereits abgelegtem Foto). Alt-Texte stehen nicht im Content und sind von mir aus den Bildern beschrieben („Transportkiste Heavy Duty aus schwarzem Multiplex mit Fächern, auf Holzpalette“, „Hartschalen Koffer in Schwarz mit Rollen und Teleskopgriff“) – bitte prüfen.
