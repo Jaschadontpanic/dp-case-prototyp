@@ -2,6 +2,11 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-10-16 – Übergabe an die Entwicklerin (WordPress)
+- Entscheidung Jascha: Die Entwicklerin setzt die Seite in WordPress (IONOS) um, mit dem Design 1:1 aus dem HTML-Prototyp, und übernimmt danach Pflege und Wartung. Der Prototyp wird nicht weiterentwickelt. Go-live-Ziel ca. 06.11.2026.
+- `docs/handover-entwicklerin.md` vollständig ausgearbeitet: Auftrag, Quellen, Go-live-Umfang (Startseite, Produkte inkl. 10 Produktseiten, Manufaktur als eine Seite, Kontakt, Rechtliches), Phase 2 (Engineering, Wissen, Englisch), technische Vorgaben, offene Bilder, Abnahme-Checkliste.
+- Neue Entscheidungen (nur in der Übergabe, im Prototyp nicht umgesetzt): „Unsere Empfehlungen“ direkt nach dem Hero; Hero-Bild = `cases-broadcast-pult-workstation.jpg` (das bisherige generierte Bild zeigt nicht existierende Beschläge); Silent-Rack-Kachel dafür mit `SOAZMA0010_00_hero.png`; Anruf-Button im CTA „Dein Case, egal wie speziell.“ mit Kontrast (bisher hell auf hell); Hero-Headline bleibt; Manufaktur-Inhalte auf einer Seite; Links auf Engineering/Wissen zum Go-live ausblenden.
+
 ## 2026-10-14 – Bauformen: alle 21 Bilder eingebunden (B2 erledigt)
 - 18 fehlende Bauform-Bilder aus Jaschas PDFs (Nr. 4–21) erzeugt und auf `/engineering/flightcase-formen/` statt „Bild folgt“ eingesetzt. Gleiche Optik wie die drei vorhandenen: PNG mit transparentem Hintergrund, Höhe 1710 px, Flächen weiß gefüllt, Linien schwarz, Außenkontur kräftiger, 18 px Rand. Dateien unter `assets/images/engineering/formen/` (37–55 KB je Bild), Zuordnung PDF → Datei in `content/engineering/flightcase-formen.md`.
 - PDF 20 (Schubladen-Case mit Klappdeckel) enthielt einen Seitenrahmen – entfernt, Linienlücken an den Kreuzungspunkten geschlossen. PDF 3 (Hauben-Case) entspricht dem vorhandenen Bild, unverändert.
