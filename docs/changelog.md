@@ -2,6 +2,9 @@
 
 Neueste Einträge oben. Jede Content- oder Strukturänderung hier kurz eintragen (Datum, was, warum).
 
+## 2026-11-09 – Produkte: H2 über der Produktübersicht
+- Jascha: kurze Überschrift über den Produktkacheln, die sagt, dass es nur eine Auswahl ist und jedes andere Case entwickelt wird. Neu: H2 „Eine Auswahl – jedes andere Case entwickeln wir für dich“ (bestehendes Element `.section-heading`, keine neue Optik). Content `content/produkte/index.md` ergänzt.
+
 ## 2026-11-09 – Startseite: Google-Bewertung 5,0 in der Kennzahlen-Leiste
 - Jascha: Google-Bewertung 5,0 Sterne als kurzer Slogan. Vierte Kennzahl in der Leiste „Die Casemanufaktur seit 1994 in Hamburg“: „5,0★“ (Stern in Teal) mit Label „Zufriedenheit“ (Jascha, gekürzt von „Kundenzufriedenheit bei Google“). Steht als erste Kennzahl, vor „30+ Jahre Erfahrung“ (Jascha). Kicker bleibt 50 % breit, die vier Kennzahlen teilen sich die andere Hälfte (`.stats-row--4`, Raster 8 Spalten statt 6); alle Zahlen oben bündig auf einer Linie. Content `content/startseite.md` ergänzt.
 - Offen vor Livegang: Wert und Rezensionsanzahl aktuell halten; Quelle Google ist im Label nicht mehr genannt – optional offizielles Google-Logo (von Jascha, nach Googles Markenrichtlinien) und/oder Link auf das Google-Profil (URL fehlt).

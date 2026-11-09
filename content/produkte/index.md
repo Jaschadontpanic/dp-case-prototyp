@@ -24,6 +24,9 @@ bis dahin `assets/images/startseite/hero-case-foto.jpg` als Platzhalter.
 **Trust-Zeile im Header (über dem Bild, unter der H1):**
 30 Jahre Lösungen für anspruchsvolle Partner – über 2.000 Konstruktionen, 100 % individuell.
 
+**H2 über der Produktübersicht (neu 2026-11-09, Jascha):** Eine Auswahl – jedes andere Case entwickeln wir für dich
+(Macht klar, dass die Kacheln nur eine Produktauswahl sind und jedes andere Case individuell entwickelt wird.)
+
 (Entscheidung 2026-09-29: Die vollständige Kundenliste des Trust-Elements wird NICHT über das
 Bild gelegt. Sie hat 8 fein abgestufte Größenstufen und Blocksatz und wird über einem Foto
 unleserlich; außerdem erscheint sie bereits auf Startseite und Standards & Werte. Stattdessen
