@@ -34,7 +34,8 @@ amptown-cases.de, mercedes-benz.de
 
 **Eyebrow + Statistik (in einer Zeile, nach unten verschoben):**
 DIE CASEMANUFAKTUR – SEIT 1994 IN HAMBURG
-30+ Jahre Erfahrung | 2000+ Konstruktionen | 100% Custom-Made | 5,0 ★ Zufriedenheit
+5,0 ★ Zufriedenheit | 30+ Jahre Erfahrung | 2000+ Konstruktionen | 100% Custom-Made
+(Reihenfolge Jascha 2026-11-09: Google-Bewertung an erster Stelle.)
 (Vierte Kennzahl neu 2026-11-09, Jascha: Google-Bewertung 5,0 Sterne, Label kurz „Zufriedenheit“. Stern als Symbol in Teal hinter der Zahl.
 Google-Logo optional: nur das offizielle Logo nach Googles Markenrichtlinien, von Jascha zu liefern.
 Vor Livegang prüfen: Bewertung und Anzahl der Rezensionen aktuell, ggf. Link auf das Google-Unternehmensprofil.)
