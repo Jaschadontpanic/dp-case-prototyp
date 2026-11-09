@@ -233,6 +233,15 @@ header.nav .nav-dropdown a.nav-dropdown-main { font-weight: 700; }
 .stat { grid-column: span 1; }
 .stat b { display: block; font-family: var(--heading-font); font-size: var(--fs-stat-number); }
 .stat span { font-family: var(--body-font); font-size: var(--fs-small); color: #888; }
+/* 4 Kennzahlen (Startseite, 2026-11-09: Google-Bewertung 5,0 ergaenzt): Kicker bleibt 50 %, 4 Kennzahlen teilen sich die andere Haelfte. */
+.stats-row--4 { grid-template-columns: repeat(8, 1fr); }
+.stats-row--4 .kicker { grid-column: span 4; }
+/* Stern hinter der 5,0: Teal (CI), etwas kleiner als die Zahl. Kennzahlen oben buendig, damit alle Zahlen auf einer Linie stehen,
+   auch wenn ein Label zweizeilig ist. */
+.stat .stat-stars { font-size: .8em; color: var(--teal); margin-left: .12em; }
+.stats-row--4 .stat { align-self: start; }
+.stats-row--4 { align-items: start; }
+.stats-row--4 .kicker { align-self: center; }
 
 footer.site-footer {
   background: #000; color: #ccc; padding: 40px var(--side-pad); margin-top: 60px;
@@ -257,4 +266,5 @@ footer.site-footer {
   .hero h1 { font-size: 32px; max-width: none; }
   .stats-row { grid-template-columns: 1fr; }
   .stats-row .kicker { grid-column: span 1; }
+  .stats-row--4 { grid-template-columns: 1fr; }
 }

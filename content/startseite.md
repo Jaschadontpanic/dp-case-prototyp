@@ -34,7 +34,9 @@ amptown-cases.de, mercedes-benz.de
 
 **Eyebrow + Statistik (in einer Zeile, nach unten verschoben):**
 DIE CASEMANUFAKTUR – SEIT 1994 IN HAMBURG
-30+ Jahre Erfahrung | 2000+ Konstruktionen | 100% Custom-Made
+30+ Jahre Erfahrung | 2000+ Konstruktionen | 100% Custom-Made | 5,0 ★ Kundenzufriedenheit bei Google
+(Vierte Kennzahl neu 2026-11-09, Jascha: Google-Bewertung 5,0 Sterne. Stern als Symbol in Teal hinter der Zahl.
+Vor Livegang prüfen: Bewertung und Anzahl der Rezensionen aktuell, ggf. Link auf das Google-Unternehmensprofil.)
 
 ### Abschnitt 2: "Alles, was ein Case koennen kann"
 Keine zusaetzliche Unterzeile/Fliesstext - nur die Headline, dann direkt die 4 Kacheln.
